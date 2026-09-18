@@ -1,0 +1,23 @@
+# Local media and generated model artifacts
+/video/
+/audios/
+/embeddings.joblib
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Local configuration and runtime output
+.env
+.env.*
+!.env.example
+*.log
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

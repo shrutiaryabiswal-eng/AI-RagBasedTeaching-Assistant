@@ -1,0 +1,3498 @@
+{
+  "chunks": [
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 0.0,
+      "end": 4.0,
+      "text": " The following content is provided under a Creative Commons license."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 4.0,
+      "end": 10.0,
+      "text": " Your support will help MIT OpenCourseWare continue to offer high quality educational resources for free."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 10.0,
+      "end": 15.0,
+      "text": " To make a donation or to view additional materials from hundreds of MIT courses,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 15.0,
+      "end": 20.0,
+      "text": " visit MIT OpenCourseWare at ocw.mit.edu."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 22.0,
+      "end": 25.0,
+      "text": " Last class I talked about payment channels and Lightning Network."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 26.0,
+      "end": 30.0,
+      "text": " Today we'll talk about a bit more about payment channels."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 30.0,
+      "end": 32.0,
+      "text": " We'll recap a little bit."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 32.0,
+      "end": 37.0,
+      "text": " We'll talk about some optimizations, one of which is key addition, the other is hash trees,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 37.0,
+      "end": 42.0,
+      "text": " and then we'll talk about cross-chain swaps or cross-chain atomic swaps."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 44.0,
+      "end": 51.0,
+      "text": " Last time the main idea of these payment channels is you've got this commitment transaction"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 51.0,
+      "end": 59.0,
+      "text": " and each party holds a different transaction that has the same amounts, but slightly different scripts."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 62.0,
+      "end": 72.0,
+      "text": " So it's spending from a shared funding transaction and it's sending out to the one that's held by Alice on her hard drive,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 72.0,
+      "end": 78.0,
+      "text": " sends to Bob in the clear. Bob just gets his eight coins with no ifsans or buts."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 78.0,
+      "end": 85.0,
+      "text": " However, when Alice broadcasts this, she needs to wait 100 blocks. She needs to wait a day."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 85.0,
+      "end": 92.0,
+      "text": " And if she reveals this key to Bob, now Bob can use Bob's key and this revocable key,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 92.0,
+      "end": 95.0,
+      "text": " and Bob can get these coins immediately."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 95.0,
+      "end": 99.0,
+      "text": " And the opposite is for Bob."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 99.0,
+      "end": 104.0,
+      "text": " So when Bob has his transaction, it's got Alice's signature, he doesn't store his own,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 104.0,
+      "end": 107.0,
+      "text": " because he can just compute it quickly."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 108.0,
+      "end": 114.0,
+      "text": " The two coins that go to Alice go to her in the clear. However, the eight coins that Bob gets for himself,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 114.0,
+      "end": 119.0,
+      "text": " he has to wait 100 blocks during the 100 blocks."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 121.0,
+      "end": 126.0,
+      "text": " Alice can sign if she has Bob's revocation key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 126.0,
+      "end": 132.0,
+      "text": " Okay, so that's the basic idea of these outputs, and then you construct these."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 133.0,
+      "end": 139.0,
+      "text": " So when I say Alice won Bitcoin, Bob, nine Bitcoin, it's of the format in these."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 139.0,
+      "end": 145.0,
+      "text": " The person who holds that transaction has a transaction where the other party gets the coins immediately,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 145.0,
+      "end": 153.0,
+      "text": " and their own coins have this lock up period and can be grabbed by the other party if they revoke them."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 153.0,
+      "end": 157.0,
+      "text": " So initially the state is Alice has won Bitcoin, Bob has nine."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 158.0,
+      "end": 162.0,
+      "text": " There's two different state one transactions, one held by Alice, one held by Bob."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 162.0,
+      "end": 169.0,
+      "text": " They build a new transaction together where Alice has five coins and Bob has five coins,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 169.0,
+      "end": 174.0,
+      "text": " and then they revoke the old one by sharing these secrets."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 174.0,
+      "end": 181.0,
+      "text": " So now, since they both have handed each other these revocation private keys,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 181.0,
+      "end": 184.0,
+      "text": " both of these parties cannot broadcast this."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 184.0,
+      "end": 188.0,
+      "text": " If they do, the other party takes all the money."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 188.0,
+      "end": 191.0,
+      "text": " And then you can build these indefinitely."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 191.0,
+      "end": 202.0,
+      "text": " Okay, so any questions about that that was covered last time, but it's kind of can be complicated questions."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 202.0,
+      "end": 208.0,
+      "text": " Okay, so some optimizations we'd want to make."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 209.0,
+      "end": 212.0,
+      "text": " So basically either party for broadcasts and has to wait."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 212.0,
+      "end": 216.0,
+      "text": " Alice gives Bob the L.S.R.Pribe key, Bob gives Alice the Bob R.Pribe key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 216.0,
+      "end": 218.0,
+      "text": " So broadcasts the counter party takes all the funds."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 218.0,
+      "end": 220.0,
+      "text": " So what are some optimizations here?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 220.0,
+      "end": 225.0,
+      "text": " The basic idea of the script is, okay, key A, you know, you can have a signature from key A,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 225.0,
+      "end": 229.0,
+      "text": " and you have to wait a day, or two, or five, or whatever."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 229.0,
+      "end": 235.0,
+      "text": " Or you can have a signature from key B and a signature from key C."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 235.0,
+      "end": 237.0,
+      "text": " So what are some optimizations here?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 237.0,
+      "end": 243.0,
+      "text": " The revealing part, any way to make that smaller, more efficient."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 243.0,
+      "end": 248.0,
+      "text": " So one idea is, you know, a preimage inside of a signature."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 248.0,
+      "end": 251.0,
+      "text": " Right? You're just revealing something."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 251.0,
+      "end": 253.0,
+      "text": " You're not actually committing to any data."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 253.0,
+      "end": 257.0,
+      "text": " So Bob, when Bob reveals his secret, he could just be, here's a preimage."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 257.0,
+      "end": 260.0,
+      "text": " And you can get, inside of like 70 bytes for a signature,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 260.0,
+      "end": 264.0,
+      "text": " you get down to like 20 bytes for a hash in a preimage."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 264.0,
+      "end": 265.0,
+      "text": " Right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 265.0,
+      "end": 268.0,
+      "text": " Because, so how would it work?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 268.0,
+      "end": 274.0,
+      "text": " You just say, okay, Alice signs if Alice knows Bob R's preimage."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 274.0,
+      "end": 278.0,
+      "text": " Right? The Bob R, Bob R doesn't have to actually sign."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 278.0,
+      "end": 280.0,
+      "text": " She can just know it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 280.0,
+      "end": 282.0,
+      "text": " That would work."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 282.0,
+      "end": 286.0,
+      "text": " So actually that was sort of the initial idea."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 286.0,
+      "end": 288.0,
+      "text": " I think that's what's written in the paper."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 288.0,
+      "end": 290.0,
+      "text": " But you can do even smaller."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 290.0,
+      "end": 295.0,
+      "text": " So an even smaller way to do it is combine keys."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 295.0,
+      "end": 299.0,
+      "text": " So in the elliptic curve that we're using, in, you know,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 299.0,
+      "end": 303.0,
+      "text": " all these groups, all these signature schemes, if you add two keys together,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 303.0,
+      "end": 304.0,
+      "text": " you can get a third key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 304.0,
+      "end": 309.0,
+      "text": " And it's using the addition operator operation that's defined on this group."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 309.0,
+      "end": 313.0,
+      "text": " So in the case where you have, you know, key B and key C,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 313.0,
+      "end": 318.0,
+      "text": " and you add them together to get say, key R, what's the private key for key R?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 318.0,
+      "end": 321.0,
+      "text": " Anyone?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 321.0,
+      "end": 328.0,
+      "text": " You've got key B, private key, key C, which has a private key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 328.0,
+      "end": 333.0,
+      "text": " You add the two public keys up together."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 333.0,
+      "end": 336.0,
+      "text": " Yeah, it's the sum of the private keys."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 336.0,
+      "end": 341.0,
+      "text": " Right? So public key B is just private key B times the generator point G."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 341.0,
+      "end": 346.0,
+      "text": " Put, in this, you know, C times G equals R times G."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 346.0,
+      "end": 351.0,
+      "text": " And then you can just, you know, move the parentheses around."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 351.0,
+      "end": 358.0,
+      "text": " So B plus C, the private keys added together times the generator point is still the same."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 358.0,
+      "end": 360.0,
+      "text": " So this is a really nice property."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 360.0,
+      "end": 365.0,
+      "text": " Actually, it's sort of the main property that we use for all signatures and all this stuff."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 365.0,
+      "end": 372.0,
+      "text": " But what that means is you can say, here, I, you know, I take your public key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 372.0,
+      "end": 374.0,
+      "text": " You know, come up with my own private key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 374.0,
+      "end": 375.0,
+      "text": " Compute the public key for that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 375.0,
+      "end": 381.0,
+      "text": " Add them together and say, hey, we've got this new shared public key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 381.0,
+      "end": 386.0,
+      "text": " And neither of us can sign with it yet because we don't know each other's private keys."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 386.0,
+      "end": 390.0,
+      "text": " But if either of us reveals the private key, then the other party can sign with it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 390.0,
+      "end": 398.0,
+      "text": " Right? So if this is Bob's and this is Alice's, they can both compute little R times G by doing this operation."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 398.0,
+      "end": 402.0,
+      "text": " Right? They both share public keys and compute the shared public key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 402.0,
+      "end": 408.0,
+      "text": " But they cannot sign because neither of them knows little R."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 408.0,
+      "end": 413.0,
+      "text": " And then let's say Alice says, okay, Bob, here's, here's this little C."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 413.0,
+      "end": 416.0,
+      "text": " Gives it to Bob. Bob says, okay, now I know a little R."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 416.0,
+      "end": 419.0,
+      "text": " But Alice doesn't. Right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 419.0,
+      "end": 423.0,
+      "text": " So this is a really nice way to do it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 423.0,
+      "end": 425.0,
+      "text": " Because it saves a lot of space."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 425.0,
+      "end": 429.0,
+      "text": " So instead, this script is now just key D."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 429.0,
+      "end": 431.0,
+      "text": " Oh, I should have put R. Oops."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 431.0,
+      "end": 433.0,
+      "text": " Key D or key A in time."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 433.0,
+      "end": 440.0,
+      "text": " Right? So instead of having this, this key in time passes or these other two keys both sign,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 440.0,
+      "end": 443.0,
+      "text": " you just have a single key that can sign immediately."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 443.0,
+      "end": 448.0,
+      "text": " Or another key that can sign after a period of time."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 448.0,
+      "end": 452.0,
+      "text": " So the actual script used is this."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 452.0,
+      "end": 460.0,
+      "text": " You say, op if the key R, op else, delay, object sequence verify, optrop,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 460.0,
+      "end": 462.0,
+      "text": " then the key A, then the end F, then the object six."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 462.0,
+      "end": 465.0,
+      "text": " So I'll walk through this because it's a little confusing."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 465.0,
+      "end": 470.0,
+      "text": " The op if takes an item off the stack and it's either true or false."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 470.0,
+      "end": 475.0,
+      "text": " So the first thing you have to do is you have to indicate which of these two paths you're going to use."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 475.0,
+      "end": 479.0,
+      "text": " Right? Either you're going to put key R on the stack"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 479.0,
+      "end": 484.0,
+      "text": " or you're going to put this delay number, which is say 100 blocks."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 484.0,
+      "end": 491.0,
+      "text": " Put an object sequence verify to verify that it has been 100 blocks since you created the transaction you're spending."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 491.0,
+      "end": 493.0,
+      "text": " And then you have to drop the delay."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 493.0,
+      "end": 496.0,
+      "text": " This was to ensure compatibility since it's a software."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 496.0,
+      "end": 498.0,
+      "text": " So old nodes would see this."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 498.0,
+      "end": 500.0,
+      "text": " Old nodes would see this."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 500.0,
+      "end": 501.0,
+      "text": " They would see a no op."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 501.0,
+      "end": 505.0,
+      "text": " And then they would see the drop to get rid of this whole thing."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 505.0,
+      "end": 508.0,
+      "text": " So the old nodes wouldn't see it at all."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 508.0,
+      "end": 513.0,
+      "text": " Then you have a key A put on the stack and then you end the if statement and then you check signatures."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 513.0,
+      "end": 521.0,
+      "text": " So really the if statement is just determining which key gets pushed onto the stack."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 521.0,
+      "end": 526.0,
+      "text": " And then the after the if statement there's a check sig, you know, to check the signature from that key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 526.0,
+      "end": 533.0,
+      "text": " So for example, if you're using the revocation key, the key that has been combined and revealed to you,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 533.0,
+      "end": 537.0,
+      "text": " you just put a one on the stack and then a signature from R."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 537.0,
+      "end": 539.0,
+      "text": " And then the op if resolves the true."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 539.0,
+      "end": 543.0,
+      "text": " So it executes this by just pushing the key onto the stack."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 543.0,
+      "end": 548.0,
+      "text": " Then it executes off else, skips to op end if and then does object sync."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 548.0,
+      "end": 549.0,
+      "text": " Right."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 549.0,
+      "end": 554.0,
+      "text": " So basically you say one execute op if he are skip to check sig."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 554.0,
+      "end": 557.0,
+      "text": " So it's just you need to sign with this key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 557.0,
+      "end": 560.0,
+      "text": " Or you say zero and signature for may."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 560.0,
+      "end": 568.0,
+      "text": " And then so the op if takes a zero, it skips to op else because it's not true."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 568.0,
+      "end": 573.0,
+      "text": " It performs, you know, pushes delay onto the onto the stack."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 573.0,
+      "end": 577.0,
+      "text": " Performance check sequence verified to make sure that enough time has passed."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 577.0,
+      "end": 581.0,
+      "text": " Drops the delay number off the stack, which is a little ugly."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 581.0,
+      "end": 586.0,
+      "text": " It would be nicer if object sequence verified did that itself, but it doesn't."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 586.0,
+      "end": 591.0,
+      "text": " Then pushes key a onto the stack."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 591.0,
+      "end": 594.0,
+      "text": " You know ends the F statement and checks the signature."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 594.0,
+      "end": 599.0,
+      "text": " So it's a little more complicated than like in C where you just can say like,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 599.0,
+      "end": 608.0,
+      "text": " you know, key D or key A and time, but this is stack based and it's not too hard when you get these things work."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 608.0,
+      "end": 612.0,
+      "text": " So any questions about this setup?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 612.0,
+      "end": 613.0,
+      "text": " Yes."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 613.0,
+      "end": 616.0,
+      "text": " So what's up drop in?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 616.0,
+      "end": 623.0,
+      "text": " Up drop takes the top most item on the stack and delete it and all the lower items come back up."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 623.0,
+      "end": 631.0,
+      "text": " Yeah, it it's just so that compatibility wise, there would be ways to."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 631.0,
+      "end": 635.0,
+      "text": " Since object sequence verified basically this used to be a no op where it did nothing."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 635.0,
+      "end": 642.0,
+      "text": " And then the soft work was okay, we're redefining no op three, I believe, to objects check sequence verified where it looks at."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 642.0,
+      "end": 645.0,
+      "text": " Basically the age of your inputs."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 645.0,
+      "end": 653.0,
+      "text": " And how you know how many confirmations your inputs have had or really the specific input you're spending in this case."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 653.0,
+      "end": 662.0,
+      "text": " Old nodes would just see it as a no op and so you could put something like delay, op check in sequence verified and then an op code around here that says."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 662.0,
+      "end": 666.0,
+      "text": " Make sure the type of top item on the stack is greater than five."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 667.0,
+      "end": 674.0,
+      "text": " And if this consumed the delay value, when by taking it off the stack, the old nodes might say, oh this is invalid."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 674.0,
+      "end": 681.0,
+      "text": " Even though this is a no op, the subsequent op code causes this to fail."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 681.0,
+      "end": 686.0,
+      "text": " Whereas in the newer version it would be like, no, this is good because this consumes that value."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 686.0,
+      "end": 693.0,
+      "text": " And that would actually make it a hard fork because then there would be transactions where the old nodes thought it was not good."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 693.0,
+      "end": 696.0,
+      "text": " And the new nodes thought, yes this is okay."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 696.0,
+      "end": 705.0,
+      "text": " So to ensure that this only restricts the validity of scripts, it doesn't pop that off."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 705.0,
+      "end": 709.0,
+      "text": " So you have to manually drop it and drop is there from before."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 709.0,
+      "end": 716.0,
+      "text": " So to an old node it would just say delay, no op drop and it's like, okay, you put something on the stack, you do nothing and then you take it off the stack."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 716.0,
+      "end": 718.0,
+      "text": " Fine."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 718.0,
+      "end": 721.0,
+      "text": " Yeah, so that's just a compatibility thing."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 721.0,
+      "end": 725.0,
+      "text": " If you were going to make it from scratch, you'd probably do it differently."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 725.0,
+      "end": 727.0,
+      "text": " Other questions about this?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 727.0,
+      "end": 729.0,
+      "text": " Okay."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 729.0,
+      "end": 730.0,
+      "text": " Cool."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 730.0,
+      "end": 735.0,
+      "text": " So, okay, so then you reveal keys, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 735.0,
+      "end": 741.0,
+      "text": " You keep revealing things each time you make a new state."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 741.0,
+      "end": 745.0,
+      "text": " And you can do these several times a second, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 745.0,
+      "end": 747.0,
+      "text": " 10 times a second, something like that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 747.0,
+      "end": 750.0,
+      "text": " So you can have millions, billions of different old transactions."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 750.0,
+      "end": 757.0,
+      "text": " The problem is you do have to remember all of these old private keys that your counterparty is given to you."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 757.0,
+      "end": 765.0,
+      "text": " Because if you forget one, they might broadcast a transaction where you really need to know that private key in order to grab the money immediately."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 765.0,
+      "end": 773.0,
+      "text": " Right? So if you, for example, you forget, this was revoked, but you forgot about it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 773.0,
+      "end": 776.0,
+      "text": " And you're Alice. And then Bob broadcasts this."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 776.0,
+      "end": 783.0,
+      "text": " You really need to know that private key so you can grab Bob's five coins with your combined key."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 783.0,
+      "end": 787.0,
+      "text": " So you need to keep track of all of these old things."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 787.0,
+      "end": 790.0,
+      "text": " So it's 32 bytes each. It's not great for scalability."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 790.0,
+      "end": 793.0,
+      "text": " So there's actually a couple ways you can do this."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 793.0,
+      "end": 799.0,
+      "text": " How can you remember a chain of 32 bytes secrets?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 799.0,
+      "end": 802.0,
+      "text": " A mercury itself would have a root here."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 802.0,
+      "end": 809.0,
+      "text": " And then a bunch of little hashes that go up to the tree, that the tree's root."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 809.0,
+      "end": 813.0,
+      "text": " So if these were secrets, you can't go back down, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 813.0,
+      "end": 818.0,
+      "text": " So you feel like, okay, I got secret zero, secret one, secret two, secret three."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 818.0,
+      "end": 823.0,
+      "text": " Well, I've got the parents of these two things, but I can't actually remember them anyway."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 823.0,
+      "end": 829.0,
+      "text": " So the simple, like a real simple way, say, okay, I've got, and you can construct it however you want."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 829.0,
+      "end": 835.0,
+      "text": " Right? Obviously, if your counterpart is not cooperating and these, these secret numbers are just completely random, there's nothing you can do."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 835.0,
+      "end": 839.0,
+      "text": " Right? If you just say, hey, I'm going to give you secret zero, secret one, secret two."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 839.0,
+      "end": 844.0,
+      "text": " There's no, you know, special properties about these things. I can't do anything."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 844.0,
+      "end": 852.0,
+      "text": " The simplest way, what's a real simple way to say, okay, I'm going to reveal secrets sequentially, and then you can store fewer of them."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 852.0,
+      "end": 863.0,
+      "text": " It's sort of like a blockchain, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 863.0,
+      "end": 870.0,
+      "text": " So you could just say, okay, well, I create secret three."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 870.0,
+      "end": 875.0,
+      "text": " Secret two is the hash of secret three."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 875.0,
+      "end": 879.0,
+      "text": " Secret one is the hash of secret two."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 879.0,
+      "end": 882.0,
+      "text": " And so now I reveal one."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 882.0,
+      "end": 885.0,
+      "text": " You don't know what two is, or you know, and so on."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 885.0,
+      "end": 887.0,
+      "text": " So zero equals hash of one."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 887.0,
+      "end": 892.0,
+      "text": " So you could just have a linear chain like this, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 892.0,
+      "end": 894.0,
+      "text": " So zero, one, two, three."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 894.0,
+      "end": 897.0,
+      "text": " If you remember three, you can compute two and one and zero."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 897.0,
+      "end": 901.0,
+      "text": " If you remember two, you can compute one and zero, but not three."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 901.0,
+      "end": 903.0,
+      "text": " So you can do that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 903.0,
+      "end": 909.0,
+      "text": " That would actually probably work fine, but we always want to make unnecessary complex optimizations to things."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 909.0,
+      "end": 920.0,
+      "text": " So this would be, the problem with this is, if you've got a billion of them, and you need to go back to the first one, you need to compute a billion hash operations."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 920.0,
+      "end": 921.0,
+      "text": " That's kind of slow."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 921.0,
+      "end": 927.0,
+      "text": " So what we do, or what the basic idea, there's like multiple implementations, like variations."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 927.0,
+      "end": 929.0,
+      "text": " You have a hash tree."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 929.0,
+      "end": 931.0,
+      "text": " So you reveal secrets one at a time."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 931.0,
+      "end": 938.0,
+      "text": " You store only log n secrets, and you recompute any secret you want with something around log n operation."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 938.0,
+      "end": 940.0,
+      "text": " I call it Elkram."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 940.0,
+      "end": 944.0,
+      "text": " I think there's an actual paper that basically is this called GGM."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 944.0,
+      "end": 947.0,
+      "text": " It's like, I think written by people at MIT."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 948.0,
+      "end": 954.0,
+      "text": " But I called it Elkram because it's basically Merkel-Tree backwards because the arrows point the other direction."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 954.0,
+      "end": 963.0,
+      "text": " So in this case, if you want, you start with a root, you start with some, you start with something up here, and you say,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 963.0,
+      "end": 971.0,
+      "text": " okay, if I want to descend to the left, I append a zero to the value of this, you know, the hash value in this root, and I hash to get them."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 971.0,
+      "end": 977.0,
+      "text": " And if I want to go right, I append a one at the end, hash that, and then I go down here."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 977.0,
+      "end": 981.0,
+      "text": " So what that lets you do is there's a sender and a receiver."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 981.0,
+      "end": 984.0,
+      "text": " The sender just computes a root, and stores that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 984.0,
+      "end": 987.0,
+      "text": " You know, they make a random root up, store it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 987.0,
+      "end": 990.0,
+      "text": " And then they also keep track of, okay, how many secrets have I given?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 990.0,
+      "end": 994.0,
+      "text": " The receiver just receives the first one."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 994.0,
+      "end": 997.0,
+      "text": " Number zero, I can't do anything."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 997.0,
+      "end": 998.0,
+      "text": " They receive one."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 998.0,
+      "end": 1001.0,
+      "text": " Okay, still can't do anything."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1001.0,
+      "end": 1002.0,
+      "text": " They receive two."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1002.0,
+      "end": 1008.0,
+      "text": " Now they can say, okay, well, I can throw away zero and one, because if I want to compute zero and one, I can just store two."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1008.0,
+      "end": 1013.0,
+      "text": " And if I want to descend to the left, append a zero and hash if I want to send a right."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1013.0,
+      "end": 1018.0,
+      "text": " So I don't store these, but I know they're still computable for me."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1018.0,
+      "end": 1021.0,
+      "text": " If I ever want to grab them back again."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1021.0,
+      "end": 1025.0,
+      "text": " I receive three, can't do anything, receive four, can't do anything."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1026.0,
+      "end": 1028.0,
+      "text": " Receive five."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1028.0,
+      "end": 1035.0,
+      "text": " Now I can do the same thing with three and four, remove those from the disk, and only store two and five."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1035.0,
+      "end": 1038.0,
+      "text": " So if I get a request for three, I can easily compute it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1038.0,
+      "end": 1041.0,
+      "text": " And then I receive six, and I can delete those two as well."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1041.0,
+      "end": 1045.0,
+      "text": " Right, so as I go up the tree, sometimes I only have to store one thing."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1045.0,
+      "end": 1050.0,
+      "text": " Sometimes I have to store three things, because that's the height of the tree."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1050.0,
+      "end": 1057.0,
+      "text": " Well, it's basically you have to store at most one on every level, and then sometimes two."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1057.0,
+      "end": 1059.0,
+      "text": " If there are two leaves."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1059.0,
+      "end": 1064.0,
+      "text": " So basically log in storage, and computing hashes is pretty quick too."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1064.0,
+      "end": 1070.0,
+      "text": " So that's a fun way to only have to store a very small amount of data."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1070.0,
+      "end": 1072.0,
+      "text": " Any questions about this?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1072.0,
+      "end": 1076.0,
+      "text": " Okay, so we're going quick."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1077.0,
+      "end": 1083.0,
+      "text": " Okay, so we'll talk about cross-chain swaps for most of the bulk of this day."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1083.0,
+      "end": 1086.0,
+      "text": " So there are altcoins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1086.0,
+      "end": 1088.0,
+      "text": " I mostly work on Bitcoin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1088.0,
+      "end": 1091.0,
+      "text": " I think a lot of the research is on Bitcoin, but there's a lot of different coins too."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1091.0,
+      "end": 1096.0,
+      "text": " People saw the idea of Bitcoin and said, hey, let's copy it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1096.0,
+      "end": 1100.0,
+      "text": " So initially most of them were just copies."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1100.0,
+      "end": 1102.0,
+      "text": " There was a site called CoinGen."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1103.0,
+      "end": 1107.0,
+      "text": " So like 2012, there started to be a lot of altcoins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1107.0,
+      "end": 1111.0,
+      "text": " Like Litecoin and Dogecoin and things like that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1111.0,
+      "end": 1117.0,
+      "text": " And most of them were like real small changes, where they took the Bitcoin source code on GitHub,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1117.0,
+      "end": 1122.0,
+      "text": " and they changed a couple of numbers here and there, and they said, okay, well it's a new coin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1122.0,
+      "end": 1127.0,
+      "text": " And then BlueMap made a site called CoinGen.io, where you could do it all very easily."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1127.0,
+      "end": 1132.0,
+      "text": " For people who weren't programming savvy, they could just make their own altcoin by menus."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1132.0,
+      "end": 1135.0,
+      "text": " Like there's a website, you say, I want it to be called a touchcoin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1135.0,
+      "end": 1140.0,
+      "text": " I want there to be 25 coins every three minutes, and I want it to, you know,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1140.0,
+      "end": 1148.0,
+      "text": " just a bunch of things you could upload a little picture, and it would make a program for you based on those things."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1148.0,
+      "end": 1151.0,
+      "text": " And then I think he sold the site."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1151.0,
+      "end": 1155.0,
+      "text": " I think it was like the first blockchain technology company, so I'm far as I'm..."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1155.0,
+      "end": 1158.0,
+      "text": " Okay, so then recent ones are very different."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1158.0,
+      "end": 1164.0,
+      "text": " People trade altcoins for Bitcoin, and trade altcoins for altcoins, and they use exchanges."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1164.0,
+      "end": 1169.0,
+      "text": " I don't know if people here used exchanges to trade altcoins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1169.0,
+      "end": 1179.0,
+      "text": " Some, okay. I actually have, I haven't until last year, but there was these like sort of hard forks from Bitcoin,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1179.0,
+      "end": 1184.0,
+      "text": " like Bitcoin Cash and Bitcoin Gold and Bitcoin whatever, and so I actually opened an account and sold them and got more of Bitcoin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1185.0,
+      "end": 1188.0,
+      "text": " How do you trade? Well, use an exchange."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1188.0,
+      "end": 1199.0,
+      "text": " And so the current exchange model, pretty much without fail, is give us all your coins, post orders on our site to swap with other users, and then ask for your coins back."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1199.0,
+      "end": 1204.0,
+      "text": " So, to give us all your coins part, it works fine, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1204.0,
+      "end": 1213.0,
+      "text": " They give you an address, you send your coins to their address, and you know, it'll appear on their site generally, but you definitely can send your coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1214.0,
+      "end": 1218.0,
+      "text": " The ask for your coins back is where the model tends to fit."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1218.0,
+      "end": 1224.0,
+      "text": " There's many, many cases where they don't give them back."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1224.0,
+      "end": 1228.0,
+      "text": " And there's a lot of reasons for this."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1228.0,
+      "end": 1235.0,
+      "text": " So, you know, Mt. Gox is one of the most prominent early ones, but it certainly wasn't the first."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1236.0,
+      "end": 1247.0,
+      "text": " Well, there was a, okay, probably one of the first was called MyBitcoins.com, and then it was sort of, I don't know if it was intentional, but the joke after it was like, well, it's his Bitcoin's now."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1247.0,
+      "end": 1252.0,
+      "text": " So, it was more of a web wallet that had private keys than a actual exchange."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1252.0,
+      "end": 1256.0,
+      "text": " But a lot of these exchanges, you know, they're really easy to set up."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1256.0,
+      "end": 1264.0,
+      "text": " You just write some software, and people start sending you coins, and then a lot of, either there's like internal problems where you've got some money."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1264.0,
+      "end": 1275.0,
+      "text": " Or the rogue employee is the only employee, and someone just realizes, hey, this computer in front of me has 20 million dollars worth of stuff on it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1275.0,
+      "end": 1280.0,
+      "text": " Like, I think I'll just unplug it and keep all the money."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1280.0,
+      "end": 1288.0,
+      "text": " Also hackers, right? Because they're probably the best targets for, you know, trying to intrude and hack into a system that you can find."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1288.0,
+      "end": 1297.0,
+      "text": " There's a whole ton of money on this computer. It's not like data, or, oh, I get someone's Facebook pictures, or I get someone's credit card numbers."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1297.0,
+      "end": 1302.0,
+      "text": " Yeah, that's nice, but Bitcoin's are, you know, sort of money, and you steal them."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1302.0,
+      "end": 1317.0,
+      "text": " Okay, so other problems with the exchange model is that people tend to trust it a lot, and they think, well, this is, you know, they assume that it's like a bank, and banks are very trustworthy, because in recent memory, they haven't really been bank failures, at least in this country."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1317.0,
+      "end": 1338.0,
+      "text": " So they sort of carry that trust forward, and bad things happen. So the idea is, wouldn't it be cool if we could have cross-chain swaps, where we have some kind of way where I've got a bunch of coin A, you've got a bunch of coin B, and we can swap between them without giving custody to some third party, or even giving custody to each other."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1338.0,
+      "end": 1349.0,
+      "text": " So you can do this using hash-time.contracts, just like in the lightning network. Right, so you get this coin, if and only if I get this other coin. You want them to be atomic."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1349.0,
+      "end": 1357.0,
+      "text": " You don't, even if it's very quick, you don't want any period of time in which one party has all the assets, or more of the assets."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1358.0,
+      "end": 1369.0,
+      "text": " So the interesting thing is about this is the lightning network sort of does this already. Right, the lightning network is a way to make atomic payments between different channels."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1369.0,
+      "end": 1383.0,
+      "text": " And then if you look at these channels and say, well, do the channels have to be on the same coin, do they have to be the same blockchain? And basically no, not much difference has to happen for them to be different, for them to be different blockchains."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1384.0,
+      "end": 1394.0,
+      "text": " Okay, so this is the HGLC slide from last time. It's similar in that you have these two outputs, right? The same as in a regular lightning payment channel that's at rest."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1394.0,
+      "end": 1412.0,
+      "text": " Alice gets, so for example Bob holds this, where if you broadcast this, Alice gets two coins right off the bat. Bob needs to wait 100 blocks, or Alice can know Bob's revocation key, and she can get seven coins, or he gets the seven coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1413.0,
+      "end": 1428.0,
+      "text": " And then you've got this HGLC hash time lock contract, where Alice needs to know a pre-image, or say, well, yeah, Alice needs to know our, this receipt, and or Bob has to wait."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1428.0,
+      "end": 1440.0,
+      "text": " But the difference in waiting is this is a relative time lock, so that Bob has to wait 100 blocks after he broadcasts this transaction."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1440.0,
+      "end": 1455.0,
+      "text": " Whereas in this case, Bob has to wait until height 500,000, regardless of when he broadcasts this transaction. So it may be that he can broadcast this transaction and immediately spend by signing here, because that that time has passed."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1455.0,
+      "end": 1462.0,
+      "text": " So it seems like a small distinction, but it's actually pretty important for this to be just absolute time."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1462.0,
+      "end": 1479.0,
+      "text": " So that's how an HGLC works, right? This output, this output's Alice's, no question. This output should be Bob's, and by should I mean, like, something's gone wrong, something's gone pretty seriously wrong if Alice takes this money, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1479.0,
+      "end": 1489.0,
+      "text": " This only is due to fraud, and fraud is not like an illegal defined sense, but we sort of can think of, you know, basically, this is always going to be Alice's, this is approximately always going to be Bob's."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1489.0,
+      "end": 1503.0,
+      "text": " This one we're really not sure, right? This can fail, and it's not due to any malice. This could, this can, this can sort of, it should be Alice's, right? You're trying to pay Alice here, but it may well be the case that Bob takes it back."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1503.0,
+      "end": 1510.0,
+      "text": " And that's not due to fraud, that's just due to computers crashing, or networks not working right, or something like that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1510.0,
+      "end": 1517.0,
+      "text": " You know, this can sort of, innocently be broadcast and go back to Bob, whereas this can't really."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1517.0,
+      "end": 1528.0,
+      "text": " Any questions about the HGLC? Basic idea? Okay, so you need, you know, Alice needs to know this secret, or Bob has to wait until a certain time."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1528.0,
+      "end": 1544.0,
+      "text": " Okay, so the cross chain swaps is basically the same as a routed payment in Lightning, right? Before we said, okay, Alice has a channel of Bob, Bob has a channel with Carol, and now Alice wants to pay Carol without opening a new channel."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1544.0,
+      "end": 1552.0,
+      "text": " In the case of Lightning, where it's all on the same blockchain, Alice could open a payment channel to Carol and spend directly that way."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1552.0,
+      "end": 1563.0,
+      "text": " In the case where these two are different blockchains, you can't actually do that, right? You can't say, oh, I'm going to, you know, there's no defined channel that will link two different blockchains."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1563.0,
+      "end": 1577.0,
+      "text": " Okay, the other aspect is, although this can work with three parties, in the case of swaps, you're generally not saying, hey, Bob, I will pay you five doge coins if you pay Carol, 100 vert coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1577.0,
+      "end": 1586.0,
+      "text": " You're usually saying, if you pay me 100 vert coins, right? So, yeah, usually it's Alice sending to Bob who's sending back to Alice."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1586.0,
+      "end": 1595.0,
+      "text": " It still works if this is a third party, Carol, but it sort of doesn't make as much sense, because generally you're saying, hey, I'll give you this if you give me that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1596.0,
+      "end": 1604.0,
+      "text": " Okay, so in this case, we have two different blockchains. You know, we've actually reduced the number of parties where it's just Alice and Bob, but we've got two different blockchains."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1604.0,
+      "end": 1609.0,
+      "text": " We've got doge coin, which I think is like yellow, right? And then vert coin is like greenish."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1609.0,
+      "end": 1616.0,
+      "text": " You can't, oh, because they don't have segway. Well, say doge coin upgrades pretty soon."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1617.0,
+      "end": 1623.0,
+      "text": " So you could, but you'd have to write a lot of code to deal with that. Yeah, and who else? It's way easier to just merge in."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1623.0,
+      "end": 1626.0,
+      "text": " They don't check signals for a file."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1626.0,
+      "end": 1632.0,
+      "text": " There's probably ways around. But yeah, there's just upgrades. Who's in charge of doge?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1632.0,
+      "end": 1643.0,
+      "text": " Tell them the upgrade. So a lot of these all coins, they sort of, you can, they've sort of archeological aspects to them where you can see where they branched off of the main Bitcoin code base."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1644.0,
+      "end": 1648.0,
+      "text": " Because a lot of times they don't get updated because no one's really working on them."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1648.0,
+      "end": 1655.0,
+      "text": " Despite no one really working on them or looking at them, they can still be worth a billion dollars, as I think those was a few months ago."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1655.0,
+      "end": 1663.0,
+      "text": " But so sometimes they catch up and they're like, oh, let's take all the code from Bitcoin that they've developed from the last few years and apply it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1663.0,
+      "end": 1671.0,
+      "text": " Sometimes the opposite happens where an alt coin will make something cool and people in Bitcoin will merge it in, but it's generally opposite direction."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1672.0,
+      "end": 1683.0,
+      "text": " Okay, so you've got these two channels that have been set up and Alice wants to sell her doge coin and buy a Bitcoin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1683.0,
+      "end": 1692.0,
+      "text": " So you have the same HDLC construction where Alice, what's interesting is this case that it's the same person on both sides."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1692.0,
+      "end": 1698.0,
+      "text": " So there's actually some optimizations you can do. But forget those for a second. Alice computes a random number."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1699.0,
+      "end": 1705.0,
+      "text": " She sends it to herself, which doesn't really make any sense in this case. So you can skip fast."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1705.0,
+      "end": 1709.0,
+      "text": " Alice already knows age and already knows are."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1709.0,
+      "end": 1715.0,
+      "text": " But Alice doesn't have to be Alice, right? It could be Carol."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1715.0,
+      "end": 1719.0,
+      "text": " So there's optimizations that you can do when they're the same person. But anyway."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1719.0,
+      "end": 1726.0,
+      "text": " Okay, so she constructs an HDLC to Bob and says, okay, if Bob knows are, he gets this money."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1726.0,
+      "end": 1735.0,
+      "text": " Otherwise Alice gets it after five o'clock. Bob says, okay, I don't know are. So I can't get these doge coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1735.0,
+      "end": 1743.0,
+      "text": " Bob then forwards it to Alice and saying, okay, if Alice knows are, she gets the coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1743.0,
+      "end": 1749.0,
+      "text": " If Bob waits till after four o'clock, he gets the coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1749.0,
+      "end": 1767.0,
+      "text": " So it's sort of like why make this construction? It actually still makes sense because even though Bob knows that Alice knows are, Alice will have to reveal are in order to take the coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1767.0,
+      "end": 1772.0,
+      "text": " So it's saying, okay, you need to know are, and you need to not just know are, but you have to show everyone."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1772.0,
+      "end": 1778.0,
+      "text": " Because the actual script says, okay, you need to know the pre-image of this 20-byte hash."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1778.0,
+      "end": 1786.0,
+      "text": " And when you actually spend, you have to put that pre-image in the blockchain. You have to put it in your input for your transaction."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1786.0,
+      "end": 1793.0,
+      "text": " And then Bob can see it. So the idea is if Alice closes this channel on vertcoin, takes the coins by using R,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1793.0,
+      "end": 1800.0,
+      "text": " Bob will know are, and Bob will know it's the same R that he can use to take the coins on the doge coin network."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1800.0,
+      "end": 1813.0,
+      "text": " Okay, so you add these to HTLCs, you then clear them out. So instead of revealing are on the blockchain, Alice can just reveal are directly to Bob."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1813.0,
+      "end": 1820.0,
+      "text": " So I'm saying, okay, I'm clearing out this HTLC because here's R, you know that I can do this, so just give me the coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1820.0,
+      "end": 1827.0,
+      "text": " You also know are, so you can take the coins yourself if I don't cooperate on that end. But hopefully she does."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1827.0,
+      "end": 1834.0,
+      "text": " So then you get rid of the HTLC, now it's back down to two outputs. There."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1834.0,
+      "end": 1844.0,
+      "text": " And then Bob says, okay, I've lost the vertcoin. And I haven't really gotten the doge coin yet, but I know I can close the channel and take it if need be."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1844.0,
+      "end": 1856.0,
+      "text": " And then Bob goes to Alice, she already knows are, but look, you know that I know are, let's clear this. And then Alice can just send the coins that way."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1856.0,
+      "end": 1859.0,
+      "text": " Okay, so any questions about this set up? Yes."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1859.0,
+      "end": 1870.0,
+      "text": " Because there's latency from Alice, master Bob basically takes the vertcoin before Bob has a chance to get the doge based through Bob."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1870.0,
+      "end": 1880.0,
+      "text": " Yeah, well that's why you have different times here. Right, so yes, that is possible that you could get to this step."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1880.0,
+      "end": 1890.0,
+      "text": " And then Alice goes offline and shuts the channels down, you know, closes the channels. But the idea is that Bob has, Bob can, can grab these coins back after 4 p.m."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1890.0,
+      "end": 1896.0,
+      "text": " Whereas Alice has to wait until 5 p.m. to grab these coins back."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1896.0,
+      "end": 1906.0,
+      "text": " So if Alice closes and tries to wait till right, right before 4 p.m. And then immediately grab these coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1906.0,
+      "end": 1919.0,
+      "text": " Bob's actually okay, because Bob says, okay, well you grabbed the vertcoins, but I actually have another hour until I have to, you know, I have an hour to reveal our where you're not able to get these coins back."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1919.0,
+      "end": 1923.0,
+      "text": " So that, so having this incrementing time can help against that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1923.0,
+      "end": 1938.0,
+      "text": " Yeah, an hour is probably not enough. The trade offs to having these times is if you have it very far in the future with very large gaps, those HTLCs can get stuck there."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1938.0,
+      "end": 1946.0,
+      "text": " And if Alice just says, look, I'm leaving this third output in the transaction, that can be annoying."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1946.0,
+      "end": 1962.0,
+      "text": " Or if it gets stuck on chain, it might take a long time to get it back. But so you want it long enough times that you don't worry about these timing attacks where someone, you know, immediately broadcasts and now you only have an hour and maybe the blockchains congested."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1962.0,
+      "end": 1973.0,
+      "text": " Versus the annoyance of, oh, it closed and now I have to wait until 5 p.m. So those are the trade offs there. Any other questions?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1973.0,
+      "end": 1990.0,
+      "text": " Okay. Okay, so cross chain swaps, right? H can be revealed, sorry, R, well H is goes into either chain, R is then revealed on either chain."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 1990.0,
+      "end": 2004.0,
+      "text": " So that both parties needs to watch both both parties need to watch both blockchains. This sort of makes sense, right? In that the channels are on two different blockchains and both parties have a channel on each."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2004.0,
+      "end": 2011.0,
+      "text": " So the receiver doesn't need to be initiator. So like it doesn't have to be Alice on both sides. But in most cases, I think it probably will be."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2012.0,
+      "end": 2020.0,
+      "text": " So yeah, you know, Alice has a vertcoin channel, Alice also has a dose can, dogecoin channel as does Bob. So they need to be operating on both networks."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2020.0,
+      "end": 2029.0,
+      "text": " There are possibilities where if you had say, this was Carol and she sent to Dave using light coin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2030.0,
+      "end": 2041.0,
+      "text": " So if you had Alice Bob, Carol, Dave, Doge, vertcoin, light coin, Alice would not have to know about anything but dogecoin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2041.0,
+      "end": 2053.0,
+      "text": " Right? So you actually only have to worry about the networks that you have channels in. Even though there are secrets that could appear in other, well, no, sorry, that's not true."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2054.0,
+      "end": 2063.0,
+      "text": " You'll have to, so if this is Carol, Alice does have to look at vertcoin because the vertcoin network could."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2063.0,
+      "end": 2070.0,
+      "text": " Good sure thing. So you have to look at one additional chain, right? So that's that's one of the issues with cross chain swaps where."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2070.0,
+      "end": 2073.0,
+      "text": " You may."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2073.0,
+      "end": 2080.0,
+      "text": " You may be routing through a network that you're not aware of. Essentially, I don't think that's that likely in practice, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2080.0,
+      "end": 2090.0,
+      "text": " It could be I'll send you five dogecoins if you send her 20 light coins and then you send back dogecoins to this other place, but it's possible."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2090.0,
+      "end": 2093.0,
+      "text": " Yes."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2093.0,
+      "end": 2101.0,
+      "text": " So when they're both Alice, essentially, that scenario is Alice is exchanging dogecoin for vertcoin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2101.0,
+      "end": 2104.0,
+      "text": " Yes."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2104.0,
+      "end": 2113.0,
+      "text": " And then if that's if on the right is Carol, that's saying Alice is going to pay Carol in dogecoin, you know, she's receiving."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2113.0,
+      "end": 2115.0,
+      "text": " Yeah."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2115.0,
+      "end": 2119.0,
+      "text": " Right. Carol receives vertcoin. Alice loses dogecoin. So there's an exchange."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2119.0,
+      "end": 2120.0,
+      "text": " Correct."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2120.0,
+      "end": 2124.0,
+      "text": " So it's like so that you're paying."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2124.0,
+      "end": 2126.0,
+      "text": " Yeah."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2126.0,
+      "end": 2136.0,
+      "text": " Yeah. So like you go to some other kind, you know, you go to England, you pay with your credit card, you lose dollars, but they get pounds and there's some somehow."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2136.0,
+      "end": 2143.0,
+      "text": " There's an exchange in the middle, right? And so from Bob's perspective, it works the same either way. He's getting more dogecoins and losing vertcoins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2143.0,
+      "end": 2146.0,
+      "text": " So Bob needs to have a lot of."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2146.0,
+      "end": 2150.0,
+      "text": " Well, you saw that he is in this case."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2150.0,
+      "end": 2155.0,
+      "text": " Right. Right. So it's possible that you set up this by initially funding it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2155.0,
+      "end": 2161.0,
+      "text": " So Alice says, I have a ton of dogecoins. Alice creates this channel and she has like 100 dogecoins and Bob has zero."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2161.0,
+      "end": 2167.0,
+      "text": " And same with vertcoin, Bob could have a lot of them and say, okay, I have 20 vertcoins and Alice has zero."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2167.0,
+      "end": 2171.0,
+      "text": " And then we can make those payments in that direction."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2171.0,
+      "end": 2180.0,
+      "text": " You can pay them. So actually in all the software now, I think there's only single funded channels."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2180.0,
+      "end": 2184.0,
+      "text": " Because having both parties funded at the same time is kind of."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2184.0,
+      "end": 2190.0,
+      "text": " It's software wise a little harder and it's also like interface wise going to be complicated because."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2190.0,
+      "end": 2199.0,
+      "text": " How do you know when to match someone's funding? Right. So usually what you do is you say, I'm Alice. Hey, Bob, what's your public key?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2199.0,
+      "end": 2204.0,
+      "text": " Give me a new public key. Okay, I'm going to construct this channel here. Sign this and Bob's like, okay."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2204.0,
+      "end": 2208.0,
+      "text": " And Bob has like nothing, no money at stake when this process happens."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2208.0,
+      "end": 2213.0,
+      "text": " And then Bob also creates the channel. Alice saying, okay, I'm going to put a bunch of vertcoins in this channel."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2213.0,
+      "end": 2219.0,
+      "text": " And they usually start with all the money on one side so they can then trade."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2219.0,
+      "end": 2224.0,
+      "text": " Okay, other questions? Yeah, so."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2224.0,
+      "end": 2229.0,
+      "text": " They have to look at these different channels on different blockchains in order to make sure this works."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2229.0,
+      "end": 2233.0,
+      "text": " There's still a lot of open questions here. How do you actually trade?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2233.0,
+      "end": 2237.0,
+      "text": " Like this is really good for trade execution, but what about discovery?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2237.0,
+      "end": 2242.0,
+      "text": " So the current exchange is they're not just, you know, put all your money in here."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2242.0,
+      "end": 2249.0,
+      "text": " And then ask for it back. There's that middle step where like you find all the other parties."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2249.0,
+      "end": 2255.0,
+      "text": " So post the orders on the blockchain and maybe there's problems."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2255.0,
+      "end": 2259.0,
+      "text": " I mean, it's not too crazy an idea, but there's some problems with it, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2259.0,
+      "end": 2265.0,
+      "text": " If you just say, hey, I want to sell dogecoins and I want to buy vertcoins and you sort of put that in an opportunity on the blockchain,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2265.0,
+      "end": 2269.0,
+      "text": " well, it's non-binding, right? You don't have to actually do anything."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2269.0,
+      "end": 2276.0,
+      "text": " There can be front running where the orders can go in, you know, the wrong sequence or in time."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2276.0,
+      "end": 2284.0,
+      "text": " And it's not scalable because if everyone's posting orders on the blockchain, that can take a lot of space."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2284.0,
+      "end": 2290.0,
+      "text": " Probably more so than actual transactions. I don't know what, I mean, I'm sure it may be."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2290.0,
+      "end": 2296.0,
+      "text": " Like total number of orders placed on an order book versus total number of actual order executions."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2296.0,
+      "end": 2301.0,
+      "text": " Usually it's, there's a lot more orders that then end up getting canceled."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2301.0,
+      "end": 2307.0,
+      "text": " Because in most exchanges that I've seen and I believe this is the case in like, you know, regular New York stock exchange kind of things,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2307.0,
+      "end": 2313.0,
+      "text": " you can say, hey, I want to sell this at this price. And then a few minutes later you say, yeah, I changed my mind."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2313.0,
+      "end": 2316.0,
+      "text": " I don't want to sell to that price anymore. The price has moved and I've changed my mind."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2316.0,
+      "end": 2319.0,
+      "text": " And a lot of times, yeah, yeah."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2319.0,
+      "end": 2324.0,
+      "text": " The exchange runs about 100 messages per grade execute trade."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2324.0,
+      "end": 2327.0,
+      "text": " Okay, so about 1% of the actual trades get executed."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2327.0,
+      "end": 2332.0,
+      "text": " Yeah, that sounds probably about the same as in a lot of Bitcoin exchanges."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2332.0,
+      "end": 2340.0,
+      "text": " Usually in the Bitcoin exchanges, they don't charge you to, you know, post it, post it in order and then take it back."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2340.0,
+      "end": 2345.0,
+      "text": " And that's free. Whereas the trade actually executed and usually they have some kind of fee."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2345.0,
+      "end": 2353.0,
+      "text": " So posting the orders themselves on the blockchain seems like a cool idea, but, you know, you've got now the scalability problem with all these transactions."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2353.0,
+      "end": 2357.0,
+      "text": " Now it's probably 100 times worse because you're all in front running."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2357.0,
+      "end": 2364.0,
+      "text": " It could also be tricky because the blockchain does provide sequence and timing, but it's up to the miners."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2364.0,
+      "end": 2371.0,
+      "text": " So if you have a 10 minute window during that 10 minute window, the miners can basically shuffle things around however they want."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2371.0,
+      "end": 2376.0,
+      "text": " And so if the miner is also trading, they can see, oh, I see all these different orders."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2376.0,
+      "end": 2380.0,
+      "text": " I will match these orders and let those happen afterwards."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2381.0,
+      "end": 2385.0,
+      "text": " So this is an issue. So there's a bunch of different models people are looking at."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2385.0,
+      "end": 2392.0,
+      "text": " And to be clear here, this is not something that really, I don't want to say it doesn't exist yet."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2392.0,
+      "end": 2399.0,
+      "text": " It sort of does. There are these decentralized exchanges popping up mostly on the Ethereum network right now."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2399.0,
+      "end": 2406.0,
+      "text": " Because then it's not actually cross-chain. You can have cross asset because there's all these ERC 20 tokens."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2407.0,
+      "end": 2410.0,
+      "text": " But the cross-chain swaps themselves are a bit more complicated to program."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2410.0,
+      "end": 2417.0,
+      "text": " So I don't know of any live, not main net operation like this."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2417.0,
+      "end": 2421.0,
+      "text": " So one model would be you have a central order book and a central counter party."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2421.0,
+      "end": 2426.0,
+      "text": " So the exchange says, okay, we're still the exchange. We still have a website."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2426.0,
+      "end": 2431.0,
+      "text": " We still have order buys and sells and stuff like that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2431.0,
+      "end": 2435.0,
+      "text": " And not only that, but the exchange is one side of every trade."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2435.0,
+      "end": 2437.0,
+      "text": " So they say, okay, open a channel with us."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2437.0,
+      "end": 2440.0,
+      "text": " Put all your verticals in, put all your doge coins in."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2440.0,
+      "end": 2444.0,
+      "text": " And then we'll open a different channel with you. And we'll put light coins in it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2444.0,
+      "end": 2446.0,
+      "text": " And if you trade with us."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2446.0,
+      "end": 2455.0,
+      "text": " But then what they can do is they can say, well, we're not actually going to trade unless there's someone else performing a similar opposite trade."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2455.0,
+      "end": 2463.0,
+      "text": " And then they can keep the spread. So they say, okay, we're selling Vertcoin at this rate and buying it at this other slightly different rate."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2463.0,
+      "end": 2466.0,
+      "text": " So that seems the most feasible."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2466.0,
+      "end": 2473.0,
+      "text": " I would venture that that's going to happen first because it's not too crazy."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2473.0,
+      "end": 2476.0,
+      "text": " But it has similar centralization to the current model."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2476.0,
+      "end": 2478.0,
+      "text": " But there is less counter party risk."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2478.0,
+      "end": 2485.0,
+      "text": " So if you are worried about an exchange shutting down and running off with all your doge coin, this can help."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2485.0,
+      "end": 2489.0,
+      "text": " So I have a channel with my doge coin in it and a channel with my Vertcoin in it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2489.0,
+      "end": 2492.0,
+      "text": " And I can sell some doge coin and get some Vertcoin from the exchange."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2492.0,
+      "end": 2494.0,
+      "text": " And I still have a nice order book."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2494.0,
+      "end": 2497.0,
+      "text": " It doesn't solve any kind of front running problem."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2497.0,
+      "end": 2500.0,
+      "text": " The exchange can still order things how they want."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2500.0,
+      "end": 2502.0,
+      "text": " And the exchange can still shut down."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2502.0,
+      "end": 2507.0,
+      "text": " But it's much more difficult for the exchange to somehow steal your coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2507.0,
+      "end": 2509.0,
+      "text": " Which is a problem now."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2509.0,
+      "end": 2511.0,
+      "text": " Another model."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2511.0,
+      "end": 2514.0,
+      "text": " You can say, well, we have a central order book."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2514.0,
+      "end": 2521.0,
+      "text": " So the exchange still exists and aggregates all the orders of everyone who wants to buy and sell."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2521.0,
+      "end": 2525.0,
+      "text": " But there's multiple counter parties that you interact with directly."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2525.0,
+      "end": 2531.0,
+      "text": " So the exchange says, okay, I'm E and I will tell Alice about Bob."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2531.0,
+      "end": 2536.0,
+      "text": " Alice says, hey, I want to sell doge coin and buy Vertcoin at this rate."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2536.0,
+      "end": 2540.0,
+      "text": " And then the exchange tells Alice and Bob, okay, you guys matched."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2540.0,
+      "end": 2543.0,
+      "text": " Bob, you want to sell Vertcoin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2543.0,
+      "end": 2544.0,
+      "text": " Alice, you want to buy it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2544.0,
+      "end": 2548.0,
+      "text": " Here, connect to each other and perform this trade."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2548.0,
+      "end": 2550.0,
+      "text": " This is cooler."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2550.0,
+      "end": 2555.0,
+      "text": " But there's questions in that like if you're connecting to many counter parties, it's costly."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2555.0,
+      "end": 2558.0,
+      "text": " You have to open a new channel and that is on chain."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2558.0,
+      "end": 2561.0,
+      "text": " Also, how do you enforce trade execution?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2561.0,
+      "end": 2567.0,
+      "text": " If it's a trade on a current exchange and you say, okay, I want to buy Bitcoins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2567.0,
+      "end": 2570.0,
+      "text": " And you click, okay, it just happened, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2570.0,
+      "end": 2572.0,
+      "text": " They aren't even your Bitcoins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2572.0,
+      "end": 2573.0,
+      "text": " You don't really have control of them."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2573.0,
+      "end": 2577.0,
+      "text": " So when you say you want to do something, they actually execute it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2577.0,
+      "end": 2583.0,
+      "text": " In this case, if they don't have a channel with you, they just are observing the trade occur."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2583.0,
+      "end": 2587.0,
+      "text": " So they're saying, okay, you know, Alice and Bob do this."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2587.0,
+      "end": 2591.0,
+      "text": " It might not even be possible to enforce."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2591.0,
+      "end": 2596.0,
+      "text": " You'd have to have some kind of penalties if Bob says, hey, Alice said she was going to sell but then didn't."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2596.0,
+      "end": 2599.0,
+      "text": " Or Bob complains, things like that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2599.0,
+      "end": 2605.0,
+      "text": " So this, there's a lot of ideas here, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2605.0,
+      "end": 2612.0,
+      "text": " Another is, okay, if you're building channels, each channel that you build has these on chain costs and takes quite a bit of time."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2612.0,
+      "end": 2617.0,
+      "text": " So maybe you could have a multi-hop network from different coins, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2617.0,
+      "end": 2622.0,
+      "text": " So instead of just Alice, Bob, Alice, you've got, you know, Dave and Carol."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2622.0,
+      "end": 2632.0,
+      "text": " And as long as I'm connected to someone in this network, I can route payments to them and they can route payments to me via different channels."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2632.0,
+      "end": 2636.0,
+      "text": " So I'm connected to this like multi-coin network kind of mesh."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2636.0,
+      "end": 2640.0,
+      "text": " That would be really cool."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2640.0,
+      "end": 2642.0,
+      "text": " It's not implemented."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2642.0,
+      "end": 2644.0,
+      "text": " It's not even really research that well yet."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2644.0,
+      "end": 2647.0,
+      "text": " So these are sort of ideas."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2647.0,
+      "end": 2650.0,
+      "text": " But that would be really cool then you wouldn't need as much liquidity."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2650.0,
+      "end": 2656.0,
+      "text": " So one of the issues with the central counterparty model is the exchange still needs to have a bunch of money."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2656.0,
+      "end": 2661.0,
+      "text": " They still need to have a bunch of doge coins and vertcoins in order to be a counterparty to every trade."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2661.0,
+      "end": 2664.0,
+      "text": " And then the question is, well, where do those come from?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2664.0,
+      "end": 2668.0,
+      "text": " Right? And if you say, oh, well, it comes from customers."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2668.0,
+      "end": 2676.0,
+      "text": " Well, now that's back into the custodial model where they still have coins that aren't really theirs."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2677.0,
+      "end": 2686.0,
+      "text": " You can say, well, they think, and what I'm guessing is going to happen is they're going to say, well, we charge a spread and we'll accept investors."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2686.0,
+      "end": 2697.0,
+      "text": " And so if you want to invest in this exchange, you know, give us a bunch of doge coin, give us a bunch of vertcoin, we will then use it to trade with different parties."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2697.0,
+      "end": 2703.0,
+      "text": " And then we'll keep some kind of spread and then, hey, you got like a return on your invested doge coin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2703.0,
+      "end": 2706.0,
+      "text": " You get more doge coin at the end, and then you can withdraw."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2706.0,
+      "end": 2713.0,
+      "text": " I think this is still better than the current model where you leave a whole bunch of coins on the exchange and you get nothing."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2713.0,
+      "end": 2722.0,
+      "text": " Now you can choose, okay, do I want to give them my coins and take that counterparty risk, but I get some return in exchange for that risk."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2722.0,
+      "end": 2725.0,
+      "text": " Or do I just want to trade without counterparty risk?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2725.0,
+      "end": 2730.0,
+      "text": " So another problem with that model, but it's probably what we have."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2731.0,
+      "end": 2737.0,
+      "text": " This doesn't have that issue in that there is no central counterparty who needs to have a bunch of coins."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2737.0,
+      "end": 2740.0,
+      "text": " I'm trading directly with the people who own the coins and want to see it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2740.0,
+      "end": 2754.0,
+      "text": " One question is, even if you have this central road in multiple counterparty, there still will be these like trader nodes that are going to go out there and essentially be kind of the same thing."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2754.0,
+      "end": 2762.0,
+      "text": " Like they're going to be well funded, they're going to take fees by doing always different transactions and they're going to get bigger and bigger."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2762.0,
+      "end": 2769.0,
+      "text": " Yeah, I guess the only distinction is, so yes, over the not even long term, medium term."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2769.0,
+      "end": 2773.0,
+      "text": " These as a user interface, they look the same, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2773.0,
+      "end": 2782.0,
+      "text": " Because whether it's the exchange itself saying, okay, I'm aggregating, you know, everyone deposit, I've got a ton of capital, I'm going to be a counterparty of these trades and market maker."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2782.0,
+      "end": 2791.0,
+      "text": " Versus, oh, there's no defined market maker, but the people with a lot of money or who are really trying to do this end up in that position."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2791.0,
+      "end": 2797.0,
+      "text": " I guess the only difference is, in this case, the counterparty is also running the order book."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2797.0,
+      "end": 2807.0,
+      "text": " And in this case, they may be different, right? There's an order book server and then there's this big counterparty who has a ton of money who's doing all the trades."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2807.0,
+      "end": 2811.0,
+      "text": " So does that difference, does that make much difference?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2811.0,
+      "end": 2815.0,
+      "text": " In the history of markets, the second example is the one you see more."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2815.0,
+      "end": 2818.0,
+      "text": " Right, right, near the Stock Exchange, Lone Stock Exchange."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2819.0,
+      "end": 2831.0,
+      "text": " The first model has the centralised party collecting huge economic rents because they're centralised, which is kind of interesting where big ones just be centralised."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2831.0,
+      "end": 2846.0,
+      "text": " Yeah, so this probably ends up with a small number of pretty big notes because mostly because the efficiency, right, if you're connecting to a hundred different counterparties and you never actually trade with any of them,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2846.0,
+      "end": 2856.0,
+      "text": " it's very costly to build those channels and which they probably has analogies to in real life, it's costly to maintain these relationships with all these different companies and stuff."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2856.0,
+      "end": 2861.0,
+      "text": " It's much more efficient if we just all meet under this button wood tree."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2861.0,
+      "end": 2870.0,
+      "text": " It's a different issue in that enforcing trade execution. You might not have legal, you might not know who any of these people are legally."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2870.0,
+      "end": 2877.0,
+      "text": " You might have some kind of penalties or some kind of proofs that the trade occurred the correct way, things like that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2877.0,
+      "end": 2878.0,
+      "text": " Yeah."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2878.0,
+      "end": 2891.0,
+      "text": " The way the trades are set up, do you need to enforce them or before you enter into them, you already know what comes."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2891.0,
+      "end": 2908.0,
+      "text": " So the example is, before you, okay, so the example is Alice says Alice goes to a server, right, so you have an exchange, but this exchange is only the order book, right, so there's a little buy and sell kind of things."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2908.0,
+      "end": 2920.0,
+      "text": " And then Alice says, okay, I want to buy VTC and then this is Alice. Bob says, okay, I want to buy what was it?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2920.0,
+      "end": 2923.0,
+      "text": " Dogecoin."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2923.0,
+      "end": 2931.0,
+      "text": " Then the exchange says, oh, you guys crossed, right, you want to buy Vercoin at a rate that he's willing to sell that or slightly higher or whatever."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2932.0,
+      "end": 2940.0,
+      "text": " So trade, right, so the exchange tells both people, hey, you matched, now you have to trade."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2940.0,
+      "end": 2948.0,
+      "text": " And then as soon as A C's, oh, you matched, you have to trade, Alice disappears. It says, oh, I didn't want, I didn't mean to."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2948.0,
+      "end": 2958.0,
+      "text": " So the exchange only can provide information, they can't actually force Alice and Bob to do the trade is the problem."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2958.0,
+      "end": 2967.0,
+      "text": " I guess you're in broadcast, in broadcasting, you're in a potential trade. There's information for somebody to come in and add those, so you do a little bit."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2967.0,
+      "end": 2975.0,
+      "text": " Because that's a big price, you're actually publishing what you would need to actually keep the trade from coming out."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2976.0,
+      "end": 2992.0,
+      "text": " So yeah, at least in Bitcoin, I don't know how to do that because you need to know who your counterparty is in order to either use these channels or even if it were on chain, right, you have to share these secrets, you know, like it's interactive with your counterparty."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 2992.0,
+      "end": 3006.0,
+      "text": " So at least in Bitcoin, I don't know a way to say Alice is posting her by Vertcoin, you know, order in a way that anyone can then go and fill it without additional interactivity from Alice."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3006.0,
+      "end": 3020.0,
+      "text": " I think there's ways to do that in Ethereum for Ethereum tokens, and there are people who have written software like that. But in the Bitcoin model, there might be a way to do it. We haven't figured it out."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3020.0,
+      "end": 3035.0,
+      "text": " So you put in your orders, they returned and say, okay, trade, and now they have to continue to interact. So it's pretty straightforward for Bob or Alice to just unplug her computer right at that point."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3036.0,
+      "end": 3052.0,
+      "text": " And that introduces timing sort of issues where Alice just puts in all these fake trades. Maybe they're kind of out there. But sometimes the market moves during the time between I put my trade in and the execution comes back."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3052.0,
+      "end": 3058.0,
+      "text": " And so I unplug most of them, you know, I ignore most of them, but the ones that are beneficial actually go through it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3059.0,
+      "end": 3061.0,
+      "text": " So it's too far from the lid at markets."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3061.0,
+      "end": 3066.0,
+      "text": " Well, yeah. So, yeah, so it's, I don't, yeah."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3066.0,
+      "end": 3076.0,
+      "text": " As you're saying, these are not live hotbeds and hot offers, meaning executable. They had another step for their executable."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3076.0,
+      "end": 3091.0,
+      "text": " So this is a new form of spoofing. This spoofing goes on in the US slugs market all the time because they're not live, it is an offers. But in the market where there's executable bits and offers, that's the distinction."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3091.0,
+      "end": 3095.0,
+      "text": " Yeah, it's not hot. So it's actually canceled."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3095.0,
+      "end": 3112.0,
+      "text": " Right. It's, I guess, so hot in this case would be if Bob gets Bob, if Alice's offer contains all the information needed by Bob to execute the trade, then it would be sort of hot in that sense. And that Bob doesn't have to interact with Alice anymore to execute."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3113.0,
+      "end": 3126.0,
+      "text": " With these constructions, you know, with the cross chain swaps using these channels, you still have to talk to each other, right? Bob needs to, you know, Alice, Bob generates, no, Alice generates the R value shares the hash with Bob, you know, they're talking to each other."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3126.0,
+      "end": 3132.0,
+      "text": " So we don't know if someone figures out a cool way to do it, then great, that will solve this issue."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3132.0,
+      "end": 3134.0,
+      "text": " But, yes."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3134.0,
+      "end": 3139.0,
+      "text": " Is 0x and rate over relay, are they hot or considered?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3139.0,
+      "end": 3156.0,
+      "text": " I believe 0x is from what I've read. I don't know about how real our rate rate, remember that is. Rate our relay works. But 0x, yeah, you post, you, you basically, your order is executable by any party without further input from you."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3157.0,
+      "end": 3166.0,
+      "text": " But it also has scaling issue. So that's a good segue to the next part, which is having some kind of distributed order book where there is no central order book."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3166.0,
+      "end": 3177.0,
+      "text": " There is no central counter party. The whole thing is a big mesh network kind of thing. That would be really cool. That seems the furthest out in terms of how do you do this?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3177.0,
+      "end": 3191.0,
+      "text": " I mean, people are working on it, but it seems hard to make practical in that how do you ensure fairness, right? Who's ordering these things? And you could say, well, the blockchain is ordering things, these things. But that ends up being that the miners order it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3191.0,
+      "end": 3198.0,
+      "text": " So if Alice is by vertcoin, she's like, okay, I'm buying vertcoin at a price of five."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3198.0,
+      "end": 3208.0,
+      "text": " And then he says, okay, I'll buy doge at a price of whatever, you know, basically you cross and you have an order where there's some kind of overlap."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3208.0,
+      "end": 3221.0,
+      "text": " The miner can say, okay, well, I'll instead ignore this order, execute my own and then execute with this guy and take the spread. Because the miner really gets to sequence things however they want."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3221.0,
+      "end": 3230.0,
+      "text": " Right, the blockchain does provide ordering, but at the block level within a block, it's totally up to the miner. So the miners could swap things around."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3230.0,
+      "end": 3241.0,
+      "text": " But yeah, how do you ensure fairness in terms of timing? How do you ensure enforced trade execution? And probably the biggest for a distributed order book is just the scalability of the orders."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3241.0,
+      "end": 3249.0,
+      "text": " You probably don't want to put all the orders on a blockchain because it just ends up being a ton of data."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3249.0,
+      "end": 3257.0,
+      "text": " So you have to have some kind of broadcast network where you've got these orders. They probably should have some way to expire."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3257.0,
+      "end": 3269.0,
+      "text": " But an expiry is also an issue in that how do you make, how do you ensure that, hey, I'm canceling this order. How do you ensure that the cancellation actually propagates?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3269.0,
+      "end": 3279.0,
+      "text": " If someone can say, okay, I've got pretty good control of the network and I can just block these order cancellations and wait and then execute."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3279.0,
+      "end": 3288.0,
+      "text": " So this is sort of, there's papers, there's ideas, but it's kind of out there."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3288.0,
+      "end": 3297.0,
+      "text": " Okay, so that's basically, yeah, that was it. It's a little earlier, but yeah, this was basically the suffer today."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3297.0,
+      "end": 3303.0,
+      "text": " The idea works, right, the cross-chain swaps, but there's still a lot of issues in terms of, okay, how do you actually get these to work?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3303.0,
+      "end": 3314.0,
+      "text": " How do you build a scalable trading platform? And there aren't really any yet. There are some things on Ethereum that work, okay, the fees end up being kind of high."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3314.0,
+      "end": 3325.0,
+      "text": " And it's also Ethereum where it's not between different blockchains, right? It's all running on the Ethereum network and the Ethereum network allows you to specify, well, this is actually something else, this isn't ether."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3325.0,
+      "end": 3337.0,
+      "text": " You can do that in Bitcoin, but so there are protocols in Bitcoin like Omni and MasterCoin and things where you could sort of create different assets by using OperaTern."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3337.0,
+      "end": 3352.0,
+      "text": " And basically all of those have moved to Ethereum now because Ethereum's a much nicer design for those things. And most of the Bitcoin developers are sort of like, great, now all these non-Bitcoin transaction data are have left."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3352.0,
+      "end": 3355.0,
+      "text": " And Bitcoin is just focused on moving Bitcoin around."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3355.0,
+      "end": 3363.0,
+      "text": " Yeah, so the basic idea works. There's still a lot of unsolved questions. Further research required, which is great to hear when you're a researcher."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3363.0,
+      "end": 3372.0,
+      "text": " And there's people working on this here. I'm working with an M&D student on cross-chain swaps this semester. There's other people working on all sorts of decentralized exchange things."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3372.0,
+      "end": 3386.0,
+      "text": " Mayhem is also very interested in it. So if you want to work with Mayhem, that's a chance. And yeah, I think it'll be big, right? Because if you look at these exchanges, there's a lot of profit."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3386.0,
+      "end": 3397.0,
+      "text": " So like, I don't know, year or two ago, you look at like Poloniex. They were making like a million dollars a day. Just the, there's so much volume and they have very few employees."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3397.0,
+      "end": 3406.0,
+      "text": " So, and they're like, like, I think the market is getting sort of more established now in terms of it's going to be larger players and stuff like that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3406.0,
+      "end": 3414.0,
+      "text": " But it was pretty much like wild, wild west a few years ago, where it's like, I'm going to open an exchange. And I don't even need a bank account."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3414.0,
+      "end": 3423.0,
+      "text": " The big exchanges that have bank accounts, I feel like are less profitable. So like Coinbase makes a lot of revenue, but they have a lot of fees."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3424.0,
+      "end": 3436.0,
+      "text": " Like a lot of costs. They have a ton of employees, they have a ton of lawyers. They have to worry about banks. Whereas if you're like Poloniex, well Poloniex is now, yeah, it lasted for like a year or two where they could do that."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3436.0,
+      "end": 3446.0,
+      "text": " But if you're just some random Altcoin exchange, you don't need a bank account, right? You say, look, I just, I'm an exchange where you can trade Dogecoin and Vertcoin. And that's it."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3446.0,
+      "end": 3459.0,
+      "text": " There's no dollars involved. So those kind of places they can open up on any server anywhere in the world. They don't even need to be companies. They can just be someone server."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3459.0,
+      "end": 3470.0,
+      "text": " And the fact that they have custody means they keep getting shut down or just running off with money. Like Cryptsey was that guy, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3470.0,
+      "end": 3479.0,
+      "text": " Yeah, well, exchange while it was a one is a possible bank account. Yeah, it's a bundle of money."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3479.0,
+      "end": 3487.0,
+      "text": " So, and then he like said, I remember there was a blog post where he just sort of said he did that. And it was just like,"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3487.0,
+      "end": 3500.0,
+      "text": " Yeah, we were making fees and stuff. So we thought we'd just say something up. And then like the is like whether to drop us, just dive out, unfortunately, into zero."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3500.0,
+      "end": 3507.0,
+      "text": " But it was just an amazing blog post where it's like, wait, you're just admitting to like a whole bunch of crimes here. Like you probably shouldn't have written this."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3507.0,
+      "end": 3513.0,
+      "text": " And then he like fled to China. But I think they got him. He's a jail now or something."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3513.0,
+      "end": 3525.0,
+      "text": " So, so there's a lot of, you know, pretty bad actors in the exchange space. It's not well run generally, but there's enormous amounts of profit."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3525.0,
+      "end": 3537.0,
+      "text": " Which to me seems like an efficiency, right? Wait, why are these people making a million dollars a day for something that, you know, is sort of just running automatically on this computer? That seems like, you know, right for disruption."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3537.0,
+      "end": 3546.0,
+      "text": " And so there's a lot of people interested in, okay, how do we decentralize the exchanges, make them like less trust involved, less risk involved."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3546.0,
+      "end": 3560.0,
+      "text": " And probably make less money than Poloniex or OKCoin or whatever. But that's sort of better because in exchange where there's less profitability means more people are going to want to trade on it because there's lower fees."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3560.0,
+      "end": 3573.0,
+      "text": " So there's a lot of research into this. I think it's pretty cool. I actually, so next to next class on Wednesday, I'll talk about discrete log contracts, which share some of these issues."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3573.0,
+      "end": 3581.0,
+      "text": " And that, you know, it's a different way to execute a trade, but it doesn't really define how you find people to execute that trade."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3581.0,
+      "end": 3593.0,
+      "text": " I personally am more interested in the discrete log contract stuff, probably because I, you know, came up with it, but also because I'm not that excited about all coins in general."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3594.0,
+      "end": 3606.0,
+      "text": " I don't know, people like all coins, but they, I don't really feel like, oh, we need to have like all these different altcoins that sort of act like money, I don't know, which is mostly what cross-chain swap let you do."
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3606.0,
+      "end": 3615.0,
+      "text": " So the discrete log contract, so has the same issues with how do you find each other? And then it, it's mostly a scalability thing, right?"
+    },
+    {
+      "title": "cryptocurrency_high_res",
+      "start": 3615.0,
+      "end": 3624.0,
+      "text": " You can do this sort of OTC where you talk in a chat room and you sort of know each other and you trade that way. And that's the level it is right now, but how to scale it up."
+    }
+  ],
+  "text": " The following content is provided under a Creative Commons license. Your support will help MIT OpenCourseWare continue to offer high quality educational resources for free. To make a donation or to view additional materials from hundreds of MIT courses, visit MIT OpenCourseWare at ocw.mit.edu. Last class I talked about payment channels and Lightning Network. Today we'll talk about a bit more about payment channels. We'll recap a little bit. We'll talk about some optimizations, one of which is key addition, the other is hash trees, and then we'll talk about cross-chain swaps or cross-chain atomic swaps. Last time the main idea of these payment channels is you've got this commitment transaction and each party holds a different transaction that has the same amounts, but slightly different scripts. So it's spending from a shared funding transaction and it's sending out to the one that's held by Alice on her hard drive, sends to Bob in the clear. Bob just gets his eight coins with no ifsans or buts. However, when Alice broadcasts this, she needs to wait 100 blocks. She needs to wait a day. And if she reveals this key to Bob, now Bob can use Bob's key and this revocable key, and Bob can get these coins immediately. And the opposite is for Bob. So when Bob has his transaction, it's got Alice's signature, he doesn't store his own, because he can just compute it quickly. The two coins that go to Alice go to her in the clear. However, the eight coins that Bob gets for himself, he has to wait 100 blocks during the 100 blocks. Alice can sign if she has Bob's revocation key. Okay, so that's the basic idea of these outputs, and then you construct these. So when I say Alice won Bitcoin, Bob, nine Bitcoin, it's of the format in these. The person who holds that transaction has a transaction where the other party gets the coins immediately, and their own coins have this lock up period and can be grabbed by the other party if they revoke them. So initially the state is Alice has won Bitcoin, Bob has nine. There's two different state one transactions, one held by Alice, one held by Bob. They build a new transaction together where Alice has five coins and Bob has five coins, and then they revoke the old one by sharing these secrets. So now, since they both have handed each other these revocation private keys, both of these parties cannot broadcast this. If they do, the other party takes all the money. And then you can build these indefinitely. Okay, so any questions about that that was covered last time, but it's kind of can be complicated questions. Okay, so some optimizations we'd want to make. So basically either party for broadcasts and has to wait. Alice gives Bob the L.S.R.Pribe key, Bob gives Alice the Bob R.Pribe key. So broadcasts the counter party takes all the funds. So what are some optimizations here? The basic idea of the script is, okay, key A, you know, you can have a signature from key A, and you have to wait a day, or two, or five, or whatever. Or you can have a signature from key B and a signature from key C. So what are some optimizations here? The revealing part, any way to make that smaller, more efficient. So one idea is, you know, a preimage inside of a signature. Right? You're just revealing something. You're not actually committing to any data. So Bob, when Bob reveals his secret, he could just be, here's a preimage. And you can get, inside of like 70 bytes for a signature, you get down to like 20 bytes for a hash in a preimage. Right? Because, so how would it work? You just say, okay, Alice signs if Alice knows Bob R's preimage. Right? The Bob R, Bob R doesn't have to actually sign. She can just know it. That would work. So actually that was sort of the initial idea. I think that's what's written in the paper. But you can do even smaller. So an even smaller way to do it is combine keys. So in the elliptic curve that we're using, in, you know, all these groups, all these signature schemes, if you add two keys together, you can get a third key. And it's using the addition operator operation that's defined on this group. So in the case where you have, you know, key B and key C, and you add them together to get say, key R, what's the private key for key R? Anyone? You've got key B, private key, key C, which has a private key. You add the two public keys up together. Yeah, it's the sum of the private keys. Right? So public key B is just private key B times the generator point G. Put, in this, you know, C times G equals R times G. And then you can just, you know, move the parentheses around. So B plus C, the private keys added together times the generator point is still the same. So this is a really nice property. Actually, it's sort of the main property that we use for all signatures and all this stuff. But what that means is you can say, here, I, you know, I take your public key. You know, come up with my own private key. Compute the public key for that. Add them together and say, hey, we've got this new shared public key. And neither of us can sign with it yet because we don't know each other's private keys. But if either of us reveals the private key, then the other party can sign with it. Right? So if this is Bob's and this is Alice's, they can both compute little R times G by doing this operation. Right? They both share public keys and compute the shared public key. But they cannot sign because neither of them knows little R. And then let's say Alice says, okay, Bob, here's, here's this little C. Gives it to Bob. Bob says, okay, now I know a little R. But Alice doesn't. Right? So this is a really nice way to do it. Because it saves a lot of space. So instead, this script is now just key D. Oh, I should have put R. Oops. Key D or key A in time. Right? So instead of having this, this key in time passes or these other two keys both sign, you just have a single key that can sign immediately. Or another key that can sign after a period of time. So the actual script used is this. You say, op if the key R, op else, delay, object sequence verify, optrop, then the key A, then the end F, then the object six. So I'll walk through this because it's a little confusing. The op if takes an item off the stack and it's either true or false. So the first thing you have to do is you have to indicate which of these two paths you're going to use. Right? Either you're going to put key R on the stack or you're going to put this delay number, which is say 100 blocks. Put an object sequence verify to verify that it has been 100 blocks since you created the transaction you're spending. And then you have to drop the delay. This was to ensure compatibility since it's a software. So old nodes would see this. Old nodes would see this. They would see a no op. And then they would see the drop to get rid of this whole thing. So the old nodes wouldn't see it at all. Then you have a key A put on the stack and then you end the if statement and then you check signatures. So really the if statement is just determining which key gets pushed onto the stack. And then the after the if statement there's a check sig, you know, to check the signature from that key. So for example, if you're using the revocation key, the key that has been combined and revealed to you, you just put a one on the stack and then a signature from R. And then the op if resolves the true. So it executes this by just pushing the key onto the stack. Then it executes off else, skips to op end if and then does object sync. Right. So basically you say one execute op if he are skip to check sig. So it's just you need to sign with this key. Or you say zero and signature for may. And then so the op if takes a zero, it skips to op else because it's not true. It performs, you know, pushes delay onto the onto the stack. Performance check sequence verified to make sure that enough time has passed. Drops the delay number off the stack, which is a little ugly. It would be nicer if object sequence verified did that itself, but it doesn't. Then pushes key a onto the stack. You know ends the F statement and checks the signature. So it's a little more complicated than like in C where you just can say like, you know, key D or key A and time, but this is stack based and it's not too hard when you get these things work. So any questions about this setup? Yes. So what's up drop in? Up drop takes the top most item on the stack and delete it and all the lower items come back up. Yeah, it it's just so that compatibility wise, there would be ways to. Since object sequence verified basically this used to be a no op where it did nothing. And then the soft work was okay, we're redefining no op three, I believe, to objects check sequence verified where it looks at. Basically the age of your inputs. And how you know how many confirmations your inputs have had or really the specific input you're spending in this case. Old nodes would just see it as a no op and so you could put something like delay, op check in sequence verified and then an op code around here that says. Make sure the type of top item on the stack is greater than five. And if this consumed the delay value, when by taking it off the stack, the old nodes might say, oh this is invalid. Even though this is a no op, the subsequent op code causes this to fail. Whereas in the newer version it would be like, no, this is good because this consumes that value. And that would actually make it a hard fork because then there would be transactions where the old nodes thought it was not good. And the new nodes thought, yes this is okay. So to ensure that this only restricts the validity of scripts, it doesn't pop that off. So you have to manually drop it and drop is there from before. So to an old node it would just say delay, no op drop and it's like, okay, you put something on the stack, you do nothing and then you take it off the stack. Fine. Yeah, so that's just a compatibility thing. If you were going to make it from scratch, you'd probably do it differently. Other questions about this? Okay. Cool. So, okay, so then you reveal keys, right? You keep revealing things each time you make a new state. And you can do these several times a second, right? 10 times a second, something like that. So you can have millions, billions of different old transactions. The problem is you do have to remember all of these old private keys that your counterparty is given to you. Because if you forget one, they might broadcast a transaction where you really need to know that private key in order to grab the money immediately. Right? So if you, for example, you forget, this was revoked, but you forgot about it. And you're Alice. And then Bob broadcasts this. You really need to know that private key so you can grab Bob's five coins with your combined key. So you need to keep track of all of these old things. So it's 32 bytes each. It's not great for scalability. So there's actually a couple ways you can do this. How can you remember a chain of 32 bytes secrets? A mercury itself would have a root here. And then a bunch of little hashes that go up to the tree, that the tree's root. So if these were secrets, you can't go back down, right? So you feel like, okay, I got secret zero, secret one, secret two, secret three. Well, I've got the parents of these two things, but I can't actually remember them anyway. So the simple, like a real simple way, say, okay, I've got, and you can construct it however you want. Right? Obviously, if your counterpart is not cooperating and these, these secret numbers are just completely random, there's nothing you can do. Right? If you just say, hey, I'm going to give you secret zero, secret one, secret two. There's no, you know, special properties about these things. I can't do anything. The simplest way, what's a real simple way to say, okay, I'm going to reveal secrets sequentially, and then you can store fewer of them. It's sort of like a blockchain, right? So you could just say, okay, well, I create secret three. Secret two is the hash of secret three. Secret one is the hash of secret two. And so now I reveal one. You don't know what two is, or you know, and so on. So zero equals hash of one. So you could just have a linear chain like this, right? So zero, one, two, three. If you remember three, you can compute two and one and zero. If you remember two, you can compute one and zero, but not three. So you can do that. That would actually probably work fine, but we always want to make unnecessary complex optimizations to things. So this would be, the problem with this is, if you've got a billion of them, and you need to go back to the first one, you need to compute a billion hash operations. That's kind of slow. So what we do, or what the basic idea, there's like multiple implementations, like variations. You have a hash tree. So you reveal secrets one at a time. You store only log n secrets, and you recompute any secret you want with something around log n operation. I call it Elkram. I think there's an actual paper that basically is this called GGM. It's like, I think written by people at MIT. But I called it Elkram because it's basically Merkel-Tree backwards because the arrows point the other direction. So in this case, if you want, you start with a root, you start with some, you start with something up here, and you say, okay, if I want to descend to the left, I append a zero to the value of this, you know, the hash value in this root, and I hash to get them. And if I want to go right, I append a one at the end, hash that, and then I go down here. So what that lets you do is there's a sender and a receiver. The sender just computes a root, and stores that. You know, they make a random root up, store it. And then they also keep track of, okay, how many secrets have I given? The receiver just receives the first one. Number zero, I can't do anything. They receive one. Okay, still can't do anything. They receive two. Now they can say, okay, well, I can throw away zero and one, because if I want to compute zero and one, I can just store two. And if I want to descend to the left, append a zero and hash if I want to send a right. So I don't store these, but I know they're still computable for me. If I ever want to grab them back again. I receive three, can't do anything, receive four, can't do anything. Receive five. Now I can do the same thing with three and four, remove those from the disk, and only store two and five. So if I get a request for three, I can easily compute it. And then I receive six, and I can delete those two as well. Right, so as I go up the tree, sometimes I only have to store one thing. Sometimes I have to store three things, because that's the height of the tree. Well, it's basically you have to store at most one on every level, and then sometimes two. If there are two leaves. So basically log in storage, and computing hashes is pretty quick too. So that's a fun way to only have to store a very small amount of data. Any questions about this? Okay, so we're going quick. Okay, so we'll talk about cross-chain swaps for most of the bulk of this day. So there are altcoins. I mostly work on Bitcoin. I think a lot of the research is on Bitcoin, but there's a lot of different coins too. People saw the idea of Bitcoin and said, hey, let's copy it. So initially most of them were just copies. There was a site called CoinGen. So like 2012, there started to be a lot of altcoins. Like Litecoin and Dogecoin and things like that. And most of them were like real small changes, where they took the Bitcoin source code on GitHub, and they changed a couple of numbers here and there, and they said, okay, well it's a new coin. And then BlueMap made a site called CoinGen.io, where you could do it all very easily. For people who weren't programming savvy, they could just make their own altcoin by menus. Like there's a website, you say, I want it to be called a touchcoin. I want there to be 25 coins every three minutes, and I want it to, you know, just a bunch of things you could upload a little picture, and it would make a program for you based on those things. And then I think he sold the site. I think it was like the first blockchain technology company, so I'm far as I'm... Okay, so then recent ones are very different. People trade altcoins for Bitcoin, and trade altcoins for altcoins, and they use exchanges. I don't know if people here used exchanges to trade altcoins. Some, okay. I actually have, I haven't until last year, but there was these like sort of hard forks from Bitcoin, like Bitcoin Cash and Bitcoin Gold and Bitcoin whatever, and so I actually opened an account and sold them and got more of Bitcoin. How do you trade? Well, use an exchange. And so the current exchange model, pretty much without fail, is give us all your coins, post orders on our site to swap with other users, and then ask for your coins back. So, to give us all your coins part, it works fine, right? They give you an address, you send your coins to their address, and you know, it'll appear on their site generally, but you definitely can send your coins. The ask for your coins back is where the model tends to fit. There's many, many cases where they don't give them back. And there's a lot of reasons for this. So, you know, Mt. Gox is one of the most prominent early ones, but it certainly wasn't the first. Well, there was a, okay, probably one of the first was called MyBitcoins.com, and then it was sort of, I don't know if it was intentional, but the joke after it was like, well, it's his Bitcoin's now. So, it was more of a web wallet that had private keys than a actual exchange. But a lot of these exchanges, you know, they're really easy to set up. You just write some software, and people start sending you coins, and then a lot of, either there's like internal problems where you've got some money. Or the rogue employee is the only employee, and someone just realizes, hey, this computer in front of me has 20 million dollars worth of stuff on it. Like, I think I'll just unplug it and keep all the money. Also hackers, right? Because they're probably the best targets for, you know, trying to intrude and hack into a system that you can find. There's a whole ton of money on this computer. It's not like data, or, oh, I get someone's Facebook pictures, or I get someone's credit card numbers. Yeah, that's nice, but Bitcoin's are, you know, sort of money, and you steal them. Okay, so other problems with the exchange model is that people tend to trust it a lot, and they think, well, this is, you know, they assume that it's like a bank, and banks are very trustworthy, because in recent memory, they haven't really been bank failures, at least in this country. So they sort of carry that trust forward, and bad things happen. So the idea is, wouldn't it be cool if we could have cross-chain swaps, where we have some kind of way where I've got a bunch of coin A, you've got a bunch of coin B, and we can swap between them without giving custody to some third party, or even giving custody to each other. So you can do this using hash-time.contracts, just like in the lightning network. Right, so you get this coin, if and only if I get this other coin. You want them to be atomic. You don't, even if it's very quick, you don't want any period of time in which one party has all the assets, or more of the assets. So the interesting thing is about this is the lightning network sort of does this already. Right, the lightning network is a way to make atomic payments between different channels. And then if you look at these channels and say, well, do the channels have to be on the same coin, do they have to be the same blockchain? And basically no, not much difference has to happen for them to be different, for them to be different blockchains. Okay, so this is the HGLC slide from last time. It's similar in that you have these two outputs, right? The same as in a regular lightning payment channel that's at rest. Alice gets, so for example Bob holds this, where if you broadcast this, Alice gets two coins right off the bat. Bob needs to wait 100 blocks, or Alice can know Bob's revocation key, and she can get seven coins, or he gets the seven coins. And then you've got this HGLC hash time lock contract, where Alice needs to know a pre-image, or say, well, yeah, Alice needs to know our, this receipt, and or Bob has to wait. But the difference in waiting is this is a relative time lock, so that Bob has to wait 100 blocks after he broadcasts this transaction. Whereas in this case, Bob has to wait until height 500,000, regardless of when he broadcasts this transaction. So it may be that he can broadcast this transaction and immediately spend by signing here, because that that time has passed. So it seems like a small distinction, but it's actually pretty important for this to be just absolute time. So that's how an HGLC works, right? This output, this output's Alice's, no question. This output should be Bob's, and by should I mean, like, something's gone wrong, something's gone pretty seriously wrong if Alice takes this money, right? This only is due to fraud, and fraud is not like an illegal defined sense, but we sort of can think of, you know, basically, this is always going to be Alice's, this is approximately always going to be Bob's. This one we're really not sure, right? This can fail, and it's not due to any malice. This could, this can, this can sort of, it should be Alice's, right? You're trying to pay Alice here, but it may well be the case that Bob takes it back. And that's not due to fraud, that's just due to computers crashing, or networks not working right, or something like that. You know, this can sort of, innocently be broadcast and go back to Bob, whereas this can't really. Any questions about the HGLC? Basic idea? Okay, so you need, you know, Alice needs to know this secret, or Bob has to wait until a certain time. Okay, so the cross chain swaps is basically the same as a routed payment in Lightning, right? Before we said, okay, Alice has a channel of Bob, Bob has a channel with Carol, and now Alice wants to pay Carol without opening a new channel. In the case of Lightning, where it's all on the same blockchain, Alice could open a payment channel to Carol and spend directly that way. In the case where these two are different blockchains, you can't actually do that, right? You can't say, oh, I'm going to, you know, there's no defined channel that will link two different blockchains. Okay, the other aspect is, although this can work with three parties, in the case of swaps, you're generally not saying, hey, Bob, I will pay you five doge coins if you pay Carol, 100 vert coins. You're usually saying, if you pay me 100 vert coins, right? So, yeah, usually it's Alice sending to Bob who's sending back to Alice. It still works if this is a third party, Carol, but it sort of doesn't make as much sense, because generally you're saying, hey, I'll give you this if you give me that. Okay, so in this case, we have two different blockchains. You know, we've actually reduced the number of parties where it's just Alice and Bob, but we've got two different blockchains. We've got doge coin, which I think is like yellow, right? And then vert coin is like greenish. You can't, oh, because they don't have segway. Well, say doge coin upgrades pretty soon. So you could, but you'd have to write a lot of code to deal with that. Yeah, and who else? It's way easier to just merge in. They don't check signals for a file. There's probably ways around. But yeah, there's just upgrades. Who's in charge of doge? Tell them the upgrade. So a lot of these all coins, they sort of, you can, they've sort of archeological aspects to them where you can see where they branched off of the main Bitcoin code base. Because a lot of times they don't get updated because no one's really working on them. Despite no one really working on them or looking at them, they can still be worth a billion dollars, as I think those was a few months ago. But so sometimes they catch up and they're like, oh, let's take all the code from Bitcoin that they've developed from the last few years and apply it. Sometimes the opposite happens where an alt coin will make something cool and people in Bitcoin will merge it in, but it's generally opposite direction. Okay, so you've got these two channels that have been set up and Alice wants to sell her doge coin and buy a Bitcoin. So you have the same HDLC construction where Alice, what's interesting is this case that it's the same person on both sides. So there's actually some optimizations you can do. But forget those for a second. Alice computes a random number. She sends it to herself, which doesn't really make any sense in this case. So you can skip fast. Alice already knows age and already knows are. But Alice doesn't have to be Alice, right? It could be Carol. So there's optimizations that you can do when they're the same person. But anyway. Okay, so she constructs an HDLC to Bob and says, okay, if Bob knows are, he gets this money. Otherwise Alice gets it after five o'clock. Bob says, okay, I don't know are. So I can't get these doge coins. Bob then forwards it to Alice and saying, okay, if Alice knows are, she gets the coins. If Bob waits till after four o'clock, he gets the coins. So it's sort of like why make this construction? It actually still makes sense because even though Bob knows that Alice knows are, Alice will have to reveal are in order to take the coins. So it's saying, okay, you need to know are, and you need to not just know are, but you have to show everyone. Because the actual script says, okay, you need to know the pre-image of this 20-byte hash. And when you actually spend, you have to put that pre-image in the blockchain. You have to put it in your input for your transaction. And then Bob can see it. So the idea is if Alice closes this channel on vertcoin, takes the coins by using R, Bob will know are, and Bob will know it's the same R that he can use to take the coins on the doge coin network. Okay, so you add these to HTLCs, you then clear them out. So instead of revealing are on the blockchain, Alice can just reveal are directly to Bob. So I'm saying, okay, I'm clearing out this HTLC because here's R, you know that I can do this, so just give me the coins. You also know are, so you can take the coins yourself if I don't cooperate on that end. But hopefully she does. So then you get rid of the HTLC, now it's back down to two outputs. There. And then Bob says, okay, I've lost the vertcoin. And I haven't really gotten the doge coin yet, but I know I can close the channel and take it if need be. And then Bob goes to Alice, she already knows are, but look, you know that I know are, let's clear this. And then Alice can just send the coins that way. Okay, so any questions about this set up? Yes. Because there's latency from Alice, master Bob basically takes the vertcoin before Bob has a chance to get the doge based through Bob. Yeah, well that's why you have different times here. Right, so yes, that is possible that you could get to this step. And then Alice goes offline and shuts the channels down, you know, closes the channels. But the idea is that Bob has, Bob can, can grab these coins back after 4 p.m. Whereas Alice has to wait until 5 p.m. to grab these coins back. So if Alice closes and tries to wait till right, right before 4 p.m. And then immediately grab these coins. Bob's actually okay, because Bob says, okay, well you grabbed the vertcoins, but I actually have another hour until I have to, you know, I have an hour to reveal our where you're not able to get these coins back. So that, so having this incrementing time can help against that. Yeah, an hour is probably not enough. The trade offs to having these times is if you have it very far in the future with very large gaps, those HTLCs can get stuck there. And if Alice just says, look, I'm leaving this third output in the transaction, that can be annoying. Or if it gets stuck on chain, it might take a long time to get it back. But so you want it long enough times that you don't worry about these timing attacks where someone, you know, immediately broadcasts and now you only have an hour and maybe the blockchains congested. Versus the annoyance of, oh, it closed and now I have to wait until 5 p.m. So those are the trade offs there. Any other questions? Okay. Okay, so cross chain swaps, right? H can be revealed, sorry, R, well H is goes into either chain, R is then revealed on either chain. So that both parties needs to watch both both parties need to watch both blockchains. This sort of makes sense, right? In that the channels are on two different blockchains and both parties have a channel on each. So the receiver doesn't need to be initiator. So like it doesn't have to be Alice on both sides. But in most cases, I think it probably will be. So yeah, you know, Alice has a vertcoin channel, Alice also has a dose can, dogecoin channel as does Bob. So they need to be operating on both networks. There are possibilities where if you had say, this was Carol and she sent to Dave using light coin. So if you had Alice Bob, Carol, Dave, Doge, vertcoin, light coin, Alice would not have to know about anything but dogecoin. Right? So you actually only have to worry about the networks that you have channels in. Even though there are secrets that could appear in other, well, no, sorry, that's not true. You'll have to, so if this is Carol, Alice does have to look at vertcoin because the vertcoin network could. Good sure thing. So you have to look at one additional chain, right? So that's that's one of the issues with cross chain swaps where. You may. You may be routing through a network that you're not aware of. Essentially, I don't think that's that likely in practice, right? It could be I'll send you five dogecoins if you send her 20 light coins and then you send back dogecoins to this other place, but it's possible. Yes. So when they're both Alice, essentially, that scenario is Alice is exchanging dogecoin for vertcoin. Yes. And then if that's if on the right is Carol, that's saying Alice is going to pay Carol in dogecoin, you know, she's receiving. Yeah. Right. Carol receives vertcoin. Alice loses dogecoin. So there's an exchange. Correct. So it's like so that you're paying. Yeah. Yeah. So like you go to some other kind, you know, you go to England, you pay with your credit card, you lose dollars, but they get pounds and there's some somehow. There's an exchange in the middle, right? And so from Bob's perspective, it works the same either way. He's getting more dogecoins and losing vertcoins. So Bob needs to have a lot of. Well, you saw that he is in this case. Right. Right. So it's possible that you set up this by initially funding it. So Alice says, I have a ton of dogecoins. Alice creates this channel and she has like 100 dogecoins and Bob has zero. And same with vertcoin, Bob could have a lot of them and say, okay, I have 20 vertcoins and Alice has zero. And then we can make those payments in that direction. You can pay them. So actually in all the software now, I think there's only single funded channels. Because having both parties funded at the same time is kind of. It's software wise a little harder and it's also like interface wise going to be complicated because. How do you know when to match someone's funding? Right. So usually what you do is you say, I'm Alice. Hey, Bob, what's your public key? Give me a new public key. Okay, I'm going to construct this channel here. Sign this and Bob's like, okay. And Bob has like nothing, no money at stake when this process happens. And then Bob also creates the channel. Alice saying, okay, I'm going to put a bunch of vertcoins in this channel. And they usually start with all the money on one side so they can then trade. Okay, other questions? Yeah, so. They have to look at these different channels on different blockchains in order to make sure this works. There's still a lot of open questions here. How do you actually trade? Like this is really good for trade execution, but what about discovery? So the current exchange is they're not just, you know, put all your money in here. And then ask for it back. There's that middle step where like you find all the other parties. So post the orders on the blockchain and maybe there's problems. I mean, it's not too crazy an idea, but there's some problems with it, right? If you just say, hey, I want to sell dogecoins and I want to buy vertcoins and you sort of put that in an opportunity on the blockchain, well, it's non-binding, right? You don't have to actually do anything. There can be front running where the orders can go in, you know, the wrong sequence or in time. And it's not scalable because if everyone's posting orders on the blockchain, that can take a lot of space. Probably more so than actual transactions. I don't know what, I mean, I'm sure it may be. Like total number of orders placed on an order book versus total number of actual order executions. Usually it's, there's a lot more orders that then end up getting canceled. Because in most exchanges that I've seen and I believe this is the case in like, you know, regular New York stock exchange kind of things, you can say, hey, I want to sell this at this price. And then a few minutes later you say, yeah, I changed my mind. I don't want to sell to that price anymore. The price has moved and I've changed my mind. And a lot of times, yeah, yeah. The exchange runs about 100 messages per grade execute trade. Okay, so about 1% of the actual trades get executed. Yeah, that sounds probably about the same as in a lot of Bitcoin exchanges. Usually in the Bitcoin exchanges, they don't charge you to, you know, post it, post it in order and then take it back. And that's free. Whereas the trade actually executed and usually they have some kind of fee. So posting the orders themselves on the blockchain seems like a cool idea, but, you know, you've got now the scalability problem with all these transactions. Now it's probably 100 times worse because you're all in front running. It could also be tricky because the blockchain does provide sequence and timing, but it's up to the miners. So if you have a 10 minute window during that 10 minute window, the miners can basically shuffle things around however they want. And so if the miner is also trading, they can see, oh, I see all these different orders. I will match these orders and let those happen afterwards. So this is an issue. So there's a bunch of different models people are looking at. And to be clear here, this is not something that really, I don't want to say it doesn't exist yet. It sort of does. There are these decentralized exchanges popping up mostly on the Ethereum network right now. Because then it's not actually cross-chain. You can have cross asset because there's all these ERC 20 tokens. But the cross-chain swaps themselves are a bit more complicated to program. So I don't know of any live, not main net operation like this. So one model would be you have a central order book and a central counter party. So the exchange says, okay, we're still the exchange. We still have a website. We still have order buys and sells and stuff like that. And not only that, but the exchange is one side of every trade. So they say, okay, open a channel with us. Put all your verticals in, put all your doge coins in. And then we'll open a different channel with you. And we'll put light coins in it. And if you trade with us. But then what they can do is they can say, well, we're not actually going to trade unless there's someone else performing a similar opposite trade. And then they can keep the spread. So they say, okay, we're selling Vertcoin at this rate and buying it at this other slightly different rate. So that seems the most feasible. I would venture that that's going to happen first because it's not too crazy. But it has similar centralization to the current model. But there is less counter party risk. So if you are worried about an exchange shutting down and running off with all your doge coin, this can help. So I have a channel with my doge coin in it and a channel with my Vertcoin in it. And I can sell some doge coin and get some Vertcoin from the exchange. And I still have a nice order book. It doesn't solve any kind of front running problem. The exchange can still order things how they want. And the exchange can still shut down. But it's much more difficult for the exchange to somehow steal your coins. Which is a problem now. Another model. You can say, well, we have a central order book. So the exchange still exists and aggregates all the orders of everyone who wants to buy and sell. But there's multiple counter parties that you interact with directly. So the exchange says, okay, I'm E and I will tell Alice about Bob. Alice says, hey, I want to sell doge coin and buy Vertcoin at this rate. And then the exchange tells Alice and Bob, okay, you guys matched. Bob, you want to sell Vertcoin. Alice, you want to buy it. Here, connect to each other and perform this trade. This is cooler. But there's questions in that like if you're connecting to many counter parties, it's costly. You have to open a new channel and that is on chain. Also, how do you enforce trade execution? If it's a trade on a current exchange and you say, okay, I want to buy Bitcoins. And you click, okay, it just happened, right? They aren't even your Bitcoins. You don't really have control of them. So when you say you want to do something, they actually execute it. In this case, if they don't have a channel with you, they just are observing the trade occur. So they're saying, okay, you know, Alice and Bob do this. It might not even be possible to enforce. You'd have to have some kind of penalties if Bob says, hey, Alice said she was going to sell but then didn't. Or Bob complains, things like that. So this, there's a lot of ideas here, right? Another is, okay, if you're building channels, each channel that you build has these on chain costs and takes quite a bit of time. So maybe you could have a multi-hop network from different coins, right? So instead of just Alice, Bob, Alice, you've got, you know, Dave and Carol. And as long as I'm connected to someone in this network, I can route payments to them and they can route payments to me via different channels. So I'm connected to this like multi-coin network kind of mesh. That would be really cool. It's not implemented. It's not even really research that well yet. So these are sort of ideas. But that would be really cool then you wouldn't need as much liquidity. So one of the issues with the central counterparty model is the exchange still needs to have a bunch of money. They still need to have a bunch of doge coins and vertcoins in order to be a counterparty to every trade. And then the question is, well, where do those come from? Right? And if you say, oh, well, it comes from customers. Well, now that's back into the custodial model where they still have coins that aren't really theirs. You can say, well, they think, and what I'm guessing is going to happen is they're going to say, well, we charge a spread and we'll accept investors. And so if you want to invest in this exchange, you know, give us a bunch of doge coin, give us a bunch of vertcoin, we will then use it to trade with different parties. And then we'll keep some kind of spread and then, hey, you got like a return on your invested doge coin. You get more doge coin at the end, and then you can withdraw. I think this is still better than the current model where you leave a whole bunch of coins on the exchange and you get nothing. Now you can choose, okay, do I want to give them my coins and take that counterparty risk, but I get some return in exchange for that risk. Or do I just want to trade without counterparty risk? So another problem with that model, but it's probably what we have. This doesn't have that issue in that there is no central counterparty who needs to have a bunch of coins. I'm trading directly with the people who own the coins and want to see it. One question is, even if you have this central road in multiple counterparty, there still will be these like trader nodes that are going to go out there and essentially be kind of the same thing. Like they're going to be well funded, they're going to take fees by doing always different transactions and they're going to get bigger and bigger. Yeah, I guess the only distinction is, so yes, over the not even long term, medium term. These as a user interface, they look the same, right? Because whether it's the exchange itself saying, okay, I'm aggregating, you know, everyone deposit, I've got a ton of capital, I'm going to be a counterparty of these trades and market maker. Versus, oh, there's no defined market maker, but the people with a lot of money or who are really trying to do this end up in that position. I guess the only difference is, in this case, the counterparty is also running the order book. And in this case, they may be different, right? There's an order book server and then there's this big counterparty who has a ton of money who's doing all the trades. So does that difference, does that make much difference? In the history of markets, the second example is the one you see more. Right, right, near the Stock Exchange, Lone Stock Exchange. The first model has the centralised party collecting huge economic rents because they're centralised, which is kind of interesting where big ones just be centralised. Yeah, so this probably ends up with a small number of pretty big notes because mostly because the efficiency, right, if you're connecting to a hundred different counterparties and you never actually trade with any of them, it's very costly to build those channels and which they probably has analogies to in real life, it's costly to maintain these relationships with all these different companies and stuff. It's much more efficient if we just all meet under this button wood tree. It's a different issue in that enforcing trade execution. You might not have legal, you might not know who any of these people are legally. You might have some kind of penalties or some kind of proofs that the trade occurred the correct way, things like that. Yeah. The way the trades are set up, do you need to enforce them or before you enter into them, you already know what comes. So the example is, before you, okay, so the example is Alice says Alice goes to a server, right, so you have an exchange, but this exchange is only the order book, right, so there's a little buy and sell kind of things. And then Alice says, okay, I want to buy VTC and then this is Alice. Bob says, okay, I want to buy what was it? Dogecoin. Then the exchange says, oh, you guys crossed, right, you want to buy Vercoin at a rate that he's willing to sell that or slightly higher or whatever. So trade, right, so the exchange tells both people, hey, you matched, now you have to trade. And then as soon as A C's, oh, you matched, you have to trade, Alice disappears. It says, oh, I didn't want, I didn't mean to. So the exchange only can provide information, they can't actually force Alice and Bob to do the trade is the problem. I guess you're in broadcast, in broadcasting, you're in a potential trade. There's information for somebody to come in and add those, so you do a little bit. Because that's a big price, you're actually publishing what you would need to actually keep the trade from coming out. So yeah, at least in Bitcoin, I don't know how to do that because you need to know who your counterparty is in order to either use these channels or even if it were on chain, right, you have to share these secrets, you know, like it's interactive with your counterparty. So at least in Bitcoin, I don't know a way to say Alice is posting her by Vertcoin, you know, order in a way that anyone can then go and fill it without additional interactivity from Alice. I think there's ways to do that in Ethereum for Ethereum tokens, and there are people who have written software like that. But in the Bitcoin model, there might be a way to do it. We haven't figured it out. So you put in your orders, they returned and say, okay, trade, and now they have to continue to interact. So it's pretty straightforward for Bob or Alice to just unplug her computer right at that point. And that introduces timing sort of issues where Alice just puts in all these fake trades. Maybe they're kind of out there. But sometimes the market moves during the time between I put my trade in and the execution comes back. And so I unplug most of them, you know, I ignore most of them, but the ones that are beneficial actually go through it. So it's too far from the lid at markets. Well, yeah. So, yeah, so it's, I don't, yeah. As you're saying, these are not live hotbeds and hot offers, meaning executable. They had another step for their executable. So this is a new form of spoofing. This spoofing goes on in the US slugs market all the time because they're not live, it is an offers. But in the market where there's executable bits and offers, that's the distinction. Yeah, it's not hot. So it's actually canceled. Right. It's, I guess, so hot in this case would be if Bob gets Bob, if Alice's offer contains all the information needed by Bob to execute the trade, then it would be sort of hot in that sense. And that Bob doesn't have to interact with Alice anymore to execute. With these constructions, you know, with the cross chain swaps using these channels, you still have to talk to each other, right? Bob needs to, you know, Alice, Bob generates, no, Alice generates the R value shares the hash with Bob, you know, they're talking to each other. So we don't know if someone figures out a cool way to do it, then great, that will solve this issue. But, yes. Is 0x and rate over relay, are they hot or considered? I believe 0x is from what I've read. I don't know about how real our rate rate, remember that is. Rate our relay works. But 0x, yeah, you post, you, you basically, your order is executable by any party without further input from you. But it also has scaling issue. So that's a good segue to the next part, which is having some kind of distributed order book where there is no central order book. There is no central counter party. The whole thing is a big mesh network kind of thing. That would be really cool. That seems the furthest out in terms of how do you do this? I mean, people are working on it, but it seems hard to make practical in that how do you ensure fairness, right? Who's ordering these things? And you could say, well, the blockchain is ordering things, these things. But that ends up being that the miners order it. So if Alice is by vertcoin, she's like, okay, I'm buying vertcoin at a price of five. And then he says, okay, I'll buy doge at a price of whatever, you know, basically you cross and you have an order where there's some kind of overlap. The miner can say, okay, well, I'll instead ignore this order, execute my own and then execute with this guy and take the spread. Because the miner really gets to sequence things however they want. Right, the blockchain does provide ordering, but at the block level within a block, it's totally up to the miner. So the miners could swap things around. But yeah, how do you ensure fairness in terms of timing? How do you ensure enforced trade execution? And probably the biggest for a distributed order book is just the scalability of the orders. You probably don't want to put all the orders on a blockchain because it just ends up being a ton of data. So you have to have some kind of broadcast network where you've got these orders. They probably should have some way to expire. But an expiry is also an issue in that how do you make, how do you ensure that, hey, I'm canceling this order. How do you ensure that the cancellation actually propagates? If someone can say, okay, I've got pretty good control of the network and I can just block these order cancellations and wait and then execute. So this is sort of, there's papers, there's ideas, but it's kind of out there. Okay, so that's basically, yeah, that was it. It's a little earlier, but yeah, this was basically the suffer today. The idea works, right, the cross-chain swaps, but there's still a lot of issues in terms of, okay, how do you actually get these to work? How do you build a scalable trading platform? And there aren't really any yet. There are some things on Ethereum that work, okay, the fees end up being kind of high. And it's also Ethereum where it's not between different blockchains, right? It's all running on the Ethereum network and the Ethereum network allows you to specify, well, this is actually something else, this isn't ether. You can do that in Bitcoin, but so there are protocols in Bitcoin like Omni and MasterCoin and things where you could sort of create different assets by using OperaTern. And basically all of those have moved to Ethereum now because Ethereum's a much nicer design for those things. And most of the Bitcoin developers are sort of like, great, now all these non-Bitcoin transaction data are have left. And Bitcoin is just focused on moving Bitcoin around. Yeah, so the basic idea works. There's still a lot of unsolved questions. Further research required, which is great to hear when you're a researcher. And there's people working on this here. I'm working with an M&D student on cross-chain swaps this semester. There's other people working on all sorts of decentralized exchange things. Mayhem is also very interested in it. So if you want to work with Mayhem, that's a chance. And yeah, I think it'll be big, right? Because if you look at these exchanges, there's a lot of profit. So like, I don't know, year or two ago, you look at like Poloniex. They were making like a million dollars a day. Just the, there's so much volume and they have very few employees. So, and they're like, like, I think the market is getting sort of more established now in terms of it's going to be larger players and stuff like that. But it was pretty much like wild, wild west a few years ago, where it's like, I'm going to open an exchange. And I don't even need a bank account. The big exchanges that have bank accounts, I feel like are less profitable. So like Coinbase makes a lot of revenue, but they have a lot of fees. Like a lot of costs. They have a ton of employees, they have a ton of lawyers. They have to worry about banks. Whereas if you're like Poloniex, well Poloniex is now, yeah, it lasted for like a year or two where they could do that. But if you're just some random Altcoin exchange, you don't need a bank account, right? You say, look, I just, I'm an exchange where you can trade Dogecoin and Vertcoin. And that's it. There's no dollars involved. So those kind of places they can open up on any server anywhere in the world. They don't even need to be companies. They can just be someone server. And the fact that they have custody means they keep getting shut down or just running off with money. Like Cryptsey was that guy, right? Yeah, well, exchange while it was a one is a possible bank account. Yeah, it's a bundle of money. So, and then he like said, I remember there was a blog post where he just sort of said he did that. And it was just like, Yeah, we were making fees and stuff. So we thought we'd just say something up. And then like the is like whether to drop us, just dive out, unfortunately, into zero. But it was just an amazing blog post where it's like, wait, you're just admitting to like a whole bunch of crimes here. Like you probably shouldn't have written this. And then he like fled to China. But I think they got him. He's a jail now or something. So, so there's a lot of, you know, pretty bad actors in the exchange space. It's not well run generally, but there's enormous amounts of profit. Which to me seems like an efficiency, right? Wait, why are these people making a million dollars a day for something that, you know, is sort of just running automatically on this computer? That seems like, you know, right for disruption. And so there's a lot of people interested in, okay, how do we decentralize the exchanges, make them like less trust involved, less risk involved. And probably make less money than Poloniex or OKCoin or whatever. But that's sort of better because in exchange where there's less profitability means more people are going to want to trade on it because there's lower fees. So there's a lot of research into this. I think it's pretty cool. I actually, so next to next class on Wednesday, I'll talk about discrete log contracts, which share some of these issues. And that, you know, it's a different way to execute a trade, but it doesn't really define how you find people to execute that trade. I personally am more interested in the discrete log contract stuff, probably because I, you know, came up with it, but also because I'm not that excited about all coins in general. I don't know, people like all coins, but they, I don't really feel like, oh, we need to have like all these different altcoins that sort of act like money, I don't know, which is mostly what cross-chain swap let you do. So the discrete log contract, so has the same issues with how do you find each other? And then it, it's mostly a scalability thing, right? You can do this sort of OTC where you talk in a chat room and you sort of know each other and you trade that way. And that's the level it is right now, but how to scale it up.",
+  "video_number": 4
+}

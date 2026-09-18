@@ -1,0 +1,6 @@
+I am teaching web development in my Sigma web development course. Here are video subtitle chunks containing video title, video number, start time in seconds, end time in seconds, the text at that time:
+
+[{"title":"numerics_high_res","number":null,"start":41.0,"end":45.0,"text":" Today to give you kind of context where we are in the course,"},{"title":"deep_learning_high_res","number":null,"start":53.0,"end":56.0,"text":" Today's topic is numerical computation for deep learning."},{"title":"cryptocurrency_high_res","number":null,"start":2507.0,"end":2509.0,"text":" Which is a problem now."},{"title":"ML_for_health_high_res","number":null,"start":1691.76,"end":1698.64,"text":" So this is a topic that's very hot right now, a discussion about how bias might play"},{"title":"physics","number":null,"start":210.0,"end":215.0,"text":" So the discussion today has three main sections."}]
+---------------------------------
+"what is todays topic"
+User asked this question related to the video chunks, you have to answer in a human way (dont mention the above format, its just for you) where and how much content is taught in which video (in which video and at what timestamp) and guide the user to go to that particular video. If user asks unrelated question, tell him that you can only answer questions related to the course

@@ -1,0 +1,2568 @@
+{
+  "chunks": [
+    {
+      "title": "deep_learning_high_res",
+      "start": 0.0,
+      "end": 25.0,
+      "text": " Hello everybody, thanks for watching this presentation. This presentation covers the topics for chapter 4 but with a lot of extra detail about how to write numerically precise code in the context that come up in deep learning."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 25.0,
+      "end": 40.0,
+      "text": " For people who are watching this on the book website, you should understand that I'm going to be taking live questions from AI with the best audience members periodically and I'll read the questions as I answer them."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 41.0,
+      "end": 47.0,
+      "text": " So I'm going to start out by looking at the slides, but I'm going to tab back and forth periodically to check for questions from the audience."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 47.0,
+      "end": 52.0,
+      "text": " So go ahead and ask questions as they come up and I'll try to answer them quickly."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 53.0,
+      "end": 56.0,
+      "text": " Today's topic is numerical computation for deep learning."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 57.0,
+      "end": 65.0,
+      "text": " Basic idea of numerical computation is that we need to be very careful about the way that we handle real numbers in a few different contexts."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 65.0,
+      "end": 76.0,
+      "text": " One is if we use an algorithm that has to do some kind of careful representation of real numbers with a finite number of bits."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 77.0,
+      "end": 90.0,
+      "text": " Real numbers like pi have infinitely many digits and then when we represent them in a computer we usually use 32-bit floating point numbers as an approximation for real numbers when we implement a deep learning algorithm on GPU."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 90.0,
+      "end": 103.0,
+      "text": " The use of 32 bits to represent something that really has infinitely many digits can often cause errors and we'd like to try to minimize the amount of damage to our program that happens when we use that representation."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 104.0,
+      "end": 112.0,
+      "text": " Another consideration for numerical computation is how sensitive a function is to very small changes in its input."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 113.0,
+      "end": 120.0,
+      "text": " This comes up even if we were able to theoretically use real numbers without having to represent them in 32 bits."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 121.0,
+      "end": 136.0,
+      "text": " When we do things like optimize a function, if that function is very sensitive to little tiny changes in the input, it becomes a lot harder to search for the inputs that minimize that function because little tiny changes in our search can strongly influence the outcome of the search."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 137.0,
+      "end": 151.0,
+      "text": " As a brief roadmap for today, I'm going to cover two different topics. The first is iterative optimization, how we actually make algorithms that search for the minimal point of some function and how this gets affected by numerical considerations."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 152.0,
+      "end": 162.0,
+      "text": " Next I'm going to talk about rounding error underflow and overflow. How the use of 32 bits to represent real numbers can affect deep learning programs."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 163.0,
+      "end": 182.0,
+      "text": " Starting out with iterative optimization, we're going to cover three different topics here. The first is how the gradient descent algorithm works. The second is curvature, the idea that the functions are optimizing are non-linear and how the second order curvature of these functions affects the optimization process."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 182.0,
+      "end": 191.0,
+      "text": " Finally, we'll have a few comments on constrained optimization. The basic algorithm that we use for most iterative optimization is gradient descent."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 192.0,
+      "end": 202.0,
+      "text": " I've illustrated this here with a really simple function, f of x equals 1.5x squared. You can see it plotted with the dashed blue light that I'm highlighting with my mouse cursor."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 203.0,
+      "end": 214.0,
+      "text": " If we would like to minimize this function, we can do it by following the gradient. Let's say that x is greater than 0. The gradient in this case, because the function is one dimensional, is just the derivative."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 215.0,
+      "end": 228.0,
+      "text": " So the derivative can be represented by the value f prime of x. Over here, f prime of x, represented by the green line, is positive. So if we descend the gradient by moving in the opposite direction of the derivative."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 228.0,
+      "end": 239.0,
+      "text": " Everywhere that we're over here, where the green line is positive, gradient descent will move left and downhill. So starting here, we would trace the blue curve leftward until we reach its minimum point here."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 240.0,
+      "end": 246.0,
+      "text": " Where the derivative is 0, we are no longer told by the derivative to move in any particular direction. So we stop."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 246.0,
+      "end": 259.0,
+      "text": " If we started over here on the left side, over here, the derivative is negative. And we move in opposite the direction of the derivative. So we would actually apply positive updates to our input x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 260.0,
+      "end": 267.0,
+      "text": " And we would move rightward along the function x squared until we reach the minimum and stop where the derivative is equal to 0."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 267.0,
+      "end": 276.0,
+      "text": " I've described a gradient descent basically in terms of this idea that we move downhill until we find a point where the derivative is 0."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 277.0,
+      "end": 287.0,
+      "text": " And the example of f of x equals 1 half x squared, there was only one point like that. In reality, there might be a lot of different points that have zero derivatives."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 288.0,
+      "end": 303.0,
+      "text": " Here I've drawn a function that's very squiggly and has several different local minima. Local minima are points that are smaller than in f of x value than all the other points surrounding them, but they're not necessarily the lowest point overall."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 304.0,
+      "end": 311.0,
+      "text": " So here, if we look to the left or the right of this point, we go uphill a little bit. If you go further to the left, we can find much lower points."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 312.0,
+      "end": 321.0,
+      "text": " Usually in the context of deep learning, we can't really expect to find this global minimum over here. We might want to do that, but it's probably not feasible."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 322.0,
+      "end": 328.0,
+      "text": " In practice, we often give up and find a point more like this one here. It's a local minimum, but the value of f of x is actually very low."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 329.0,
+      "end": 336.0,
+      "text": " So we've done a good job of reducing the value of the function, even if we don't find our way all the way to the bottom of the function."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 337.0,
+      "end": 348.0,
+      "text": " In practice, we don't even necessarily find a local minimum. In practice, we often just sort of get stuck for numerical reasons, and that's the topic of this chapter."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 349.0,
+      "end": 357.0,
+      "text": " I'm fast forwarding a little bit, and I'm showing you a figure from chapter 8. On the x-axis, I show you how long gradient descent has been running on a particular problem."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 358.0,
+      "end": 367.0,
+      "text": " In the two different plots, I show you two different things. On the left side, I show you how big the gradients are over time, specifically I'm plotting the norm of the gradient."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 368.0,
+      "end": 380.0,
+      "text": " Every little black dot is a different step of the gradient descent algorithm. So you can see it's kind of noisy. On different steps, it's not like we always see the same gradient norm twice in a row. It bounces around a lot."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 381.0,
+      "end": 389.0,
+      "text": " But I've fit a smooth blue curve to these lines. You can see how the gradient norm actually gradually gets bigger over time."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 390.0,
+      "end": 397.0,
+      "text": " Based on the plots that I showed you on the previous slides, you might expect that the gradient norm would shrink as you approach a local minimum and it can graduate go down to zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 398.0,
+      "end": 407.0,
+      "text": " It turns out that a lot of the time we actually just get stuck and can't really keep making progress toward regions of smaller gradient norm."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 407.0,
+      "end": 413.0,
+      "text": " So we stop when f of x has become very small rather than when the gradient has gone away."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 414.0,
+      "end": 420.0,
+      "text": " You could say maybe this plot that I made here where I show the gradient getting bigger over time, maybe that's an example of failure, maybe the algorithm is just broken."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 421.0,
+      "end": 426.0,
+      "text": " But actually if we look at the plot on the right, I'm showing you the error rate of a classifier that we're training with gradient descent."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 427.0,
+      "end": 434.0,
+      "text": " And this error rate decreases over time successfully and levels off to about state of the art accuracy for the problem that this is training on."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 435.0,
+      "end": 442.0,
+      "text": " So you can see that this is actually an example of the optimization algorithm succeeding from our point of view. It's not actually finding a local minimum."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 442.0,
+      "end": 450.0,
+      "text": " It's just finding a very low value of the function f of x that are minimizing and that low value turns out to be good enough for us to use the model."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 452.0,
+      "end": 458.0,
+      "text": " Someone has asked why don't we test a larger diversity when we've reached the local minimum wouldn't that tell us we could get a lower elsewhere."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 459.0,
+      "end": 466.0,
+      "text": " And the answer is yes, a lot of the time we do things like run multiple random restarts of the optimization algorithm."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 466.0,
+      "end": 478.0,
+      "text": " And sometimes you can find lower values that way. For a lot of problems, you also find that several different random restarts end up with about the same the same final value."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 479.0,
+      "end": 493.0,
+      "text": " Someone else asked, can you please explain gradient norm a bit? The basic idea is if you have an input to your function x with multiple coordinates, then the gradient gives you the derivative of your function with respect to each of those coordinates."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 493.0,
+      "end": 509.0,
+      "text": " And that tells us the direction we should go in to move downhill. If you measure the norm of that gradient, that gives you an idea of how steep the function is. It tells you how quickly you can expect the function to drop if you move in a specific direction."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 510.0,
+      "end": 520.0,
+      "text": " I'm going to skip the next question because it's answered later in the talk. And then there's one more question about how can the gradient increase when you are using a descent direction? Is it not convex?"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 520.0,
+      "end": 535.0,
+      "text": " It turns out that the gradient can increase if you optimize a neural net because the function is not convex. It's also possible that if you use too large of a step size, the gradient can increase because you move to a region that's steeper."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 537.0,
+      "end": 546.0,
+      "text": " I think of the way that we optimize deep learning functions as more of a way of life than a strictly mathematical discipline right now."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 546.0,
+      "end": 556.0,
+      "text": " If you approach optimization from a really pure math point of view, you're usually looking to do something like find literally the smallest value of some function f of x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 557.0,
+      "end": 566.0,
+      "text": " Or you might have some other formally defined criterion like you're looking for a critical point of f of x where the value is locally the smallest in some neighborhood."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 567.0,
+      "end": 575.0,
+      "text": " For deep learning, we usually have a more qualitative pragmatic approach where our goal is to just decrease the value of f of x a lot."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 576.0,
+      "end": 587.0,
+      "text": " And we aren't necessarily hoping to actually find even a local minimum. We just want to make the error rate go down until the error rate is low enough that our model can be used for some engineering application."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 588.0,
+      "end": 594.0,
+      "text": " Actually finding a critical point might be very difficult and a lot of the critical points we find may not be what we want."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 596.0,
+      "end": 603.0,
+      "text": " The next topic in our overview of iterative optimization is the effective curvature on these optimization algorithms."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 604.0,
+      "end": 611.0,
+      "text": " We've mentioned that gradient descent in theory will approach a critical point where the gradient is equal to zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 612.0,
+      "end": 615.0,
+      "text": " Here I show you three different kinds of critical points in one dimension."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 616.0,
+      "end": 625.0,
+      "text": " There can be a minimum where the function curves upward around the critical point and the critical point is thus lower in value than a critical point."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 626.0,
+      "end": 634.0,
+      "text": " There can also be a local maximum where the function curves downward so the critical point is higher in value than all the surrounding points."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 635.0,
+      "end": 641.0,
+      "text": " Or you can have saddle points where you actually are neither a minimum nor a maximum."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 642.0,
+      "end": 653.0,
+      "text": " Settle points make a little bit more sense in two dimensions. You can think of it as there's one axis where the critical point is a local minimum and another axis where the critical point is a local maximum."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 653.0,
+      "end": 659.0,
+      "text": " Local maximum are usually not much of a problem for optimization algorithms."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 660.0,
+      "end": 663.0,
+      "text": " The saddle points can be a problem for iterative optimization algorithms."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 664.0,
+      "end": 670.0,
+      "text": " There's one algorithm called the Newton's method where the basic strategy is to solve for a point where the gradient is equal to zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 671.0,
+      "end": 675.0,
+      "text": " If you're able to solve that problem algebraically you can jump to a solution right away."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 676.0,
+      "end": 681.0,
+      "text": " Unfortunately a solution in terms of Newton's method is not always actually a minimum."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 681.0,
+      "end": 686.0,
+      "text": " If you have a function that has saddle points in it these are also places where the gradient is zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 687.0,
+      "end": 692.0,
+      "text": " But they are not really a minimum because they're a maximum across some axes."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 694.0,
+      "end": 698.0,
+      "text": " So algorithms like Newton's method will accidentally teleport onto saddle points and get stuck."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 699.0,
+      "end": 703.0,
+      "text": " It turns out that for neural networks there are a lot more saddle points than local minimum."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 704.0,
+      "end": 707.0,
+      "text": " Fortunately saddle points are not a big problem for gradient descent."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 707.0,
+      "end": 712.0,
+      "text": " Unless you initialize directly on the saddle point gradient descent can escape the saddle point."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 713.0,
+      "end": 723.0,
+      "text": " If you look at appendix C of a paper called qualitatively characterizing neural network optimization problems I have some math there where I show why gradient descent is able to escape."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 724.0,
+      "end": 728.0,
+      "text": " We can characterize all of these different critical points by using curvature."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 728.0,
+      "end": 737.0,
+      "text": " As I said a local minimum is where the function curves up around around the point and the local maximum is where it curves down."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 738.0,
+      "end": 743.0,
+      "text": " We can also think of this as a way of predicting how well gradient descent will perform."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 744.0,
+      "end": 755.0,
+      "text": " Gradient descent basically says we're going to look at the slope of the function and we're going to pretend that the function is linear nearby our current x value."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 755.0,
+      "end": 760.0,
+      "text": " And then we're going to move in a direction that will make our linear approximation go downhill."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 761.0,
+      "end": 766.0,
+      "text": " The amount of actual payoff that you get from that depends on how curved the function is."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 767.0,
+      "end": 774.0,
+      "text": " If your function is perfectly linear, if you make a linear approximation to the function then it will just overlay the function exactly."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 775.0,
+      "end": 778.0,
+      "text": " So here you can see I've got this dashed green line overlaying the blue line."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 778.0,
+      "end": 788.0,
+      "text": " If we take a little step according to the direction of the derivative we're going to decrease the function f of x by exactly the same amount that our linear function predicted."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 789.0,
+      "end": 798.0,
+      "text": " And that means that these iterative search algorithms where we always just take little steps moving downhill are going to work really well regardless of the size of step that we use."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 799.0,
+      "end": 807.0,
+      "text": " If we have negative curvature where the function curves downward as you move away from the current point then we're actually in a very nice situation where if we take a little step of the curve, we're going to take a little step of the curve."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 808.0,
+      "end": 821.0,
+      "text": " If we take a step that was predicted to reduce the dashed green linear function approximating f of x will find that f of x actually decreases even more than our approximation predicted to do to do."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 822.0,
+      "end": 827.0,
+      "text": " So if we can find directions of negative curvature there a good way to reduce the value of the function very quickly."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 828.0,
+      "end": 837.0,
+      "text": " Unfortunately what happens a lot more often is we have directions of positive curvature with directions of positive curvature the function curves up relative to the linear function."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 838.0,
+      "end": 844.0,
+      "text": " So we have two small steps we end up not nearly decreasing the function as much as we wanted to."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 845.0,
+      "end": 853.0,
+      "text": " And in fact if we take two big of a step we can accidentally increase the function value we can overshoot the minimum in this direction and go back uphill."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 854.0,
+      "end": 866.0,
+      "text": " That's why we start looking at what's called the numerics of the function we look at how much curvature there is to this function and see how it affects our ability to take large steps to search for the minimum value of the function."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 868.0,
+      "end": 875.0,
+      "text": " Someone asked what was the name of the paper that I just told you can actually see that in the slides they're available at deep learning book.org."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 876.0,
+      "end": 888.0,
+      "text": " So far I've shown you these one dimensional examples of curvature but in practice x is an end dimensional vector and we need to understand how the curvature affects the function in many different directions."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 888.0,
+      "end": 895.0,
+      "text": " We can do that using the Hessian matrix the Hessian matrix is a matrix containing all of the second derivatives."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 896.0,
+      "end": 909.0,
+      "text": " So if you look at row i and column j of the Hessian matrix you'll find the derivative where first we take the derivative and direct with respect to x i and next we take the derivative with respect to x j."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 909.0,
+      "end": 916.0,
+      "text": " It turns out that you can use the Hessian matrix to compute the second derivative in a particular direction d."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 917.0,
+      "end": 927.0,
+      "text": " You can do that by computing d transpose hd where d is a unit vector describing the direction where you would like to get the second derivative."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 928.0,
+      "end": 933.0,
+      "text": " It turns out that there's actually some nice intuition for what second derivative you'll get."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 934.0,
+      "end": 951.0,
+      "text": " Hessian matrices are usually symmetric assuming that different properties of the function are held and a symmetric real valued matrix has an eigen decomposition in terms of orthogonal eigenvectors and eigenvalues associated with each eigenvector."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 952.0,
+      "end": 960.0,
+      "text": " So you can write all of the eigenvectors in a matrix q and they become this orthogonal basis for the space that you're in and then you have a diagonal matrix of eigenvalues."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 961.0,
+      "end": 970.0,
+      "text": " If we look back at some of the slides from chapter two we can see what happens when we multiply by a matrix that has particular eigenvectors and eigenvalues."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 971.0,
+      "end": 982.0,
+      "text": " If we start out with a bunch of points that are represented by this blue circle here and we multiply each of these points by a matrix that has eigenvectors v1 and v2."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 983.0,
+      "end": 991.0,
+      "text": " We'll see that each of the points get stretched away from the origin according to the eigenvalues of the matrix."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 992.0,
+      "end": 1001.0,
+      "text": " So if you have a large lambda one eigenvalue associated with v1 you'll actually stretch out the circle in this direction."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1001.0,
+      "end": 1005.0,
+      "text": " Points will get pulled further out by a factor of lambda one."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1006.0,
+      "end": 1012.0,
+      "text": " And then if you have a small eigenvalue associated with direction v2 points will get pulled inward."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1013.0,
+      "end": 1026.0,
+      "text": " So you can see that these directions will be when you multiply h by d, d will either get stretched or shrunk according to how big or small the eigenvalues of the Hessian are in that direction."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1027.0,
+      "end": 1033.0,
+      "text": " And then when you take the dot product with the direction again you'll end up just measuring the size of that vector."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1034.0,
+      "end": 1043.0,
+      "text": " So you'll end up saying that the second derivative is based on how much the Hessian shrinks or stretches your vector in that particular direction."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1045.0,
+      "end": 1048.0,
+      "text": " But what happens if your direction is not an eigenvector?"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1049.0,
+      "end": 1054.0,
+      "text": " Well then it turns out that you basically interpolate based on the eigenvectors that are nearby."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1055.0,
+      "end": 1059.0,
+      "text": " You can compute the second derivative as a sum over all the different eigenvalues."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1060.0,
+      "end": 1069.0,
+      "text": " And you multiply by this term that measures how similar the direction you're looking in is to that corresponding eigenvalue."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1070.0,
+      "end": 1082.0,
+      "text": " You can kind of see that in this plot that if you have a direction that's very closely aligned with eigenvector two, you're going to get your directions stretched by approximately eigenvalue two."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1082.0,
+      "end": 1095.0,
+      "text": " And then as you move towards eigenvalue one, the amount that your direction gets stretched is going to scale gradually up to the amount of stretching that comes from eigenvalue one."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1096.0,
+      "end": 1102.0,
+      "text": " If you're never going to stretch more than the maximum eigenvalue, you're never going to stretch less than the minimum eigenvalue."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1103.0,
+      "end": 1108.0,
+      "text": " We can use these eigenvalues to figure out what the optimal step size is likely to be."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1109.0,
+      "end": 1116.0,
+      "text": " So first off, if we have a direction of negative curvature, even a second order approximation would tell us that we can keep stepping forever."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1117.0,
+      "end": 1123.0,
+      "text": " That's probably not going to be true for a neural net because it's very non-linear, very, it's not even really quadratic."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1124.0,
+      "end": 1127.0,
+      "text": " It's likely to start going back uphill at some point for a large step size."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1128.0,
+      "end": 1138.0,
+      "text": " The main place where the Hessian tells us a lot of information is if we look at the case of positive curvature, we know that if we start following the linear function downhill, we can decrease the value of the function."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1139.0,
+      "end": 1145.0,
+      "text": " But if we step too far, we'll start to go back uphill. We don't want to step any further than this minimum point here."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1147.0,
+      "end": 1153.0,
+      "text": " We can make a second order Taylor series approximation to the value that we'll get when we take a specific gradient step."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1154.0,
+      "end": 1165.0,
+      "text": " We can say we're starting off at some point x0 and we're taking a gradient descent step where we move by step size epsilon multiplied by a gradient g."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1166.0,
+      "end": 1175.0,
+      "text": " The first order Taylor series approximation, or second order Taylor series approximation tells us that the value at this new point will be approximately equal to the value at our current point."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1176.0,
+      "end": 1183.0,
+      "text": " Minus epsilon times the squared norm of the gradient. This is the first order Taylor series term."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1184.0,
+      "end": 1191.0,
+      "text": " Plus one half epsilon squared times the gradient multiplied by the Hessian multiplied by the gradient."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1192.0,
+      "end": 1199.0,
+      "text": " This here is the directional second derivative in the direction of the gradient, but also scaled by the size of the gradient."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1200.0,
+      "end": 1209.0,
+      "text": " So if we then solve this equation for the minimum predicted value that we'll get after the step, we solve it in terms of the step size."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1210.0,
+      "end": 1222.0,
+      "text": " Assuming that we're looking in a direction of positive curvature, we find that the optimal step size is equal to the squared norm of the gradient divided by g transpose hg."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1223.0,
+      "end": 1229.0,
+      "text": " So what does this tell us overall? The numerator says that if the gradient is bigger, we can take bigger steps."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1230.0,
+      "end": 1232.0,
+      "text": " So big gradients will speed up the optimization algorithm."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1233.0,
+      "end": 1239.0,
+      "text": " In the denominator, we actually see that this g transpose hg term can shrink the optimal step size a lot."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1240.0,
+      "end": 1248.0,
+      "text": " So if the gradient happens to point in a direction that's aligned with an eigenvector of the Hessian that has a big eigenvalue, you have to slow down a lot."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1248.0,
+      "end": 1251.0,
+      "text": " Otherwise, we'll overshoot the minimum and go back up hill."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1252.0,
+      "end": 1260.0,
+      "text": " Overall, this shows us something about why when we actually run an iterative search in practice, we may not actually arrive at a critical point."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1261.0,
+      "end": 1270.0,
+      "text": " Over time, we'd expect the gradient to get smaller and smaller, but we'll often also find for the kinds of optimization problems that come up with neural nets."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1270.0,
+      "end": 1279.0,
+      "text": " We'll find that this g transpose hg term gets very big and we're just not able to make very big steps anymore, even if the gradient remains large."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1280.0,
+      "end": 1289.0,
+      "text": " We can measure this with something called the condition number. The condition number looks at the largest ratio we can find between two of our eigenvalues."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1290.0,
+      "end": 1299.0,
+      "text": " If there's a very large eigenvalue and a very small eigenvalue, it means that when our gradient points in the direction of the large eigenvalue, we're forced to take very small steps."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1300.0,
+      "end": 1307.0,
+      "text": " We have to do that even if sometimes the gradient would point in the direction of a small eigenvalue and it would be safe to take larger steps."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1308.0,
+      "end": 1315.0,
+      "text": " Basically, if there's a wide range of eigenvalues, gradient descent has to miss out on a lot of the potential value that it could find on each step."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1316.0,
+      "end": 1319.0,
+      "text": " It has to keep the step size small to avoid accidentally going up hill."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1320.0,
+      "end": 1329.0,
+      "text": " You can see this with this contour plot. Here we're minimizing a quadratic function. Each of the black rings shows a set of points where the function is set."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1330.0,
+      "end": 1339.0,
+      "text": " The function is of equal value. At the middle here, we've got a minimum of the function. Every time we see a ring on our way out, we're taking a step up in value of the function."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1340.0,
+      "end": 1343.0,
+      "text": " The red path is showing how gradient descent moves."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1344.0,
+      "end": 1349.0,
+      "text": " Ideally, gradient descent would want to just point straight at the minimum and go straight there."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1350.0,
+      "end": 1355.0,
+      "text": " Instead, we keep finding that the gradients tend to point across this canyon."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1355.0,
+      "end": 1361.0,
+      "text": " We keep going down the canyon wall, overshooting the bottom of the canyon and coming to the other side of the canyon."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1362.0,
+      "end": 1369.0,
+      "text": " We're going this zigzagging fashion where we're always walking up or down a canyon wall instead of flowing down along the bottom of the canyon."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1370.0,
+      "end": 1384.0,
+      "text": " You can see this with neural networks. That same paper that I mentioned earlier includes this visualization of a little 3D representation of what happens in a neural net optimization problem with the gradient descent."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1385.0,
+      "end": 1397.0,
+      "text": " We can see that towards the end of training, gradient descent, as represented by this blue path, is moving down this really tight canyon with the green 3D mesh."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1398.0,
+      "end": 1407.0,
+      "text": " The gradient is actually still pretty large here, but the curvature is even larger and the curvature makes it really hard to take large steps."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1408.0,
+      "end": 1419.0,
+      "text": " Some things about this visualization are a little bit hard to understand because when you work with multiple dimensions and project them down to just a few dimensions, some things can be lost."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1420.0,
+      "end": 1427.0,
+      "text": " So one thing that we can't see here is that this blue curve is actually zigzagging a lot, just like in the previous visualization."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1428.0,
+      "end": 1435.0,
+      "text": " It's just that the way that we made this plot means that we can't actually see the other dimensions where it's zigzagging."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1436.0,
+      "end": 1441.0,
+      "text": " But those zigzags are stopping it from moving a lot faster along the bottom of this canyon."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1442.0,
+      "end": 1447.0,
+      "text": " The last topic that we'll cover for iterative optimization is the idea of constrained optimization."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1448.0,
+      "end": 1453.0,
+      "text": " And I don't actually have a lot to say about this. I'm just going to very quickly mention a little bit about how it works."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1453.0,
+      "end": 1482.0,
+      "text": " If you have constraints for a function, like if you have some values, g, that measure some, how much you deviate from exactly satisfying a constraint or some values, h, that measure how far you are on the wrong side of some inequality, you can actually take your original function, f of x, and transform it into this new function called the Lagrangian function."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1483.0,
+      "end": 1488.0,
+      "text": " Where you penalize the function for violating those constraints."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1489.0,
+      "end": 1502.0,
+      "text": " And you can then solve, instead of just a minimization problem, you can solve a minmax problem where you want to keep increasing the coefficients on those penalty terms until you satisfy the penalty terms."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1502.0,
+      "end": 1509.0,
+      "text": " This will give you a solution to the constrained optimization problem rather than just letting you search over all of space."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1509.0,
+      "end": 1520.0,
+      "text": " In this book, we usually use this Lagrangian, or this is also called the KKT version, when you include both the exact and the inequality constraints."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1522.0,
+      "end": 1538.0,
+      "text": " In this book, we mostly use this approach for solving problems in theory. Like if we want to show that the Gaussian is the probability distribution of the highest entropy, we can use some of these penalty terms to constrain that the function we're searching over is a probability distribution that's non negative and sums to one."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1539.0,
+      "end": 1550.0,
+      "text": " In practice, if we actually want to write a program that we run where we use several iterations to search for a solution, there's a much easier thing you can do instead of having this minmax problem and Lagrangian penalties and so on."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1550.0,
+      "end": 1556.0,
+      "text": " You can just project x back to the nearest point that satisfies the constraints after each step."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1556.0,
+      "end": 1560.0,
+      "text": " And that's a very practical, easy to implement way of solving these kinds of problems."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1561.0,
+      "end": 1574.0,
+      "text": " Someone has asked which data visualization did you use to plot the data points and for that, you should read the paper. It's a visualization that became up specifically for that paper. It's not a standard technique."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1574.0,
+      "end": 1584.0,
+      "text": " Someone else asked what happens if we do not choose the direction where the gradient points, but select the direction where the step we can take is maximal."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1584.0,
+      "end": 1591.0,
+      "text": " So yeah, you can actually look for directions where you intentionally seek out negative curvature and so on."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1591.0,
+      "end": 1598.0,
+      "text": " It turns out to be difficult to do that in high dimensional space. Someone asks what gradient to set up the measures we'd recommend."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1599.0,
+      "end": 1606.0,
+      "text": " I would say usually Adam or gradient descent with momentum are pretty good. And a lot of the time you should consider using gradient clipping."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1606.0,
+      "end": 1618.0,
+      "text": " The next part of our overall roadmap is to discuss what happens when we have rounding error, when we have underflow overflow, all of these issues that happen when we use a finite number of bits to represent real numbers."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1619.0,
+      "end": 1629.0,
+      "text": " This is really important. I know it sounds kind of boring to talk about this low level stuff with bits, but writing numerically precise code is actually a deep learning super skill."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1629.0,
+      "end": 1640.0,
+      "text": " A lot of the time you'll find that deep learning algorithms sort of work when you code them up. The loss will go down, the accuracy will go up, the accuracy will get within a few percentage points of the state of the art."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1641.0,
+      "end": 1650.0,
+      "text": " And you can check your code really carefully and you can find that there aren't really any bugs, but maybe there are some things that aren't quite optimal about it."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1650.0,
+      "end": 1659.0,
+      "text": " And that's often caused by a loss of numerical precision where you run your gradient descent algorithm and you don't get quite of good results as you think you should."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1660.0,
+      "end": 1667.0,
+      "text": " And another time you'll find that your deep learning algorithm explodes. You get a lot of not a number of values, you get a lot of very large values."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1667.0,
+      "end": 1672.0,
+      "text": " And this might happen even if you make your learning rate relatively small and you think everything should be stable."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1672.0,
+      "end": 1679.0,
+      "text": " Both of these problems actually usually come from writing code that doesn't have high enough numerical precision."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1679.0,
+      "end": 1687.0,
+      "text": " So being able to write numerically precise code can really differentiate how well you perform as a deep learning practitioner."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1687.0,
+      "end": 1694.0,
+      "text": " A lot of people have heard the story of how when I first thought of generative adversarial nets, I was at a bar and I went home and I coded them up immediately."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1694.0,
+      "end": 1698.0,
+      "text": " And you know within an hour or so later, I actually had them working."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1698.0,
+      "end": 1700.0,
+      "text": " A lot of people have went through how I was able to do that."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1700.0,
+      "end": 1706.0,
+      "text": " And part of the answer is that I knew about all of this really boring numerical precision stuff."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1706.0,
+      "end": 1712.0,
+      "text": " So I didn't waste any time shooting myself in the foot writing numerically and precise code."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1712.0,
+      "end": 1716.0,
+      "text": " And that reduces the amount of time it takes to get the algorithm working a lot."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1717.0,
+      "end": 1727.0,
+      "text": " The basic idea is that when you use a finite number of bits to represent a real number, you get both rounding errors and what are called truncation errors."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1727.0,
+      "end": 1735.0,
+      "text": " In a digital computer, we're usually talking about using float 32 or some other similar schemes to represent real numbers."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1735.0,
+      "end": 1739.0,
+      "text": " That's especially true when we're using kuda on GPUs."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1739.0,
+      "end": 1741.0,
+      "text": " Sometimes we use other floating formats."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1741.0,
+      "end": 1747.0,
+      "text": " A lot of the problems I'm going to describe here will often mostly go away if you're able to switch to float 64."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1747.0,
+      "end": 1754.0,
+      "text": " But that usually requires a slower computation on GPU or may even force you to move to CPU."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1754.0,
+      "end": 1757.0,
+      "text": " It will also force you to use more memory."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1757.0,
+      "end": 1764.0,
+      "text": " So if you can write numerically precise code using float 32, then that can be a big advantage."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1764.0,
+      "end": 1772.0,
+      "text": " There's basically three categories of problems that happen on these kinds of 32 bit representations."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1772.0,
+      "end": 1777.0,
+      "text": " So first, most numbers that you work with, they're not going to cause catastrophic problems on their own."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1777.0,
+      "end": 1779.0,
+      "text": " But they are going to get rounded."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1779.0,
+      "end": 1791.0,
+      "text": " If you have some real number x and you turn it into a representation on computer, it's going to get rounded to some value x plus delta, where delta is just some small value describing the rounding error that happened."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1791.0,
+      "end": 1795.0,
+      "text": " So you'll be off by a little bit from what you meant to be."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1795.0,
+      "end": 1806.0,
+      "text": " A larger problem is when you have some extremely large value of x, you just can't represent it with the range of numbers that your float 32 values can represent."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1806.0,
+      "end": 1814.0,
+      "text": " And it will actually get replaced by some placeholder like in just saying that x is too large to represent."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1814.0,
+      "end": 1827.0,
+      "text": " So it's not really a finite value anymore. You've got this infinite number and your code will probably still go ahead and keep doing arithmetic on this number as if it were a real value and then you'll get in trouble."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1827.0,
+      "end": 1834.0,
+      "text": " There's another topic which is still basically a kind of rounding error, but it's a particularly harmful kind of rounding error."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1834.0,
+      "end": 1839.0,
+      "text": " So if you have a small value of x, it can get replaced by zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1839.0,
+      "end": 1847.0,
+      "text": " This is especially harmful because a lot of the algorithms in deep learning often assume that we have some very small but non zero variable."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1847.0,
+      "end": 1855.0,
+      "text": " Like for example, if you use the logistic sigmoid activation function, you can pass very negative values to the logistic sigmoid."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1855.0,
+      "end": 1863.0,
+      "text": " And algebraically, they'll never become quite zero, but in a computer they can definitely get rounded down to zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1863.0,
+      "end": 1868.0,
+      "text": " And so people are asking, aren't these numerical issues already addressed in the current deep learning libraries?"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1868.0,
+      "end": 1873.0,
+      "text": " And the answer is basically yes, but you need to know when to look out for them."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1873.0,
+      "end": 1881.0,
+      "text": " A lot of the time you write your own code and you might end up rewriting a version of something that already has an numerically stable variant."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1881.0,
+      "end": 1888.0,
+      "text": " Sometimes you might need to, for example, compute a softmax over several tensors instead of just one tensor."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1888.0,
+      "end": 1897.0,
+      "text": " And you'll need to know how to do that in an numerically stable way if your library only provides a softmax for a single tensor."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1897.0,
+      "end": 1905.0,
+      "text": " Some other people are asking if there's any pointers on the best way to deal with nants. That's basically what the next several slides will do."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1905.0,
+      "end": 1909.0,
+      "text": " Someone asks, how does the 64 bit representation solve the nane error?"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1909.0,
+      "end": 1915.0,
+      "text": " The basic idea is that if you have 32 bits, there's a certain range of values that you can represent."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1915.0,
+      "end": 1920.0,
+      "text": " If you have 64 bits, that range expands."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1920.0,
+      "end": 1928.0,
+      "text": " So a program that might cause a noun when you use 32 bits might actually avoid the noun when you use 64 bits."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1928.0,
+      "end": 1933.0,
+      "text": " If you use a program that uses even bigger numbers, you can eventually still get nants for 64 bits."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1933.0,
+      "end": 1939.0,
+      "text": " It's just that fewer programs cause problems using 64 bits than using 32."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1939.0,
+      "end": 1949.0,
+      "text": " One example is if you look at the pilot and two repository that I used to work on in grad school before we had tensor flow, you can look at some of the unit tests."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1949.0,
+      "end": 1953.0,
+      "text": " And when I compute the k-old divergence between two Gaussian distributions."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1953.0,
+      "end": 1960.0,
+      "text": " If I use float 64, the unit test expects the k-old divergence to have a minimum value of 0."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1960.0,
+      "end": 1969.0,
+      "text": " But if I use float 32, the unit test actually has to allow the k-old divergence to go slightly negative."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1969.0,
+      "end": 1977.0,
+      "text": " So one example of how we can get rounding errors and they can affect this code is what happens when you add a very small number to a larger number."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1977.0,
+      "end": 1985.0,
+      "text": " So we're going to make an array using 32 bit floats and we're going to store the value 0 and the value 10 to the minus 8 in this array."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1985.0,
+      "end": 1997.0,
+      "text": " If we compute the arg max of this array, the arg max is 1 because position 0 has a value of 0, position 1 has a positive but very small value of 10 to the minus 8."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 1997.0,
+      "end": 2003.0,
+      "text": " So now suppose that we take these numbers and we add them to a much larger number, we add them to 1."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2003.0,
+      "end": 2008.0,
+      "text": " Well, 0 is going to have 1 added to it and end up with a value of 1."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2008.0,
+      "end": 2014.0,
+      "text": " Ideally, 1 plus 10 to the minus 8 would be represented as 1."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2014.0,
+      "end": 2020.0,
+      "text": " But it's like 1 point, you know, 0, 0, 0, 0, 1 after the correct number of 0s."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2020.0,
+      "end": 2024.0,
+      "text": " In this case, it's actually going to get rounded to 1, which isn't quite what we want."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2024.0,
+      "end": 2032.0,
+      "text": " When you take the arg max of the newer array where we added 1 to it, we actually get that the arg max is 0 now because numpy breaks ties to"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2032.0,
+      "end": 2035.0,
+      "text": " the first index that's tied for the max."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2035.0,
+      "end": 2043.0,
+      "text": " So this addition of a number that caused rounding error has actually downstream changed the results quite a lot."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2043.0,
+      "end": 2050.0,
+      "text": " We only really wanted to extract a single bit from this computation and we're now actually getting the value of that bit wrong."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2050.0,
+      "end": 2057.0,
+      "text": " There's some secondary effects that happen when we have rounding error and overflow and underflow errors."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2058.0,
+      "end": 2064.0,
+      "text": " What happens is after the first error, we do some more math and then the second error causes a bigger problem."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2064.0,
+      "end": 2068.0,
+      "text": " So for example, so we have some code that computes x minus y."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2068.0,
+      "end": 2072.0,
+      "text": " x minus y is a relatively safe thing to do to start with."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2072.0,
+      "end": 2077.0,
+      "text": " There's definitely some ways that can go wrong, but there's not anything fundamentally wrong with doing a subtraction."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2077.0,
+      "end": 2081.0,
+      "text": " But now suppose that x overflows to nth, y overflows to nth."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2081.0,
+      "end": 2087.0,
+      "text": " Well, then we've got infinity minus infinity and we don't really know which infinity is larger."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2087.0,
+      "end": 2090.0,
+      "text": " This kind of operation is not really defined."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2090.0,
+      "end": 2093.0,
+      "text": " So now our x minus y will turn these in to nth."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2093.0,
+      "end": 2102.0,
+      "text": " A lot of the time when you have overflow, the way that you first see it is that you'll get a nth in your loss function or your gradient."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2102.0,
+      "end": 2105.0,
+      "text": " So somewhere in your computational graph, you'll get an inth."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2105.0,
+      "end": 2114.0,
+      "text": " And then by the time it actually gets printed out or plotted somewhere, it will have been turned into a nth by these additional steps of arithmetic that came afterward."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2114.0,
+      "end": 2129.0,
+      "text": " One of the main functions that's often the culprit of numerical precision problems in deep learning programs is the x function that computes the natural logarithms base e raised to the power of x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2129.0,
+      "end": 2132.0,
+      "text": " This will overflow for large values of x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2132.0,
+      "end": 2136.0,
+      "text": " And a lot of the time when I say large values, I am talking about extremely large values."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2136.0,
+      "end": 2140.0,
+      "text": " For x, when I say large values, I'm actually talking about numbers that are not very big."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2140.0,
+      "end": 2147.0,
+      "text": " If you're using float 32, a value of 89 past 2x will overflow to nth."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2147.0,
+      "end": 2154.0,
+      "text": " To make sure that your program doesn't have trouble with x, just never use large x as the argument for x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2154.0,
+      "end": 2162.0,
+      "text": " And make sure that you design the structure of your functions that you compute so that they will never actually pass a large x to x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2162.0,
+      "end": 2170.0,
+      "text": " A lot of the rest of this lecture will be about ideas for how you can prevent that from happening in specific cases."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2170.0,
+      "end": 2177.0,
+      "text": " The other big problem with x is that if your argument to it is very negative, x of x can underflow."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2177.0,
+      "end": 2185.0,
+      "text": " This may not be a problem. If you think about it, x of a very negative number is just some small number epsilon."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2185.0,
+      "end": 2189.0,
+      "text": " And if you round that number down to zero, you've only made a mistake of size epsilon."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2189.0,
+      "end": 2194.0,
+      "text": " So if that was your final output of the function, it's not a very big error."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2194.0,
+      "end": 2202.0,
+      "text": " Unfortunately, if you then do other math on top of this output, rounding a small number epsilon down to zero can be catastrophic."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2202.0,
+      "end": 2211.0,
+      "text": " If you're using x of x in a denominator, or as an argument to a logarithm, it can cause really big problems."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2211.0,
+      "end": 2223.0,
+      "text": " Another case where you can sometimes encounter danger is when you have subtraction, especially if you want to guarantee that the output of the subtraction is going to be positive."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2223.0,
+      "end": 2230.0,
+      "text": " You have two values x and y, and you know algebraically that you can prove that x is always greater than y."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2230.0,
+      "end": 2234.0,
+      "text": " In a computer, you may actually find that x minus y ends up being negative."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2234.0,
+      "end": 2240.0,
+      "text": " So if you relied on x minus y being positive in subsequent steps of your program, you could run into trouble."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2240.0,
+      "end": 2244.0,
+      "text": " One case where you see this a lot is computing the variance."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2244.0,
+      "end": 2250.0,
+      "text": " So there's one way that you can write the variance, where it's the expectation of a squared value."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2250.0,
+      "end": 2255.0,
+      "text": " If you implement the variance this way in your code, it's always going to give you positive numbers."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2255.0,
+      "end": 2263.0,
+      "text": " Because the output of the squaring value will always be non negative. I shouldn't say positive."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2263.0,
+      "end": 2274.0,
+      "text": " And then if you look at the difference between the expectation of the squared value of the function and the square of the expected value of the function,"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2274.0,
+      "end": 2279.0,
+      "text": " algebraically, that's a perfectly valid way of rearranging this expression for the variance."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2279.0,
+      "end": 2284.0,
+      "text": " A lot of times this is actually the one where we actually have access to those values to compute it."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2284.0,
+      "end": 2291.0,
+      "text": " Unfortunately, it's numerically unstable because if we have a little bit of rounding error on the left and a little bit of rounding error on the right,"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2291.0,
+      "end": 2296.0,
+      "text": " and these values were very close to zero to start with, if the rounding error goes in the wrong direction,"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2296.0,
+      "end": 2300.0,
+      "text": " we can end up with a small negative value instead of zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2300.0,
+      "end": 2308.0,
+      "text": " And that can cause trouble, especially if you were planning to pass this value to a square root or logarithm later on."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2309.0,
+      "end": 2313.0,
+      "text": " Loggertham and square root are also functions where you want to be very careful."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2313.0,
+      "end": 2321.0,
+      "text": " The logarithm of zero is negative infinity. And the logarithm of a negative number is imaginary, usually in software frameworks like NumPy,"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2321.0,
+      "end": 2325.0,
+      "text": " we end up treating that as a not a number."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2325.0,
+      "end": 2334.0,
+      "text": " The square root of zero is zero, so that's actually safe. But the derivative of square root has a divide by zero if you take the derivative at x equals zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2334.0,
+      "end": 2341.0,
+      "text": " So you definitely want to avoid underflow or rounding to a negative value in the argument to either log or square root."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2341.0,
+      "end": 2345.0,
+      "text": " One very common place where this comes up is when we compute the standard deviation."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2345.0,
+      "end": 2348.0,
+      "text": " The standard deviation is the square root of the variance."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2348.0,
+      "end": 2355.0,
+      "text": " So if you compute the variance using the dangerous strategy from this slide, you can end up with this rounding to a small negative number."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2355.0,
+      "end": 2359.0,
+      "text": " And then you take the square root of that small negative number and run into trouble."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2360.0,
+      "end": 2365.0,
+      "text": " The logarithm of x is a common pattern that comes up a lot in deep learning."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2365.0,
+      "end": 2371.0,
+      "text": " We often see this when we're computing log probabilities and the probability is based on taking the x of some argument."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2371.0,
+      "end": 2375.0,
+      "text": " Whenever you see this, you should simplify it to just the value x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2375.0,
+      "end": 2379.0,
+      "text": " Fiona will do this for you automatically. A lot of frameworks don't."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2380.0,
+      "end": 2389.0,
+      "text": " And if you do this, you can avoid overflowing the x because you just take x rather than competing x of x first before competing the log."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2389.0,
+      "end": 2399.0,
+      "text": " You can also avoid underflow in x, which would then cause the logarithm to turn into negative."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2399.0,
+      "end": 2402.0,
+      "text": " So now I have a little bit of an exercise for you."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2402.0,
+      "end": 2407.0,
+      "text": " Let's say that we're doing a little bit of a hack to avoid a divide by zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2407.0,
+      "end": 2415.0,
+      "text": " We want to take a normalized, what to compute a normalized version of x where x will have unit standard deviation."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2415.0,
+      "end": 2420.0,
+      "text": " And we divide x by some estimate of the standard deviation in order to do that."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2420.0,
+      "end": 2425.0,
+      "text": " We know that our standard deviation might have some round to zero trouble."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2425.0,
+      "end": 2437.0,
+      "text": " So we're going to add a small constant epsilon of 10 to the minus 7 to our standard deviation in order to make sure we don't divide by zero when we compute the normalized version of x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2437.0,
+      "end": 2439.0,
+      "text": " So there's two different ways we can imagine doing this."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2439.0,
+      "end": 2445.0,
+      "text": " One is we could take the square root of epsilon plus the variance and use that as our standard deviation."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2445.0,
+      "end": 2450.0,
+      "text": " The other version of the hack is we could take epsilon plus the square root of the variance."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2450.0,
+      "end": 2454.0,
+      "text": " So which of these is the better way to implement this hack?"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2455.0,
+      "end": 2461.0,
+      "text": " Does anybody want to answer on the chat?"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2461.0,
+      "end": 2464.0,
+      "text": " The first one. So why do you say the first one?"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2464.0,
+      "end": 2466.0,
+      "text": " Oh, you got a vote for the second one as well."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2466.0,
+      "end": 2475.0,
+      "text": " So does somebody want to give a reason for one of their votes?"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2475.0,
+      "end": 2478.0,
+      "text": " So the square root of apps will be too small."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2478.0,
+      "end": 2488.0,
+      "text": " That can definitely happen if your apps is already just barely as big as you can represent and variance is zero, it can round down."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2488.0,
+      "end": 2499.0,
+      "text": " There's also another issue here, which is think about what happens if the variance is already implemented safely."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2499.0,
+      "end": 2503.0,
+      "text": " And we know that it won't get rounded down too low."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2503.0,
+      "end": 2506.0,
+      "text": " And let's also suppose we make epsilon a little bit bigger."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2506.0,
+      "end": 2510.0,
+      "text": " So if we divide by a square root of epsilon that won't give us divide by zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2510.0,
+      "end": 2515.0,
+      "text": " Is there any other problem that might come up here?"
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2515.0,
+      "end": 2518.0,
+      "text": " So there is one other problem that might come up here."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2518.0,
+      "end": 2528.0,
+      "text": " If we use this version, where we have the epsilon plus square root of the variance, we can actually get."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2528.0,
+      "end": 2541.0,
+      "text": " When we compute the derivative of normalized acts later on, we can have this problem that the square root of the variance might be evaluated exactly for the variance being equal to zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2541.0,
+      "end": 2547.0,
+      "text": " And when we take the derivative of square root, we actually get it divide by zero in that case."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2547.0,
+      "end": 2557.0,
+      "text": " So usually you want to put the epsilon inside the square root, but you do need to make sure that your epsilon is big enough that it won't get rounded down to zero when you take the square root."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2557.0,
+      "end": 2563.0,
+      "text": " Another function that comes up all the time in deep learning is log sum x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2563.0,
+      "end": 2566.0,
+      "text": " You see this in things like the cross entropy function."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2566.0,
+      "end": 2577.0,
+      "text": " The naive way of implementing this is if you have an array, you apply x to the array, then you sum out the x values, and then you take the log at the end."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2577.0,
+      "end": 2582.0,
+      "text": " The failure modes to this are those two different ways it can go wrong."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2582.0,
+      "end": 2587.0,
+      "text": " One is if any of your entries in the array is big, your x can overflow."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2587.0,
+      "end": 2595.0,
+      "text": " So you just take x of some large number in float 32, a value of 90 would do this to you."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2595.0,
+      "end": 2598.0,
+      "text": " You overflow. Now you've got an in here."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2598.0,
+      "end": 2604.0,
+      "text": " When you start doing arithmetic on the in it's probably going to turn into a noun pretty soon."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2605.0,
+      "end": 2609.0,
+      "text": " And that one's relatively obvious. A lot of people realize that that one's going to happen."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2609.0,
+      "end": 2619.0,
+      "text": " Another case that this can fail is if all of the entries in the array are very negative, then all of the x under float is zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2619.0,
+      "end": 2622.0,
+      "text": " Individually, each of these mistakes in the x is not a big deal."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2622.0,
+      "end": 2630.0,
+      "text": " The x of a very negative number is some small number epsilon. You round that to zero. Your error is only order of epsilon."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2630.0,
+      "end": 2637.0,
+      "text": " The problem is when you sum up all the zeros, if all of them are literally zero, then the sum is also literally zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2637.0,
+      "end": 2645.0,
+      "text": " And then you pass that to a log. So you get a negative end at the end, even if that's not not algebraically the correct answer."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2645.0,
+      "end": 2650.0,
+      "text": " So the good news is there's a relatively simple trick that lets us fix this."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2650.0,
+      "end": 2657.0,
+      "text": " The way it works is we take the maximum of the array, and then we subtract the maximum off all of the entries."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2658.0,
+      "end": 2664.0,
+      "text": " Then we compute log sum x of this new safe array that had the max subtracted off of it."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2664.0,
+      "end": 2668.0,
+      "text": " And we add the max back on to the result after we take the log."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2668.0,
+      "end": 2672.0,
+      "text": " Intensive for those, there's a build in version that does this for you."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2672.0,
+      "end": 2677.0,
+      "text": " TF.Reduce log sum x. You do need to know to use that though."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2677.0,
+      "end": 2685.0,
+      "text": " Someone was saying, don't all the deep learning frameworks already solve this. Well, a lot of them provide solutions to it, but you have to know to use those solutions."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2685.0,
+      "end": 2691.0,
+      "text": " So whenever you see yourself doing a log sum x, be sure to use this stable variant of it."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2691.0,
+      "end": 2697.0,
+      "text": " If we look at why this works, first off, we need to make sure that we're actually computing the value that we want."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2697.0,
+      "end": 2701.0,
+      "text": " We want to see that the new expression is algebraically equivalent to the old one."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2701.0,
+      "end": 2705.0,
+      "text": " So the way we can see this is we've got this variable m representing the max."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2705.0,
+      "end": 2708.0,
+      "text": " We've got this vector a representing the array."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2708.0,
+      "end": 2715.0,
+      "text": " The new value that we're computing is m plus log sum over i of x of a i minus m."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2715.0,
+      "end": 2725.0,
+      "text": " Well, each of these x terms, we can use the fact that x of a i minus m turns into x of a i divided by x of m."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2725.0,
+      "end": 2729.0,
+      "text": " And so we've simplified these terms inside the sum."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2729.0,
+      "end": 2736.0,
+      "text": " Now it turns out that every term in the sum has this factor division by x of m."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2736.0,
+      "end": 2742.0,
+      "text": " And this factor doesn't depend on i at all. So we can actually pull it outside the summation."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2742.0,
+      "end": 2748.0,
+      "text": " So now we've got this one over x m factor multiplied by this summation factor."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2748.0,
+      "end": 2757.0,
+      "text": " Well, a logarithm of two factors can be split into into the sum of the logarithm of both those factors."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2758.0,
+      "end": 2763.0,
+      "text": " The logarithm of one over x is actually just negative log of x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2763.0,
+      "end": 2768.0,
+      "text": " So we get m minus log x m plus the sum over all these factors."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2768.0,
+      "end": 2772.0,
+      "text": " This log x obviously that turns into the identity."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2772.0,
+      "end": 2780.0,
+      "text": " So we get m minus m this cancels and I actually have a mistake I left at the log here, but there should be a log right there."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2781.0,
+      "end": 2788.0,
+      "text": " So we've actually recovered the original version of the expression that we're trying to optimize."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2788.0,
+      "end": 2796.0,
+      "text": " So the other thing we need to check to see that this works is we need to make sure that the two failure modes we identified earlier are gone."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2796.0,
+      "end": 2800.0,
+      "text": " So we notice that there is a way that we can overflow the original version."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2800.0,
+      "end": 2807.0,
+      "text": " We've also noticed that there was a way we could underflow every term of the original version and then get a negative int when we pass it to the log."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2808.0,
+      "end": 2816.0,
+      "text": " So first let's look at the overflow case because we subtract off the max all of the entries of safer ray are at most zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2816.0,
+      "end": 2820.0,
+      "text": " X m is zero is just one so we can compute that without any overflow."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2820.0,
+      "end": 2823.0,
+      "text": " So we've eliminated the overflow problem."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2823.0,
+      "end": 2827.0,
+      "text": " Next there was the case where every value of the x under flows."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2827.0,
+      "end": 2831.0,
+      "text": " Well, we can still have a problem where some of the x terms under flow."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2832.0,
+      "end": 2840.0,
+      "text": " The good news is subtracting off the max actually means that there has to be at least one entry of safer ray that's equal to zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2840.0,
+      "end": 2843.0,
+      "text": " Any entries that were tied for the max now have a value of zero."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2843.0,
+      "end": 2850.0,
+      "text": " And so those are not going to underflow when we kick the x they'll get a value of one and that's a nice stable value that can be computed easily."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2850.0,
+      "end": 2856.0,
+      "text": " That means that the sum is now at least one and we can safely pass that sum to the logarithm."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2857.0,
+      "end": 2864.0,
+      "text": " So someone is asking if there's any book or blogs summarizing all these numerical computation problems in the context of deep learning."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2864.0,
+      "end": 2869.0,
+      "text": " There are definitely books about numerical computation."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2869.0,
+      "end": 2875.0,
+      "text": " A lot of them don't really focus specifically on the problems that come up a lot in deep learning."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2875.0,
+      "end": 2880.0,
+      "text": " And I don't actually know of one that is focused in that way."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2880.0,
+      "end": 2886.0,
+      "text": " I will probably write an article about it or add it to the second edition of the deep learning textbook."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2886.0,
+      "end": 2892.0,
+      "text": " But I don't know of a good resource to point you to yet other than this lecture."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2892.0,
+      "end": 2895.0,
+      "text": " The softmax function comes up all the time in deep learning."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2895.0,
+      "end": 2908.0,
+      "text": " We use it as the output of most neural nets for classification for generating text for selecting discrete actions in reinforcement learning agents."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2908.0,
+      "end": 2913.0,
+      "text": " The main advice for the softmax is that you should use your library's built in softmax function."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2913.0,
+      "end": 2918.0,
+      "text": " If you try to make your own it's easy to mess up and get a numerically unstable version."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2918.0,
+      "end": 2929.0,
+      "text": " If you do build your own the way that you should do it is you should take the argument to the softmax, the logits, and you should track off the maximum value before you pass it through the softmax."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2929.0,
+      "end": 2938.0,
+      "text": " The reason this works is very similar to the log sum x. I won't walk through exactly what all of the justification for it is."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2938.0,
+      "end": 2943.0,
+      "text": " But it's basically the same logic as what we just saw with log sum x."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2943.0,
+      "end": 2946.0,
+      "text": " The sigmoid function is also very common in deep learning."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2946.0,
+      "end": 2949.0,
+      "text": " And it's essentially the same thing as softmax."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2949.0,
+      "end": 2957.0,
+      "text": " It's basically a softmax where one of the inputs is hard coded to zero and you pass out just one of the outputs."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2957.0,
+      "end": 2961.0,
+      "text": " So once again the recommendation is to use your libraries build in sigmoid function."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2961.0,
+      "end": 2967.0,
+      "text": " If you don't you can you can stabilize it using the same trick as with the softmax."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2967.0,
+      "end": 2975.0,
+      "text": " The cross entropy function is the loss for most neural nets that we train, especially if you have a softmax output."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2975.0,
+      "end": 2982.0,
+      "text": " Everything that I say here also applies with sigmoid just replace the word softmax with sigmoid."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2982.0,
+      "end": 2993.0,
+      "text": " This is probably one of the most common things that I see people screw up in deep learning is they implement their own cross entropy function and they compute it using the probabilities."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2993.0,
+      "end": 2997.0,
+      "text": " They actually literally apply the softmax and then compute the loss."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 2997.0,
+      "end": 3005.0,
+      "text": " What you actually want to do is use the logits, the values output by the neural net before you get to the softmax."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3005.0,
+      "end": 3008.0,
+      "text": " And you want to compute your loss in terms of those."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3008.0,
+      "end": 3013.0,
+      "text": " The reason is the probabilities will lose gradient when the softmax saturates."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3013.0,
+      "end": 3021.0,
+      "text": " The cross entropy function won't saturate unless you're already getting the right answer and then you don't need any gradient because you're already winning."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3021.0,
+      "end": 3032.0,
+      "text": " The short recommendation for how to write good code is to use an numerically stable version of the cross entropy function that's already provided to you by your library."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3032.0,
+      "end": 3038.0,
+      "text": " If you're using tensor flow, you can use cf.nnd at softmax cross entropy with logits."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3038.0,
+      "end": 3047.0,
+      "text": " If you're using another software framework, you need to be very careful and check that it actually is computing the cross entropy using the logits rather than the probabilities."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3047.0,
+      "end": 3054.0,
+      "text": " A lot of frameworks screw this up and use the output of the softmax rather than the input to the softmax."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3054.0,
+      "end": 3059.0,
+      "text": " It's a common enough problem that I've actually seen this in frameworks that I've used."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3060.0,
+      "end": 3072.0,
+      "text": " If you do make your own cross entropy function, you should use the stabilization tricks for the softmax and the log some acts that come up inside this loss function in order to stabilize it."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3072.0,
+      "end": 3080.0,
+      "text": " In general, if you have some bugs that you're encountering, there are a few really simple strategies that you can follow to catch them."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3081.0,
+      "end": 3094.0,
+      "text": " One thing is that if you increase the learning rate for your gradient descent algorithm and the loss function value gets stuck, that for a very large learning rate, you find that your loss is flat over time as you take more steps."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3094.0,
+      "end": 3098.0,
+      "text": " That probably means that the gradient is getting rounded down to zero somewhere in your graph."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3099.0,
+      "end": 3104.0,
+      "text": " You are probably losing numerical precision and ending up without a gradient."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3104.0,
+      "end": 3111.0,
+      "text": " Otherwise, a large learning rate should make you move faster and faster and actually cause explosion rather than getting stuck."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3111.0,
+      "end": 3118.0,
+      "text": " The most common way that I've seen this happen is when the cross entropy loss is calculated using probabilities instead of logits."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3118.0,
+      "end": 3126.0,
+      "text": " If the softmax rounds a probability to one or zero, then the gradient through it is gone and you can't do very much about it."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3127.0,
+      "end": 3137.0,
+      "text": " A lot of the time people that encounter this problem with extreme values of the softmax will sort of hack around it by clipping the value of the softmax somehow or other to avoid extreme values."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3137.0,
+      "end": 3142.0,
+      "text": " That will make sure that you don't get nands in the forward prop like when you take a log of the softmax."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3142.0,
+      "end": 3147.0,
+      "text": " But it will also mean that you get zeros in the back prop when you try to compute the gradients."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3147.0,
+      "end": 3154.0,
+      "text": " That's a really common bug and it's pretty easy to identify by the learning curve being flat."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3154.0,
+      "end": 3161.0,
+      "text": " I've actually seen this in a third party open source implementations of generative adversarial notes."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3161.0,
+      "end": 3169.0,
+      "text": " This is one of those cases where it will look like you don't have a bug because if you use a small enough learning rate, your code will basically work."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3169.0,
+      "end": 3172.0,
+      "text": " But it just won't perform quite as well as it ought to."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3172.0,
+      "end": 3179.0,
+      "text": " If you use a large learning rate, then it will break and it will look like the algorithm is not robust to hyper parameters."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3179.0,
+      "end": 3188.0,
+      "text": " But really the problem is that your code is not numerically precise enough to handle some of the larger larger learning rates."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3188.0,
+      "end": 3199.0,
+      "text": " Another one of the bug hunting strategies I use is just if you see an explosion immediately become very suspicious of anywhere that you see a log x square root or division in your code."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3199.0,
+      "end": 3205.0,
+      "text": " And just look and see if you're doing it divide by zero a square root of a negative number and x of a large number and so on."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3205.0,
+      "end": 3209.0,
+      "text": " Also, you should always suspect the code that has changed the most recently."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3209.0,
+      "end": 3225.0,
+      "text": " So for example, if you were running your code and everything's fine and then eventually you add something like batch norm and suddenly see explosion, then you should probably suspect that maybe the problem is when you divide by the square root of the variance in your batch norm."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3225.0,
+      "end": 3228.0,
+      "text": " And that's very likely to be where the problem is."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3228.0,
+      "end": 3244.0,
+      "text": " A lot of the time I find that when I'm helping people like interns or brain residents, just following this bug hunting strategy with my colleagues at Google Brain will help me almost immediately solve problems that were very mysterious for someone who is new to deep learning."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3244.0,
+      "end": 3248.0,
+      "text": " And if you can learn this pattern, it can accelerate your workflow quite a lot."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3248.0,
+      "end": 3250.0,
+      "text": " Okay, thanks glad you enjoyed the talk."
+    },
+    {
+      "title": "deep_learning_high_res",
+      "start": 3255.0,
+      "end": 3257.0,
+      "text": " Thank you."
+    }
+  ],
+  "text": " Hello everybody, thanks for watching this presentation. This presentation covers the topics for chapter 4 but with a lot of extra detail about how to write numerically precise code in the context that come up in deep learning. For people who are watching this on the book website, you should understand that I'm going to be taking live questions from AI with the best audience members periodically and I'll read the questions as I answer them. So I'm going to start out by looking at the slides, but I'm going to tab back and forth periodically to check for questions from the audience. So go ahead and ask questions as they come up and I'll try to answer them quickly. Today's topic is numerical computation for deep learning. Basic idea of numerical computation is that we need to be very careful about the way that we handle real numbers in a few different contexts. One is if we use an algorithm that has to do some kind of careful representation of real numbers with a finite number of bits. Real numbers like pi have infinitely many digits and then when we represent them in a computer we usually use 32-bit floating point numbers as an approximation for real numbers when we implement a deep learning algorithm on GPU. The use of 32 bits to represent something that really has infinitely many digits can often cause errors and we'd like to try to minimize the amount of damage to our program that happens when we use that representation. Another consideration for numerical computation is how sensitive a function is to very small changes in its input. This comes up even if we were able to theoretically use real numbers without having to represent them in 32 bits. When we do things like optimize a function, if that function is very sensitive to little tiny changes in the input, it becomes a lot harder to search for the inputs that minimize that function because little tiny changes in our search can strongly influence the outcome of the search. As a brief roadmap for today, I'm going to cover two different topics. The first is iterative optimization, how we actually make algorithms that search for the minimal point of some function and how this gets affected by numerical considerations. Next I'm going to talk about rounding error underflow and overflow. How the use of 32 bits to represent real numbers can affect deep learning programs. Starting out with iterative optimization, we're going to cover three different topics here. The first is how the gradient descent algorithm works. The second is curvature, the idea that the functions are optimizing are non-linear and how the second order curvature of these functions affects the optimization process. Finally, we'll have a few comments on constrained optimization. The basic algorithm that we use for most iterative optimization is gradient descent. I've illustrated this here with a really simple function, f of x equals 1.5x squared. You can see it plotted with the dashed blue light that I'm highlighting with my mouse cursor. If we would like to minimize this function, we can do it by following the gradient. Let's say that x is greater than 0. The gradient in this case, because the function is one dimensional, is just the derivative. So the derivative can be represented by the value f prime of x. Over here, f prime of x, represented by the green line, is positive. So if we descend the gradient by moving in the opposite direction of the derivative. Everywhere that we're over here, where the green line is positive, gradient descent will move left and downhill. So starting here, we would trace the blue curve leftward until we reach its minimum point here. Where the derivative is 0, we are no longer told by the derivative to move in any particular direction. So we stop. If we started over here on the left side, over here, the derivative is negative. And we move in opposite the direction of the derivative. So we would actually apply positive updates to our input x. And we would move rightward along the function x squared until we reach the minimum and stop where the derivative is equal to 0. I've described a gradient descent basically in terms of this idea that we move downhill until we find a point where the derivative is 0. And the example of f of x equals 1 half x squared, there was only one point like that. In reality, there might be a lot of different points that have zero derivatives. Here I've drawn a function that's very squiggly and has several different local minima. Local minima are points that are smaller than in f of x value than all the other points surrounding them, but they're not necessarily the lowest point overall. So here, if we look to the left or the right of this point, we go uphill a little bit. If you go further to the left, we can find much lower points. Usually in the context of deep learning, we can't really expect to find this global minimum over here. We might want to do that, but it's probably not feasible. In practice, we often give up and find a point more like this one here. It's a local minimum, but the value of f of x is actually very low. So we've done a good job of reducing the value of the function, even if we don't find our way all the way to the bottom of the function. In practice, we don't even necessarily find a local minimum. In practice, we often just sort of get stuck for numerical reasons, and that's the topic of this chapter. I'm fast forwarding a little bit, and I'm showing you a figure from chapter 8. On the x-axis, I show you how long gradient descent has been running on a particular problem. In the two different plots, I show you two different things. On the left side, I show you how big the gradients are over time, specifically I'm plotting the norm of the gradient. Every little black dot is a different step of the gradient descent algorithm. So you can see it's kind of noisy. On different steps, it's not like we always see the same gradient norm twice in a row. It bounces around a lot. But I've fit a smooth blue curve to these lines. You can see how the gradient norm actually gradually gets bigger over time. Based on the plots that I showed you on the previous slides, you might expect that the gradient norm would shrink as you approach a local minimum and it can graduate go down to zero. It turns out that a lot of the time we actually just get stuck and can't really keep making progress toward regions of smaller gradient norm. So we stop when f of x has become very small rather than when the gradient has gone away. You could say maybe this plot that I made here where I show the gradient getting bigger over time, maybe that's an example of failure, maybe the algorithm is just broken. But actually if we look at the plot on the right, I'm showing you the error rate of a classifier that we're training with gradient descent. And this error rate decreases over time successfully and levels off to about state of the art accuracy for the problem that this is training on. So you can see that this is actually an example of the optimization algorithm succeeding from our point of view. It's not actually finding a local minimum. It's just finding a very low value of the function f of x that are minimizing and that low value turns out to be good enough for us to use the model. Someone has asked why don't we test a larger diversity when we've reached the local minimum wouldn't that tell us we could get a lower elsewhere. And the answer is yes, a lot of the time we do things like run multiple random restarts of the optimization algorithm. And sometimes you can find lower values that way. For a lot of problems, you also find that several different random restarts end up with about the same the same final value. Someone else asked, can you please explain gradient norm a bit? The basic idea is if you have an input to your function x with multiple coordinates, then the gradient gives you the derivative of your function with respect to each of those coordinates. And that tells us the direction we should go in to move downhill. If you measure the norm of that gradient, that gives you an idea of how steep the function is. It tells you how quickly you can expect the function to drop if you move in a specific direction. I'm going to skip the next question because it's answered later in the talk. And then there's one more question about how can the gradient increase when you are using a descent direction? Is it not convex? It turns out that the gradient can increase if you optimize a neural net because the function is not convex. It's also possible that if you use too large of a step size, the gradient can increase because you move to a region that's steeper. I think of the way that we optimize deep learning functions as more of a way of life than a strictly mathematical discipline right now. If you approach optimization from a really pure math point of view, you're usually looking to do something like find literally the smallest value of some function f of x. Or you might have some other formally defined criterion like you're looking for a critical point of f of x where the value is locally the smallest in some neighborhood. For deep learning, we usually have a more qualitative pragmatic approach where our goal is to just decrease the value of f of x a lot. And we aren't necessarily hoping to actually find even a local minimum. We just want to make the error rate go down until the error rate is low enough that our model can be used for some engineering application. Actually finding a critical point might be very difficult and a lot of the critical points we find may not be what we want. The next topic in our overview of iterative optimization is the effective curvature on these optimization algorithms. We've mentioned that gradient descent in theory will approach a critical point where the gradient is equal to zero. Here I show you three different kinds of critical points in one dimension. There can be a minimum where the function curves upward around the critical point and the critical point is thus lower in value than a critical point. There can also be a local maximum where the function curves downward so the critical point is higher in value than all the surrounding points. Or you can have saddle points where you actually are neither a minimum nor a maximum. Settle points make a little bit more sense in two dimensions. You can think of it as there's one axis where the critical point is a local minimum and another axis where the critical point is a local maximum. Local maximum are usually not much of a problem for optimization algorithms. The saddle points can be a problem for iterative optimization algorithms. There's one algorithm called the Newton's method where the basic strategy is to solve for a point where the gradient is equal to zero. If you're able to solve that problem algebraically you can jump to a solution right away. Unfortunately a solution in terms of Newton's method is not always actually a minimum. If you have a function that has saddle points in it these are also places where the gradient is zero. But they are not really a minimum because they're a maximum across some axes. So algorithms like Newton's method will accidentally teleport onto saddle points and get stuck. It turns out that for neural networks there are a lot more saddle points than local minimum. Fortunately saddle points are not a big problem for gradient descent. Unless you initialize directly on the saddle point gradient descent can escape the saddle point. If you look at appendix C of a paper called qualitatively characterizing neural network optimization problems I have some math there where I show why gradient descent is able to escape. We can characterize all of these different critical points by using curvature. As I said a local minimum is where the function curves up around around the point and the local maximum is where it curves down. We can also think of this as a way of predicting how well gradient descent will perform. Gradient descent basically says we're going to look at the slope of the function and we're going to pretend that the function is linear nearby our current x value. And then we're going to move in a direction that will make our linear approximation go downhill. The amount of actual payoff that you get from that depends on how curved the function is. If your function is perfectly linear, if you make a linear approximation to the function then it will just overlay the function exactly. So here you can see I've got this dashed green line overlaying the blue line. If we take a little step according to the direction of the derivative we're going to decrease the function f of x by exactly the same amount that our linear function predicted. And that means that these iterative search algorithms where we always just take little steps moving downhill are going to work really well regardless of the size of step that we use. If we have negative curvature where the function curves downward as you move away from the current point then we're actually in a very nice situation where if we take a little step of the curve, we're going to take a little step of the curve. If we take a step that was predicted to reduce the dashed green linear function approximating f of x will find that f of x actually decreases even more than our approximation predicted to do to do. So if we can find directions of negative curvature there a good way to reduce the value of the function very quickly. Unfortunately what happens a lot more often is we have directions of positive curvature with directions of positive curvature the function curves up relative to the linear function. So we have two small steps we end up not nearly decreasing the function as much as we wanted to. And in fact if we take two big of a step we can accidentally increase the function value we can overshoot the minimum in this direction and go back uphill. That's why we start looking at what's called the numerics of the function we look at how much curvature there is to this function and see how it affects our ability to take large steps to search for the minimum value of the function. Someone asked what was the name of the paper that I just told you can actually see that in the slides they're available at deep learning book.org. So far I've shown you these one dimensional examples of curvature but in practice x is an end dimensional vector and we need to understand how the curvature affects the function in many different directions. We can do that using the Hessian matrix the Hessian matrix is a matrix containing all of the second derivatives. So if you look at row i and column j of the Hessian matrix you'll find the derivative where first we take the derivative and direct with respect to x i and next we take the derivative with respect to x j. It turns out that you can use the Hessian matrix to compute the second derivative in a particular direction d. You can do that by computing d transpose hd where d is a unit vector describing the direction where you would like to get the second derivative. It turns out that there's actually some nice intuition for what second derivative you'll get. Hessian matrices are usually symmetric assuming that different properties of the function are held and a symmetric real valued matrix has an eigen decomposition in terms of orthogonal eigenvectors and eigenvalues associated with each eigenvector. So you can write all of the eigenvectors in a matrix q and they become this orthogonal basis for the space that you're in and then you have a diagonal matrix of eigenvalues. If we look back at some of the slides from chapter two we can see what happens when we multiply by a matrix that has particular eigenvectors and eigenvalues. If we start out with a bunch of points that are represented by this blue circle here and we multiply each of these points by a matrix that has eigenvectors v1 and v2. We'll see that each of the points get stretched away from the origin according to the eigenvalues of the matrix. So if you have a large lambda one eigenvalue associated with v1 you'll actually stretch out the circle in this direction. Points will get pulled further out by a factor of lambda one. And then if you have a small eigenvalue associated with direction v2 points will get pulled inward. So you can see that these directions will be when you multiply h by d, d will either get stretched or shrunk according to how big or small the eigenvalues of the Hessian are in that direction. And then when you take the dot product with the direction again you'll end up just measuring the size of that vector. So you'll end up saying that the second derivative is based on how much the Hessian shrinks or stretches your vector in that particular direction. But what happens if your direction is not an eigenvector? Well then it turns out that you basically interpolate based on the eigenvectors that are nearby. You can compute the second derivative as a sum over all the different eigenvalues. And you multiply by this term that measures how similar the direction you're looking in is to that corresponding eigenvalue. You can kind of see that in this plot that if you have a direction that's very closely aligned with eigenvector two, you're going to get your directions stretched by approximately eigenvalue two. And then as you move towards eigenvalue one, the amount that your direction gets stretched is going to scale gradually up to the amount of stretching that comes from eigenvalue one. If you're never going to stretch more than the maximum eigenvalue, you're never going to stretch less than the minimum eigenvalue. We can use these eigenvalues to figure out what the optimal step size is likely to be. So first off, if we have a direction of negative curvature, even a second order approximation would tell us that we can keep stepping forever. That's probably not going to be true for a neural net because it's very non-linear, very, it's not even really quadratic. It's likely to start going back uphill at some point for a large step size. The main place where the Hessian tells us a lot of information is if we look at the case of positive curvature, we know that if we start following the linear function downhill, we can decrease the value of the function. But if we step too far, we'll start to go back uphill. We don't want to step any further than this minimum point here. We can make a second order Taylor series approximation to the value that we'll get when we take a specific gradient step. We can say we're starting off at some point x0 and we're taking a gradient descent step where we move by step size epsilon multiplied by a gradient g. The first order Taylor series approximation, or second order Taylor series approximation tells us that the value at this new point will be approximately equal to the value at our current point. Minus epsilon times the squared norm of the gradient. This is the first order Taylor series term. Plus one half epsilon squared times the gradient multiplied by the Hessian multiplied by the gradient. This here is the directional second derivative in the direction of the gradient, but also scaled by the size of the gradient. So if we then solve this equation for the minimum predicted value that we'll get after the step, we solve it in terms of the step size. Assuming that we're looking in a direction of positive curvature, we find that the optimal step size is equal to the squared norm of the gradient divided by g transpose hg. So what does this tell us overall? The numerator says that if the gradient is bigger, we can take bigger steps. So big gradients will speed up the optimization algorithm. In the denominator, we actually see that this g transpose hg term can shrink the optimal step size a lot. So if the gradient happens to point in a direction that's aligned with an eigenvector of the Hessian that has a big eigenvalue, you have to slow down a lot. Otherwise, we'll overshoot the minimum and go back up hill. Overall, this shows us something about why when we actually run an iterative search in practice, we may not actually arrive at a critical point. Over time, we'd expect the gradient to get smaller and smaller, but we'll often also find for the kinds of optimization problems that come up with neural nets. We'll find that this g transpose hg term gets very big and we're just not able to make very big steps anymore, even if the gradient remains large. We can measure this with something called the condition number. The condition number looks at the largest ratio we can find between two of our eigenvalues. If there's a very large eigenvalue and a very small eigenvalue, it means that when our gradient points in the direction of the large eigenvalue, we're forced to take very small steps. We have to do that even if sometimes the gradient would point in the direction of a small eigenvalue and it would be safe to take larger steps. Basically, if there's a wide range of eigenvalues, gradient descent has to miss out on a lot of the potential value that it could find on each step. It has to keep the step size small to avoid accidentally going up hill. You can see this with this contour plot. Here we're minimizing a quadratic function. Each of the black rings shows a set of points where the function is set. The function is of equal value. At the middle here, we've got a minimum of the function. Every time we see a ring on our way out, we're taking a step up in value of the function. The red path is showing how gradient descent moves. Ideally, gradient descent would want to just point straight at the minimum and go straight there. Instead, we keep finding that the gradients tend to point across this canyon. We keep going down the canyon wall, overshooting the bottom of the canyon and coming to the other side of the canyon. We're going this zigzagging fashion where we're always walking up or down a canyon wall instead of flowing down along the bottom of the canyon. You can see this with neural networks. That same paper that I mentioned earlier includes this visualization of a little 3D representation of what happens in a neural net optimization problem with the gradient descent. We can see that towards the end of training, gradient descent, as represented by this blue path, is moving down this really tight canyon with the green 3D mesh. The gradient is actually still pretty large here, but the curvature is even larger and the curvature makes it really hard to take large steps. Some things about this visualization are a little bit hard to understand because when you work with multiple dimensions and project them down to just a few dimensions, some things can be lost. So one thing that we can't see here is that this blue curve is actually zigzagging a lot, just like in the previous visualization. It's just that the way that we made this plot means that we can't actually see the other dimensions where it's zigzagging. But those zigzags are stopping it from moving a lot faster along the bottom of this canyon. The last topic that we'll cover for iterative optimization is the idea of constrained optimization. And I don't actually have a lot to say about this. I'm just going to very quickly mention a little bit about how it works. If you have constraints for a function, like if you have some values, g, that measure some, how much you deviate from exactly satisfying a constraint or some values, h, that measure how far you are on the wrong side of some inequality, you can actually take your original function, f of x, and transform it into this new function called the Lagrangian function. Where you penalize the function for violating those constraints. And you can then solve, instead of just a minimization problem, you can solve a minmax problem where you want to keep increasing the coefficients on those penalty terms until you satisfy the penalty terms. This will give you a solution to the constrained optimization problem rather than just letting you search over all of space. In this book, we usually use this Lagrangian, or this is also called the KKT version, when you include both the exact and the inequality constraints. In this book, we mostly use this approach for solving problems in theory. Like if we want to show that the Gaussian is the probability distribution of the highest entropy, we can use some of these penalty terms to constrain that the function we're searching over is a probability distribution that's non negative and sums to one. In practice, if we actually want to write a program that we run where we use several iterations to search for a solution, there's a much easier thing you can do instead of having this minmax problem and Lagrangian penalties and so on. You can just project x back to the nearest point that satisfies the constraints after each step. And that's a very practical, easy to implement way of solving these kinds of problems. Someone has asked which data visualization did you use to plot the data points and for that, you should read the paper. It's a visualization that became up specifically for that paper. It's not a standard technique. Someone else asked what happens if we do not choose the direction where the gradient points, but select the direction where the step we can take is maximal. So yeah, you can actually look for directions where you intentionally seek out negative curvature and so on. It turns out to be difficult to do that in high dimensional space. Someone asks what gradient to set up the measures we'd recommend. I would say usually Adam or gradient descent with momentum are pretty good. And a lot of the time you should consider using gradient clipping. The next part of our overall roadmap is to discuss what happens when we have rounding error, when we have underflow overflow, all of these issues that happen when we use a finite number of bits to represent real numbers. This is really important. I know it sounds kind of boring to talk about this low level stuff with bits, but writing numerically precise code is actually a deep learning super skill. A lot of the time you'll find that deep learning algorithms sort of work when you code them up. The loss will go down, the accuracy will go up, the accuracy will get within a few percentage points of the state of the art. And you can check your code really carefully and you can find that there aren't really any bugs, but maybe there are some things that aren't quite optimal about it. And that's often caused by a loss of numerical precision where you run your gradient descent algorithm and you don't get quite of good results as you think you should. And another time you'll find that your deep learning algorithm explodes. You get a lot of not a number of values, you get a lot of very large values. And this might happen even if you make your learning rate relatively small and you think everything should be stable. Both of these problems actually usually come from writing code that doesn't have high enough numerical precision. So being able to write numerically precise code can really differentiate how well you perform as a deep learning practitioner. A lot of people have heard the story of how when I first thought of generative adversarial nets, I was at a bar and I went home and I coded them up immediately. And you know within an hour or so later, I actually had them working. A lot of people have went through how I was able to do that. And part of the answer is that I knew about all of this really boring numerical precision stuff. So I didn't waste any time shooting myself in the foot writing numerically and precise code. And that reduces the amount of time it takes to get the algorithm working a lot. The basic idea is that when you use a finite number of bits to represent a real number, you get both rounding errors and what are called truncation errors. In a digital computer, we're usually talking about using float 32 or some other similar schemes to represent real numbers. That's especially true when we're using kuda on GPUs. Sometimes we use other floating formats. A lot of the problems I'm going to describe here will often mostly go away if you're able to switch to float 64. But that usually requires a slower computation on GPU or may even force you to move to CPU. It will also force you to use more memory. So if you can write numerically precise code using float 32, then that can be a big advantage. There's basically three categories of problems that happen on these kinds of 32 bit representations. So first, most numbers that you work with, they're not going to cause catastrophic problems on their own. But they are going to get rounded. If you have some real number x and you turn it into a representation on computer, it's going to get rounded to some value x plus delta, where delta is just some small value describing the rounding error that happened. So you'll be off by a little bit from what you meant to be. A larger problem is when you have some extremely large value of x, you just can't represent it with the range of numbers that your float 32 values can represent. And it will actually get replaced by some placeholder like in just saying that x is too large to represent. So it's not really a finite value anymore. You've got this infinite number and your code will probably still go ahead and keep doing arithmetic on this number as if it were a real value and then you'll get in trouble. There's another topic which is still basically a kind of rounding error, but it's a particularly harmful kind of rounding error. So if you have a small value of x, it can get replaced by zero. This is especially harmful because a lot of the algorithms in deep learning often assume that we have some very small but non zero variable. Like for example, if you use the logistic sigmoid activation function, you can pass very negative values to the logistic sigmoid. And algebraically, they'll never become quite zero, but in a computer they can definitely get rounded down to zero. And so people are asking, aren't these numerical issues already addressed in the current deep learning libraries? And the answer is basically yes, but you need to know when to look out for them. A lot of the time you write your own code and you might end up rewriting a version of something that already has an numerically stable variant. Sometimes you might need to, for example, compute a softmax over several tensors instead of just one tensor. And you'll need to know how to do that in an numerically stable way if your library only provides a softmax for a single tensor. Some other people are asking if there's any pointers on the best way to deal with nants. That's basically what the next several slides will do. Someone asks, how does the 64 bit representation solve the nane error? The basic idea is that if you have 32 bits, there's a certain range of values that you can represent. If you have 64 bits, that range expands. So a program that might cause a noun when you use 32 bits might actually avoid the noun when you use 64 bits. If you use a program that uses even bigger numbers, you can eventually still get nants for 64 bits. It's just that fewer programs cause problems using 64 bits than using 32. One example is if you look at the pilot and two repository that I used to work on in grad school before we had tensor flow, you can look at some of the unit tests. And when I compute the k-old divergence between two Gaussian distributions. If I use float 64, the unit test expects the k-old divergence to have a minimum value of 0. But if I use float 32, the unit test actually has to allow the k-old divergence to go slightly negative. So one example of how we can get rounding errors and they can affect this code is what happens when you add a very small number to a larger number. So we're going to make an array using 32 bit floats and we're going to store the value 0 and the value 10 to the minus 8 in this array. If we compute the arg max of this array, the arg max is 1 because position 0 has a value of 0, position 1 has a positive but very small value of 10 to the minus 8. So now suppose that we take these numbers and we add them to a much larger number, we add them to 1. Well, 0 is going to have 1 added to it and end up with a value of 1. Ideally, 1 plus 10 to the minus 8 would be represented as 1. But it's like 1 point, you know, 0, 0, 0, 0, 1 after the correct number of 0s. In this case, it's actually going to get rounded to 1, which isn't quite what we want. When you take the arg max of the newer array where we added 1 to it, we actually get that the arg max is 0 now because numpy breaks ties to the first index that's tied for the max. So this addition of a number that caused rounding error has actually downstream changed the results quite a lot. We only really wanted to extract a single bit from this computation and we're now actually getting the value of that bit wrong. There's some secondary effects that happen when we have rounding error and overflow and underflow errors. What happens is after the first error, we do some more math and then the second error causes a bigger problem. So for example, so we have some code that computes x minus y. x minus y is a relatively safe thing to do to start with. There's definitely some ways that can go wrong, but there's not anything fundamentally wrong with doing a subtraction. But now suppose that x overflows to nth, y overflows to nth. Well, then we've got infinity minus infinity and we don't really know which infinity is larger. This kind of operation is not really defined. So now our x minus y will turn these in to nth. A lot of the time when you have overflow, the way that you first see it is that you'll get a nth in your loss function or your gradient. So somewhere in your computational graph, you'll get an inth. And then by the time it actually gets printed out or plotted somewhere, it will have been turned into a nth by these additional steps of arithmetic that came afterward. One of the main functions that's often the culprit of numerical precision problems in deep learning programs is the x function that computes the natural logarithms base e raised to the power of x. This will overflow for large values of x. And a lot of the time when I say large values, I am talking about extremely large values. For x, when I say large values, I'm actually talking about numbers that are not very big. If you're using float 32, a value of 89 past 2x will overflow to nth. To make sure that your program doesn't have trouble with x, just never use large x as the argument for x. And make sure that you design the structure of your functions that you compute so that they will never actually pass a large x to x. A lot of the rest of this lecture will be about ideas for how you can prevent that from happening in specific cases. The other big problem with x is that if your argument to it is very negative, x of x can underflow. This may not be a problem. If you think about it, x of a very negative number is just some small number epsilon. And if you round that number down to zero, you've only made a mistake of size epsilon. So if that was your final output of the function, it's not a very big error. Unfortunately, if you then do other math on top of this output, rounding a small number epsilon down to zero can be catastrophic. If you're using x of x in a denominator, or as an argument to a logarithm, it can cause really big problems. Another case where you can sometimes encounter danger is when you have subtraction, especially if you want to guarantee that the output of the subtraction is going to be positive. You have two values x and y, and you know algebraically that you can prove that x is always greater than y. In a computer, you may actually find that x minus y ends up being negative. So if you relied on x minus y being positive in subsequent steps of your program, you could run into trouble. One case where you see this a lot is computing the variance. So there's one way that you can write the variance, where it's the expectation of a squared value. If you implement the variance this way in your code, it's always going to give you positive numbers. Because the output of the squaring value will always be non negative. I shouldn't say positive. And then if you look at the difference between the expectation of the squared value of the function and the square of the expected value of the function, algebraically, that's a perfectly valid way of rearranging this expression for the variance. A lot of times this is actually the one where we actually have access to those values to compute it. Unfortunately, it's numerically unstable because if we have a little bit of rounding error on the left and a little bit of rounding error on the right, and these values were very close to zero to start with, if the rounding error goes in the wrong direction, we can end up with a small negative value instead of zero. And that can cause trouble, especially if you were planning to pass this value to a square root or logarithm later on. Loggertham and square root are also functions where you want to be very careful. The logarithm of zero is negative infinity. And the logarithm of a negative number is imaginary, usually in software frameworks like NumPy, we end up treating that as a not a number. The square root of zero is zero, so that's actually safe. But the derivative of square root has a divide by zero if you take the derivative at x equals zero. So you definitely want to avoid underflow or rounding to a negative value in the argument to either log or square root. One very common place where this comes up is when we compute the standard deviation. The standard deviation is the square root of the variance. So if you compute the variance using the dangerous strategy from this slide, you can end up with this rounding to a small negative number. And then you take the square root of that small negative number and run into trouble. The logarithm of x is a common pattern that comes up a lot in deep learning. We often see this when we're computing log probabilities and the probability is based on taking the x of some argument. Whenever you see this, you should simplify it to just the value x. Fiona will do this for you automatically. A lot of frameworks don't. And if you do this, you can avoid overflowing the x because you just take x rather than competing x of x first before competing the log. You can also avoid underflow in x, which would then cause the logarithm to turn into negative. So now I have a little bit of an exercise for you. Let's say that we're doing a little bit of a hack to avoid a divide by zero. We want to take a normalized, what to compute a normalized version of x where x will have unit standard deviation. And we divide x by some estimate of the standard deviation in order to do that. We know that our standard deviation might have some round to zero trouble. So we're going to add a small constant epsilon of 10 to the minus 7 to our standard deviation in order to make sure we don't divide by zero when we compute the normalized version of x. So there's two different ways we can imagine doing this. One is we could take the square root of epsilon plus the variance and use that as our standard deviation. The other version of the hack is we could take epsilon plus the square root of the variance. So which of these is the better way to implement this hack? Does anybody want to answer on the chat? The first one. So why do you say the first one? Oh, you got a vote for the second one as well. So does somebody want to give a reason for one of their votes? So the square root of apps will be too small. That can definitely happen if your apps is already just barely as big as you can represent and variance is zero, it can round down. There's also another issue here, which is think about what happens if the variance is already implemented safely. And we know that it won't get rounded down too low. And let's also suppose we make epsilon a little bit bigger. So if we divide by a square root of epsilon that won't give us divide by zero. Is there any other problem that might come up here? So there is one other problem that might come up here. If we use this version, where we have the epsilon plus square root of the variance, we can actually get. When we compute the derivative of normalized acts later on, we can have this problem that the square root of the variance might be evaluated exactly for the variance being equal to zero. And when we take the derivative of square root, we actually get it divide by zero in that case. So usually you want to put the epsilon inside the square root, but you do need to make sure that your epsilon is big enough that it won't get rounded down to zero when you take the square root. Another function that comes up all the time in deep learning is log sum x. You see this in things like the cross entropy function. The naive way of implementing this is if you have an array, you apply x to the array, then you sum out the x values, and then you take the log at the end. The failure modes to this are those two different ways it can go wrong. One is if any of your entries in the array is big, your x can overflow. So you just take x of some large number in float 32, a value of 90 would do this to you. You overflow. Now you've got an in here. When you start doing arithmetic on the in it's probably going to turn into a noun pretty soon. And that one's relatively obvious. A lot of people realize that that one's going to happen. Another case that this can fail is if all of the entries in the array are very negative, then all of the x under float is zero. Individually, each of these mistakes in the x is not a big deal. The x of a very negative number is some small number epsilon. You round that to zero. Your error is only order of epsilon. The problem is when you sum up all the zeros, if all of them are literally zero, then the sum is also literally zero. And then you pass that to a log. So you get a negative end at the end, even if that's not not algebraically the correct answer. So the good news is there's a relatively simple trick that lets us fix this. The way it works is we take the maximum of the array, and then we subtract the maximum off all of the entries. Then we compute log sum x of this new safe array that had the max subtracted off of it. And we add the max back on to the result after we take the log. Intensive for those, there's a build in version that does this for you. TF.Reduce log sum x. You do need to know to use that though. Someone was saying, don't all the deep learning frameworks already solve this. Well, a lot of them provide solutions to it, but you have to know to use those solutions. So whenever you see yourself doing a log sum x, be sure to use this stable variant of it. If we look at why this works, first off, we need to make sure that we're actually computing the value that we want. We want to see that the new expression is algebraically equivalent to the old one. So the way we can see this is we've got this variable m representing the max. We've got this vector a representing the array. The new value that we're computing is m plus log sum over i of x of a i minus m. Well, each of these x terms, we can use the fact that x of a i minus m turns into x of a i divided by x of m. And so we've simplified these terms inside the sum. Now it turns out that every term in the sum has this factor division by x of m. And this factor doesn't depend on i at all. So we can actually pull it outside the summation. So now we've got this one over x m factor multiplied by this summation factor. Well, a logarithm of two factors can be split into into the sum of the logarithm of both those factors. The logarithm of one over x is actually just negative log of x. So we get m minus log x m plus the sum over all these factors. This log x obviously that turns into the identity. So we get m minus m this cancels and I actually have a mistake I left at the log here, but there should be a log right there. So we've actually recovered the original version of the expression that we're trying to optimize. So the other thing we need to check to see that this works is we need to make sure that the two failure modes we identified earlier are gone. So we notice that there is a way that we can overflow the original version. We've also noticed that there was a way we could underflow every term of the original version and then get a negative int when we pass it to the log. So first let's look at the overflow case because we subtract off the max all of the entries of safer ray are at most zero. X m is zero is just one so we can compute that without any overflow. So we've eliminated the overflow problem. Next there was the case where every value of the x under flows. Well, we can still have a problem where some of the x terms under flow. The good news is subtracting off the max actually means that there has to be at least one entry of safer ray that's equal to zero. Any entries that were tied for the max now have a value of zero. And so those are not going to underflow when we kick the x they'll get a value of one and that's a nice stable value that can be computed easily. That means that the sum is now at least one and we can safely pass that sum to the logarithm. So someone is asking if there's any book or blogs summarizing all these numerical computation problems in the context of deep learning. There are definitely books about numerical computation. A lot of them don't really focus specifically on the problems that come up a lot in deep learning. And I don't actually know of one that is focused in that way. I will probably write an article about it or add it to the second edition of the deep learning textbook. But I don't know of a good resource to point you to yet other than this lecture. The softmax function comes up all the time in deep learning. We use it as the output of most neural nets for classification for generating text for selecting discrete actions in reinforcement learning agents. The main advice for the softmax is that you should use your library's built in softmax function. If you try to make your own it's easy to mess up and get a numerically unstable version. If you do build your own the way that you should do it is you should take the argument to the softmax, the logits, and you should track off the maximum value before you pass it through the softmax. The reason this works is very similar to the log sum x. I won't walk through exactly what all of the justification for it is. But it's basically the same logic as what we just saw with log sum x. The sigmoid function is also very common in deep learning. And it's essentially the same thing as softmax. It's basically a softmax where one of the inputs is hard coded to zero and you pass out just one of the outputs. So once again the recommendation is to use your libraries build in sigmoid function. If you don't you can you can stabilize it using the same trick as with the softmax. The cross entropy function is the loss for most neural nets that we train, especially if you have a softmax output. Everything that I say here also applies with sigmoid just replace the word softmax with sigmoid. This is probably one of the most common things that I see people screw up in deep learning is they implement their own cross entropy function and they compute it using the probabilities. They actually literally apply the softmax and then compute the loss. What you actually want to do is use the logits, the values output by the neural net before you get to the softmax. And you want to compute your loss in terms of those. The reason is the probabilities will lose gradient when the softmax saturates. The cross entropy function won't saturate unless you're already getting the right answer and then you don't need any gradient because you're already winning. The short recommendation for how to write good code is to use an numerically stable version of the cross entropy function that's already provided to you by your library. If you're using tensor flow, you can use cf.nnd at softmax cross entropy with logits. If you're using another software framework, you need to be very careful and check that it actually is computing the cross entropy using the logits rather than the probabilities. A lot of frameworks screw this up and use the output of the softmax rather than the input to the softmax. It's a common enough problem that I've actually seen this in frameworks that I've used. If you do make your own cross entropy function, you should use the stabilization tricks for the softmax and the log some acts that come up inside this loss function in order to stabilize it. In general, if you have some bugs that you're encountering, there are a few really simple strategies that you can follow to catch them. One thing is that if you increase the learning rate for your gradient descent algorithm and the loss function value gets stuck, that for a very large learning rate, you find that your loss is flat over time as you take more steps. That probably means that the gradient is getting rounded down to zero somewhere in your graph. You are probably losing numerical precision and ending up without a gradient. Otherwise, a large learning rate should make you move faster and faster and actually cause explosion rather than getting stuck. The most common way that I've seen this happen is when the cross entropy loss is calculated using probabilities instead of logits. If the softmax rounds a probability to one or zero, then the gradient through it is gone and you can't do very much about it. A lot of the time people that encounter this problem with extreme values of the softmax will sort of hack around it by clipping the value of the softmax somehow or other to avoid extreme values. That will make sure that you don't get nands in the forward prop like when you take a log of the softmax. But it will also mean that you get zeros in the back prop when you try to compute the gradients. That's a really common bug and it's pretty easy to identify by the learning curve being flat. I've actually seen this in a third party open source implementations of generative adversarial notes. This is one of those cases where it will look like you don't have a bug because if you use a small enough learning rate, your code will basically work. But it just won't perform quite as well as it ought to. If you use a large learning rate, then it will break and it will look like the algorithm is not robust to hyper parameters. But really the problem is that your code is not numerically precise enough to handle some of the larger larger learning rates. Another one of the bug hunting strategies I use is just if you see an explosion immediately become very suspicious of anywhere that you see a log x square root or division in your code. And just look and see if you're doing it divide by zero a square root of a negative number and x of a large number and so on. Also, you should always suspect the code that has changed the most recently. So for example, if you were running your code and everything's fine and then eventually you add something like batch norm and suddenly see explosion, then you should probably suspect that maybe the problem is when you divide by the square root of the variance in your batch norm. And that's very likely to be where the problem is. A lot of the time I find that when I'm helping people like interns or brain residents, just following this bug hunting strategy with my colleagues at Google Brain will help me almost immediately solve problems that were very mysterious for someone who is new to deep learning. And if you can learn this pattern, it can accelerate your workflow quite a lot. Okay, thanks glad you enjoyed the talk. Thank you.",
+  "video_number": 5
+}

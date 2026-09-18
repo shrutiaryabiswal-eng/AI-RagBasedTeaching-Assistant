@@ -1,0 +1,1404 @@
+{
+  "chunks": [
+    {
+      "title": "image_processing_high_res",
+      "start": 0.0,
+      "end": 9.8,
+      "text": " Welcome back to Medical Engineering and today we want to continue our little excursion through"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 9.8,
+      "end": 15.0,
+      "text": " the theory but you'll see that we'll get much more applied in the next couple of videos"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 15.0,
+      "end": 23.44,
+      "text": " because in the next two videos we want to talk about actual 2D signal processing and"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 23.44,
+      "end": 29.04,
+      "text": " the first thing that we want to look at is an introduction into 2D image processing and"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 29.04,
+      "end": 36.2,
+      "text": " we'll start with simple operations and expand them to linear system theory and filters"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 36.2,
+      "end": 41.48,
+      "text": " and then in a second step we will look into non-linear systems."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 41.48,
+      "end": 45.2,
+      "text": " So I hope you enjoy the 2D image processing with me."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 59.04,
+      "end": 80.8,
+      "text": " So here we are at with the Medical Engineering Systems and today the topic will be image processing."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 80.8,
+      "end": 84.88,
+      "text": " So let's have a look at the basics of image processing."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 84.88,
+      "end": 93.44,
+      "text": " Now an image is essentially a 2D function and you can think of the image as a function that"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 93.44,
+      "end": 99.72,
+      "text": " essentially is on a grid space where you could say essentially every column and every row"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 99.72,
+      "end": 106.52,
+      "text": " is a function or a signal as we've discussed earlier and now we have to expand the space"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 106.52,
+      "end": 110.67999999999999,
+      "text": " and to be able to work with these 2D signals."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 110.68,
+      "end": 117.4,
+      "text": " On the right hand side you see an visualization and you can see here that we have the red function"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 117.4,
+      "end": 123.12,
+      "text": " which is essentially one column and this is a sequence of values that you can see here"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 123.12,
+      "end": 128.48000000000002,
+      "text": " plotted and we also have the blue function which is essentially one row and it's again"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 128.48000000000002,
+      "end": 130.96,
+      "text": " a sequence of values."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 130.96,
+      "end": 136.96,
+      "text": " Together these grey values here in this example form a 2D image."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 136.96,
+      "end": 143.76000000000002,
+      "text": " Now you see the lady here that is actually Lennar and this is one of the first images"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 143.76000000000002,
+      "end": 146.16,
+      "text": " that was used for image processing."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 146.16,
+      "end": 153.96,
+      "text": " It actually originates from a magazine that was published in November 1972."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 153.96,
+      "end": 160.32,
+      "text": " So at that time there were not so many scanners and digital images available."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 160.32,
+      "end": 166.56,
+      "text": " It happened that one of those images were scanned so they took a subsection of one of"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 166.56,
+      "end": 170.16,
+      "text": " the largest images that they could find in the magazine."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 170.16,
+      "end": 176.88,
+      "text": " They scanned it and actually this image became kind of iconic and has been used in image"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 176.88,
+      "end": 179.68,
+      "text": " processing over and over again."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 179.68,
+      "end": 186.0,
+      "text": " So Lennar became extremely popular and she has also been invited although she didn't"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 186.0,
+      "end": 191.52,
+      "text": " know about her fans in the image processing community so she has been invited actually"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 191.52,
+      "end": 200.48,
+      "text": " to a couple of conferences and she is still being welcomed warmheartedly on various conferences"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 200.48,
+      "end": 206.56,
+      "text": " and today people still use this image in order to test their algorithms."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 206.56,
+      "end": 213.2,
+      "text": " Well actually there's many other image sets that people experiment with now but sometimes"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 213.28,
+      "end": 217.44,
+      "text": " for nostalgic reasons this image is still being used."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 217.44,
+      "end": 225.35999999999999,
+      "text": " Note that only this subsection that we are showing here is being used and the full image is not"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 225.35999999999999,
+      "end": 230.0,
+      "text": " being commonly used in the image processing community."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 230.0,
+      "end": 235.6,
+      "text": " So just that you don't get the wrong impression it was just one of the images that was lying"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 235.6,
+      "end": 242.0,
+      "text": " around and that they had access to and they decided to use the subsection of the image."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 242.72,
+      "end": 244.4,
+      "text": " What's the digital image?"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 244.4,
+      "end": 252.16,
+      "text": " So let's go back and think of our function space and what you can see here is a highly magnified"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 252.16,
+      "end": 260.32,
+      "text": " image so this is just showing a couple of black and gray dots and what you see here is that"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 260.32,
+      "end": 266.32,
+      "text": " essentially every color, every shade of gray is associated to a value."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 266.32,
+      "end": 271.84,
+      "text": " So the gray that you can see here it's a light gray so it's associated to the value 200"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 271.84,
+      "end": 277.52,
+      "text": " and the dark color, the black is associated in this example to the color 35."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 278.4,
+      "end": 286.47999999999996,
+      "text": " So essentially every shade of gray is associated to a number and this number originated from"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 286.47999999999996,
+      "end": 289.91999999999996,
+      "text": " a sampling process as we discussed in the last video."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 290.64,
+      "end": 297.67999999999995,
+      "text": " Obviously these are the images that are used to introduce image processing what we will work with"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 297.68,
+      "end": 305.6,
+      "text": " much more frequently are of course medical images and one thing that is very peculiar about"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 305.6,
+      "end": 312.40000000000003,
+      "text": " medical images is that they often have more gray values, more shades of gray, that you can actually"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 312.40000000000003,
+      "end": 317.84000000000003,
+      "text": " show at the same time on your monitor and actually more than you can perceive."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 318.72,
+      "end": 327.04,
+      "text": " So the human visual system can approximately differentiate 256 different shades of gray."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 328.48,
+      "end": 333.6,
+      "text": " You cannot differentiate more or the average human being cannot differentiate more and if you"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 333.6,
+      "end": 342.40000000000003,
+      "text": " display them you will see that they appear as a continuous color gradient or gray value gradient"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 342.40000000000003,
+      "end": 349.52,
+      "text": " on your screen. So in order to be able to visualize all of the information that is in the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 349.52,
+      "end": 356.08,
+      "text": " medical image we have to use tricks. One trick that you could come up with is using different"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 356.08,
+      "end": 362.0,
+      "text": " gamma values and you see them here we can do a gamma correction which is a non-linear scaling"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 362.0,
+      "end": 370.64,
+      "text": " of the gray values and if we would do so we would be able to focus more on the skull or on the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 370.64,
+      "end": 377.91999999999996,
+      "text": " brain and change the color values. This however is not so frequently used in medical imaging."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 378.56,
+      "end": 385.76,
+      "text": " What is much more common is so called window leveling. So here we have an example of a"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 385.76,
+      "end": 394.64,
+      "text": " CT image and we know that Huntsville units denoted as HU here are associated to different materials"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 395.44,
+      "end": 402.0,
+      "text": " and on the left hand side and the right hand side you see exactly the same image but displayed"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 402.0,
+      "end": 410.15999999999997,
+      "text": " in a different window level. So minus a thousand Huntsville units is air and plus a thousand Huntsville"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 410.24,
+      "end": 418.48,
+      "text": " units is bone or contrast agent and you see here that we can visualize all of the materials on the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 418.48,
+      "end": 426.16,
+      "text": " left hand side ranging from air up to contrast agent that you can see in the heart and the bones"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 426.64000000000004,
+      "end": 434.16,
+      "text": " and then on the right hand side image water-rich materials such as water and soft tissues are"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 434.16,
+      "end": 442.16,
+      "text": " around zero Huntsville units and if we pick a fresh out that is above zero Huntsville units only"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 442.16,
+      "end": 448.88000000000005,
+      "text": " the contrast agent and the bone will be visible. So what you see in this image is the contrast agent"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 448.88000000000005,
+      "end": 455.6,
+      "text": " in the heart and the bones and you see that this is an interventional scan so there is still some"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 455.6,
+      "end": 463.84000000000003,
+      "text": " residual artifact that you see at the bottom of the scan and this was caused by a truncation"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 463.84,
+      "end": 470.32,
+      "text": " at the end of the volume. So also sometimes these scans have associated artifacts and you have"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 470.32,
+      "end": 476.79999999999995,
+      "text": " to know about the problems that can arise in the scanning process in order not to misread"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 476.79999999999995,
+      "end": 484.88,
+      "text": " the information here. So for sure there is no ring-like bone structure at the bottom of the scan"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 484.88,
+      "end": 491.67999999999995,
+      "text": " here but this is artificially created by the reconstruction method and if you're reading these"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 491.68,
+      "end": 497.28000000000003,
+      "text": " images if you're interpreting these images you have to know about this. Obviously there is a"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 497.28000000000003,
+      "end": 504.48,
+      "text": " wide range of variations that you can pick for windowing and thresholding and this is why I have a"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 504.48,
+      "end": 519.12,
+      "text": " short video where we are playing with the window and threshold in different settings."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 521.68,
+      "end": 551.04,
+      "text": " So what you see is that the image is actually composed of different grey values."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 551.8399999999999,
+      "end": 559.52,
+      "text": " Now what I'm showing here is called a histogram and a histogram is essentially a kind of"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 559.52,
+      "end": 566.64,
+      "text": " probability distribution because you count the frequency, the occurrence of every grey value."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 567.4399999999999,
+      "end": 578.56,
+      "text": " So on the left hand side example we have grey values from 0 to 255 so 256 different shades of grain"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 578.64,
+      "end": 591.28,
+      "text": " and you can see on the y-axis how often that respective color or grey value appeared in the image."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 592.16,
+      "end": 600.3199999999999,
+      "text": " So the histogram doesn't contain the spatial information anymore but it tells you which grey value"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 600.3199999999999,
+      "end": 607.5999999999999,
+      "text": " occurs how frequently. Now if we change the window and level what we're essentially doing is"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 607.6,
+      "end": 615.76,
+      "text": " we're adjusting the histogram and here on the right hand side you can see a rescaling of the same"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 615.76,
+      "end": 625.76,
+      "text": " histogram to only 16 bins. So here we have pooled neighboring grey values in order to reduce"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 625.76,
+      "end": 632.1600000000001,
+      "text": " the number of grey values in that particular image. Obviously this would have a large impact"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 632.16,
+      "end": 639.28,
+      "text": " on the displayed image and you could immediately see that I adjusted the number of grey values."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 639.28,
+      "end": 646.24,
+      "text": " So this is something that we want to in the following. Now let's go back to our example image."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 646.24,
+      "end": 652.56,
+      "text": " So here you see our famous learner and if you look at the associated histogram here on the right"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 652.56,
+      "end": 660.7199999999999,
+      "text": " hand side you see that actually not all of the 256 grey values actually appear in the image."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 661.3599999999999,
+      "end": 668.64,
+      "text": " So you see that there is a short area with very low grey values and very high grey values where the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 668.64,
+      "end": 676.64,
+      "text": " frequency is 0 so they never appear in the image. And you can see also that our learner,"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 676.64,
+      "end": 683.84,
+      "text": " well the image impression is kind of okay but she could use a little bit more contrast right."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 685.04,
+      "end": 692.88,
+      "text": " So this is where histogram equalization comes in. In histogram equalization the idea is that we want"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 692.88,
+      "end": 701.04,
+      "text": " to optimally use all of the associated grey values. What we're doing here is we're showing the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 701.04,
+      "end": 708.24,
+      "text": " cumulative density function which means that we're essentially computing the integral over the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 708.24,
+      "end": 717.52,
+      "text": " histogram. So at every point in the cumulative density function I am showing the addition of all"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 717.52,
+      "end": 725.5999999999999,
+      "text": " the values from the zero of bin to the current bin. So this can be computed essentially with a"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 725.6,
+      "end": 732.48,
+      "text": " for loop where you then add up all of the previous values and write them into the respective bin."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 734.0,
+      "end": 741.36,
+      "text": " Now if I normalize this with the total number of pixels in the image you will see that we get"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 741.36,
+      "end": 748.72,
+      "text": " values between zero and one. If you look at the left hand side image you see the cumulative"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 748.72,
+      "end": 757.36,
+      "text": " density function of our original image. And you can also see that plateaus at the very low values"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 757.36,
+      "end": 763.6,
+      "text": " and at the very high values where we don't have any change in grey values anymore because these"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 763.6,
+      "end": 771.12,
+      "text": " grey values simply do not occur in the image. Now the idea of histogram equalization is that you"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 771.12,
+      "end": 778.4,
+      "text": " transform this cumulative density function on the left into the one on the right. So we want to"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 778.4,
+      "end": 786.8,
+      "text": " linearize the entire cumulative density function which essentially means that we try to achieve"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 786.8,
+      "end": 796.0,
+      "text": " a more or less uniform distribution of the grey values. There is algorithms to do so and in"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 796.0,
+      "end": 804.24,
+      "text": " particular they then introduce small gaps in the histogram such that all of the grey values"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 804.24,
+      "end": 810.4,
+      "text": " are being used. So you could say this is very similar to what we are achieving when we apply"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 810.4,
+      "end": 820.24,
+      "text": " the window leveling. Now here you can see a histogram that has been equalized and now the contrast"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 820.24,
+      "end": 825.76,
+      "text": " of the image has been improved and you can see that our lowest grey value is now really zero"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 826.16,
+      "end": 834.56,
+      "text": " and the highest grey value is really 255. Let's compare the two images and here you can clearly see that"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 834.56,
+      "end": 838.96,
+      "text": " the right hand side image has a much better contrast than the left hand side image."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 841.84,
+      "end": 849.2,
+      "text": " Good so these are the very basics of image processing and now we want to go ahead and look what we"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 849.2,
+      "end": 856.8000000000001,
+      "text": " can achieve with linear systems theory. And one thing that can be very nicely achieved is"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 856.8000000000001,
+      "end": 864.24,
+      "text": " computing derivatives. Now a derivative of a function if you look at the definition this is"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 864.24,
+      "end": 874.48,
+      "text": " essentially the limit of the function plus a small value at the position x and then you subtract"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 874.48,
+      "end": 879.52,
+      "text": " the original value at position x from that and divide by the small value h."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 881.04,
+      "end": 887.36,
+      "text": " If you now have the limit of h towards zero you get the continuous derivative."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 888.5600000000001,
+      "end": 894.72,
+      "text": " Now the problem that we have is that we are in a discrete space. In a discrete space we cannot"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 894.72,
+      "end": 902.0,
+      "text": " assign values of h that are lower than one because they would be zero and then our whole computation"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 902.0,
+      "end": 909.68,
+      "text": " would simply collapse to zero. So what we do is we then choose different variants of doing a"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 909.68,
+      "end": 915.6,
+      "text": " single as step size of one and then you come up with the solution shown here at the bottom."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 915.6,
+      "end": 926.0,
+      "text": " So you can for example take the value of one for h then you add one to the function f of x"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 926.56,
+      "end": 933.92,
+      "text": " and subtract f of x from that. This would be the forward difference. There is the backward"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 933.92,
+      "end": 941.44,
+      "text": " difference where you set h to minus one so you subtract one then the two flip and you have f of"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 941.44,
+      "end": 949.28,
+      "text": " x minus f of x minus one. So the problem with those two approaches is that you're essentially"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 949.28,
+      "end": 957.6,
+      "text": " computing the derivative at the position x plus 0.5. So you are kind of shifting the coordinate"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 957.6,
+      "end": 963.92,
+      "text": " system and you wouldn't be in the original coordinate system which is the reason why very frequently"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 963.92,
+      "end": 970.72,
+      "text": " there's also central differences and the central difference then simply takes the pixel on the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 970.72,
+      "end": 976.16,
+      "text": " right hand side and subtracts the pixel on the left hand side of the current position of the image."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 976.56,
+      "end": 984.8,
+      "text": " This is interesting because it allows us to compute image derivatives. Now why would we be"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 984.8,
+      "end": 990.64,
+      "text": " interested in image derivatives? Well let's look at an example and here you can see that the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 990.64,
+      "end": 998.9599999999999,
+      "text": " derivatives in x and y direction and what you see very nicely here is that the edges pop up."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 999.2800000000001,
+      "end": 1008.4000000000001,
+      "text": " So edges in our image are locations of very high gradients. So here you have either in x or y"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1008.4000000000001,
+      "end": 1017.6,
+      "text": " directions very high derivatives. So one idea for example to detect edges is to compute the derivative"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1017.6,
+      "end": 1025.76,
+      "text": " and x and y direction and then compute the magnitude of the two. So because you have a two-dimensional"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1025.76,
+      "end": 1032.48,
+      "text": " function you will be introducing a gradient that is also two-dimensional because you compute"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1032.48,
+      "end": 1039.92,
+      "text": " the derivatives in x and y direction and then you take the norm for example the l2 norm of this"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1039.92,
+      "end": 1047.52,
+      "text": " gradient and this way you can determine the magnitude and detect edges. Also interesting is that"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1047.52,
+      "end": 1055.76,
+      "text": " you can also compute the direction and then you could compute the angle of the edges which then"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1055.76,
+      "end": 1065.04,
+      "text": " allows you also detect edges of a certain orientation. So this is a very very common application"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1065.04,
+      "end": 1073.36,
+      "text": " for linear systems and a good way of how we can actually compute edges in an image."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1074.32,
+      "end": 1081.76,
+      "text": " This brings us back to image filtering and linear systems theory. So you remember that a filter"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1081.76,
+      "end": 1090.4799999999998,
+      "text": " can be applied to an image and this filter has very similar properties as we already have discussed"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1090.4799999999998,
+      "end": 1100.24,
+      "text": " in the 1D case. So the filters are linear and they are shift invariant. So this is a linear"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1100.24,
+      "end": 1106.96,
+      "text": " shift invariant system which means that it can be entirely described by convolution."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1107.84,
+      "end": 1115.84,
+      "text": " And therefore we will need a 2D convolution and now you can see here that we have some function"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1115.84,
+      "end": 1124.8,
+      "text": " k which is filter kernel and the filter kernel now takes the role of the impulse response"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1124.8799999999999,
+      "end": 1134.08,
+      "text": " that we talked about earlier in our systems theory. So now we have suddenly 2D impulse responses"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1134.08,
+      "end": 1140.32,
+      "text": " and these can be written up in a discrete fashion and then we end up with filter kernels."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1141.6,
+      "end": 1148.32,
+      "text": " For some functions they can be described in a very compact way such as for the derivative"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1148.32,
+      "end": 1153.9199999999998,
+      "text": " we've seen that every point of the image we essentially have to take the left neighbor and the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1153.92,
+      "end": 1161.52,
+      "text": " right neighbor subtract the two from each other and then we get exactly the derivative in that"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1161.52,
+      "end": 1169.1200000000001,
+      "text": " particular direction. So that's interesting because we've just seen that computing a derivative"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1169.92,
+      "end": 1178.5600000000002,
+      "text": " can be performed by convolution and for a derivative we can determine a kernel that is performing"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1178.56,
+      "end": 1186.96,
+      "text": " the derivative. So this means that computing derivatives is something that can be explained"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1187.6,
+      "end": 1193.84,
+      "text": " by a linear shift invariant system. So that's actually pretty useful and you will see that"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1193.84,
+      "end": 1198.72,
+      "text": " throughout your studies this will have many many applications and it's also very useful for"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1198.72,
+      "end": 1206.6399999999999,
+      "text": " example for solving partial differential equations. So you will see this will come up over and"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1206.64,
+      "end": 1213.2800000000002,
+      "text": " over again in your studies. Here we will now only stick to the discrete version and the nice"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1213.2800000000002,
+      "end": 1219.3600000000001,
+      "text": " thing with the discrete version is that we can write these up as these filter kernels and you will"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1219.3600000000001,
+      "end": 1225.92,
+      "text": " see that this then takes the form of very small masks for several filters such as the derivative"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1225.92,
+      "end": 1234.96,
+      "text": " filter. A side remark of course linear system theory applies and also the fundamental properties"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1234.96,
+      "end": 1243.6000000000001,
+      "text": " apply which means that if you have a filter kernel and you convert it into Fourier domain"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1244.24,
+      "end": 1249.76,
+      "text": " and you have the image and you convert it to 2D Fourier domain then you just have to multiply"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1249.76,
+      "end": 1257.68,
+      "text": " the two point wise and convert back and you do exactly a convolution. Now for the simple filters"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1257.68,
+      "end": 1264.32,
+      "text": " that we have here in this set of slides this would be rather excessive because typically the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1264.32,
+      "end": 1270.6399999999999,
+      "text": " kernels are very small they are like one by three or three by three or five by five these are"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1270.6399999999999,
+      "end": 1276.1599999999999,
+      "text": " really compact kernels and there it doesn't make sense to compute the complete Fourier transform"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1276.1599999999999,
+      "end": 1283.04,
+      "text": " but sometimes you have kernels with very large extent in spatial domain and there it makes sense to"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1283.04,
+      "end": 1290.3999999999999,
+      "text": " make use of the Fourier properties here. Also you will see that the 2D Fourier space is something"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1290.4,
+      "end": 1297.2800000000002,
+      "text": " that comes up in this class again and again. Now what's actually a 2D Fourier space?"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1298.24,
+      "end": 1305.6000000000001,
+      "text": " You remember that when we are computing the 1D Fourier transform we essentially take a signal"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1305.6000000000001,
+      "end": 1314.3200000000002,
+      "text": " of a fixed frequency and then we multiply it point wise with the signal that we want to process"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1315.12,
+      "end": 1319.6799999999998,
+      "text": " some everything up and we get the coefficient for that particular frequency."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1320.8,
+      "end": 1330.24,
+      "text": " Now in the 2D case this is slightly different because now our 2D waves have to be described also"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1330.24,
+      "end": 1337.36,
+      "text": " in 2D which means that it's not just the frequency of the wave but they also have an orientation."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1337.36,
+      "end": 1344.24,
+      "text": " So they are essentially sine and cosine wave fronts that have a particular orientation and you"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1344.24,
+      "end": 1352.8799999999999,
+      "text": " can see that they are printed here the base functions on the set of slides and they vary in orientation"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1353.52,
+      "end": 1359.84,
+      "text": " and in frequency so the frequency you can determine by looking essentially from one value to the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1359.84,
+      "end": 1365.6799999999998,
+      "text": " next value so that's the wavelength and this is associated to one over the wavelength will give"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1365.68,
+      "end": 1373.8400000000001,
+      "text": " you the frequency. So what you see in this image now is that we can compute one point in the 2D"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1373.8400000000001,
+      "end": 1381.2,
+      "text": " Fourier transform by taking one of the wave fronts that you see with different orientations"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1381.8400000000001,
+      "end": 1388.88,
+      "text": " multiplying the entire image point wise with this wave front and summing everything up."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1389.5200000000002,
+      "end": 1397.0400000000002,
+      "text": " This will then give you exactly one point in 2D Fourier space. So this is actually quite expensive"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1397.0400000000002,
+      "end": 1404.0800000000002,
+      "text": " to compute because we have to instantiate all those wave fronts then we have to multiply them"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1404.0800000000002,
+      "end": 1409.92,
+      "text": " point wise with the image and add everything up and then you just got one point in the 2D Fourier"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1409.92,
+      "end": 1417.6000000000001,
+      "text": " space. Also see that the farther you go away from the center the shorter the wavelength gets"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1417.6,
+      "end": 1423.4399999999998,
+      "text": " and the higher the frequency and the closer you get to the center the longer the wavelength"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1423.4399999999998,
+      "end": 1430.32,
+      "text": " and the lower the frequency. Also note that depending on the orientation the direction that you're at"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1430.9599999999998,
+      "end": 1438.7199999999998,
+      "text": " the orientation of the wave front changes. Now if you look at this image then you can also see very"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1438.72,
+      "end": 1447.44,
+      "text": " easily that if you would be rotating the image then essentially you're also rotating the 2D"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1447.44,
+      "end": 1456.08,
+      "text": " Fourier space. So if you have a rotation in the spatial domain this will also be a rotation in 2D"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1456.08,
+      "end": 1462.72,
+      "text": " Fourier space. That's quite interesting to see right? So keep that in mind if you want to go to"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1462.72,
+      "end": 1467.52,
+      "text": " Fourier space you have to compute those wave fronts multiply them point wise with each other"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1467.52,
+      "end": 1473.52,
+      "text": " and add them up and if you want to go back it's the same as we discussed earlier. So you take"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1473.52,
+      "end": 1480.08,
+      "text": " the coefficient at that particular point in the 2D Fourier transform you multiply this with the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1480.08,
+      "end": 1488.16,
+      "text": " complete 2D wave front and then you repeat that for all of the points in the 2D Fourier space and"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1488.16,
+      "end": 1499.52,
+      "text": " add everything up and this way you get the original image again."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1518.64,
+      "end": 1533.0400000000002,
+      "text": " Okay so let's return to our example and now let's discuss the filter kernel. So the filter kernel"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1533.0400000000002,
+      "end": 1541.8400000000001,
+      "text": " here for the derivative filter of the central difference is simply this 3 by 1 matrix. So you"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1541.84,
+      "end": 1550.8,
+      "text": " simply have the derivative with respect to x written up here so you take minus 1 times f of x"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1550.8,
+      "end": 1561.76,
+      "text": " minus 1 y plus 0 times f of xy plus 1 time f of x plus 1 y and this is now the impulse response"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1561.76,
+      "end": 1568.8,
+      "text": " the filter kernel that you have to convolve with in order to generate a derivative in x direction."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1569.04,
+      "end": 1578.8799999999999,
+      "text": " So for computing the derivative in y direction you have to transpose the kernel and then you get"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1578.8799999999999,
+      "end": 1584.3999999999999,
+      "text": " the solution here on the top right which will be able to compute the derivative in x direction."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1585.68,
+      "end": 1592.24,
+      "text": " By the way there is also second order derivatives and the second order derivatives can be"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1592.32,
+      "end": 1601.68,
+      "text": " determined also in discrete fashion and here this is simply the convolution of the kernel"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1601.68,
+      "end": 1612.96,
+      "text": " with itself. So if you convolve the x kernel with itself you get exactly the 1 minus 2 1 and if"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1612.96,
+      "end": 1621.92,
+      "text": " you look at the shape of for example a Gaussian and it's second order derivative then you can see"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1621.92,
+      "end": 1631.2,
+      "text": " that you get these Mexican head type of functions and this is also represented here in the second"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1631.2,
+      "end": 1637.3600000000001,
+      "text": " order derivative kernels. Also if you want to compute the y direction then it's simply the"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1637.36,
+      "end": 1644.3999999999999,
+      "text": " transpose of this kernel. There's a couple of more kernels that we can come up with and here"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1644.3999999999999,
+      "end": 1651.36,
+      "text": " for example there is the mean filter so here you have a neighborhood of 3 by 3 some in total 9"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1651.36,
+      "end": 1660.24,
+      "text": " so you take a kernel impulse response that is simply one over 9 at every position in that image."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1660.88,
+      "end": 1669.1200000000001,
+      "text": " This is then also called the box filter. There is also discrete approximations of the Gaussian"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1669.1200000000001,
+      "end": 1677.6,
+      "text": " and one example here is shown on the right hand side so this is a 5 by 5 kernel and if you look at"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1677.6,
+      "end": 1683.36,
+      "text": " this and think about how the shape looks like you can see that this is a discrete approximation"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1684.0,
+      "end": 1694.6399999999999,
+      "text": " of a Gaussian bell in this discrete 5 by 5 neighborhood. Now if you take those filter kernels"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1695.76,
+      "end": 1702.4799999999998,
+      "text": " and apply them to the image you can observe the following so both the mean and the Gaussian"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1702.4799999999998,
+      "end": 1710.3999999999999,
+      "text": " they are blur filters so they reduce noise but also reduce the resolution of the image so you"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1710.4,
+      "end": 1715.44,
+      "text": " can take the image on the left hand side and produce an image like on the right hand side here."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1716.8000000000002,
+      "end": 1724.0800000000002,
+      "text": " There is actually many different kernels you can try and I also prepared a short video where we"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1724.0800000000002,
+      "end": 1733.6000000000001,
+      "text": " explore the use of a blur filter as well as a derivative filter using image j and I think this"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1733.6000000000001,
+      "end": 1740.3200000000002,
+      "text": " is something that you can very easily test with the software that we are also using in the exercise"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1740.72,
+      "end": 1747.6799999999998,
+      "text": " so I would recommend to actually play around with eclipse in image j when you are writing these"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1747.6799999999998,
+      "end": 1753.28,
+      "text": " plugins and also give a short at the different functionalities of image j you will find that this"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1753.28,
+      "end": 1760.24,
+      "text": " is really useful and many of the things that you find in Photoshop or other image processing in"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1760.24,
+      "end": 1766.6399999999999,
+      "text": " software toolboxes they can be rather easily be implemented on your own using filter kernels"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1766.64,
+      "end": 1773.1200000000001,
+      "text": " blurring sharpening and so on our essentially linear shift and varying filter kernels and can be"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1773.1200000000001,
+      "end": 1781.6000000000001,
+      "text": " expressed by convolution."
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1796.64,
+      "end": 1822.3200000000002,
+      "text": " So I hope you enjoyed this little video here and I would be very delighted to see you again"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1822.3999999999999,
+      "end": 1829.6,
+      "text": " in the next video when we are discussing non linear filters so thank you very much for watching"
+    },
+    {
+      "title": "image_processing_high_res",
+      "start": 1829.6,
+      "end": 1837.28,
+      "text": " and bye bye"
+    }
+  ],
+  "text": " Welcome back to Medical Engineering and today we want to continue our little excursion through the theory but you'll see that we'll get much more applied in the next couple of videos because in the next two videos we want to talk about actual 2D signal processing and the first thing that we want to look at is an introduction into 2D image processing and we'll start with simple operations and expand them to linear system theory and filters and then in a second step we will look into non-linear systems. So I hope you enjoy the 2D image processing with me. So here we are at with the Medical Engineering Systems and today the topic will be image processing. So let's have a look at the basics of image processing. Now an image is essentially a 2D function and you can think of the image as a function that essentially is on a grid space where you could say essentially every column and every row is a function or a signal as we've discussed earlier and now we have to expand the space and to be able to work with these 2D signals. On the right hand side you see an visualization and you can see here that we have the red function which is essentially one column and this is a sequence of values that you can see here plotted and we also have the blue function which is essentially one row and it's again a sequence of values. Together these grey values here in this example form a 2D image. Now you see the lady here that is actually Lennar and this is one of the first images that was used for image processing. It actually originates from a magazine that was published in November 1972. So at that time there were not so many scanners and digital images available. It happened that one of those images were scanned so they took a subsection of one of the largest images that they could find in the magazine. They scanned it and actually this image became kind of iconic and has been used in image processing over and over again. So Lennar became extremely popular and she has also been invited although she didn't know about her fans in the image processing community so she has been invited actually to a couple of conferences and she is still being welcomed warmheartedly on various conferences and today people still use this image in order to test their algorithms. Well actually there's many other image sets that people experiment with now but sometimes for nostalgic reasons this image is still being used. Note that only this subsection that we are showing here is being used and the full image is not being commonly used in the image processing community. So just that you don't get the wrong impression it was just one of the images that was lying around and that they had access to and they decided to use the subsection of the image. What's the digital image? So let's go back and think of our function space and what you can see here is a highly magnified image so this is just showing a couple of black and gray dots and what you see here is that essentially every color, every shade of gray is associated to a value. So the gray that you can see here it's a light gray so it's associated to the value 200 and the dark color, the black is associated in this example to the color 35. So essentially every shade of gray is associated to a number and this number originated from a sampling process as we discussed in the last video. Obviously these are the images that are used to introduce image processing what we will work with much more frequently are of course medical images and one thing that is very peculiar about medical images is that they often have more gray values, more shades of gray, that you can actually show at the same time on your monitor and actually more than you can perceive. So the human visual system can approximately differentiate 256 different shades of gray. You cannot differentiate more or the average human being cannot differentiate more and if you display them you will see that they appear as a continuous color gradient or gray value gradient on your screen. So in order to be able to visualize all of the information that is in the medical image we have to use tricks. One trick that you could come up with is using different gamma values and you see them here we can do a gamma correction which is a non-linear scaling of the gray values and if we would do so we would be able to focus more on the skull or on the brain and change the color values. This however is not so frequently used in medical imaging. What is much more common is so called window leveling. So here we have an example of a CT image and we know that Huntsville units denoted as HU here are associated to different materials and on the left hand side and the right hand side you see exactly the same image but displayed in a different window level. So minus a thousand Huntsville units is air and plus a thousand Huntsville units is bone or contrast agent and you see here that we can visualize all of the materials on the left hand side ranging from air up to contrast agent that you can see in the heart and the bones and then on the right hand side image water-rich materials such as water and soft tissues are around zero Huntsville units and if we pick a fresh out that is above zero Huntsville units only the contrast agent and the bone will be visible. So what you see in this image is the contrast agent in the heart and the bones and you see that this is an interventional scan so there is still some residual artifact that you see at the bottom of the scan and this was caused by a truncation at the end of the volume. So also sometimes these scans have associated artifacts and you have to know about the problems that can arise in the scanning process in order not to misread the information here. So for sure there is no ring-like bone structure at the bottom of the scan here but this is artificially created by the reconstruction method and if you're reading these images if you're interpreting these images you have to know about this. Obviously there is a wide range of variations that you can pick for windowing and thresholding and this is why I have a short video where we are playing with the window and threshold in different settings. So what you see is that the image is actually composed of different grey values. Now what I'm showing here is called a histogram and a histogram is essentially a kind of probability distribution because you count the frequency, the occurrence of every grey value. So on the left hand side example we have grey values from 0 to 255 so 256 different shades of grain and you can see on the y-axis how often that respective color or grey value appeared in the image. So the histogram doesn't contain the spatial information anymore but it tells you which grey value occurs how frequently. Now if we change the window and level what we're essentially doing is we're adjusting the histogram and here on the right hand side you can see a rescaling of the same histogram to only 16 bins. So here we have pooled neighboring grey values in order to reduce the number of grey values in that particular image. Obviously this would have a large impact on the displayed image and you could immediately see that I adjusted the number of grey values. So this is something that we want to in the following. Now let's go back to our example image. So here you see our famous learner and if you look at the associated histogram here on the right hand side you see that actually not all of the 256 grey values actually appear in the image. So you see that there is a short area with very low grey values and very high grey values where the frequency is 0 so they never appear in the image. And you can see also that our learner, well the image impression is kind of okay but she could use a little bit more contrast right. So this is where histogram equalization comes in. In histogram equalization the idea is that we want to optimally use all of the associated grey values. What we're doing here is we're showing the cumulative density function which means that we're essentially computing the integral over the histogram. So at every point in the cumulative density function I am showing the addition of all the values from the zero of bin to the current bin. So this can be computed essentially with a for loop where you then add up all of the previous values and write them into the respective bin. Now if I normalize this with the total number of pixels in the image you will see that we get values between zero and one. If you look at the left hand side image you see the cumulative density function of our original image. And you can also see that plateaus at the very low values and at the very high values where we don't have any change in grey values anymore because these grey values simply do not occur in the image. Now the idea of histogram equalization is that you transform this cumulative density function on the left into the one on the right. So we want to linearize the entire cumulative density function which essentially means that we try to achieve a more or less uniform distribution of the grey values. There is algorithms to do so and in particular they then introduce small gaps in the histogram such that all of the grey values are being used. So you could say this is very similar to what we are achieving when we apply the window leveling. Now here you can see a histogram that has been equalized and now the contrast of the image has been improved and you can see that our lowest grey value is now really zero and the highest grey value is really 255. Let's compare the two images and here you can clearly see that the right hand side image has a much better contrast than the left hand side image. Good so these are the very basics of image processing and now we want to go ahead and look what we can achieve with linear systems theory. And one thing that can be very nicely achieved is computing derivatives. Now a derivative of a function if you look at the definition this is essentially the limit of the function plus a small value at the position x and then you subtract the original value at position x from that and divide by the small value h. If you now have the limit of h towards zero you get the continuous derivative. Now the problem that we have is that we are in a discrete space. In a discrete space we cannot assign values of h that are lower than one because they would be zero and then our whole computation would simply collapse to zero. So what we do is we then choose different variants of doing a single as step size of one and then you come up with the solution shown here at the bottom. So you can for example take the value of one for h then you add one to the function f of x and subtract f of x from that. This would be the forward difference. There is the backward difference where you set h to minus one so you subtract one then the two flip and you have f of x minus f of x minus one. So the problem with those two approaches is that you're essentially computing the derivative at the position x plus 0.5. So you are kind of shifting the coordinate system and you wouldn't be in the original coordinate system which is the reason why very frequently there's also central differences and the central difference then simply takes the pixel on the right hand side and subtracts the pixel on the left hand side of the current position of the image. This is interesting because it allows us to compute image derivatives. Now why would we be interested in image derivatives? Well let's look at an example and here you can see that the derivatives in x and y direction and what you see very nicely here is that the edges pop up. So edges in our image are locations of very high gradients. So here you have either in x or y directions very high derivatives. So one idea for example to detect edges is to compute the derivative and x and y direction and then compute the magnitude of the two. So because you have a two-dimensional function you will be introducing a gradient that is also two-dimensional because you compute the derivatives in x and y direction and then you take the norm for example the l2 norm of this gradient and this way you can determine the magnitude and detect edges. Also interesting is that you can also compute the direction and then you could compute the angle of the edges which then allows you also detect edges of a certain orientation. So this is a very very common application for linear systems and a good way of how we can actually compute edges in an image. This brings us back to image filtering and linear systems theory. So you remember that a filter can be applied to an image and this filter has very similar properties as we already have discussed in the 1D case. So the filters are linear and they are shift invariant. So this is a linear shift invariant system which means that it can be entirely described by convolution. And therefore we will need a 2D convolution and now you can see here that we have some function k which is filter kernel and the filter kernel now takes the role of the impulse response that we talked about earlier in our systems theory. So now we have suddenly 2D impulse responses and these can be written up in a discrete fashion and then we end up with filter kernels. For some functions they can be described in a very compact way such as for the derivative we've seen that every point of the image we essentially have to take the left neighbor and the right neighbor subtract the two from each other and then we get exactly the derivative in that particular direction. So that's interesting because we've just seen that computing a derivative can be performed by convolution and for a derivative we can determine a kernel that is performing the derivative. So this means that computing derivatives is something that can be explained by a linear shift invariant system. So that's actually pretty useful and you will see that throughout your studies this will have many many applications and it's also very useful for example for solving partial differential equations. So you will see this will come up over and over again in your studies. Here we will now only stick to the discrete version and the nice thing with the discrete version is that we can write these up as these filter kernels and you will see that this then takes the form of very small masks for several filters such as the derivative filter. A side remark of course linear system theory applies and also the fundamental properties apply which means that if you have a filter kernel and you convert it into Fourier domain and you have the image and you convert it to 2D Fourier domain then you just have to multiply the two point wise and convert back and you do exactly a convolution. Now for the simple filters that we have here in this set of slides this would be rather excessive because typically the kernels are very small they are like one by three or three by three or five by five these are really compact kernels and there it doesn't make sense to compute the complete Fourier transform but sometimes you have kernels with very large extent in spatial domain and there it makes sense to make use of the Fourier properties here. Also you will see that the 2D Fourier space is something that comes up in this class again and again. Now what's actually a 2D Fourier space? You remember that when we are computing the 1D Fourier transform we essentially take a signal of a fixed frequency and then we multiply it point wise with the signal that we want to process some everything up and we get the coefficient for that particular frequency. Now in the 2D case this is slightly different because now our 2D waves have to be described also in 2D which means that it's not just the frequency of the wave but they also have an orientation. So they are essentially sine and cosine wave fronts that have a particular orientation and you can see that they are printed here the base functions on the set of slides and they vary in orientation and in frequency so the frequency you can determine by looking essentially from one value to the next value so that's the wavelength and this is associated to one over the wavelength will give you the frequency. So what you see in this image now is that we can compute one point in the 2D Fourier transform by taking one of the wave fronts that you see with different orientations multiplying the entire image point wise with this wave front and summing everything up. This will then give you exactly one point in 2D Fourier space. So this is actually quite expensive to compute because we have to instantiate all those wave fronts then we have to multiply them point wise with the image and add everything up and then you just got one point in the 2D Fourier space. Also see that the farther you go away from the center the shorter the wavelength gets and the higher the frequency and the closer you get to the center the longer the wavelength and the lower the frequency. Also note that depending on the orientation the direction that you're at the orientation of the wave front changes. Now if you look at this image then you can also see very easily that if you would be rotating the image then essentially you're also rotating the 2D Fourier space. So if you have a rotation in the spatial domain this will also be a rotation in 2D Fourier space. That's quite interesting to see right? So keep that in mind if you want to go to Fourier space you have to compute those wave fronts multiply them point wise with each other and add them up and if you want to go back it's the same as we discussed earlier. So you take the coefficient at that particular point in the 2D Fourier transform you multiply this with the complete 2D wave front and then you repeat that for all of the points in the 2D Fourier space and add everything up and this way you get the original image again. Okay so let's return to our example and now let's discuss the filter kernel. So the filter kernel here for the derivative filter of the central difference is simply this 3 by 1 matrix. So you simply have the derivative with respect to x written up here so you take minus 1 times f of x minus 1 y plus 0 times f of xy plus 1 time f of x plus 1 y and this is now the impulse response the filter kernel that you have to convolve with in order to generate a derivative in x direction. So for computing the derivative in y direction you have to transpose the kernel and then you get the solution here on the top right which will be able to compute the derivative in x direction. By the way there is also second order derivatives and the second order derivatives can be determined also in discrete fashion and here this is simply the convolution of the kernel with itself. So if you convolve the x kernel with itself you get exactly the 1 minus 2 1 and if you look at the shape of for example a Gaussian and it's second order derivative then you can see that you get these Mexican head type of functions and this is also represented here in the second order derivative kernels. Also if you want to compute the y direction then it's simply the transpose of this kernel. There's a couple of more kernels that we can come up with and here for example there is the mean filter so here you have a neighborhood of 3 by 3 some in total 9 so you take a kernel impulse response that is simply one over 9 at every position in that image. This is then also called the box filter. There is also discrete approximations of the Gaussian and one example here is shown on the right hand side so this is a 5 by 5 kernel and if you look at this and think about how the shape looks like you can see that this is a discrete approximation of a Gaussian bell in this discrete 5 by 5 neighborhood. Now if you take those filter kernels and apply them to the image you can observe the following so both the mean and the Gaussian they are blur filters so they reduce noise but also reduce the resolution of the image so you can take the image on the left hand side and produce an image like on the right hand side here. There is actually many different kernels you can try and I also prepared a short video where we explore the use of a blur filter as well as a derivative filter using image j and I think this is something that you can very easily test with the software that we are also using in the exercise so I would recommend to actually play around with eclipse in image j when you are writing these plugins and also give a short at the different functionalities of image j you will find that this is really useful and many of the things that you find in Photoshop or other image processing in software toolboxes they can be rather easily be implemented on your own using filter kernels blurring sharpening and so on our essentially linear shift and varying filter kernels and can be expressed by convolution. So I hope you enjoyed this little video here and I would be very delighted to see you again in the next video when we are discussing non linear filters so thank you very much for watching and bye bye",
+  "video_number": 6
+}

@@ -1,0 +1,1464 @@
+{
+  "chunks": [
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 0.0,
+      "end": 16.0,
+      "text": " Hi everyone and welcome back to the MIT class and urban energy systems."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 16.0,
+      "end": 19.0,
+      "text": " Wherever you're seeing this lecture, please subscribe."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 19.0,
+      "end": 25.0,
+      "text": " You can either find it on the web page where you found this video or ask the instructor."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 25.0,
+      "end": 33.0,
+      "text": " Let's get back to the topic for today which is going to be cities and decarbonization."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 33.0,
+      "end": 35.0,
+      "text": " What is the role of cities?"
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 35.0,
+      "end": 47.0,
+      "text": " Again, I'm David Sew and if you're thinking about how cities can take action or what their roles in decarbonization, you have found the right place and your people."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 47.0,
+      "end": 51.0,
+      "text": " I want to cover briefly how you prepare for class this week."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 51.0,
+      "end": 55.0,
+      "text": " This is our second class. I want to make sure that everyone's caught up."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 55.0,
+      "end": 61.0,
+      "text": " First, the introductory reading from last week is fairly short and skimable so it's easy to catch up."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 61.0,
+      "end": 63.0,
+      "text": " But you should catch up."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 63.0,
+      "end": 67.0,
+      "text": " It's particularly important to look at my CHAPTER 2."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 67.0,
+      "end": 70.0,
+      "text": " Again, it's my CHAPTER 2."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 70.0,
+      "end": 80.0,
+      "text": " There's an initial problem set due Monday night. You can just access the problem set by going directly to this Google form, the link on the screen."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 80.0,
+      "end": 86.0,
+      "text": " You should do the reading for this week. That's on the syllabus. I'll also show the reading for this week on the next page."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 86.0,
+      "end": 89.0,
+      "text": " And then you should watch the rest of this video lecture."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 89.0,
+      "end": 96.0,
+      "text": " And during the reading and while watching the video lecture, it's important for you to write down the questions that you have for discussion."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 96.0,
+      "end": 104.0,
+      "text": " And then I want you to feel free to share them on Slack whenever a synchronously or in our class meeting on Tuesday."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 104.0,
+      "end": 111.0,
+      "text": " So the material for today, again, I won't go over them. These are all new syllabus, but these will also be the slides so you can follow the links."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 111.0,
+      "end": 114.0,
+      "text": " The first four readings are the required readings."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 114.0,
+      "end": 128.0,
+      "text": " And then the last two readings are optional readings that give additional information to the articles above."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 128.0,
+      "end": 131.0,
+      "text": " So what I want to start with is my CHAPTER 2."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 131.0,
+      "end": 133.0,
+      "text": " What he calls the balance sheet."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 133.0,
+      "end": 138.0,
+      "text": " And then we have the important set of concepts, simply so we can think about the energy system."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 138.0,
+      "end": 144.0,
+      "text": " And very simply what Makhayas trying to do in his book is contrast these red and green bars."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 144.0,
+      "end": 147.0,
+      "text": " Energy consumption is on the left in red."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 147.0,
+      "end": 150.0,
+      "text": " Energy production is on the right in green."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 150.0,
+      "end": 155.0,
+      "text": " And so when Makhay titles his book, sustainable energy without the hot air."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 155.0,
+      "end": 161.0,
+      "text": " And we're trying to do is replace our current level of consumption with entirely renewable resources."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 161.0,
+      "end": 165.0,
+      "text": " And that's how we're going to achieve a sustainable energy system."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 165.0,
+      "end": 175.0,
+      "text": " And so a sustainable energy system would be if our total conceivable sustainable production sources on the right are greater than our total consumption."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 175.0,
+      "end": 183.0,
+      "text": " And an unsustainable energy system would be where our total consumption of energy is larger than our total conceivable sustainable production."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 183.0,
+      "end": 195.0,
+      "text": " Of course these two bars will change over time as our expectations around consumption change and our technologies and our institutions and our markets for sustainable production change."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 195.0,
+      "end": 209.0,
+      "text": " But that's the challenge, the challenge is to try to put these two in balance and at least have total sustainable production that is enough to meet all of our societal needs or our global societal needs or energy consumption."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 209.0,
+      "end": 215.0,
+      "text": " One of my look like is the key forms of consumption on the left hand stack in red."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 215.0,
+      "end": 220.0,
+      "text": " That is the energy we need for transportation, including cars, planes and freight."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 220.0,
+      "end": 226.0,
+      "text": " It's the energy we need to heat and cool the spaces that we live in that can wildly differ across countries."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 226.0,
+      "end": 230.0,
+      "text": " It's a basic need for lighting so we can see at night."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 230.0,
+      "end": 236.0,
+      "text": " It's a growing need for energy for information systems and our other gadgets."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 236.0,
+      "end": 255.0,
+      "text": " The fifth point food, a tremendous amount of energy goes into growing and transporting and keeping our food cold and finally manufacturing for all the technologies or all the gadgets we need to do transportation or heating and cooling like information systems of food."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 255.0,
+      "end": 260.0,
+      "text": " We have to make these things in the first place and that requires a tremendous amount of energy."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 260.0,
+      "end": 265.0,
+      "text": " On the right hand side, our sustainable production stack has a number of categories."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 265.0,
+      "end": 274.0,
+      "text": " The good thing is, and I'll try to emphasize this in the class repeatedly, is that we have many sustainable technologies that can produce energy."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 274.0,
+      "end": 276.0,
+      "text": " We have wind and solar."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 276.0,
+      "end": 282.0,
+      "text": " A solar energy can be harnessed in the form of affordable taillight or solar cells that produce electricity."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 282.0,
+      "end": 299.0,
+      "text": " We can harness solar energy through thermal energy and we can also harness solar energy through biomass by harvesting the potential of earth to engage in photosynthesis, create crops that we then can use for other things, including burning in engines."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 299.0,
+      "end": 313.0,
+      "text": " Hydroelectric power is producing electricity directly from our mechanical storage directly from hydropower, wave energy and tide energy are two sources of energy that comes from the earth."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 313.0,
+      "end": 323.0,
+      "text": " On a regular basis, geothermal energy also comes from the earth. The heat inside the earth can be harnessed to produce energy and finally nuclear."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 323.0,
+      "end": 330.0,
+      "text": " And my Kai puts it with a question mark because it's not clear whether or not it's nuclear energy or nuclear power accounts is sustainable."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 330.0,
+      "end": 346.0,
+      "text": " It is low carbon, but as I said in the earlier class, we have questions about how do we handle the fuel for nuclear power plants, how do we handle the waste for nuclear power plants and whether or not that will be fully sustainable in the long run."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 346.0,
+      "end": 356.0,
+      "text": " And so I want to cover two physical concepts from a chai chapter 2 that I think are basically going to be the most important physical concepts you need to understand as class."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 356.0,
+      "end": 363.0,
+      "text": " And the first one, quite simply, is energy is the quantitative property of doing work."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 363.0,
+      "end": 370.0,
+      "text": " Energy can be neither destroyed nor created, one of our fundamental laws of thermodynamics."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 370.0,
+      "end": 383.0,
+      "text": " Energy can be transformed into light heat or mass. Hence the famous equation by Einstein equals E equals mc squared energy equals mass times the speed of light squared."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 383.0,
+      "end": 386.0,
+      "text": " This is a fundamental finding out of relativity."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 387.0,
+      "end": 395.0,
+      "text": " And of course energy can take many different forms and we use it in many different forms in our energy system energy can be kinetic."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 395.0,
+      "end": 402.0,
+      "text": " It can be chemical, we can have potential energy, we can have a chemical energy, let's say stored in the elastic properties materials."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 402.0,
+      "end": 414.0,
+      "text": " And of course biological energy, which is fundamentally chemical energy, but we have different modes of perhaps using that chemical energy in our muscles in animals in ecosystems."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 414.0,
+      "end": 433.0,
+      "text": " And we're going to measure energy in terms of units of kilowatt hours. You'll see energy referred to in terms of British thermal units, BTUs, something only used in the US and America, the United States, Thurms, Jules, calories are all units for energy, they can all be converted to kilowatt hours."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 433.0,
+      "end": 449.0,
+      "text": " A specific category I want to highlight below is fossil fuels are sometimes measured in barrels of oil, short tons of coal, cubic feed natural gas. That's because that's how we measure the things we trade in commodity markets for commoditized fossil fuels."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 449.0,
+      "end": 458.0,
+      "text": " But again, the amount of energy in a barrel oil and a short ton of coal and cubic foot of natural gas can be converted to kilowatt hours."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 459.0,
+      "end": 474.0,
+      "text": " So just to give you a few examples, example one, you may have had the frustrating experience of having gone to the gym foolishly, counting your calories, realizing you worked out for an hour on a running treadmill as only equivalent to three Oreos."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 474.0,
+      "end": 497.0,
+      "text": " You can also look at example two, the average American household uses per year, about 11,000 kilowatt hours in electricity. Each person uses 300 million BTUs total per year, which is approximately 2.3 gallons of oil, 7.89 pounds of coal and 252 cubic feet of natural gas per day."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 497.0,
+      "end": 505.0,
+      "text": " Now, let's just more pointing out that the first example in terms of the American household is in kilowatt hours, but only counts for electricity."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 505.0,
+      "end": 519.0,
+      "text": " That's for the whole household per year. The second sentence measures each person on a per capita basis, but then breaks the millions of BTUs into different units because of the different sources of energy."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 519.0,
+      "end": 532.0,
+      "text": " And this is to say that when we do these comparisons, we want to be careful about the units we use, the average in over time, and the sources of energy because the original source of energy may not actually be how much energy we use in the end."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 532.0,
+      "end": 536.0,
+      "text": " We'll talk about that more in a few slides."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 536.0,
+      "end": 549.0,
+      "text": " Another key fiscal concept we have to talk about our will be very useful is power and that's the quantitative rate of doing work. That is our is energy per time."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 549.0,
+      "end": 569.0,
+      "text": " It's a rate. The units we use of that are watts or equal to jewels per second, other other forms of power they might be familiar with are earths and peers in terms of the left from current, horsepower in terms of the engine in your car or other motors."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 569.0,
+      "end": 588.0,
+      "text": " And lumens are the amount of energy cast off per second from led light bulb, but measured over a spear around light bulb. So it's actually weighted by the area around light bulb or what degree of area is is putting off how much energy."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 588.0,
+      "end": 606.0,
+      "text": " So to just kind of use the same example as the previous slide, you could say I worked out for an hour and I only worked off the equivalent of three Oreos, but maybe sounds perhaps more impressive if you say my workout maintained a steady power output of three Oreos per hour."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 607.0,
+      "end": 626.0,
+      "text": " Another key concept we have to cover that links energy and climate is emissions intensity and emissions are measured in terms of greenhouse gases. Usually measured in metric ton carbon dioxide equivalent, which is abbreviated MTCDE or MTCO2E and so on."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 626.0,
+      "end": 649.0,
+      "text": " And the reason why we have to measure it in terms of metric ton carbon dioxide equivalent is that there's a lot of different greenhouse gases and sub of them, for example, methane, CH4 as much more global warming potential carbon dioxide. So a single ton of methane has about 84 times the global warming potential of a ton of carbon dioxide."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 649.0,
+      "end": 665.0,
+      "text": " And in early in this life, that defines over time to have 20 metric tons of carbon dioxide equivalent. So this is just to say that if we have different greenhouse gases, we've measured them or make them all equivalent to a metric ton of carbon dioxide equivalent during the lifetime."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 666.0,
+      "end": 678.0,
+      "text": " We can also measure emissions intensity by the type of gas as the example I just gave you in terms of methane, also nitrous oxide and flora hexane, I think, or another greenhouse gas."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 679.0,
+      "end": 693.0,
+      "text": " You can measure emissions intensity per unit of energy. This much greenhouse gas is created in terms of this much energy. You can measure greenhouse gases per activity per dollar GDP or by region. People use lots of different intensities."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 693.0,
+      "end": 705.0,
+      "text": " And the reason why I'm focusing on this key constant intensity is that as we look at different parts of the system, we're going to look at the intensity of the different parts of the system to kind of get a whole picture of where greenhouse gases are coming from."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 706.0,
+      "end": 713.0,
+      "text": " Just like we're going to look at energy intensity, in terms of how much energy do you need for different activities, how much energy do different regions of the world use."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 714.0,
+      "end": 725.0,
+      "text": " And so to give you a few examples of the components of the parties, the top meetings that the UN framework invention on climate change runs every year."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 725.0,
+      "end": 742.0,
+      "text": " They have reporting inventory and when every country, which is party to the current agreement, has to report its greenhouse gas missions. And frankly, the actions that they're taking to reduce their greenhouse gases, they have to measure or report their greenhouse gases in terms of a specific inventory format."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 743.0,
+      "end": 756.0,
+      "text": " And so, you can see that here, you can click on it and you can see how countries report different kinds of greenhouse gases. It's because countries can only see the source of the activities at create greenhouse gases."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 756.0,
+      "end": 768.0,
+      "text": " So it's easier for us to measure how many barrels of oil we burned or how many short tons of poll we burned or let's say how much land use conversion has led to how much methane or how much carbon dioxide."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 768.0,
+      "end": 782.0,
+      "text": " We can also measure, let's say, our greenhouse gas emissions per unit of electricity because electricity comes from a grid that grid is a technology we'll talk about a lot in this class that mixes different sources of energy together."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 782.0,
+      "end": 790.0,
+      "text": " So we try to get an average intensity of greenhouse gas missions per unit electricity in different regions."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 790.0,
+      "end": 806.0,
+      "text": " Another mission is intensity factor that people look at quite often is air quality. You can look at how many greenhouse gases or how much particulate matter is produced by certain activities like the local miles travels or a number of cars and rate."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 806.0,
+      "end": 816.0,
+      "text": " So just to give you an example of what carbon emission intensity looks like, this is the carbon emission intensity of economies in 2018 and this is from our world and data."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 816.0,
+      "end": 832.0,
+      "text": " And you can see actually it's measured on the bottom legend here in terms of amount of kilograms of carbon dioxide equivalent carbon dioxide intensity per dollar of GDP measured in international 20 limit prices."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 832.0,
+      "end": 849.0,
+      "text": " And you can see by that measure actually a lot of the developed world such as Australia, North America and parts of Latin America don't look very intense if only because they don't produce that many greenhouse gases per dollar of the GDP output."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 849.0,
+      "end": 862.0,
+      "text": " Now, like we talked about in the last class in terms of population, what does this hide? Well, there's a couple of things with a map. Sometimes the area of the map distorts the actual area or total emissions."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 862.0,
+      "end": 868.0,
+      "text": " You know, small places don't look like they have as much impact as big places, even though that really has nothing to do with the average."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 868.0,
+      "end": 881.0,
+      "text": " But the more important point from a map like this is that it hides the fact that the rich countries like Australia, Europe, North America and parts of Latin America, simply have much larger GDPs."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 881.0,
+      "end": 898.0,
+      "text": " So it looks like the carbon dioxide output per GDP is low. But if we look at the per capita CO2 emissions like the point in our last class, you can see that for a relatively small number of people in those rich developed countries, they have very high CO2 emissions per capita."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 898.0,
+      "end": 910.0,
+      "text": " And so your map basically changes biometrically and you can see the difference between richer countries and poor countries and overwhelmingly the richer countries are more responsible for carbon dioxide emissions."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 911.0,
+      "end": 921.0,
+      "text": " If we look at this similarly in kind of a scatter plot, you can again see that it looks like on an emission intensity basis, India and the United States are not that different."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 921.0,
+      "end": 934.0,
+      "text": " Of course, the differences in terms of the output of the economy on a per capita basis, the average person United States produces much more and inevitably consumes much more than your average person in the Pakistan."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 934.0,
+      "end": 943.0,
+      "text": " So even though we have equivalent emissions intensity per dollar, we simply produce and consume much more in the rich countries."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 943.0,
+      "end": 963.0,
+      "text": " And I make this point because after the Kyoto Protocol and after the George W. Bush administration chose to leave the Kyoto Protocol, one of their arguments was that the US actually had a lower carbon emission intensity or at least a comparable carbon emission intensity to some developing countries."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 963.0,
+      "end": 971.0,
+      "text": " Of course, this hit the fact that the United States is both richer and consumes much more and produces much more."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 971.0,
+      "end": 977.0,
+      "text": " So that's just a way to talk about what intensities may tell us and what they may hide also."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 977.0,
+      "end": 982.0,
+      "text": " Now I'm going to get to a really kind of key dive in that I rather love in this class."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 982.0,
+      "end": 986.0,
+      "text": " So I'll start off this class by talking about St. Key diagrams."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 986.0,
+      "end": 994.0,
+      "text": " And you can find a St. Key diagram of the US and every state at this web link at the bottom, Lawrence, live more national laboratory."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 994.0,
+      "end": 997.0,
+      "text": " What a St. Key diagram is is basically a flow chart."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 997.0,
+      "end": 1007.0,
+      "text": " It's a flow chart between the sources on the left and you can see all of our energy sources solar nuclear hydro winds, you're thermal natural gas coal bomb mass petroleum."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1007.0,
+      "end": 1010.0,
+      "text": " And we get all of the ultimate uses on the right."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1010.0,
+      "end": 1018.0,
+      "text": " And the final I guess we call final consumption is in residential buildings, commercial buildings, industrial buildings and transportation."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1018.0,
+      "end": 1025.0,
+      "text": " Of course, the spinal category here is also a kind of a statement about where does the energy go in the first place."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1025.0,
+      "end": 1042.0,
+      "text": " Only about 50% of the energy or less that we actually burn in the original original sources goes into these uses in the sectors about actually looks like one third of the energy goes to what we call energy services."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1042.0,
+      "end": 1050.0,
+      "text": " So the objective energy is the by parts of that combustion usually that we don't capture for apple energy services."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1050.0,
+      "end": 1065.0,
+      "text": " So to give you an example, you can see how I said before the electric grid mixes many different types of energy sources solar nuclear hydro wind all these natural gas and coal all feed into the electric grid."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1065.0,
+      "end": 1079.0,
+      "text": " When we feed that energy into electric grid into power plants, we basically only take a fraction of it looks like about one third of the electricity, one third of the energy in those energy sources actually goes to things like residential commercial and best fuel."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1079.0,
+      "end": 1086.0,
+      "text": " But about two thirds of it gets rejected, which means that it's heat energy going out of each chimney of a coal fire power plant."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1086.0,
+      "end": 1092.0,
+      "text": " Or might be energy lost the electric grid, it simply lost because the resistance of the electrical wires."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1092.0,
+      "end": 1103.0,
+      "text": " And so this kind of graph, I actually find tremendously useful to summarize what the sources on the left are the ultimate uses of the energy are on the right."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1103.0,
+      "end": 1121.0,
+      "text": " And also some of the interim steps where we might be able to capture some energy back in terms of energy efficiency or let me think about how our intermediate technologies like the electric grid actually use energy and how much of the intrinsic energy in the fuel source are we using to take one example from this graph."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1121.0,
+      "end": 1131.0,
+      "text": " I think it does a really good job of showing you, for example, that electricity over one way goes into residential buildings commercial buildings and industrial buildings are industrial activities."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1131.0,
+      "end": 1140.0,
+      "text": " But you can see that there's no link between electricity generation and transportation so very small orange line here 0.0.0 to quad."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1140.0,
+      "end": 1146.0,
+      "text": " One thing I should have pointed out is that the total US energy consumption in 2021 was by 97 quads."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1146.0,
+      "end": 1149.0,
+      "text": " It's pretty easy mentally to round it up to about 100."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1149.0,
+      "end": 1157.0,
+      "text": " So this is actually 0.02% roughly of all the energy in the US is used or electricity is used for transportation."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1157.0,
+      "end": 1175.0,
+      "text": " You can see overwhelmingly that the majority of energy for transportation 24.3 quads or about 24% of the energy in the US comes from petroleum and originally that came from about 35 odds of 35% of our initial energy sources."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1175.0,
+      "end": 1178.0,
+      "text": " And you can see some portion goes off to industrial activities."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1178.0,
+      "end": 1183.0,
+      "text": " So the vast majority of the energy that drives our transportation system is petroleum."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1183.0,
+      "end": 1204.0,
+      "text": " And you can see that when we burn petroleum or gasoline in our internal combustion engines, a very small fraction that looks like about 20% of it is actually used for moving the car forward about 80% of the energy actually goes out of the tailpipe either in the form of heat out of the tailpipe or else air resistance that is not really good."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1204.0,
+      "end": 1210.0,
+      "text": " We are trying to do we are trying to move goods and services and people around."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1210.0,
+      "end": 1215.0,
+      "text": " So this is just again a way of saying that there's lots of different kinds of Sankey diagrams."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1215.0,
+      "end": 1222.0,
+      "text": " This is a nice one that has proportional flows between sources, intermediate transforming technologies and uses."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1222.0,
+      "end": 1227.0,
+      "text": " It also shows you what efficiency level is being achieved in these different sectors."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1227.0,
+      "end": 1239.0,
+      "text": " This is essentially a county exercise, but if you can find the Sankey diagram for a given region or city or country, it gives you a really good picture of where the energy is coming from or where the energy is going to."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1239.0,
+      "end": 1246.0,
+      "text": " So want to use the Sankey diagrams to think about what our pathways are to deep decarbonization deep decarbonization."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1246.0,
+      "end": 1252.0,
+      "text": " I think I've said before that I'm said before it is both a goal and a process."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1252.0,
+      "end": 1264.0,
+      "text": " We know that climate science tells us of the IPCC has told us through an exhaustive scientific process that we need to achieve net zero and put genetic greenhouse gas emissions by 2050."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1264.0,
+      "end": 1270.0,
+      "text": " Deep decarbonization is both the goal of getting to net zero emissions by 2050."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1270.0,
+      "end": 1277.0,
+      "text": " And also it's this process where decarbonizing for the next 28 years to lessen the effects climate change."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1277.0,
+      "end": 1282.0,
+      "text": " And so the first deep decarbonization plan started in 2015."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1282.0,
+      "end": 1291.0,
+      "text": " The deep decarbonization pathways projects started 2015 for a number of countries to try to think about what analytical or policy or technology pathways we needed."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1291.0,
+      "end": 1295.0,
+      "text": " It was updated in this paper in 2020 that you read this class."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1295.0,
+      "end": 1305.0,
+      "text": " That's probably followed by the White House mid-century strategy, which was the Obama administration's commitment to the Paris Agreement to reduce greenhouse gas emissions by 80% by 2050."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1305.0,
+      "end": 1318.0,
+      "text": " But just four years later you have a series of reports from academics and NGOs looking at ways to get a 100% reduction by 2050, which is what the IPCC says we need to do by 2050."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1319.0,
+      "end": 1335.0,
+      "text": " And so the key thing I want to say in this class but also in the paper I referred to last time last week of the paper on deep decarbonization I wrote recently is that many of these plans agree with the technology pathways are so we should focus as"
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1336.0,
+      "end": 1345.0,
+      "text": " Urban policy analysts and urban planners and people who work in cities on implementation, which we focus on geography, which focus on politics of it."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1345.0,
+      "end": 1353.0,
+      "text": " And frankly as planners we should look at the land use and built environment implications for deep decarbonization."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1354.0,
+      "end": 1369.0,
+      "text": " So look at the Sankey diagram from Williams at all 2020 they look at the reference case for energy use in the United States and this is a reference case I think the energy information administration puts out every year."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1369.0,
+      "end": 1385.0,
+      "text": " You can see on the left hand side that overwhelmingly the reference case, which is usually fairly conservative shows that we will get most of our energy from we get most of energy currently from uranium, full natural gas, a little bit from biomass and a large portion petroleum."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1385.0,
+      "end": 1390.0,
+      "text": " You can see the newables here are relatively small geothermal solar, wind and hydro."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1391.0,
+      "end": 1408.0,
+      "text": " And all the energy goes through these intermediate steps electricity generation pipeline gas, boiling refining outputs or liquid fuels, it gets transmitted like the grid and ultimately goes to buildings, which are residential commercial buildings together, it goes to industry and goes transportation."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1409.0,
+      "end": 1427.0,
+      "text": " Again you can see here from buildings that overwhelmingly about half of the energy comes from the grid, half of energy comes from pipeline gas, transportation and was all the energy currently currently used comes from comes from the volume and industry uses a variety of energy technologies and fuels."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1427.0,
+      "end": 1436.0,
+      "text": " Now let's contrast that with the Williams paper on what a 100% renewable energy feature look like. There's a couple things to notice here."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1436.0,
+      "end": 1449.0,
+      "text": " First all of our newables, the 100% renewable sources we are going to need are have taken over completely geothermal solar wind hydro biomass, there's no poll, no natural gas and no petroleum."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1449.0,
+      "end": 1463.0,
+      "text": " Overwhelmingly about two thirds of the energy will go through the electric grid, it will be generated electricity, I'd go through the grid or you used to produce hydrogen hydrogen will produce various liquid and gas fuels."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1463.0,
+      "end": 1473.0,
+      "text": " And if you look at what the future looks like in 2050 according to this paper or this technology pathway, you can see that buildings have to overwhelmingly get their energy for electricity."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1473.0,
+      "end": 1484.0,
+      "text": " Industry will still use a variety of inputs, but all those inputs will be from intermediate steps that have transformed our renewable energy into the kinds of fuels we need to drive into processes."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1484.0,
+      "end": 1493.0,
+      "text": " And you can see that transportation is going to come overwhelmingly from electric about 50% of our energy and transportation will come electric."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1493.0,
+      "end": 1507.0,
+      "text": " Some of it will come from I think liquid fuels and some will come from compressed gases such as hydrogen and maybe natural gas or methane produced from renewable resources."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1507.0,
+      "end": 1522.0,
+      "text": " And let's just look at the implications from this and this is to read the numbers off those previous to graphs and then you look at the power sector, you can see that petroleum natural gas and coal, as I said, has to be eliminated completely 100%."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1522.0,
+      "end": 1535.0,
+      "text": " Biomast has to grow by 3.5 times nuclear power in the 100% renewable case is actually eliminated completely because I think Williams and I will do not define nuclear as a renewable energy source."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1535.0,
+      "end": 1546.0,
+      "text": " But the key things that most dire I think are most challenging things we have to deal with are growing our solar energy share by about a factor of 46."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1546.0,
+      "end": 1556.0,
+      "text": " We have to grow our share for wind by factor of 27 hydro energy thermal are going to be relatively small players in this forecast and that's just the power sector."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1556.0,
+      "end": 1565.0,
+      "text": " If you look at buildings, residential commercial, you can see two things not only does electricity have to decline in total use."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1565.0,
+      "end": 1573.0,
+      "text": " But we have to completely eliminate natural gas and we have to increase our use of biomass just slightly."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1573.0,
+      "end": 1579.0,
+      "text": " Now the key thing is that the reason why we're declining our total use of electricity is that it's more efficient."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1579.0,
+      "end": 1590.0,
+      "text": " But at the same time of electricity we do use is going to be used to do things that natural gas currently does if we're going to get heating and cooling from electricity rather than natural gas as we do now."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1590.0,
+      "end": 1594.0,
+      "text": " And so this is one important point on a highly from Sankey diggers."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1594.0,
+      "end": 1611.0,
+      "text": " If you look at the total primary energy and buildings, it actually has to go down by about 50% and this is the point I think I made in the last class, which is if you look back here, the total energy looks like I think roughly 100 plots also 100 accidentals, I think is how this paper measures it."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1611.0,
+      "end": 1624.0,
+      "text": " And if you look at the next slide, you can see that the width of these flows have gone down a little bit, which is just make the point that I think I said to you last week, which is that not only do our uses have to become more thicken."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1624.0,
+      "end": 1631.0,
+      "text": " We also have to simply reduce the total amount we're using and the remaining 50% has to become renewable."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1631.0,
+      "end": 1637.0,
+      "text": " So we actually need a complete transformation by energy system, both on the consumption side and production side."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1637.0,
+      "end": 1646.0,
+      "text": " If you look at the tone paper, this is going to shift a little bit to this question of existing energy infrastructure."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1646.0,
+      "end": 1650.0,
+      "text": " This is a paper written in 2019 in nature."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1650.0,
+      "end": 1666.0,
+      "text": " And in this paper, they say our estimates suggest that little or no new CO2 emitting infrastructure can be commissioned and that existing infrastructure may need to be retired early or be retrofit with carbon capture and storage technology in order to meet the pairs of green and fine goals."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1666.0,
+      "end": 1673.0,
+      "text": " So this paper is basically going to show us that we had a distinct infrastructure, obviously the energy infrastructure that we use every day."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1673.0,
+      "end": 1690.0,
+      "text": " And if we want to meet our pairs of unit son of goals, which is keeping preferably global average temperature is less than 1.5 degrees Celsius, higher than green, industrial era, we actually need to build no more fossil fuel infrastructure, which is CO2 mini infrastructure."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1690.0,
+      "end": 1696.0,
+      "text": " And we may have to retire some of the energy infrastructure to have early before its plan lifetime."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1696.0,
+      "end": 1714.0,
+      "text": " This is part of the struggle. This is why you have activists trying to retire, pull fired power plants and avoid building new pipelines in natural gas plants or having, passing, let's say, gas bands for new appliances in parts of Massachusetts and California and other states."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1714.0,
+      "end": 1733.0,
+      "text": " So just to show you what this looks like, all these categories of the legends here, commercial buildings, residential building, international transport, road transport, industry electricity, these kinds of technologies have a natural lifetime in terms of they have committed CO2 emission from existing and proposed infrastructure."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1733.0,
+      "end": 1743.0,
+      "text": " And you see that our existing infrastructure is overwhelmingly dominated by industry and electricity and road transport is this blue wedge and buildings are actually built to be small."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1743.0,
+      "end": 1754.0,
+      "text": " And those are all things that are going to phase out naturally over time because infrastructure gets bold. If you don't maintain it and you don't rebuild it, then it wears out and you can't use it anymore."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1754.0,
+      "end": 1762.0,
+      "text": " We have more proposed infrastructure, but that proposed infrastructure cannot be built if we need to try to meet our price climate goals."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1763.0,
+      "end": 1781.0,
+      "text": " At the same time, in the B panel here, we have the commuter emissions from different countries and you can see the lifetime of infrastructure in China is relatively long and a large portion of the future problem because so much of it is built fairly recently."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1781.0,
+      "end": 1793.0,
+      "text": " You can see the rest of the world is actually only about two thirds of the problem that China poses. And as the US has a relatively small future commuter emissions because the nature of our technology."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1793.0,
+      "end": 1808.0,
+      "text": " Of course, there's been many more proposed projects, but the point of this paper is that we cannot actually build the proposed infrastructure and we may have to retire some existing infrastructure early to avoid going over our climate limits."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1808.0,
+      "end": 1824.0,
+      "text": " So another kind of interesting graph in this paper, which I like quite a bit is a population pyramid, but a sort of a population pyramid showing the portions of the population of people by age that actually shows the age structure of our global electricity generating capacity."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1825.0,
+      "end": 1835.0,
+      "text": " And I want to simply make a point about what the different nature of the problem in China and the US are you can see on the left hand side, this is the rest of the world."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1835.0,
+      "end": 1843.0,
+      "text": " Some ways dominated by the US can see our 15 or 17 years ago, we built quite a bit of natural gas or oil infrastructure."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1843.0,
+      "end": 1849.0,
+      "text": " You can see the rest of the world has more recently the building gas and oil infrastructure at the yellow bars."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1849.0,
+      "end": 1861.0,
+      "text": " And you can see the right hand side, this is an electricity generation from coal that is overwhelmingly dominated by coal fire power plants built in China most in the last 12 or 14 years."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1861.0,
+      "end": 1882.0,
+      "text": " The reason why we use this graph is to look at the nature of the problem and what particular sectors we're going to have to tackle, which particular power plants for not to tackle to avoid beating more greenhouse gas emissions that again will put us beyond our prayers, we need targets that will then finally jeopardize the climate of the planet."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1883.0,
+      "end": 1900.0,
+      "text": " So this brings me to cities, which is numerous recent studies show that most US greenhouse gas emissions or global greenhouse gas emissions in some of these studies are from cities, but the key point of this literature on a highlight is that the exact proportion to depends on how and where you count."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1901.0,
+      "end": 1914.0,
+      "text": " The Jones et al 2018 paper and the Goldstein et al 2020 paper both find find the higher incomes and lower population desities are highly correlated with higher carbon footprints and energy use."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1914.0,
+      "end": 1926.0,
+      "text": " The gurney et al 2018 2020 and 2021 reports papers find the majority of road and fossil fuel infrastructure or use and be associated with cities."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1926.0,
+      "end": 1955.0,
+      "text": " The Moran paper is quite interesting and it finds that both in the China in both China and the US the largest 10 cities plus 5% of suburban residents by income are responsible for more than majority of the greenhouse gas emissions from both countries, China and the US, which is to say that if we focused just on largest 10 cities and the most carbon intensive suburbs, and we could actually make a significant difference in the greenhouse gas emissions in countries."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1955.0,
+      "end": 1974.0,
+      "text": " It is also kind of recapping the moral argument I made to you in the last class, which is that the richest people in both countries have a disproportionate responsibility to lower the greenhouse gas emissions, just in the same way that the US has a disproportionate responsibility to lower greenhouse gas emissions relative to the rest of the world."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1974.0,
+      "end": 1985.0,
+      "text": " Finally, the CTO in 2021 and the wide mineral papers 2021 kind of show different research and planning frameworks for how do you really count these greenhouse gas emissions."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1985.0,
+      "end": 1998.0,
+      "text": " And so there's debate about how you count it, but there's this emerging consensus and literature that cities are responsible for a large portion of greenhouse gas emissions in many countries, including China and the US."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 1998.0,
+      "end": 2006.0,
+      "text": " Just to highlight a few of the key issues why it's hard to get an exact proportion depends on different definitions of the cities or what an urban area is."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2006.0,
+      "end": 2021.0,
+      "text": " It depends which emissions you count upstream emissions, like things that you import in the form of fuels or goods, downstream emissions, the things that you export out of the city or waste energy or waste products that go outside the city and goods and services."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2021.0,
+      "end": 2031.0,
+      "text": " There's all different ways to count emissions from all these things, the C40 and error report that I assigned in the reading gets to some of these issues."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2031.0,
+      "end": 2043.0,
+      "text": " Finally, some interesting questions that are not always accounted for cities clearly shaped local microclimates to account that as part of climate change because that actually changes how people subsequently use energy and cities."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2043.0,
+      "end": 2048.0,
+      "text": " And this is kind of fundamental question, how do you measure applicants to measure in terms of wealth or income."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2048.0,
+      "end": 2056.0,
+      "text": " I suspect if we measure these in different ways, you'd find different places are responsible for different levels of greenhouse gas emissions."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2056.0,
+      "end": 2064.0,
+      "text": " Just again, kind of make this argument about how we measure things matters and also how intensity may show as a different picture."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2064.0,
+      "end": 2069.0,
+      "text": " This is from the gurney at out 120 paper, the left hand panel shows absolute emissions."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2069.0,
+      "end": 2086.0,
+      "text": " You can see the absolute emissions in this country basically almost identically mimics the spatial or urban spatial structure of the country or all the red areas and the left coast or high concentrations of absolute emissions."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2086.0,
+      "end": 2102.0,
+      "text": " Of course, if you mentioned a pretty capital basis, you might say, OK, out west people are relatively inefficient, but we should also highlight the fact that there's these interrelationships between these two areas of places out here in the west is a high concentration of fossil fuel production generation."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2102.0,
+      "end": 2111.0,
+      "text": " But where is that energy going that energy is going to cities and so we think back to Maccays left hand bar of consumption."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2111.0,
+      "end": 2123.0,
+      "text": " I would argue to all the urban planners in the ring and I have said this to my colleagues in city government that we should not be complacent about the fact that we think we have relatively low capital emissions in cities."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2123.0,
+      "end": 2134.0,
+      "text": " We have to be responsible for the fact that energy is being used elsewhere that we consume in the form of fuels, foods and services, food and we export our waste also."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2134.0,
+      "end": 2141.0,
+      "text": " So that is the place where cities can have a big impact on greenhouse gas emissions, but it may be a different kind of efficiency."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2141.0,
+      "end": 2152.0,
+      "text": " You might have to think about how much we consume, why we consume energy, how do we do it more efficiently and hopefully ultimately reduce our consumption to meet our decarbonization goals."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2152.0,
+      "end": 2157.0,
+      "text": " Finally, I'll just flash through the readings quickly because we'll talk about them more in fast."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2157.0,
+      "end": 2165.0,
+      "text": " The Sue at L 2019 paper, this is actually not my paper, it's written by a colleague, Angel Sue at the University of North Carolina."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2165.0,
+      "end": 2177.0,
+      "text": " It is a research roadmap for how do we spend more time or how do we spend more thinking about quantifying the climate mitigation actions that non-state or subnational governments could take."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2177.0,
+      "end": 2186.0,
+      "text": " And this is getting that kind of measurement question, how are we going to measure greenhouse gas emissions and how are we going to measure what act in those entities take."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2186.0,
+      "end": 2197.0,
+      "text": " And just to give you an example, there's different ways to count how cities take climate action in the person, state targets and those targets may be different still than national level targets."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2197.0,
+      "end": 2210.0,
+      "text": " So, you know, this question, are we going to double count in some cases, cities are actually most cases, cities are more ambitious than their states, cities are all kind of more ambitious than national governments."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2210.0,
+      "end": 2221.0,
+      "text": " We want to avoid double counting, we want to assume we want to count cities considering how we're going to, those cities are going to act well to the cities without targets."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2221.0,
+      "end": 2225.0,
+      "text": " So, this paper will get at that, we'll just talk about more in class."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2225.0,
+      "end": 2231.0,
+      "text": " And this brings me to this optional reading by Mark Lath et al, which is pledges and progress."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2231.0,
+      "end": 2236.0,
+      "text": " This is a Brookings station report, it looks to 100 largest cities across the United States."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2236.0,
+      "end": 2246.0,
+      "text": " They find that number of cities, these 100 cities have all set fairly ambitious goals, everything on the blue here, on the right."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2246.0,
+      "end": 2254.0,
+      "text": " The parentheses shows you when they set the goal and you can see Boston where we are actually came bridges also in the graph somewhere."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2254.0,
+      "end": 2260.0,
+      "text": " But Boston Massachusetts in 2005, so they're going to have an 80% reduction by 2050."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2260.0,
+      "end": 2268.0,
+      "text": " As all of these cities did also meeting the White House's targets in 2016."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2268.0,
+      "end": 2272.0,
+      "text": " It's come measure with the national targets of 2016."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2272.0,
+      "end": 2279.0,
+      "text": " You can see a number of these cities here and left have set less ambitious targets, 50% reduction, let's say 40% reduction."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2279.0,
+      "end": 2288.0,
+      "text": " But they may have more closer targets, so this might be an interim goal on the way to a more ambitious target down the road."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2288.0,
+      "end": 2295.0,
+      "text": " The take home from this Markle report and you know, let's you look at it, you leave here, because I think something will be quite interested in particular cities."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2295.0,
+      "end": 2300.0,
+      "text": " You can see what the differences between their current emissions inventory and their target emissions."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2300.0,
+      "end": 2308.0,
+      "text": " And you can see in the case of Chicago Illinois, they said a 2015 to the 2015 greenhouse gas inventory."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2308.0,
+      "end": 2316.0,
+      "text": " They have targeted admission in the year that inventory and it looks like Chicago is admitting about 50% more emissions than they targeted in 2015."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2316.0,
+      "end": 2326.0,
+      "text": " I actually find this report quite hopeful because it takes a serious look at all these cities and says, well, we should take cities seriously in terms of the climate action goals and setting."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2326.0,
+      "end": 2331.0,
+      "text": " But in order to take them seriously, we also have to hold them according to the plans that they're setting."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2331.0,
+      "end": 2341.0,
+      "text": " So it looks like Boston is closer to its target at 10% higher inventory emissions than it had the plan for in 2016."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2341.0,
+      "end": 2348.0,
+      "text": " So that 10% hopefully gives us or that inventory difference gives us a good place to target our actions."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2348.0,
+      "end": 2354.0,
+      "text": " Other places let's say Los Angeles looks like it's actually headed at schools is actually 10% less than the greenhouse gas emissions."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2354.0,
+      "end": 2357.0,
+      "text": " They plan for it in 2013."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2357.0,
+      "end": 2366.0,
+      "text": " So cities looks like almost overwhelmingly temperate cities except for Minneapolis, but all these fairly temperate region cities are doing better than they expected."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2366.0,
+      "end": 2372.0,
+      "text": " Some of these cities here, I guess Chicago is a cold climate city and Tucson is the opposite."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2372.0,
+      "end": 2380.0,
+      "text": " But for different reasons, Tucson and Chicago are wildly over the goals they set in 2014 and 2015."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2380.0,
+      "end": 2384.0,
+      "text": " And so I'll just stop here and I will talk more in class this week."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2384.0,
+      "end": 2388.0,
+      "text": " We'll talk the results of carbon calculators that we did for Homer."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2388.0,
+      "end": 2393.0,
+      "text": " We'll I'll put some questions for discussion on the board and we'll just start our discussion."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2393.0,
+      "end": 2396.0,
+      "text": " And we'll have some news items to talk about in class."
+    },
+    {
+      "title": "cities_and_decarbonization_standard_res",
+      "start": 2396.0,
+      "end": 2400.0,
+      "text": " Thank you very much. I hope you guys have a great rest of your weekend."
+    }
+  ],
+  "text": " Hi everyone and welcome back to the MIT class and urban energy systems. Wherever you're seeing this lecture, please subscribe. You can either find it on the web page where you found this video or ask the instructor. Let's get back to the topic for today which is going to be cities and decarbonization. What is the role of cities? Again, I'm David Sew and if you're thinking about how cities can take action or what their roles in decarbonization, you have found the right place and your people. I want to cover briefly how you prepare for class this week. This is our second class. I want to make sure that everyone's caught up. First, the introductory reading from last week is fairly short and skimable so it's easy to catch up. But you should catch up. It's particularly important to look at my CHAPTER 2. Again, it's my CHAPTER 2. There's an initial problem set due Monday night. You can just access the problem set by going directly to this Google form, the link on the screen. You should do the reading for this week. That's on the syllabus. I'll also show the reading for this week on the next page. And then you should watch the rest of this video lecture. And during the reading and while watching the video lecture, it's important for you to write down the questions that you have for discussion. And then I want you to feel free to share them on Slack whenever a synchronously or in our class meeting on Tuesday. So the material for today, again, I won't go over them. These are all new syllabus, but these will also be the slides so you can follow the links. The first four readings are the required readings. And then the last two readings are optional readings that give additional information to the articles above. So what I want to start with is my CHAPTER 2. What he calls the balance sheet. And then we have the important set of concepts, simply so we can think about the energy system. And very simply what Makhayas trying to do in his book is contrast these red and green bars. Energy consumption is on the left in red. Energy production is on the right in green. And so when Makhay titles his book, sustainable energy without the hot air. And we're trying to do is replace our current level of consumption with entirely renewable resources. And that's how we're going to achieve a sustainable energy system. And so a sustainable energy system would be if our total conceivable sustainable production sources on the right are greater than our total consumption. And an unsustainable energy system would be where our total consumption of energy is larger than our total conceivable sustainable production. Of course these two bars will change over time as our expectations around consumption change and our technologies and our institutions and our markets for sustainable production change. But that's the challenge, the challenge is to try to put these two in balance and at least have total sustainable production that is enough to meet all of our societal needs or our global societal needs or energy consumption. One of my look like is the key forms of consumption on the left hand stack in red. That is the energy we need for transportation, including cars, planes and freight. It's the energy we need to heat and cool the spaces that we live in that can wildly differ across countries. It's a basic need for lighting so we can see at night. It's a growing need for energy for information systems and our other gadgets. The fifth point food, a tremendous amount of energy goes into growing and transporting and keeping our food cold and finally manufacturing for all the technologies or all the gadgets we need to do transportation or heating and cooling like information systems of food. We have to make these things in the first place and that requires a tremendous amount of energy. On the right hand side, our sustainable production stack has a number of categories. The good thing is, and I'll try to emphasize this in the class repeatedly, is that we have many sustainable technologies that can produce energy. We have wind and solar. A solar energy can be harnessed in the form of affordable taillight or solar cells that produce electricity. We can harness solar energy through thermal energy and we can also harness solar energy through biomass by harvesting the potential of earth to engage in photosynthesis, create crops that we then can use for other things, including burning in engines. Hydroelectric power is producing electricity directly from our mechanical storage directly from hydropower, wave energy and tide energy are two sources of energy that comes from the earth. On a regular basis, geothermal energy also comes from the earth. The heat inside the earth can be harnessed to produce energy and finally nuclear. And my Kai puts it with a question mark because it's not clear whether or not it's nuclear energy or nuclear power accounts is sustainable. It is low carbon, but as I said in the earlier class, we have questions about how do we handle the fuel for nuclear power plants, how do we handle the waste for nuclear power plants and whether or not that will be fully sustainable in the long run. And so I want to cover two physical concepts from a chai chapter 2 that I think are basically going to be the most important physical concepts you need to understand as class. And the first one, quite simply, is energy is the quantitative property of doing work. Energy can be neither destroyed nor created, one of our fundamental laws of thermodynamics. Energy can be transformed into light heat or mass. Hence the famous equation by Einstein equals E equals mc squared energy equals mass times the speed of light squared. This is a fundamental finding out of relativity. And of course energy can take many different forms and we use it in many different forms in our energy system energy can be kinetic. It can be chemical, we can have potential energy, we can have a chemical energy, let's say stored in the elastic properties materials. And of course biological energy, which is fundamentally chemical energy, but we have different modes of perhaps using that chemical energy in our muscles in animals in ecosystems. And we're going to measure energy in terms of units of kilowatt hours. You'll see energy referred to in terms of British thermal units, BTUs, something only used in the US and America, the United States, Thurms, Jules, calories are all units for energy, they can all be converted to kilowatt hours. A specific category I want to highlight below is fossil fuels are sometimes measured in barrels of oil, short tons of coal, cubic feed natural gas. That's because that's how we measure the things we trade in commodity markets for commoditized fossil fuels. But again, the amount of energy in a barrel oil and a short ton of coal and cubic foot of natural gas can be converted to kilowatt hours. So just to give you a few examples, example one, you may have had the frustrating experience of having gone to the gym foolishly, counting your calories, realizing you worked out for an hour on a running treadmill as only equivalent to three Oreos. You can also look at example two, the average American household uses per year, about 11,000 kilowatt hours in electricity. Each person uses 300 million BTUs total per year, which is approximately 2.3 gallons of oil, 7.89 pounds of coal and 252 cubic feet of natural gas per day. Now, let's just more pointing out that the first example in terms of the American household is in kilowatt hours, but only counts for electricity. That's for the whole household per year. The second sentence measures each person on a per capita basis, but then breaks the millions of BTUs into different units because of the different sources of energy. And this is to say that when we do these comparisons, we want to be careful about the units we use, the average in over time, and the sources of energy because the original source of energy may not actually be how much energy we use in the end. We'll talk about that more in a few slides. Another key fiscal concept we have to talk about our will be very useful is power and that's the quantitative rate of doing work. That is our is energy per time. It's a rate. The units we use of that are watts or equal to jewels per second, other other forms of power they might be familiar with are earths and peers in terms of the left from current, horsepower in terms of the engine in your car or other motors. And lumens are the amount of energy cast off per second from led light bulb, but measured over a spear around light bulb. So it's actually weighted by the area around light bulb or what degree of area is is putting off how much energy. So to just kind of use the same example as the previous slide, you could say I worked out for an hour and I only worked off the equivalent of three Oreos, but maybe sounds perhaps more impressive if you say my workout maintained a steady power output of three Oreos per hour. Another key concept we have to cover that links energy and climate is emissions intensity and emissions are measured in terms of greenhouse gases. Usually measured in metric ton carbon dioxide equivalent, which is abbreviated MTCDE or MTCO2E and so on. And the reason why we have to measure it in terms of metric ton carbon dioxide equivalent is that there's a lot of different greenhouse gases and sub of them, for example, methane, CH4 as much more global warming potential carbon dioxide. So a single ton of methane has about 84 times the global warming potential of a ton of carbon dioxide. And in early in this life, that defines over time to have 20 metric tons of carbon dioxide equivalent. So this is just to say that if we have different greenhouse gases, we've measured them or make them all equivalent to a metric ton of carbon dioxide equivalent during the lifetime. We can also measure emissions intensity by the type of gas as the example I just gave you in terms of methane, also nitrous oxide and flora hexane, I think, or another greenhouse gas. You can measure emissions intensity per unit of energy. This much greenhouse gas is created in terms of this much energy. You can measure greenhouse gases per activity per dollar GDP or by region. People use lots of different intensities. And the reason why I'm focusing on this key constant intensity is that as we look at different parts of the system, we're going to look at the intensity of the different parts of the system to kind of get a whole picture of where greenhouse gases are coming from. Just like we're going to look at energy intensity, in terms of how much energy do you need for different activities, how much energy do different regions of the world use. And so to give you a few examples of the components of the parties, the top meetings that the UN framework invention on climate change runs every year. They have reporting inventory and when every country, which is party to the current agreement, has to report its greenhouse gas missions. And frankly, the actions that they're taking to reduce their greenhouse gases, they have to measure or report their greenhouse gases in terms of a specific inventory format. And so, you can see that here, you can click on it and you can see how countries report different kinds of greenhouse gases. It's because countries can only see the source of the activities at create greenhouse gases. So it's easier for us to measure how many barrels of oil we burned or how many short tons of poll we burned or let's say how much land use conversion has led to how much methane or how much carbon dioxide. We can also measure, let's say, our greenhouse gas emissions per unit of electricity because electricity comes from a grid that grid is a technology we'll talk about a lot in this class that mixes different sources of energy together. So we try to get an average intensity of greenhouse gas missions per unit electricity in different regions. Another mission is intensity factor that people look at quite often is air quality. You can look at how many greenhouse gases or how much particulate matter is produced by certain activities like the local miles travels or a number of cars and rate. So just to give you an example of what carbon emission intensity looks like, this is the carbon emission intensity of economies in 2018 and this is from our world and data. And you can see actually it's measured on the bottom legend here in terms of amount of kilograms of carbon dioxide equivalent carbon dioxide intensity per dollar of GDP measured in international 20 limit prices. And you can see by that measure actually a lot of the developed world such as Australia, North America and parts of Latin America don't look very intense if only because they don't produce that many greenhouse gases per dollar of the GDP output. Now, like we talked about in the last class in terms of population, what does this hide? Well, there's a couple of things with a map. Sometimes the area of the map distorts the actual area or total emissions. You know, small places don't look like they have as much impact as big places, even though that really has nothing to do with the average. But the more important point from a map like this is that it hides the fact that the rich countries like Australia, Europe, North America and parts of Latin America, simply have much larger GDPs. So it looks like the carbon dioxide output per GDP is low. But if we look at the per capita CO2 emissions like the point in our last class, you can see that for a relatively small number of people in those rich developed countries, they have very high CO2 emissions per capita. And so your map basically changes biometrically and you can see the difference between richer countries and poor countries and overwhelmingly the richer countries are more responsible for carbon dioxide emissions. If we look at this similarly in kind of a scatter plot, you can again see that it looks like on an emission intensity basis, India and the United States are not that different. Of course, the differences in terms of the output of the economy on a per capita basis, the average person United States produces much more and inevitably consumes much more than your average person in the Pakistan. So even though we have equivalent emissions intensity per dollar, we simply produce and consume much more in the rich countries. And I make this point because after the Kyoto Protocol and after the George W. Bush administration chose to leave the Kyoto Protocol, one of their arguments was that the US actually had a lower carbon emission intensity or at least a comparable carbon emission intensity to some developing countries. Of course, this hit the fact that the United States is both richer and consumes much more and produces much more. So that's just a way to talk about what intensities may tell us and what they may hide also. Now I'm going to get to a really kind of key dive in that I rather love in this class. So I'll start off this class by talking about St. Key diagrams. And you can find a St. Key diagram of the US and every state at this web link at the bottom, Lawrence, live more national laboratory. What a St. Key diagram is is basically a flow chart. It's a flow chart between the sources on the left and you can see all of our energy sources solar nuclear hydro winds, you're thermal natural gas coal bomb mass petroleum. And we get all of the ultimate uses on the right. And the final I guess we call final consumption is in residential buildings, commercial buildings, industrial buildings and transportation. Of course, the spinal category here is also a kind of a statement about where does the energy go in the first place. Only about 50% of the energy or less that we actually burn in the original original sources goes into these uses in the sectors about actually looks like one third of the energy goes to what we call energy services. So the objective energy is the by parts of that combustion usually that we don't capture for apple energy services. So to give you an example, you can see how I said before the electric grid mixes many different types of energy sources solar nuclear hydro wind all these natural gas and coal all feed into the electric grid. When we feed that energy into electric grid into power plants, we basically only take a fraction of it looks like about one third of the electricity, one third of the energy in those energy sources actually goes to things like residential commercial and best fuel. But about two thirds of it gets rejected, which means that it's heat energy going out of each chimney of a coal fire power plant. Or might be energy lost the electric grid, it simply lost because the resistance of the electrical wires. And so this kind of graph, I actually find tremendously useful to summarize what the sources on the left are the ultimate uses of the energy are on the right. And also some of the interim steps where we might be able to capture some energy back in terms of energy efficiency or let me think about how our intermediate technologies like the electric grid actually use energy and how much of the intrinsic energy in the fuel source are we using to take one example from this graph. I think it does a really good job of showing you, for example, that electricity over one way goes into residential buildings commercial buildings and industrial buildings are industrial activities. But you can see that there's no link between electricity generation and transportation so very small orange line here 0.0.0 to quad. One thing I should have pointed out is that the total US energy consumption in 2021 was by 97 quads. It's pretty easy mentally to round it up to about 100. So this is actually 0.02% roughly of all the energy in the US is used or electricity is used for transportation. You can see overwhelmingly that the majority of energy for transportation 24.3 quads or about 24% of the energy in the US comes from petroleum and originally that came from about 35 odds of 35% of our initial energy sources. And you can see some portion goes off to industrial activities. So the vast majority of the energy that drives our transportation system is petroleum. And you can see that when we burn petroleum or gasoline in our internal combustion engines, a very small fraction that looks like about 20% of it is actually used for moving the car forward about 80% of the energy actually goes out of the tailpipe either in the form of heat out of the tailpipe or else air resistance that is not really good. We are trying to do we are trying to move goods and services and people around. So this is just again a way of saying that there's lots of different kinds of Sankey diagrams. This is a nice one that has proportional flows between sources, intermediate transforming technologies and uses. It also shows you what efficiency level is being achieved in these different sectors. This is essentially a county exercise, but if you can find the Sankey diagram for a given region or city or country, it gives you a really good picture of where the energy is coming from or where the energy is going to. So want to use the Sankey diagrams to think about what our pathways are to deep decarbonization deep decarbonization. I think I've said before that I'm said before it is both a goal and a process. We know that climate science tells us of the IPCC has told us through an exhaustive scientific process that we need to achieve net zero and put genetic greenhouse gas emissions by 2050. Deep decarbonization is both the goal of getting to net zero emissions by 2050. And also it's this process where decarbonizing for the next 28 years to lessen the effects climate change. And so the first deep decarbonization plan started in 2015. The deep decarbonization pathways projects started 2015 for a number of countries to try to think about what analytical or policy or technology pathways we needed. It was updated in this paper in 2020 that you read this class. That's probably followed by the White House mid-century strategy, which was the Obama administration's commitment to the Paris Agreement to reduce greenhouse gas emissions by 80% by 2050. But just four years later you have a series of reports from academics and NGOs looking at ways to get a 100% reduction by 2050, which is what the IPCC says we need to do by 2050. And so the key thing I want to say in this class but also in the paper I referred to last time last week of the paper on deep decarbonization I wrote recently is that many of these plans agree with the technology pathways are so we should focus as Urban policy analysts and urban planners and people who work in cities on implementation, which we focus on geography, which focus on politics of it. And frankly as planners we should look at the land use and built environment implications for deep decarbonization. So look at the Sankey diagram from Williams at all 2020 they look at the reference case for energy use in the United States and this is a reference case I think the energy information administration puts out every year. You can see on the left hand side that overwhelmingly the reference case, which is usually fairly conservative shows that we will get most of our energy from we get most of energy currently from uranium, full natural gas, a little bit from biomass and a large portion petroleum. You can see the newables here are relatively small geothermal solar, wind and hydro. And all the energy goes through these intermediate steps electricity generation pipeline gas, boiling refining outputs or liquid fuels, it gets transmitted like the grid and ultimately goes to buildings, which are residential commercial buildings together, it goes to industry and goes transportation. Again you can see here from buildings that overwhelmingly about half of the energy comes from the grid, half of energy comes from pipeline gas, transportation and was all the energy currently currently used comes from comes from the volume and industry uses a variety of energy technologies and fuels. Now let's contrast that with the Williams paper on what a 100% renewable energy feature look like. There's a couple things to notice here. First all of our newables, the 100% renewable sources we are going to need are have taken over completely geothermal solar wind hydro biomass, there's no poll, no natural gas and no petroleum. Overwhelmingly about two thirds of the energy will go through the electric grid, it will be generated electricity, I'd go through the grid or you used to produce hydrogen hydrogen will produce various liquid and gas fuels. And if you look at what the future looks like in 2050 according to this paper or this technology pathway, you can see that buildings have to overwhelmingly get their energy for electricity. Industry will still use a variety of inputs, but all those inputs will be from intermediate steps that have transformed our renewable energy into the kinds of fuels we need to drive into processes. And you can see that transportation is going to come overwhelmingly from electric about 50% of our energy and transportation will come electric. Some of it will come from I think liquid fuels and some will come from compressed gases such as hydrogen and maybe natural gas or methane produced from renewable resources. And let's just look at the implications from this and this is to read the numbers off those previous to graphs and then you look at the power sector, you can see that petroleum natural gas and coal, as I said, has to be eliminated completely 100%. Biomast has to grow by 3.5 times nuclear power in the 100% renewable case is actually eliminated completely because I think Williams and I will do not define nuclear as a renewable energy source. But the key things that most dire I think are most challenging things we have to deal with are growing our solar energy share by about a factor of 46. We have to grow our share for wind by factor of 27 hydro energy thermal are going to be relatively small players in this forecast and that's just the power sector. If you look at buildings, residential commercial, you can see two things not only does electricity have to decline in total use. But we have to completely eliminate natural gas and we have to increase our use of biomass just slightly. Now the key thing is that the reason why we're declining our total use of electricity is that it's more efficient. But at the same time of electricity we do use is going to be used to do things that natural gas currently does if we're going to get heating and cooling from electricity rather than natural gas as we do now. And so this is one important point on a highly from Sankey diggers. If you look at the total primary energy and buildings, it actually has to go down by about 50% and this is the point I think I made in the last class, which is if you look back here, the total energy looks like I think roughly 100 plots also 100 accidentals, I think is how this paper measures it. And if you look at the next slide, you can see that the width of these flows have gone down a little bit, which is just make the point that I think I said to you last week, which is that not only do our uses have to become more thicken. We also have to simply reduce the total amount we're using and the remaining 50% has to become renewable. So we actually need a complete transformation by energy system, both on the consumption side and production side. If you look at the tone paper, this is going to shift a little bit to this question of existing energy infrastructure. This is a paper written in 2019 in nature. And in this paper, they say our estimates suggest that little or no new CO2 emitting infrastructure can be commissioned and that existing infrastructure may need to be retired early or be retrofit with carbon capture and storage technology in order to meet the pairs of green and fine goals. So this paper is basically going to show us that we had a distinct infrastructure, obviously the energy infrastructure that we use every day. And if we want to meet our pairs of unit son of goals, which is keeping preferably global average temperature is less than 1.5 degrees Celsius, higher than green, industrial era, we actually need to build no more fossil fuel infrastructure, which is CO2 mini infrastructure. And we may have to retire some of the energy infrastructure to have early before its plan lifetime. This is part of the struggle. This is why you have activists trying to retire, pull fired power plants and avoid building new pipelines in natural gas plants or having, passing, let's say, gas bands for new appliances in parts of Massachusetts and California and other states. So just to show you what this looks like, all these categories of the legends here, commercial buildings, residential building, international transport, road transport, industry electricity, these kinds of technologies have a natural lifetime in terms of they have committed CO2 emission from existing and proposed infrastructure. And you see that our existing infrastructure is overwhelmingly dominated by industry and electricity and road transport is this blue wedge and buildings are actually built to be small. And those are all things that are going to phase out naturally over time because infrastructure gets bold. If you don't maintain it and you don't rebuild it, then it wears out and you can't use it anymore. We have more proposed infrastructure, but that proposed infrastructure cannot be built if we need to try to meet our price climate goals. At the same time, in the B panel here, we have the commuter emissions from different countries and you can see the lifetime of infrastructure in China is relatively long and a large portion of the future problem because so much of it is built fairly recently. You can see the rest of the world is actually only about two thirds of the problem that China poses. And as the US has a relatively small future commuter emissions because the nature of our technology. Of course, there's been many more proposed projects, but the point of this paper is that we cannot actually build the proposed infrastructure and we may have to retire some existing infrastructure early to avoid going over our climate limits. So another kind of interesting graph in this paper, which I like quite a bit is a population pyramid, but a sort of a population pyramid showing the portions of the population of people by age that actually shows the age structure of our global electricity generating capacity. And I want to simply make a point about what the different nature of the problem in China and the US are you can see on the left hand side, this is the rest of the world. Some ways dominated by the US can see our 15 or 17 years ago, we built quite a bit of natural gas or oil infrastructure. You can see the rest of the world has more recently the building gas and oil infrastructure at the yellow bars. And you can see the right hand side, this is an electricity generation from coal that is overwhelmingly dominated by coal fire power plants built in China most in the last 12 or 14 years. The reason why we use this graph is to look at the nature of the problem and what particular sectors we're going to have to tackle, which particular power plants for not to tackle to avoid beating more greenhouse gas emissions that again will put us beyond our prayers, we need targets that will then finally jeopardize the climate of the planet. So this brings me to cities, which is numerous recent studies show that most US greenhouse gas emissions or global greenhouse gas emissions in some of these studies are from cities, but the key point of this literature on a highlight is that the exact proportion to depends on how and where you count. The Jones et al 2018 paper and the Goldstein et al 2020 paper both find find the higher incomes and lower population desities are highly correlated with higher carbon footprints and energy use. The gurney et al 2018 2020 and 2021 reports papers find the majority of road and fossil fuel infrastructure or use and be associated with cities. The Moran paper is quite interesting and it finds that both in the China in both China and the US the largest 10 cities plus 5% of suburban residents by income are responsible for more than majority of the greenhouse gas emissions from both countries, China and the US, which is to say that if we focused just on largest 10 cities and the most carbon intensive suburbs, and we could actually make a significant difference in the greenhouse gas emissions in countries. It is also kind of recapping the moral argument I made to you in the last class, which is that the richest people in both countries have a disproportionate responsibility to lower the greenhouse gas emissions, just in the same way that the US has a disproportionate responsibility to lower greenhouse gas emissions relative to the rest of the world. Finally, the CTO in 2021 and the wide mineral papers 2021 kind of show different research and planning frameworks for how do you really count these greenhouse gas emissions. And so there's debate about how you count it, but there's this emerging consensus and literature that cities are responsible for a large portion of greenhouse gas emissions in many countries, including China and the US. Just to highlight a few of the key issues why it's hard to get an exact proportion depends on different definitions of the cities or what an urban area is. It depends which emissions you count upstream emissions, like things that you import in the form of fuels or goods, downstream emissions, the things that you export out of the city or waste energy or waste products that go outside the city and goods and services. There's all different ways to count emissions from all these things, the C40 and error report that I assigned in the reading gets to some of these issues. Finally, some interesting questions that are not always accounted for cities clearly shaped local microclimates to account that as part of climate change because that actually changes how people subsequently use energy and cities. And this is kind of fundamental question, how do you measure applicants to measure in terms of wealth or income. I suspect if we measure these in different ways, you'd find different places are responsible for different levels of greenhouse gas emissions. Just again, kind of make this argument about how we measure things matters and also how intensity may show as a different picture. This is from the gurney at out 120 paper, the left hand panel shows absolute emissions. You can see the absolute emissions in this country basically almost identically mimics the spatial or urban spatial structure of the country or all the red areas and the left coast or high concentrations of absolute emissions. Of course, if you mentioned a pretty capital basis, you might say, OK, out west people are relatively inefficient, but we should also highlight the fact that there's these interrelationships between these two areas of places out here in the west is a high concentration of fossil fuel production generation. But where is that energy going that energy is going to cities and so we think back to Maccays left hand bar of consumption. I would argue to all the urban planners in the ring and I have said this to my colleagues in city government that we should not be complacent about the fact that we think we have relatively low capital emissions in cities. We have to be responsible for the fact that energy is being used elsewhere that we consume in the form of fuels, foods and services, food and we export our waste also. So that is the place where cities can have a big impact on greenhouse gas emissions, but it may be a different kind of efficiency. You might have to think about how much we consume, why we consume energy, how do we do it more efficiently and hopefully ultimately reduce our consumption to meet our decarbonization goals. Finally, I'll just flash through the readings quickly because we'll talk about them more in fast. The Sue at L 2019 paper, this is actually not my paper, it's written by a colleague, Angel Sue at the University of North Carolina. It is a research roadmap for how do we spend more time or how do we spend more thinking about quantifying the climate mitigation actions that non-state or subnational governments could take. And this is getting that kind of measurement question, how are we going to measure greenhouse gas emissions and how are we going to measure what act in those entities take. And just to give you an example, there's different ways to count how cities take climate action in the person, state targets and those targets may be different still than national level targets. So, you know, this question, are we going to double count in some cases, cities are actually most cases, cities are more ambitious than their states, cities are all kind of more ambitious than national governments. We want to avoid double counting, we want to assume we want to count cities considering how we're going to, those cities are going to act well to the cities without targets. So, this paper will get at that, we'll just talk about more in class. And this brings me to this optional reading by Mark Lath et al, which is pledges and progress. This is a Brookings station report, it looks to 100 largest cities across the United States. They find that number of cities, these 100 cities have all set fairly ambitious goals, everything on the blue here, on the right. The parentheses shows you when they set the goal and you can see Boston where we are actually came bridges also in the graph somewhere. But Boston Massachusetts in 2005, so they're going to have an 80% reduction by 2050. As all of these cities did also meeting the White House's targets in 2016. It's come measure with the national targets of 2016. You can see a number of these cities here and left have set less ambitious targets, 50% reduction, let's say 40% reduction. But they may have more closer targets, so this might be an interim goal on the way to a more ambitious target down the road. The take home from this Markle report and you know, let's you look at it, you leave here, because I think something will be quite interested in particular cities. You can see what the differences between their current emissions inventory and their target emissions. And you can see in the case of Chicago Illinois, they said a 2015 to the 2015 greenhouse gas inventory. They have targeted admission in the year that inventory and it looks like Chicago is admitting about 50% more emissions than they targeted in 2015. I actually find this report quite hopeful because it takes a serious look at all these cities and says, well, we should take cities seriously in terms of the climate action goals and setting. But in order to take them seriously, we also have to hold them according to the plans that they're setting. So it looks like Boston is closer to its target at 10% higher inventory emissions than it had the plan for in 2016. So that 10% hopefully gives us or that inventory difference gives us a good place to target our actions. Other places let's say Los Angeles looks like it's actually headed at schools is actually 10% less than the greenhouse gas emissions. They plan for it in 2013. So cities looks like almost overwhelmingly temperate cities except for Minneapolis, but all these fairly temperate region cities are doing better than they expected. Some of these cities here, I guess Chicago is a cold climate city and Tucson is the opposite. But for different reasons, Tucson and Chicago are wildly over the goals they set in 2014 and 2015. And so I'll just stop here and I will talk more in class this week. We'll talk the results of carbon calculators that we did for Homer. We'll I'll put some questions for discussion on the board and we'll just start our discussion. And we'll have some news items to talk about in class. Thank you very much. I hope you guys have a great rest of your weekend.",
+  "video_number": 2
+}

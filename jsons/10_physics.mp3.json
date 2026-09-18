@@ -1,0 +1,2136 @@
+{
+  "chunks": [
+    {
+      "title": "physics",
+      "start": 0.0,
+      "end": 20.0,
+      "text": " Okay, welcome everyone. Welcome back to 8225, which is also STS042, physics in the 20th century."
+    },
+    {
+      "title": "physics",
+      "start": 20.0,
+      "end": 27.0,
+      "text": " Let me start by asking just quickly, if there are any logistical questions, any kind of course structure or other questions like that."
+    },
+    {
+      "title": "physics",
+      "start": 27.0,
+      "end": 31.0,
+      "text": " We can try to clear up quickly and then we'll jump into the first main lecture."
+    },
+    {
+      "title": "physics",
+      "start": 31.0,
+      "end": 39.0,
+      "text": " In general, it's good to do the readings at least to skim the more technical readings before the assigned class."
+    },
+    {
+      "title": "physics",
+      "start": 39.0,
+      "end": 46.0,
+      "text": " So for today, that was a brief excerpt from Maxwell's Treatise on Electries in Magnus, for example, at a chapter from Bruce Hunt's book on the Maximilians."
+    },
+    {
+      "title": "physics",
+      "start": 46.0,
+      "end": 52.0,
+      "text": " So in general, it would be helpful if you keep up with the readings because it's just going to snowball."
+    },
+    {
+      "title": "physics",
+      "start": 52.0,
+      "end": 61.0,
+      "text": " Otherwise, some of the readings as you probably have noted with the maximum in particular are pretty, they're not exactly a page turning novel, right?"
+    },
+    {
+      "title": "physics",
+      "start": 61.0,
+      "end": 63.0,
+      "text": " Like what's going on with that?"
+    },
+    {
+      "title": "physics",
+      "start": 63.0,
+      "end": 70.0,
+      "text": " So I'm going to be talking about what Maxwell thought he was doing, what some of Maxwell's contemporaries, how they read that book in today's lecture."
+    },
+    {
+      "title": "physics",
+      "start": 70.0,
+      "end": 80.0,
+      "text": " So today, I hope we will exemplify the kind of use to make of readings like that as we go through the first work example with Maxwell today."
+    },
+    {
+      "title": "physics",
+      "start": 80.0,
+      "end": 92.0,
+      "text": " Other readings, as you'll see, like the chapter from Bruce Hunt for this week, are by physicists or historians or sociologists or other more recent scholars trying to help us make sense of that older work."
+    },
+    {
+      "title": "physics",
+      "start": 92.0,
+      "end": 102.0,
+      "text": " And for those, I think it does make sense to read them a bit more closely, what's the actual argument the author is making, what are the kinds of evidence does the author bring to bear?"
+    },
+    {
+      "title": "physics",
+      "start": 102.0,
+      "end": 111.0,
+      "text": " Because what we'll work on together over the course of the semester is actually working on your own written essays, your own analyses, where you will be, will help you will build up toward it."
+    },
+    {
+      "title": "physics",
+      "start": 111.0,
+      "end": 118.0,
+      "text": " But you're working on articulating an argument, defending that argument with evidence and examples from various sources."
+    },
+    {
+      "title": "physics",
+      "start": 118.0,
+      "end": 128.0,
+      "text": " So those are the readings that we would call a secondary source, readings by historians or more recent physicists or philosophers or sociologists or journalists or whomever."
+    },
+    {
+      "title": "physics",
+      "start": 128.0,
+      "end": 133.0,
+      "text": " Those are more like the kinds of writings we're going to try to do ourselves or the course of the term."
+    },
+    {
+      "title": "physics",
+      "start": 133.0,
+      "end": 138.0,
+      "text": " So I reckon plus I think hopefully they're interesting I've chosen for you know very carefully."
+    },
+    {
+      "title": "physics",
+      "start": 138.0,
+      "end": 149.0,
+      "text": " So I do recommend you try to read those a bit differently, let's say, than something like skimming over Maxwell's treatise, which might look both pretty bland and weird and a little unusual given how we do things today."
+    },
+    {
+      "title": "physics",
+      "start": 149.0,
+      "end": 153.0,
+      "text": " So there are kind of different ways to read the different kinds of sources."
+    },
+    {
+      "title": "physics",
+      "start": 153.0,
+      "end": 161.0,
+      "text": " And I guess I hope we today will actually give a bit of an example of that as we talk talk a little bit about that Maxwell reading throughout today."
+    },
+    {
+      "title": "physics",
+      "start": 161.0,
+      "end": 166.0,
+      "text": " So that's the plan and if there's no other questions, I think we'll just jump right in."
+    },
+    {
+      "title": "physics",
+      "start": 166.0,
+      "end": 171.0,
+      "text": " So I'm going to go ahead and share screen."
+    },
+    {
+      "title": "physics",
+      "start": 171.0,
+      "end": 177.0,
+      "text": " And hopefully you can see that for a slide."
+    },
+    {
+      "title": "physics",
+      "start": 177.0,
+      "end": 181.0,
+      "text": " So today we're going to start our kind of journey in earnest."
+    },
+    {
+      "title": "physics",
+      "start": 181.0,
+      "end": 196.0,
+      "text": " So we're going to turn the clock back about 200 years and talk about some of the leading natural philosophers and the leading people who are trying to understand the physical world."
+    },
+    {
+      "title": "physics",
+      "start": 196.0,
+      "end": 202.0,
+      "text": " And what did they think their job was what were the settings in which they did it, what were the conceptual tools they brought to bear."
+    },
+    {
+      "title": "physics",
+      "start": 202.0,
+      "end": 210.0,
+      "text": " And we'll always be asking ourselves what looks kind of similar and what looks really, really unfamiliar from our vantage points today."
+    },
+    {
+      "title": "physics",
+      "start": 210.0,
+      "end": 215.0,
+      "text": " So the discussion today has three main sections."
+    },
+    {
+      "title": "physics",
+      "start": 215.0,
+      "end": 225.0,
+      "text": " I have a brief kind of warm up on physics then and now just to try to prep us to put our minds back into the world of the early 19th century."
+    },
+    {
+      "title": "physics",
+      "start": 225.0,
+      "end": 234.0,
+      "text": " Then we'll spend a bit of time talking about Michael Faraday, who is one of the most widely celebrated scientists or natural philosophers of his day."
+    },
+    {
+      "title": "physics",
+      "start": 234.0,
+      "end": 239.0,
+      "text": " And we'll see some of the things that he introduced during his rather unusual career."
+    },
+    {
+      "title": "physics",
+      "start": 239.0,
+      "end": 254.0,
+      "text": " And then the last main section for today we'll talk about some of the folks who were a bit younger than Faraday, who kind of took up his mantle, who tried to continue his line of work, but again using some some different kinds of techniques and tools in this case William Thompson and James Clark Maxwell."
+    },
+    {
+      "title": "physics",
+      "start": 254.0,
+      "end": 257.0,
+      "text": " So that's our kind of goal for today."
+    },
+    {
+      "title": "physics",
+      "start": 257.0,
+      "end": 267.0,
+      "text": " So let's just pause and remember that we are entering a kind of you know imaginary time capsule and going back you know about 200 years to start."
+    },
+    {
+      "title": "physics",
+      "start": 267.0,
+      "end": 277.0,
+      "text": " So the assumptions that we might bring in as physics students as MIT students more generally about how the world works about what the job of a physicist is and so on."
+    },
+    {
+      "title": "physics",
+      "start": 277.0,
+      "end": 292.0,
+      "text": " Those won't map on perfectly well to some of these earlier folks we start talking about and I really I find that that's part of what's so fun for me about working in the history science is exactly this moment with things don't look so familiar as well as a continuity we can trace over time."
+    },
+    {
+      "title": "physics",
+      "start": 292.0,
+      "end": 304.0,
+      "text": " So one of the biggest questions we might ask about physics today is what what's the world made up what do we think as modern day scientists are the basic building blocks out of which the world is made."
+    },
+    {
+      "title": "physics",
+      "start": 304.0,
+      "end": 322.0,
+      "text": " If we were to conduct a survey of most working physicists at MIT or really anywhere around the world at this point we'd get an answer along these lines we would hear about something called the standard model of particle physics which is amazing and will actually talk a bit about the standard model later in the semester."
+    },
+    {
+      "title": "physics",
+      "start": 322.0,
+      "end": 341.0,
+      "text": " It describes the world is made up of a very small number of fundamental entities elementary particles like the quarks and electrons and how mayzons and neutrinos and even the long elusive exposed on there's a collection not a very big collection of stuff out of which we think literally everything else is made."
+    },
+    {
+      "title": "physics",
+      "start": 341.0,
+      "end": 358.0,
+      "text": " We hear the physicists today talk about the tools that have been developed to try to study interactions of those elementary bits of matter how different particles can interact with each other can scatter off each other can transmit the fundamental forces of nature like changing certain kinds of particles in a vacuum."
+    },
+    {
+      "title": "physics",
+      "start": 358.0,
+      "end": 378.0,
+      "text": " Depending on which physicist we ask we might get an earful maybe more than we invited saying that actually all those particles of the missiles really only the kind of the efflorescence of more fundamental entities called strings that live in some abstract space the point is we're going to get an answer like this about basically particles exchanging particles in the vacuum."
+    },
+    {
+      "title": "physics",
+      "start": 378.0,
+      "end": 399.0,
+      "text": " Now if we were to build our time machine which I sincerely hope we can complete soon and we go back you know a hundred or little in 200 years to say talk with leading a natural researchers in Britain and we told them this answer that physicist today so the world is made of particles exchanging particles in a vacuum they would have thought we were really not with it."
+    },
+    {
+      "title": "physics",
+      "start": 399.0,
+      "end": 428.0,
+      "text": " I like to think they would have shouted bollocks or at least something maybe more colorful every single part of this modern answer would have looked extraordinarily wrong headed to the people that were going to spend some time reading about and talking about at the start of this term and why is that important I mean if we if we did this exercise with the ancient minds or the medieval Turks or or the or the Renaissance French we'd also expect some disagreement what I like about this is that we're turning the clock back not so far compared to the present day."
+    },
+    {
+      "title": "physics",
+      "start": 429.0,
+      "end": 458.0,
+      "text": " And yet we already see a huge divergence in the answers as we'll see throughout today and actions for several class sessions for the term we use their equations we still use said you know Maxwell's equations for example and a lot of the ideas that Michael Farad introduced and yet what they thought those equations meant what they thought they were describing about how the world is made up are almost you know a hundred degrees opposite from how we start our investigations today so even though some parts have remained the same."
+    },
+    {
+      "title": "physics",
+      "start": 459.0,
+      "end": 469.0,
+      "text": " Going over these hundred fifty or 200 years to the past what we make how we make sense of those ideas or those techniques have gone through a really quite amazing change."
+    },
+    {
+      "title": "physics",
+      "start": 469.0,
+      "end": 479.0,
+      "text": " So what do we think the world is made of that's not a kind of static set of answers and we see pretty dramatic change even over a relatively short span of history."
+    },
+    {
+      "title": "physics",
+      "start": 479.0,
+      "end": 489.0,
+      "text": " There's another kind of shift that we want to get our heads into a kind of a tune ourselves to as well and that concerns who pursues the study physics and in what kinds of settings what institutions."
+    },
+    {
+      "title": "physics",
+      "start": 489.0,
+      "end": 500.0,
+      "text": " So during the first half of the 19th century we'll start this class people who worked on what we would call physics electricity, magnetism optics other phenomena heat."
+    },
+    {
+      "title": "physics",
+      "start": 500.0,
+      "end": 518.0,
+      "text": " They also worked on things that we would call not physics like chemistry or mathematics or astronomy physiology even beyond that for them this was all kind of one field of study it was often grouped under the term natural philosophy rather than physics or chemistry or mathematics per se."
+    },
+    {
+      "title": "physics",
+      "start": 518.0,
+      "end": 547.0,
+      "text": " In fact the term for person who studied these things in English term we would call scientists was actually only invented in 1834 it's remarkably new as far as the English language goes it was invented after some developments will actually start talking about today so even having the job description scientist or the title is actually relatively new and what these particular kinds of scientists that we would now call physicists what they thought they should do again some pretty broad changes."
+    },
+    {
+      "title": "physics",
+      "start": 547.0,
+      "end": 566.0,
+      "text": " Not only do they think their job description is different than what we might imagine for ourselves but where they did the work and what kinds of settings or institutions that was also pretty different merely 200 years ago let alone much further back in human history."
+    },
+    {
+      "title": "physics",
+      "start": 566.0,
+      "end": 593.0,
+      "text": " Not a stuff we'll start by talking about today was not done in schools or universities they were done in separate institutes or academies and the key thing is these were not places where students took classes to get degrees there was a kind of separation between kind of learning institutions universities existed throughout many parts of the world including Western Europe and the United States university existed but that was not where people were doing what we would call scientific research."
+    },
+    {
+      "title": "physics",
+      "start": 593.0,
+      "end": 606.0,
+      "text": " In fact some of the most prominent natural philosophers are leading physicists were not really not professors at universities some of them had never even attended university themselves that's true of the first figure we'll look at today Michael Farrier."
+    },
+    {
+      "title": "physics",
+      "start": 606.0,
+      "end": 622.0,
+      "text": " So there's a big shift toward a kind of placement of this research that would look more familiar things more like what we'd expect to see ourselves that shift begins in the middle of the 19th century so more like 150 or 107 years ago rather than 200 years ago or more."
+    },
+    {
+      "title": "physics",
+      "start": 623.0,
+      "end": 643.0,
+      "text": " There's a shift to where research in fields like physics gets done more often than not by people who are professors in universities who also spend some of the time teaching students like what we are more used to today that's that has a history it's actually relatively recent and it has an emerges really in the middle part of the 19th century."
+    },
+    {
+      "title": "physics",
+      "start": 643.0,
+      "end": 666.0,
+      "text": " So the overall theme of this very first kind of warm up for the class is to kind of put ourselves on guard we shouldn't assume that our current sense of what's expected or normal or familiar either about how we choose to study the natural world what concepts we use let alone how we think we we should be pursuing that what kinds of institutions or job descriptions."
+    },
+    {
+      "title": "physics",
+      "start": 666.0,
+      "end": 676.0,
+      "text": " We shouldn't expect that what's familiar to us today is just how people did things in the past and in fact we'll see some pretty dramatic changes over a relatively short span of time."
+    },
+    {
+      "title": "physics",
+      "start": 676.0,
+      "end": 681.0,
+      "text": " So I pause there and ask him any questions just on that early kind of warm up."
+    },
+    {
+      "title": "physics",
+      "start": 681.0,
+      "end": 693.0,
+      "text": " Anyone have any thoughts or questions about that."
+    },
+    {
+      "title": "physics",
+      "start": 694.0,
+      "end": 700.0,
+      "text": " If not, then I'm going to press on again feel free to jump in on the chat if things come up."
+    },
+    {
+      "title": "physics",
+      "start": 700.0,
+      "end": 707.0,
+      "text": " Let's talk about this first figure I already mentioned Michael Farry we're going to spend a little time talking about Farry I think he's fast."
+    },
+    {
+      "title": "physics",
+      "start": 707.0,
+      "end": 714.0,
+      "text": " So he became one of the most successful and actually one of the most famous natural philosophers in his lifetime in fact really of the entire 19th century."
+    },
+    {
+      "title": "physics",
+      "start": 714.0,
+      "end": 727.0,
+      "text": " He had a pretty remarkable personal story and I think we'll also see he helps sort of make clear some of the larger social and institutional changes going on as well he helps us understand his own larger time period."
+    },
+    {
+      "title": "physics",
+      "start": 727.0,
+      "end": 737.0,
+      "text": " Personally he had this really kind of inspiring rags to riches story who is born into a rather poor family he never attended high school let alone college university."
+    },
+    {
+      "title": "physics",
+      "start": 737.0,
+      "end": 752.0,
+      "text": " He was apprenticed to a book binder at age 13 I mean he literally left his family moved in with his his main tutor and was apprenticed in a kind of trade."
+    },
+    {
+      "title": "physics",
+      "start": 752.0,
+      "end": 759.0,
+      "text": " So in that sense his kind of life his career path started out closer to what we might expect of the Renaissance or even the Middle Ages."
+    },
+    {
+      "title": "physics",
+      "start": 759.0,
+      "end": 774.0,
+      "text": " He had to go to the modern period it was a kind of time still of guilds and of trades associations and his role his way to make a living was to learn the kind of manual dexterity skills of being a book binder starting early on."
+    },
+    {
+      "title": "physics",
+      "start": 774.0,
+      "end": 786.0,
+      "text": " He met the very famous chemist or natural philosopher Humphrey Davy when Davy gave a series of public lectures on natural philosophy at the Royal institution in London and we'll talk about about the Royal institution."
+    },
+    {
+      "title": "physics",
+      "start": 786.0,
+      "end": 808.0,
+      "text": " It was not a university was a place where research was done and public lectures were given so Faraday was just mesmerized by Davy's lectures he actually took very careful notes on these public lectures Faraday then bound into a beautiful very fancy book and here's how we know he was so smart he then gave that fancy book to Davy as a gift and I have a hint here what you can do with that information."
+    },
+    {
+      "title": "physics",
+      "start": 808.0,
+      "end": 812.0,
+      "text": " He basically brought his way into a new kind of apprenticeship."
+    },
+    {
+      "title": "physics",
+      "start": 812.0,
+      "end": 822.0,
+      "text": " Davy was very flattered and impressed by the kind of manual skills by the dexterity that Faraday had shown so Davy hired Faraday for a basic new kind of apprenticeship."
+    },
+    {
+      "title": "physics",
+      "start": 822.0,
+      "end": 828.0,
+      "text": " Faraday had never attended high school or college he wasn't that he was trained in mathematical physics quite the contrary."
+    },
+    {
+      "title": "physics",
+      "start": 828.0,
+      "end": 840.0,
+      "text": " But Davy figured Faraday could do some new kinds of manual dexterity skills in the laboratory as a laboratory assistant a kind of continuation of his book binder apprenticeship."
+    },
+    {
+      "title": "physics",
+      "start": 840.0,
+      "end": 844.0,
+      "text": " So that's how Faraday enters what we now call the world of natural philosophy."
+    },
+    {
+      "title": "physics",
+      "start": 844.0,
+      "end": 848.0,
+      "text": " So years and years go by they were very closely for long time."
+    },
+    {
+      "title": "physics",
+      "start": 848.0,
+      "end": 856.0,
+      "text": " Davy eventually steps down he retires and Faraday in fact became his successor now the director of this royal institution in London."
+    },
+    {
+      "title": "physics",
+      "start": 856.0,
+      "end": 868.0,
+      "text": " So much like I mentioned a few moments ago Faraday worked on really a kind of mind bogging array of topics mind bogging from our modern point of view quite kind of familiar to his own contemporaries."
+    },
+    {
+      "title": "physics",
+      "start": 868.0,
+      "end": 874.0,
+      "text": " So he worked on what we would separately class wise chemistry optics electric magazine electrolysis and more."
+    },
+    {
+      "title": "physics",
+      "start": 874.0,
+      "end": 886.0,
+      "text": " To Faraday these were all elements of a single unified approach to nature and he was particularly faraday fast and even more than some of his contemporaries with his inter convertibility of forces."
+    },
+    {
+      "title": "physics",
+      "start": 886.0,
+      "end": 894.0,
+      "text": " How could electrical effects make you know physiological effects happen like using electric shocks to make a frog's leg jump."
+    },
+    {
+      "title": "physics",
+      "start": 894.0,
+      "end": 904.0,
+      "text": " How could chemical effects be be catalyzed by electric current so is the way that one kind of phenomenon or force could have effects and some other domain."
+    },
+    {
+      "title": "physics",
+      "start": 904.0,
+      "end": 922.0,
+      "text": " Now Faraday was partly inspired in this kind of inter convertibility view by his own religious background so really very interesting work by a number of historians biographers of Faraday who tried to understand why Faraday took this kind of notion even further even more fervently than many of his own contemporaries."
+    },
+    {
+      "title": "physics",
+      "start": 922.0,
+      "end": 941.0,
+      "text": " And these other historians make a pretty compelling case Faraday belong to a rather small religious minority in England he was a Protestant but he was not an anglican he was not a member of the kind of official church of England he belonged to a small sect called the sandamanians Protestant but not Anglican."
+    },
+    {
+      "title": "physics",
+      "start": 941.0,
+      "end": 959.0,
+      "text": " And the sandamanians even more than the kind of standard church of England at the time emphasized a kind of underlying unity to all of nature were all part of one natural world and that people and things are somehow connected to each other that was part of what the sandamanians themselves kind of believed and had a theological import for them."
+    },
+    {
+      "title": "physics",
+      "start": 959.0,
+      "end": 979.0,
+      "text": " And there's a really interesting parallel at the very least in some of the ways that Faraday had explored the natural world as well. He became a beloved very successful public lecturer he continued the tradition that Ambridavi had done at the Royal institution giving these very very well attended so called Christmas lectures these still continue from Royal institution to this day."
+    },
+    {
+      "title": "physics",
+      "start": 979.0,
+      "end": 987.0,
+      "text": " Faraday would really fill the lecture hall and give these dazzling spectacular demonstrations electrical effects and chemical change in all the rest."
+    },
+    {
+      "title": "physics",
+      "start": 987.0,
+      "end": 991.0,
+      "text": " That's partly why he became so beloved and well known in his lifetime."
+    },
+    {
+      "title": "physics",
+      "start": 991.0,
+      "end": 1000.0,
+      "text": " You can't quite see it in this engraving it's hard to tell but these were this really was the definition of popular the tickets were not too expensive."
+    },
+    {
+      "title": "physics",
+      "start": 1000.0,
+      "end": 1010.0,
+      "text": " That's partly how very young and poor Faraday himself was able to attend as a child. It wasn't like attending you know the fanciest opera performance in in high elite London."
+    },
+    {
+      "title": "physics",
+      "start": 1010.0,
+      "end": 1023.0,
+      "text": " There was a kind of you would there be cheap seats you can see how large the hall so they're the very nice you know fancy seats then as now we're expensive and tickets would go to the to the affluence and well to do."
+    },
+    {
+      "title": "physics",
+      "start": 1023.0,
+      "end": 1034.0,
+      "text": " But there really was a cut what we today would call a kind of outreach is a real effort to reach across several kind of social and economic classes not all the way but broader than only the very elite."
+    },
+    {
+      "title": "physics",
+      "start": 1034.0,
+      "end": 1048.0,
+      "text": " And they they became a really beloved kind of city institution within London people would come in from out of town to attend them became an annual tradition and Faraday became especially beloved as a presenter in that tradition."
+    },
+    {
+      "title": "physics",
+      "start": 1048.0,
+      "end": 1064.0,
+      "text": " So they really were reaching not only people who had any interest in in natural philosophy was really the kind of a way of showing a kind of sophistication and and and away for members of the so called aspiring classes meaning those who weren't so well to do."
+    },
+    {
+      "title": "physics",
+      "start": 1064.0,
+      "end": 1073.0,
+      "text": " To be able to participate in things that they saw the really elites doing so really had a interesting kind of social cross section to the story written a lot of issues that's not."
+    },
+    {
+      "title": "physics",
+      "start": 1073.0,
+      "end": 1100.0,
+      "text": " So they really were talked about broadly covered in the in the broad sheet newspapers and on in this time period the main mechanisms were largely books so even side even scientists like when we would call physicists were mostly writing monographs and sometimes writing short articles for fellow specialists there were scientific journals include some of the earliest and founded in England going back to the 1660s similar ones in other parts of Europe."
+    },
+    {
+      "title": "physics",
+      "start": 1100.0,
+      "end": 1116.0,
+      "text": " But the but the real kind of transfer mechanisms were often through monographs as partly why Maxwell's treat us that we'll talk about later today became so so widely known as influential there were then these these lectures there were also so called itinerant lectures."
+    },
+    {
+      "title": "physics",
+      "start": 1116.0,
+      "end": 1145.0,
+      "text": " People who made their whole living just giving popular lectures on topics like electricity town to town so not just in London but to the to the outskirts and likewise throughout provincial France and other places so there were kind of popular lectures in that sense you can think of it almost like like PBS television today like no specials but for fellow specialists there were just the start of professional meetings the British Association for the advancement of science I'm having annual meetings of the sort that would become so familiar."
+    },
+    {
+      "title": "physics",
+      "start": 1145.0,
+      "end": 1160.0,
+      "text": " For fellow specialists sometimes those would be covered in the national newspapers it was a hodgepodge some things would look familiar to us some things might seem a little a little more unusual but Faraday wrote books and books and some articles for example."
+    },
+    {
+      "title": "physics",
+      "start": 1161.0,
+      "end": 1178.0,
+      "text": " There were and certainly some of this would get into the curriculum for universities will talk more about that actually especially later today in the next class session but the way that kind of fellow researchers interact with fellow researchers it was largely through books sometimes through journals and through these different kinds of lectures great great questions."
+    },
+    {
+      "title": "physics",
+      "start": 1178.0,
+      "end": 1207.0,
+      "text": " I'm going to move on these are great questions i'll try to answer more than I'll get to as we go further but I want to get to one of the topics that was really really high on Faraday's list of most important this is really going to set our kind of agenda for several classes to come and that's what was called the ether a presumptive a hypothetical medium that pretty much everyone that we're going to talk about Faraday included just assume they kind of knew they had a lot of things to do with the first class of the year."
+    },
+    {
+      "title": "physics",
+      "start": 1208.0,
+      "end": 1218.0,
+      "text": " So I think that's a very important thing to do is to have an extremely strong confidence that this medium was filling all of space filled every nook and cranny of the universe."
+    },
+    {
+      "title": "physics",
+      "start": 1218.0,
+      "end": 1235.0,
+      "text": " And that's it was this medium that filled everything that enabled various processes to affect one other that was the kind of inter convertibility of forces why did electrical effects lead to magnetic effects because they're both they're both ultimately effects of this ether that connects everything so what's the ether."
+    },
+    {
+      "title": "physics",
+      "start": 1235.0,
+      "end": 1253.0,
+      "text": " Faraday's own childhood another kind of amateur British naturalist named Thomas Young building on some work by French scholars from around the same time right around the year 1800 had advanced a wave theory of light this is opposite actually to Isaac Newton's theory of light or a particle or corpuscular theory."
+    },
+    {
+      "title": "physics",
+      "start": 1253.0,
+      "end": 1269.0,
+      "text": " So Thomas Young like some of the French scholars as well suggest there's a whole bunch of optical phenomena like interference like reflection and refraction could really make only be made sense of if light was a series of waves and I'm sure you've seen this is a very simple illustration."
+    },
+    {
+      "title": "physics",
+      "start": 1269.0,
+      "end": 1279.0,
+      "text": " If two waves are perfectly in sync with each other we'd say in phase you can get constructive interference that peaks will become larger than either wave alone the trumps are going deeper."
+    },
+    {
+      "title": "physics",
+      "start": 1279.0,
+      "end": 1289.0,
+      "text": " Of course if those two waves are exactly out of sync with each other the perfectly out of phase you can get destructive interference and the resultant wave of vanish together and sort of anything in between."
+    },
+    {
+      "title": "physics",
+      "start": 1289.0,
+      "end": 1309.0,
+      "text": " So Young and others were convinced that these interference phenomena were natural indications that light is a wave phenomena but then the next question is well waves of what waves in what ocean waves are clearly waves of water sound waves or compressions or waves in the atmosphere in the air water waves of."
+    },
+    {
+      "title": "physics",
+      "start": 1309.0,
+      "end": 1319.0,
+      "text": " So they said well anyway we know about is a wave in some medium there must be a medium that carries these light waves it was called the luminiferous ether which is a very fancy word."
+    },
+    {
+      "title": "physics",
+      "start": 1319.0,
+      "end": 1335.0,
+      "text": " You can see how to parse it here if you remember either Latin or Harry Potter I find them equally helpful think about the lumos spell in Harry Potter the lumini art just means light referring to light ferris means carrying like a ferris wheel."
+    },
+    {
+      "title": "physics",
+      "start": 1335.0,
+      "end": 1359.0,
+      "text": " So the formal name of lumini efforts either it really just means the light carrying with a light bearing ether this was the medium in which light traveled in which everything all of the physical phenomena were immersed which is why these folks would never said the stuff of the world is elementary particles traveling in vacuum there is no vacuum everything at root is filled with ether that's where they were starting."
+    },
+    {
+      "title": "physics",
+      "start": 1359.0,
+      "end": 1380.0,
+      "text": " So why would you need a medium for light again even before around the same time as Thomas young in England a number French scholars had found that the speed of light speed of which light waves travel depends on the medium and medium in which they're traveling in fact are slower in water than an air that's opposite by the way the sound waves travel more quickly in a dense medium."
+    },
+    {
+      "title": "physics",
+      "start": 1380.0,
+      "end": 1394.0,
+      "text": " And that led to things like snows law the whole kind of set of knowledge about refraction and how light behaves that across is from one type of medium to another you can characterize these media in terms of what became known as an index of a fraction."
+    },
+    {
+      "title": "physics",
+      "start": 1394.0,
+      "end": 1422.0,
+      "text": " And so everything about the behavior of these waves seem to depend on the medium through which they were traveling so there must be some kind of baseline or reference medium the ether with respect to which any of these deviations would then be measured so water is one type of medium but even if you take all the water away and have a kind of evacuated chamber you still have light waves traveling in the in the remaining ether that was how they organize these studies are so much for light."
+    },
+    {
+      "title": "physics",
+      "start": 1422.0,
+      "end": 1435.0,
+      "text": " What about other things like electricity and magnetism so again during Faraday's early career by this point he was already a kind of in sconce to the Royal institution still working closely with people like on pretty Davy."
+    },
+    {
+      "title": "physics",
+      "start": 1435.0,
+      "end": 1450.0,
+      "text": " There was a headline grabbing event not found in Britain but actually nearby in Denmark so on another natural philosopher Hans Christian Orstead was giving a public lecture very much like at the Royal institution same kind of format these were popular throughout."
+    },
+    {
+      "title": "physics",
+      "start": 1450.0,
+      "end": 1475.0,
+      "text": " Orstead was giving a public lecture and he accidentally discovered in the midst of his talk something that he really didn't expect he had an appraise that looked a lot like this kind of conducting coil so is a conducting wire and he had nearby a compass so a magnetic needle and he found that when current was flowing through the wire the needle would be deflected he did not expect at all."
+    },
+    {
+      "title": "physics",
+      "start": 1475.0,
+      "end": 1489.0,
+      "text": " Not expected at all. Not expected at all. No one else expected that somehow that electric current the flow of electricity could affect could induce magnetic effects it could change the behavior of that magnetic magnetic needle of the compass."
+    },
+    {
+      "title": "physics",
+      "start": 1489.0,
+      "end": 1496.0,
+      "text": " This became headline news if there had been 19th century Twitter this would have broken Twitter hashtag."
+    },
+    {
+      "title": "physics",
+      "start": 1496.0,
+      "end": 1510.0,
+      "text": " This was like literally whatever was super exciting including people like Michael Faraday. This was for Faraday exactly this kind of interconversion of forces that he was so interested partly from his sandamanian faith partly because he was a natural philosopher of his time."
+    },
+    {
+      "title": "physics",
+      "start": 1510.0,
+      "end": 1518.0,
+      "text": " So not only does he quickly replicate Orstead's finding he separately finds that he can get electric current to move a compass needle."
+    },
+    {
+      "title": "physics",
+      "start": 1518.0,
+      "end": 1539.0,
+      "text": " He then finds the inverse he then does as shown here he takes a bar magnet and starts moving it in a pattern near a conducting coil from which he can measure the current as an ammeter attached and he finds the inverse can happen as well then a moving magnet changing magnetic effect can induce an electric current."
+    },
+    {
+      "title": "physics",
+      "start": 1540.0,
+      "end": 1550.0,
+      "text": " So he's investigating induction both sort of electric currents inducing magnetic effects magnetic fields or magnetic effects inducing electric effects and he wants to kind of keep track of this stuff."
+    },
+    {
+      "title": "physics",
+      "start": 1550.0,
+      "end": 1560.0,
+      "text": " So he starts sketching these helpful doodles that he calls lines of force. As far as Faraday was concerned these were lines of force to depict the underlying state of the ether."
+    },
+    {
+      "title": "physics",
+      "start": 1560.0,
+      "end": 1581.0,
+      "text": " So it must be he begins to reason with these kind of pictorial aids that the ether could be put under states of strain or tension that's if I have an electric charge that I place within the ether it's going to have an effect and put a kind of strain on the ether immediately around it."
+    },
+    {
+      "title": "physics",
+      "start": 1581.0,
+      "end": 1589.0,
+      "text": " So he draws these lines of force emitting out your outward from positive electric charge or collapsing into ward a negative electric charge."
+    },
+    {
+      "title": "physics",
+      "start": 1590.0,
+      "end": 1609.0,
+      "text": " And then he begins using his sort of like middle school level mathematics he had a little bit of geometry before leaving formal schooling and he puts that to work he says he he supposes what the number of lines that come outward from a positive charge is fixed and is proportional to the amount of that electric charge."
+    },
+    {
+      "title": "physics",
+      "start": 1609.0,
+      "end": 1619.0,
+      "text": " So charge of say seven units would have seven of these lines rating outward affecting this round of ether by charge of 10 units would have 10 lines ready to happen."
+    },
+    {
+      "title": "physics",
+      "start": 1620.0,
+      "end": 1628.0,
+      "text": " Then you can imagine what would happen if you surrounded that positive charge with a kind of imaginary sphere at some distant radius."
+    },
+    {
+      "title": "physics",
+      "start": 1628.0,
+      "end": 1640.0,
+      "text": " Then you ask how many lines per unit area will cross through that imagined sphere the density of field lines will fall out the lines are dispersing as you get further and further away from electric charge."
+    },
+    {
+      "title": "physics",
+      "start": 1641.0,
+      "end": 1650.0,
+      "text": " So the density of field lines how many of those lines will intersect a kind of unit of that sphere will fall off like one of our square to take the fixed number of lines."
+    },
+    {
+      "title": "physics",
+      "start": 1650.0,
+      "end": 1657.0,
+      "text": " So the density of field lines divide by the surface area that you've surrounded that charge by the area goes by like four pi r squared."
+    },
+    {
+      "title": "physics",
+      "start": 1658.0,
+      "end": 1669.0,
+      "text": " So the density should fall off like one of our r squared that was really exciting to Faraday because he had learned from again from French scholars like cool ohm not too long before really just in Faraday's own childhood."
+    },
+    {
+      "title": "physics",
+      "start": 1669.0,
+      "end": 1694.0,
+      "text": " If there was this Newton-like force of attraction or repulsion among electric charges we now call it cool ohms law that this magnitude of the force between two electric charges falls off like one over the square the distance exactly as as Faraday had kind of reasons toward by thinking about states attention in the ether and how that strain would be kind of dissipated at more and more distance."
+    },
+    {
+      "title": "physics",
+      "start": 1695.0,
+      "end": 1712.0,
+      "text": " So Faraday went on I mean he was so excited not only about one topic like electricity but also about magnetism what if you plop a bar magnet down in the ether then he could do that with these things like iron filings and trace out the kind of lines and influence around the magnets and you've probably done even as a child."
+    },
+    {
+      "title": "physics",
+      "start": 1713.0,
+      "end": 1727.0,
+      "text": " And he realized that he could make sense of this also in terms of lines of force that these iron filings were helping him map out the kind of magnetic effects the strain that the bar magnet with its north and south magnetic holes could do for the surrounding ether."
+    },
+    {
+      "title": "physics",
+      "start": 1728.0,
+      "end": 1748.0,
+      "text": " What's really interesting here is that Faraday starts to say that sometimes forces might not be transmitted only along the kind of straight line shortest path between a and b that was the sort of rule for all Newton-like forces the magnetic lines of force would bend they curve they would have these kind of looping pads."
+    },
+    {
+      "title": "physics",
+      "start": 1748.0,
+      "end": 1752.0,
+      "text": " And so maybe the magnetic force did not always go on shortest distance paths."
+    },
+    {
+      "title": "physics",
+      "start": 1752.0,
+      "end": 1766.0,
+      "text": " And more generally Faraday starts saying let's keep track of all these states of tension in the ether he introduces this notion of the field something that physicists to this day use every single day of our careers we now call it field theory."
+    },
+    {
+      "title": "physics",
+      "start": 1766.0,
+      "end": 1776.0,
+      "text": " It largely comes as being introduced by Faraday as he tries to make sense of with kind of convenient and demonic devices these states of strain in the ether."
+    },
+    {
+      "title": "physics",
+      "start": 1777.0,
+      "end": 1787.0,
+      "text": " So the electric and magnetic fields as far as Faraday was concerned were simply ways of characterizing the local state of the ether as represented by these kind of lines of force."
+    },
+    {
+      "title": "physics",
+      "start": 1787.0,
+      "end": 1801.0,
+      "text": " What were the stresses and strains at that spot in the ether how do they change of a go to this spot how do they change that that one spot over time this is what he says is the notion of a field it's just shorthand for the state of the underlying ether."
+    },
+    {
+      "title": "physics",
+      "start": 1801.0,
+      "end": 1810.0,
+      "text": " And so the real one might still wonder is the ether just a helpful thing to think about it at Faraday and his colleagues think he was really part of the world."
+    },
+    {
+      "title": "physics",
+      "start": 1810.0,
+      "end": 1821.0,
+      "text": " And it was unambiguously for them part of the world not just convenient to think about but really the stuff from which the world was made and we'll talk about this in some more detail over coming class sessions."
+    },
+    {
+      "title": "physics",
+      "start": 1821.0,
+      "end": 1827.0,
+      "text": " Faraday thought he found like the golden proof in 1845 and now is much more senior researcher."
+    },
+    {
+      "title": "physics",
+      "start": 1827.0,
+      "end": 1837.0,
+      "text": " How could you demonstrate the ethos real well let's study the interaction in magnetic fields and the behavior of light in particular polarized light."
+    },
+    {
+      "title": "physics",
+      "start": 1837.0,
+      "end": 1843.0,
+      "text": " This is now known as the Faraday effect of the Faraday rotation is one of these things it's literally still in our textbooks we use it all the time."
+    },
+    {
+      "title": "physics",
+      "start": 1843.0,
+      "end": 1851.0,
+      "text": " It comes from Faraday's efforts to prove to himself and his colleagues that we are all immersed in this elastic bendable ether."
+    },
+    {
+      "title": "physics",
+      "start": 1851.0,
+      "end": 1864.0,
+      "text": " So Faraday and his peers the idea was the following that if you put the ether under local strain by by putting a local magnetic field in some region of space."
+    },
+    {
+      "title": "physics",
+      "start": 1864.0,
+      "end": 1870.0,
+      "text": " That magnetic field will have a kind of twisting or curling effect a kind of torsion on the underlying ether."
+    },
+    {
+      "title": "physics",
+      "start": 1870.0,
+      "end": 1880.0,
+      "text": " And then this light wave is traveling through this kind of deformed local bit of the ether so it's behavior will change in a particular what's called the plane of polarization."
+    },
+    {
+      "title": "physics",
+      "start": 1880.0,
+      "end": 1888.0,
+      "text": " The direction in which it's its wave is is waving will rotate of some angle shown here is the angle beta."
+    },
+    {
+      "title": "physics",
+      "start": 1888.0,
+      "end": 1895.0,
+      "text": " So if the if the field starts out the wave starts out waving in one direction it will literally rotate it by some angle."
+    },
+    {
+      "title": "physics",
+      "start": 1895.0,
+      "end": 1901.0,
+      "text": " The amount of rotation depends on the strength of the field and the distance through which this this ether is under attention."
+    },
+    {
+      "title": "physics",
+      "start": 1901.0,
+      "end": 1906.0,
+      "text": " This is not just a good idea for 1845 it's how we make sense of the world today."
+    },
+    {
+      "title": "physics",
+      "start": 1906.0,
+      "end": 1916.0,
+      "text": " It's the ether part but it comes from trying to figure out is the ether real just last year I had fun working with a really terrific year up student some of my no mox doxner."
+    },
+    {
+      "title": "physics",
+      "start": 1916.0,
+      "end": 1919.0,
+      "text": " He and my friend Joe from audio and physics."
+    },
+    {
+      "title": "physics",
+      "start": 1919.0,
+      "end": 1926.0,
+      "text": " We use this exact same phenomenon that an external magnetic field will rotate the plane of polarization of light."
+    },
+    {
+      "title": "physics",
+      "start": 1926.0,
+      "end": 1936.0,
+      "text": " Not to talk about the ether but as a way to jam quantum encryption indefinitely so in this sort of hyper modern physics of the moment we're still going back to parity rotation."
+    },
+    {
+      "title": "physics",
+      "start": 1936.0,
+      "end": 1943.0,
+      "text": " And yet parity thought this is a way of characterizing the ether I just love that we're going to see many examples of that throughout the class."
+    },
+    {
+      "title": "physics",
+      "start": 1943.0,
+      "end": 1946.0,
+      "text": " Let me wrap up the parity part that will pause again for some more questions."
+    },
+    {
+      "title": "physics",
+      "start": 1946.0,
+      "end": 1955.0,
+      "text": " So Faraday as we've seen worked on a variety of phenomena what we would call separately chemistry and optics electrolysis even physiology let alone electricity and actions."
+    },
+    {
+      "title": "physics",
+      "start": 1955.0,
+      "end": 1973.0,
+      "text": " He was especially interested in the inter convertibility of forces partly compelling case of the made this kind of resonated especially closely with his his sort of religious minority views his sandamanian views and that there was this kind of underlying unity of nature."
+    },
+    {
+      "title": "physics",
+      "start": 1973.0,
+      "end": 1982.0,
+      "text": " Faraday was never trained in advance mathematics he had really just the rudiments of this kind of pictorial geometry like we saw with the kind of lines of force."
+    },
+    {
+      "title": "physics",
+      "start": 1982.0,
+      "end": 1988.0,
+      "text": " He was an apprentice to take where he had tremendous manual tech dexterity skills and also great cleverness."
+    },
+    {
+      "title": "physics",
+      "start": 1988.0,
+      "end": 2002.0,
+      "text": " He became this leading experimentalist based on not formal training at a university but being kind of a apprentice as a book binder and then essentially a apprentice as hungry day is assistant at the world institution not at university."
+    },
+    {
+      "title": "physics",
+      "start": 2002.0,
+      "end": 2021.0,
+      "text": " He introduces these things which we still use to this day like lines of force and then fields for Faraday these are ways of characterizing the one big prize of natural studies meaning the ether the medium within which all these things unfold in the reason as far as Friday was concerned why there could be this inter convertibility and unity."
+    },
+    {
+      "title": "physics",
+      "start": 2021.0,
+      "end": 2028.0,
+      "text": " So in place of Newtonian action of distance that somehow one object could instantaneously affect or zero force on another one."
+    },
+    {
+      "title": "physics",
+      "start": 2028.0,
+      "end": 2038.0,
+      "text": " Faraday starts explaining all physics physical phenomena here is the ambition to explain everything in terms of these local fields local disturbance here at position x equals one."
+    },
+    {
+      "title": "physics",
+      "start": 2038.0,
+      "end": 2055.0,
+      "text": " And they can convey effects to its nearest neighbors point by point so you have to study how these fields change over time and spread out through space everything is now much the local fields not action and distance let me pause there again and ask me any questions see at least one more item in the chat."
+    },
+    {
+      "title": "physics",
+      "start": 2055.0,
+      "end": 2062.0,
+      "text": " Any questions on the Faraday material."
+    },
+    {
+      "title": "physics",
+      "start": 2062.0,
+      "end": 2076.0,
+      "text": " Very good so it was common to attend the public science lectures in fact it was seen as a way of being kind of elegant again it doesn't really fascinating work on the kind of social class emulation going on especially heightened as you might know in in Britain is time to read."
+    },
+    {
+      "title": "physics",
+      "start": 2076.0,
+      "end": 2105.0,
+      "text": " So to be considered a kind of fashionable lady in the terminology today one had to show or at least fame interest in a range of topics one of which was these kind of you know elegant demonstrations of the glories of the world for many people this by the way we had a kind of over religious significance a kind of natural theology not for everyone but for many in this period the idea was it learning about how electric shocks make frauds frogs legs twitch or how magnetic bar magnets."
+    },
+    {
+      "title": "physics",
+      "start": 2105.0,
+      "end": 2134.0,
+      "text": " Can change can induce electric current these are ways of kind of revealing the glory of God's creation as many people argue at the time so as a as actually a function of kind of moral or spiritual uplift and therefore again according to the kind of assumptions and we might say prejudice is the time therefore all the more important for young women to be exposed to this was a thinking of the time with their kind of tender moral souls that needed special care again to speak in their idiom not not my name."
+    },
+    {
+      "title": "physics",
+      "start": 2135.0,
+      "end": 2165.0,
+      "text": " So there actually was a great encouragement for women to attend these public lectures not not as you might expect to move into the laboratory not to do the work that was almost uniquely male enclave in this period certainly in the wrong institution but to be sort of exposed to be part of the broader kind of polite discussions it was one way of showing that you were you know how to kind of appropriate upbringing again is lots of cool stuff I beg that to talk more about that or sense and reference to Marie the short answer was yes to attend the Christmas lectures at Royal"
+    },
+    {
+      "title": "physics",
+      "start": 2165.0,
+      "end": 2193.0,
+      "text": " Institute that was an awesome thing to you know bring your daughter to but but at the time and the Sunni will see change rather slowly but change over time throughout the semester at that time it was not something that was seen as a kind of acceptable or appropriate day job or a career path so that was a very very clear gender disparity but a great openness to have women participate in that limited way in the kind of public lectures very good question will come back to that that theme quite a lot."
+    },
+    {
+      "title": "physics",
+      "start": 2195.0,
+      "end": 2216.0,
+      "text": " Great questions oh that's so good so will come to actually will come to some of that in his very next unit right now so so partly i'll just putt but the short answer is there was a growing recognition in just this time period among many influential government leaders not only in Britain in many parts of your perfect many parts of the world China and Japan certainly North America."
+    },
+    {
+      "title": "physics",
+      "start": 2216.0,
+      "end": 2245.0,
+      "text": " A growing recognition by this during this exact time period that many nation states would benefit from investing in what we would now call science and technology or science and engineering so there certainly were hot button issues then as now natural evolution Darwin's theory of evolution which comes just around this time for publishing 1859 that becomes yet another flashpoint for for tension and controversy but for a lot of this work in what we would now call the physical sciences as we'll see."
+    },
+    {
+      "title": "physics",
+      "start": 2246.0,
+      "end": 2273.0,
+      "text": " There was actually a kind of investment a new kind of priority in a lot of this work not across the board not without its own hiccups will come to that but it was actually a turning point in in a new kind of investment partly because many of these places were undergoing their own kind of nation based industrial development and we'll see that actually more explicitly in the next class some of it today with Maxwell and in the next semester was a great question to theme will trace throughout the semester."
+    },
+    {
+      "title": "physics",
+      "start": 2273.0,
+      "end": 2284.0,
+      "text": " But even in in Faraday's own lifetime that was beginning to change into a more kind of a higher priority investment in exactly these topics great question."
+    },
+    {
+      "title": "physics",
+      "start": 2284.0,
+      "end": 2287.0,
+      "text": " Any others should we press on."
+    },
+    {
+      "title": "physics",
+      "start": 2287.0,
+      "end": 2302.0,
+      "text": " These are great so keep in common these are great historical questions to help us think about like what was different back then what might have been similar so we're going to keep that kind of back in fourth in mind as we enter now just the last part for today's class and we're talking about"
+    },
+    {
+      "title": "physics",
+      "start": 2302.0,
+      "end": 2305.0,
+      "text": " William Thompson and James Clark Max well."
+    },
+    {
+      "title": "physics",
+      "start": 2305.0,
+      "end": 2320.0,
+      "text": " So as as we saw these briefly Faraday had very little formal training and mathematics and he used very little in his own studies he's very voluminous studies and that's not surprising given what we know about his own early childhood and education."
+    },
+    {
+      "title": "physics",
+      "start": 2320.0,
+      "end": 2328.0,
+      "text": " There's a really remarkable shift one that I still find unbelievably fascinating so we're going to spend quite a bit of time talking about it today in next class as well."
+    },
+    {
+      "title": "physics",
+      "start": 2328.0,
+      "end": 2349.0,
+      "text": " This amazing shift that begins really late in Faraday's own lifetime in the middle decades of the 19th century it doesn't only happen in Britain we're going to look at it because it's especially kind of dramatic or kind of blown out of proportion we might say in Britain at places like Cambridge University it's happening also in places like France and other parts of the world."
+    },
+    {
+      "title": "physics",
+      "start": 2349.0,
+      "end": 2368.0,
+      "text": " Even beyond here but Cambridge in Britain gives us like the kind of capstone picture that in this almost like pure essence so there's a real sea change going on between Faraday's early life and even a later years of his own career in in the way that people would try to approach national phenomenon like electricity and activism."
+    },
+    {
+      "title": "physics",
+      "start": 2369.0,
+      "end": 2384.0,
+      "text": " Two kind of exemplars two examples of that shift our names that might be familiar to many of you and will spend a little time today talking about some of their work William Thompson who was later known as Lord Calvin that's the same Calvin from the Calvin."
+    },
+    {
+      "title": "physics",
+      "start": 2384.0,
+      "end": 2388.0,
+      "text": " Temperature scale absolute temperature for a little to you and other many other things."
+    },
+    {
+      "title": "physics",
+      "start": 2388.0,
+      "end": 2396.0,
+      "text": " So Thompson on one hand and James Clark max on the other again I'm sure max all familiar name things like max equations and all the rest."
+    },
+    {
+      "title": "physics",
+      "start": 2396.0,
+      "end": 2421.0,
+      "text": " So these two folks were about two generations younger than Faraday they were coming of age when Faraday was already a well known natural philosopher they pick up on Faraday's work they were avid readers of Faraday's books often monographs not just his articles and they begin to translate it into a very powerful mathematical form of the sorts of Faraday had had no inkling of whatsoever."
+    },
+    {
+      "title": "physics",
+      "start": 2421.0,
+      "end": 2436.0,
+      "text": " Turns out both Thompson and Maxwell were were born in Scotland they were not from London or the immediate English surroundings you know both Scottish born they both moved to Cambridge for their formal university training in the middle decades of the 19th century."
+    },
+    {
+      "title": "physics",
+      "start": 2436.0,
+      "end": 2456.0,
+      "text": " So both Thompson and Max were became deeply involved coming to exactly the question it was raised just in that last question period they came deeply involved with what we might call kind of engineering aspects or applications of natural philosophy all around the physics of the ether they had both had very long illustrious careers."
+    },
+    {
+      "title": "physics",
+      "start": 2456.0,
+      "end": 2479.0,
+      "text": " Not only when they were university students they were pursuing these very fancy sophisticated mathematical kind of formal mathematical approaches to electricity, magnetism and the physics of the ether not only for the sake of pure mathematics as we'll see they were deeply involved in very practical ways with with things that governments wanted to pay for like telegraphy and other practical electrical technical devices."
+    },
+    {
+      "title": "physics",
+      "start": 2479.0,
+      "end": 2496.0,
+      "text": " So among the most important in their own careers wasn't deep telegraphy so as you know Britain then as now was an island is still an island back then it had lots and lots of colonies that's what's changed it was a period of still rapid acceleration of the British colonial adventure."
+    },
+    {
+      "title": "physics",
+      "start": 2496.0,
+      "end": 2519.0,
+      "text": " So distant outposts or so called possession this territorial possession is really all around the world again many of you might recall the old quick that the sun never sets on the British Empire and that time period there were colonial holdings or territories that spanned really the entire globe so at any given time of day the sun was shining on some British outposts."
+    },
+    {
+      "title": "physics",
+      "start": 2519.0,
+      "end": 2546.0,
+      "text": " So what do you need if you're going to try to administer a world spanning empire you need ways to have efficient communication and that was an enormous impetus for things like telegraphy even with some of the former colonies like the United States or Canada some some kind of formal colonial holdings there was still an effort in the same period the middle decades of the 19th century to have efficient long disk communication things like commerce and diplomacy."
+    },
+    {
+      "title": "physics",
+      "start": 2546.0,
+      "end": 2556.0,
+      "text": " So there are all kinds of reasons why electro mechanical investigations were given a very high priority in Britain in this time period."
+    },
+    {
+      "title": "physics",
+      "start": 2556.0,
+      "end": 2573.0,
+      "text": " So we get a taste that here's our first quotation from that little bit of the Maxwell that I decide Maxwell published this voluminous treat as a two volume treat us in 1873 to the two volumes together run to about 900 pages it makes for fun be treating."
+    },
+    {
+      "title": "physics",
+      "start": 2573.0,
+      "end": 2597.0,
+      "text": " But in a very opening of the preface we get this really interesting observation he tells us partly why anyone should read this book and he says here the important applications of electromagnetism to telegraphy have reacted on pure science by giving a commercial value and indeed a kind of governmental diplomatic value to accurate electrical measurements and by affording to electricians as they experts in the field."
+    },
+    {
+      "title": "physics",
+      "start": 2597.0,
+      "end": 2608.0,
+      "text": " The use of apparatus on a scale which greatly transcends that of any ordinary laboratory this is they're getting huge investment to conduct very large investigations with very elaborate apparatus."
+    },
+    {
+      "title": "physics",
+      "start": 2608.0,
+      "end": 2624.0,
+      "text": " The consequences of this demand the sort of government and commercial private interest demand for electrical knowledge and of these experimental opportunities for acquiring that knowledge have already been very great both in stimulating the energies of advanced electricians."
+    },
+    {
+      "title": "physics",
+      "start": 2624.0,
+      "end": 2640.0,
+      "text": " And then diffusing among practical men a degree of accurate knowledge which is likely to conduce to the general scientific progress of the whole engineering profession p s by my nine hundred page book if literally worth something that's what he's announcing the opening pages of his treat us."
+    },
+    {
+      "title": "physics",
+      "start": 2641.0,
+      "end": 2650.0,
+      "text": " So let's go a little bit into some some of how William Thompson and James Clark Maxwell start treating Faraday's kind of intellectual legacy."
+    },
+    {
+      "title": "physics",
+      "start": 2650.0,
+      "end": 2663.0,
+      "text": " So Thompson began reading Faraday's books as well as some articles as an undergraduate Faraday Thompson was still you know basically 18 and 19 years old at Cambridge when he starts devouring Faraday's work or continues to."
+    },
+    {
+      "title": "physics",
+      "start": 2663.0,
+      "end": 2685.0,
+      "text": " He began to realize that he could put Faraday's work he could kind of translate it on the one hand and also Newton's work on mechanics within the same mathematical structure this with the stuff that only in the middle decades of the 19th century was what suit university students at Cambridge like William Thompson began to really be immersed in will talk much more about that in the next lecture."
+    },
+    {
+      "title": "physics",
+      "start": 2685.0,
+      "end": 2697.0,
+      "text": " So we realize that you could make this bridge you could treat all these disparate phenomena with an electricity and separately all these disparate phenomena within Newton's mechanics blocks sliding down planes the attraction of gravity."
+    },
+    {
+      "title": "physics",
+      "start": 2697.0,
+      "end": 2711.0,
+      "text": " Introduce one similar mathematical construct the potential a scalar potential which is often just you labeled by the Greek letter five if this is brand new to you don't worry if it's very familiar to you great."
+    },
+    {
+      "title": "physics",
+      "start": 2711.0,
+      "end": 2732.0,
+      "text": " The idea is that a scalar function a scalar field like this potential it has values at every point in space those values can change over time but it doesn't have direction it has no it only has magnitudes you can think of making a kind of representing the temperature in the room at every location space."
+    },
+    {
+      "title": "physics",
+      "start": 2732.0,
+      "end": 2752.0,
+      "text": " And then tracking how those temperature readings change over time at each location space that's a scalar function temperature scalar has magnitude but not direction that's hopefully review other things like these fields that Faraday introduced for electricity magnetism those have direction as well as as well as magnitude those are vector quantities."
+    },
+    {
+      "title": "physics",
+      "start": 2752.0,
+      "end": 2773.0,
+      "text": " Well, as Thompson was learning to just devour in his undergraduate studies you could create a vector quantity by taking kind of rates of change of a scale of quantity what we now call the gradient so the gradient of when this upside down triangle and the opposite possible the gradient of a scalar function gives a vector function and in particular."
+    },
+    {
+      "title": "physics",
+      "start": 2773.0,
+      "end": 2784.0,
+      "text": " One could represent these vector field like quantities of either electricity or gravitation by first writing down a simpler mathematical object the scalar function scalar potential."
+    },
+    {
+      "title": "physics",
+      "start": 2785.0,
+      "end": 2802.0,
+      "text": " So he first in reviews what had already been worked out by a bunch of 18th century so vaunt throughout the throughout France French scholars throughout the 1700s downstream from Newton himself they have really translated Newton's own work into this language of direct directional quantities like."
+    },
+    {
+      "title": "physics",
+      "start": 2803.0,
+      "end": 2811.0,
+      "text": " And then it's a simple field like the gravitation like forces and the gravitational field and then introduced the simplifying a mathematical structure of the scalar potential."
+    },
+    {
+      "title": "physics",
+      "start": 2812.0,
+      "end": 2828.0,
+      "text": " And then you could study not just how the field is related to changes in that scalar function the gradient you can see how the field would divert the divergence of that field related to where the stuff is the density of sources of gravitation like a mass density."
+    },
+    {
+      "title": "physics",
+      "start": 2828.0,
+      "end": 2853.0,
+      "text": " This was basically a translation re translation of of Newton's work from the 1680s translated into this more modern language throughout the 1700s by the French scholars of direction full of extra quantities being related to derivatives to rates of change of simpler scale requires that was literally textbook stuff that's what Thompson's learning as an undergraduate it's not Thompson not those French folks in this case."
+    },
+    {
+      "title": "physics",
+      "start": 2854.0,
+      "end": 2874.0,
+      "text": " Who says can we make a one for one map he's absorbing this cool Faraday stuff he says what if we represent an electric field as the state of strain in the ether exactly as Faraday had begun kind of grow up into or pictorially there's a their electrical forces to be forces related to electrical fields the state of disturbance of the ether sorry how that."
+    },
+    {
+      "title": "physics",
+      "start": 2874.0,
+      "end": 2898.0,
+      "text": " So again, okay you can then relate the electric field again to rates of change of a simpler quantity of scalar potential exactly analogous to the gravitational case you can then ask how the electric field is diverging throughout space and time like those lines of force getting more and more spread out which other in Faraday simple pictures."
+    },
+    {
+      "title": "physics",
+      "start": 2898.0,
+      "end": 2911.0,
+      "text": " And that's related to where the stuff is to the sources of this electrical disturbance the charge density how many electrical charge objects are distributed throughout space per unit volume say so he makes a one to one."
+    },
+    {
+      "title": "physics",
+      "start": 2911.0,
+      "end": 2927.0,
+      "text": " And he says there's really this precise mathematical analogy between electrical phenomena and mechanics like Newton's laws and the mapping is done by this a little bit more formal more fancy mathematics so far that's not so shocking Thompson was among the first to take this textbook."
+    },
+    {
+      "title": "physics",
+      "start": 2928.0,
+      "end": 2933.0,
+      "text": " And so I started doing new things with it with a Faraday cool in M stuff."
+    },
+    {
+      "title": "physics",
+      "start": 2933.0,
+      "end": 2951.0,
+      "text": " One within one year of when Faraday introduced what we now call Faraday rotation remember that thing about the external magnetic field rotating the plane improvisation for light Thompson does the same thing is it's oh good Faraday has some new cool stuff let me put that through my very fancy universe and mathematics."
+    },
+    {
+      "title": "physics",
+      "start": 2951.0,
+      "end": 2973.0,
+      "text": " So now he still undergraduate Thompson is now making brand new stuff not just rewriting the known regularities among electrical phenomena but in fact formalizing the brand new stuff like Faraday rotation introduces a new kind of mathematical object the vector potential that was not known even to the French savant we still call it the vector potential a."
+    },
+    {
+      "title": "physics",
+      "start": 2973.0,
+      "end": 2983.0,
+      "text": " And he introduces a new operator new way of manipulating that quantity which we call the curl Thompson events curl as an undergraduate just let that sink in for a second."
+    },
+    {
+      "title": "physics",
+      "start": 2983.0,
+      "end": 2993.0,
+      "text": " So you know the new semesters early you all can invent all kinds of new math before let's say November Thompson literally this like for fun on the weekends because he can't get enough math."
+    },
+    {
+      "title": "physics",
+      "start": 2993.0,
+      "end": 3021.0,
+      "text": " So he introduces the vector potential and this curl because as Faraday had kind of intuitive the effect of a magnetic field on the surrounding ether was it kind of turning or twisting strain unlike the kind of straight line strain of an electric field and so Thompson wants to kind of formalize what that curl what that twisting torsion will be like as a different kind of strain in the ether any formalizes this new operator which we now no one love and use every single day."
+    },
+    {
+      "title": "physics",
+      "start": 3021.0,
+      "end": 3031.0,
+      "text": " There comes out of Thompson trying to treat mathematically formally what he was still learning very actively from people like Faraday pretty amazing."
+    },
+    {
+      "title": "physics",
+      "start": 3031.0,
+      "end": 3050.0,
+      "text": " So far following Faraday's lead Thompson begins to interpret this math math as a mechanically remember we saw that one to one bridge between the kind of Newton mechanic stuff and the electricity stuff he says if the same mathematics applies maybe it's the same physical explanation on under hurting all of it."
+    },
+    {
+      "title": "physics",
+      "start": 3050.0,
+      "end": 3068.0,
+      "text": " The ether it learned from people like Michael Faraday others either seem to be this elastic physical medium it was literally a kind of stuff spread out everywhere and that medium could be put under local states of tension or strain with twist with directional properties described by these vectors."
+    },
+    {
+      "title": "physics",
+      "start": 3068.0,
+      "end": 3077.0,
+      "text": " So these new mathematical techniques like curl could quantify this physical mechanical mediums response to pressures like electric and magnetic fields."
+    },
+    {
+      "title": "physics",
+      "start": 3077.0,
+      "end": 3088.0,
+      "text": " He really took up to heart in a famous sort of public lectures much like these London ones he actually came to Baltimore in the United States and gave very, very well attended pop and lectures for Baltimore."
+    },
+    {
+      "title": "physics",
+      "start": 3088.0,
+      "end": 3098.0,
+      "text": " Thompson basically tried to give his audience a feel for what these kind of experts were doing this is direct quotations of fat again people in their fancy opera gloves like out for night on the town."
+    },
+    {
+      "title": "physics",
+      "start": 3098.0,
+      "end": 3127.0,
+      "text": " Do you have a great Lord Kelvin by this point the great enabled Lord Kelvin described about the latest advances and he tells us fancy audience stick your hand in a bowl of jelly okay and see how wiggles and vibrates as you move for handrave that's what it was to do physics because the jelly is just like this elastic ether it's everywhere in the job of super smart ambitious people like William Thompson was to quantify the wiggles and vibrations of that ether much as you would if you disturb."
+    },
+    {
+      "title": "physics",
+      "start": 3127.0,
+      "end": 3132.0,
+      "text": " This part of jelly I love that."
+    },
+    {
+      "title": "physics",
+      "start": 3132.0,
+      "end": 3147.0,
+      "text": " This is known as a mechanical world view if the mathematics was the same make this one to one mathematical map then maybe you could model electromagnetism on literally a mechanical model you have an elastic stuff under states of strain with directional properties."
+    },
+    {
+      "title": "physics",
+      "start": 3147.0,
+      "end": 3176.0,
+      "text": " And if the models reproduce all the relevant phenomena like coulums law and all the rest all the electromagnetic phenomena that maybe these aren't only analogies or models maybe either really was merely a mechanical system just like that jar of jam so it becomes a mechanical world view all of the things of the world are to be understood on mechanical kind of vibrations or responses of this space filling ether last part and a possible questions almost done."
+    },
+    {
+      "title": "physics",
+      "start": 3177.0,
+      "end": 3184.0,
+      "text": " When it turned to Thompson's slightly younger colleague James Clark Max."
+    },
+    {
+      "title": "physics",
+      "start": 3184.0,
+      "end": 3196.0,
+      "text": " I mentioned they had a similar upbringing a couple years apart both Scott and both come to Cambridge for their undergraduate studies Maxwell's a couple years younger I don't think they actually overlapped and came to know each other later."
+    },
+    {
+      "title": "physics",
+      "start": 3197.0,
+      "end": 3205.0,
+      "text": " He Maxwell like Thompson becomes steeped in his new Cambridge mathematical training will talk a lot more about the Cambridge training in the next class."
+    },
+    {
+      "title": "physics",
+      "start": 3205.0,
+      "end": 3219.0,
+      "text": " And they did and Maxwell develops further analogies between these electromagnetic kind of ether based systems and mechanical systems here's a famous example this by the way you get some more description of this in that chapter by Bruce Hunt in the reading for today."
+    },
+    {
+      "title": "physics",
+      "start": 3219.0,
+      "end": 3232.0,
+      "text": " The model the effects of a magnetic field on the ether Maxwell matches this elaborate system basically it's like a contraption of like pulleys and conveyor belts and gears we don't know if we're about to detail so much the ambition is what I want to convey."
+    },
+    {
+      "title": "physics",
+      "start": 3232.0,
+      "end": 3247.0,
+      "text": " But there's a physical model of an actual system a mechanical system gears levers and straps that he thinks is what's really going on in the ether when we do things like put a little patch of ether under local strain from a magnetic field."
+    },
+    {
+      "title": "physics",
+      "start": 3247.0,
+      "end": 3257.0,
+      "text": " So between these kind of vortices as depicted here are these idle wheels we'll sort of stay in place but can change the rate at which they turn and really is like these conveyor belts."
+    },
+    {
+      "title": "physics",
+      "start": 3257.0,
+      "end": 3267.0,
+      "text": " If an external force change the rate at which one of these vortices was spinning you could change it by imposing what is external feels like a magnetic field."
+    },
+    {
+      "title": "physics",
+      "start": 3267.0,
+      "end": 3282.0,
+      "text": " You change the rate at which this kind of unit cell is spinning that change of the rate at which the immediately nearest neighbors are going to be behaving it's all this far today field idea of local neighbor to local neighbor not action or distance."
+    },
+    {
+      "title": "physics",
+      "start": 3282.0,
+      "end": 3295.0,
+      "text": " So this unit cell starts to change its rate of rotation that changes speed at which these intervening these local idle wheels spin that then changes the rate at which their nearest neighbors in because they're literally connected so it's all local effects."
+    },
+    {
+      "title": "physics",
+      "start": 3295.0,
+      "end": 3308.0,
+      "text": " So all effects are local and the way that a magnetic disturbance affects something over there is by these local effects propagating through the medium in this kind of gears and straps conveyor belt sort of way."
+    },
+    {
+      "title": "physics",
+      "start": 3309.0,
+      "end": 3315.0,
+      "text": " And again he gives us hints about this in the even in the brief excerpt from Maxwell's street is that I assigned for today."
+    },
+    {
+      "title": "physics",
+      "start": 3315.0,
+      "end": 3323.0,
+      "text": " So he talks about how the action of one electrical system on another is affected not by direct direct action at distance not the way Newton had said."
+    },
+    {
+      "title": "physics",
+      "start": 3323.0,
+      "end": 3331.0,
+      "text": " But rather by means of a distribution of stress in this medium is a elastic medium or the ether extending continuously throughout space."
+    },
+    {
+      "title": "physics",
+      "start": 3331.0,
+      "end": 3346.0,
+      "text": " Likewise, he says if you pages later in the excerpt the distribution of stress in this medium is either is precisely that to which parity was led in his investigation of induction of the fact that a moving magnetic moving magnet can induce electrical effects like an electric current."
+    },
+    {
+      "title": "physics",
+      "start": 3347.0,
+      "end": 3360.0,
+      "text": " At every point of the medium is a state of stress every part of the ethers under some kind of stress such as there's tension along the lines of force pressure at right angles is really going mechanical model almost sometimes a kind of hydrostatic one."
+    },
+    {
+      "title": "physics",
+      "start": 3360.0,
+      "end": 3362.0,
+      "text": " And other ones more like the gears of the fact."
+    },
+    {
+      "title": "physics",
+      "start": 3363.0,
+      "end": 3383.0,
+      "text": " This became how the max well is not just max but even his nearest followers and students and kind of protege is that's where they thought it was to study the natural world to build more and more kind of articulated mechanical models of the ether with which they could model and even predict more and more features of natural world like electromagnetic effects."
+    },
+    {
+      "title": "physics",
+      "start": 3383.0,
+      "end": 3390.0,
+      "text": " So one of his acolytes Oliver large himself went on to a very very distinguished career in physics himself."
+    },
+    {
+      "title": "physics",
+      "start": 3390.0,
+      "end": 3395.0,
+      "text": " He wrote a book a few years later the Maxwell's treat is called the modern modern views of electricity."
+    },
+    {
+      "title": "physics",
+      "start": 3395.0,
+      "end": 3406.0,
+      "text": " And it was all about this sort of max well in approach within this mechanical world view to account for states of strain and ether using this kind of much more articulated mapping the fancy math."
+    },
+    {
+      "title": "physics",
+      "start": 3406.0,
+      "end": 3411.0,
+      "text": " The people like Thompson Maxwell ensued the whole Cambridge group would articulate."
+    },
+    {
+      "title": "physics",
+      "start": 3411.0,
+      "end": 3417.0,
+      "text": " Well, this didn't impress everyone I love this book reviews the nastiest book of you for a long long time."
+    },
+    {
+      "title": "physics",
+      "start": 3417.0,
+      "end": 3426.0,
+      "text": " Here's a review by the French mathematical physicist Pierre du M reviewing Oliver largest book this kind of max well in book."
+    },
+    {
+      "title": "physics",
+      "start": 3426.0,
+      "end": 3434.0,
+      "text": " du M hoped he would like it. He also was very interested in lectures and lectures, but he just snips in his wonderful sneering French way to where the quoting."
+    },
+    {
+      "title": "physics",
+      "start": 3434.0,
+      "end": 3449.0,
+      "text": " du M says here is a book intended to expound the modern theories of electricity and there are nothing but strings which move around pullies which roll around drums which go through pearl beads which carry weights and tubes which pump water while others swelling contract."
+    },
+    {
+      "title": "physics",
+      "start": 3449.0,
+      "end": 3457.0,
+      "text": " Tooth wheels are geared on another engage hooks. This is the real kicker. We thought we were entering the tranquil and neatly ordered a mode of reason."
+    },
+    {
+      "title": "physics",
+      "start": 3457.0,
+      "end": 3472.0,
+      "text": " But we find ourselves in a factory this was not high praise he is like I thought it was going to learn something edifying for my soul and said this is literally low class stuff. This is the most obnoxious take down book review that I could think."
+    },
+    {
+      "title": "physics",
+      "start": 3472.0,
+      "end": 3486.0,
+      "text": " So this max well in British approach doesn't please everyone and yet as we'll see in the last little bit there's starting to make some pretty remarkable strides nonetheless last little bit that will pause for questions last part for next."
+    },
+    {
+      "title": "physics",
+      "start": 3486.0,
+      "end": 3494.0,
+      "text": " So while working out this sort of mechanical model how would local disturbances propagate through this elastic medium of the ether."
+    },
+    {
+      "title": "physics",
+      "start": 3494.0,
+      "end": 3510.0,
+      "text": " Maxwell starts putting in some quantitative values for the way to characterize the kind of response of the ether these are really like spring constants how stretchy is the ether or how much stretching is attention to get sort of per unit applied external field."
+    },
+    {
+      "title": "physics",
+      "start": 3510.0,
+      "end": 3519.0,
+      "text": " When we apply an external electric field to this part of the ether how much does attention change or likewise the magnetic field so we like spring constants analogous."
+    },
+    {
+      "title": "physics",
+      "start": 3519.0,
+      "end": 3523.0,
+      "text": " And that's what he and his college are measuring in their local laboratories in study."
+    },
+    {
+      "title": "physics",
+      "start": 3523.0,
+      "end": 3533.0,
+      "text": " Then he goes back to these mechanical models to ask how quickly would a mechanical disturbance begin to propagate within this mechanical ether."
+    },
+    {
+      "title": "physics",
+      "start": 3533.0,
+      "end": 3543.0,
+      "text": " And he finds really to a surprise he didn't see that coming these disturbances in the ether moment by moment local effects would move at a speed he already knew very well the speed of light."
+    },
+    {
+      "title": "physics",
+      "start": 3543.0,
+      "end": 3547.0,
+      "text": " Here's a direct quotation was very famous paper from 1865."
+    },
+    {
+      "title": "physics",
+      "start": 3547.0,
+      "end": 3559.0,
+      "text": " And he says the velocity of transverse undulations in our hypothetical medium I just love that phrase transverse undulations in our hyperventilumia meaning the speed at which these waves of ether are traveling."
+    },
+    {
+      "title": "physics",
+      "start": 3559.0,
+      "end": 3577.0,
+      "text": " That's been agreed so exactly with the velocity of light that's counted from optical experiments action mostly astronomical test that we can scarcely avoid the inference that light consists of the transverse undulations of the same media in the ether which is the cause of electric and magnetic phenomena."
+    },
+    {
+      "title": "physics",
+      "start": 3577.0,
+      "end": 3579.0,
+      "text": " So that's what's going on here."
+    },
+    {
+      "title": "physics",
+      "start": 3579.0,
+      "end": 3589.0,
+      "text": " To the light waves are literally nothing but traveling disturbances of electric and magnetic fields within this light bearing all pervasive ether."
+    },
+    {
+      "title": "physics",
+      "start": 3589.0,
+      "end": 3600.0,
+      "text": " He gets that he gets this unification of electricity magnetism and optics by thinking very, very hard and very quantitatively about the mechanical response of this all pervasive ether."
+    },
+    {
+      "title": "physics",
+      "start": 3600.0,
+      "end": 3605.0,
+      "text": " So let me wrap up, then I'll pause. I see a bunch of comments coming up in the chat, so I want to make sure we have time to chat."
+    },
+    {
+      "title": "physics",
+      "start": 3605.0,
+      "end": 3609.0,
+      "text": " So let me just wrap up for and then we'll get to discussion."
+    },
+    {
+      "title": "physics",
+      "start": 3609.0,
+      "end": 3622.0,
+      "text": " Leading natural philosophers of the 19th century were really quite convinced and they had very good reasons that the world is made up just different kinds of stuff than how our contemporaries would answer that question."
+    },
+    {
+      "title": "physics",
+      "start": 3622.0,
+      "end": 3634.0,
+      "text": " That opening question, what's the world made of? The folks back then world leading rightly celebrated scholars, Faraday Thompson Maxwell and for that matter, people like Pierre Duhem and his contemporaries as well."
+    },
+    {
+      "title": "physics",
+      "start": 3634.0,
+      "end": 3645.0,
+      "text": " They were convinced that the world was not made of elementary particles that skitter around and evacuate, but rather there was no vacuum and particles were a kind of afterthought will come back to that next class."
+    },
+    {
+      "title": "physics",
+      "start": 3645.0,
+      "end": 3671.0,
+      "text": " That the world is filled with his elastic physical medium, the ether and everything that matters is a response that ether to various kinds of mechanical disturbances as Lord Kelvin says stick your hand in a bowl of jelly, see how that's what the world is made up until the middle decades of the 19th century, many leading highly accomplished and very influential natural philosophers like Michael Faraday."
+    },
+    {
+      "title": "physics",
+      "start": 3671.0,
+      "end": 3689.0,
+      "text": " Could enter research careers based on this apprenticeship model closer to the middle ages or the Renaissance than to today. They often worked in sort of institutes which had no formal teaching function, they were not for the most part based at universities, that's what begins to change in the middle decades of the 19th century."
+    },
+    {
+      "title": "physics",
+      "start": 3689.0,
+      "end": 3709.0,
+      "text": " So Faraday Thompson Maxwell in their own different ways pursue these analogies between this light bearing or luminiferous ether and mechanical systems Faraday with his rather rudimentary geometrical arguments and his very clever kind of pictorial aids, Thompson Maxwell with his increasingly sophisticated mathematics will look at that as a more next time."
+    },
+    {
+      "title": "physics",
+      "start": 3709.0,
+      "end": 3720.0,
+      "text": " They all became convinced of what became called a mechanical worldview, the electromagnetic effects were literally nothing but mechanical effects, mechanical effects on this all pervasive ether."
+    },
+    {
+      "title": "physics",
+      "start": 3720.0,
+      "end": 3731.0,
+      "text": " Moreover, this is the birth of what we now call field physics, local causes yield local effects, there's no action and a distance unlike Maxwell's description, actually Newton's description of gravity."
+    },
+    {
+      "title": "physics",
+      "start": 3731.0,
+      "end": 3744.0,
+      "text": " A can affect B but it'll take some time for the effects to propagate and certain kinds of propagating effects like these electric and magnetic transverse undulations which show up as nothing other than what we call light."
+    },
+    {
+      "title": "physics",
+      "start": 3744.0,
+      "end": 3754.0,
+      "text": " Let me stop sharing the screen there, open it up for questions, there's a huge set in the chat, I think I'll get to them all today."
+    },
+    {
+      "title": "physics",
+      "start": 3762.0,
+      "end": 3771.0,
+      "text": " Great, great question, thank you. So there was a spectrum even among what we now call the max welions, they didn't all have, you know, exact same ideas only shared a lot."
+    },
+    {
+      "title": "physics",
+      "start": 3771.0,
+      "end": 3777.0,
+      "text": " And so indeed some of them wondered is this a useful analogy and if so should we none of us keep pursuing it see what we get out of it."
+    },
+    {
+      "title": "physics",
+      "start": 3777.0,
+      "end": 3790.0,
+      "text": " Others were convinced that it's more than it's not merely an analogy, it's a helpful analogy precisely cause of some deeper similarity and individuals use change over time in the whole group would have a kind of let's say evolving center of gravity."
+    },
+    {
+      "title": "physics",
+      "start": 3791.0,
+      "end": 3799.0,
+      "text": " There were more like each other in the kind of Cambridge scene, then like say the French or the Germans or indeed communities further afield as well."
+    },
+    {
+      "title": "physics",
+      "start": 3799.0,
+      "end": 3814.0,
+      "text": " Look at so I don't want to make it sound like they're all kind of like exactly have the same motion, they were pretty similar compared to as we'll see actually a really interesting contrast next class, I think it's with some leading scholars within the German states."
+    },
+    {
+      "title": "physics",
+      "start": 3814.0,
+      "end": 3831.0,
+      "text": " So they are there was maybe the strongest countries, but you're right that some of these even within Cambridge or the kind of close Max Wollion colleagues, they were all delighted to pursue the mathematical analogies they were getting trained in this very very elaborate mathematical machinery as we'll talk more about next time they shared that."
+    },
+    {
+      "title": "physics",
+      "start": 3832.0,
+      "end": 3848.0,
+      "text": " And they were impressed by what the analogies would bring them either to explain something or do prompts new questions and then try to go to the laboratory was a productive set of analogies that was already what they agreed on some then said it's not just analogy the world is filled with jelly effective."
+    },
+    {
+      "title": "physics",
+      "start": 3848.0,
+      "end": 3849.0,
+      "text": " It's a great question."
+    },
+    {
+      "title": "physics",
+      "start": 3849.0,
+      "end": 3860.0,
+      "text": " It looks like Julia has very kind of compiled a bunch of questions for me, let me answer some that Julia has as a private chat to me and if I miss some others we have time for some more."
+    },
+    {
+      "title": "physics",
+      "start": 3861.0,
+      "end": 3879.0,
+      "text": " So someone asks by way Julia if university and research institutions were separated in time who used to teach at the university so very good people would teach at the university who had gone to university so self self replicating now that's still true today but we've achieved a kind of monopoly, whereas back then it wasn't such a monopoly."
+    },
+    {
+      "title": "physics",
+      "start": 3880.0,
+      "end": 3894.0,
+      "text": " That is to say people who would teach universities had indeed been trained like like William Thompson or James Clark Maxwell with their own students and in fact we'll talk quite a bit about this in the next class and something I find really interesting."
+    },
+    {
+      "title": "physics",
+      "start": 3894.0,
+      "end": 3909.0,
+      "text": " And that was still separated from people who could enter really elaborately amazingly prestigious careers like Michael Faraday or even Thomas Young before him or Hans Christian or state or many other names we counted today without going through that kind of formal university setting."
+    },
+    {
+      "title": "physics",
+      "start": 3909.0,
+      "end": 3921.0,
+      "text": " So the kind of apprenticeship model like get your hands dirty on effectively a kind of elaborate internship and just like never leave that was still a viable path in to conduct really world class cutting edge research."
+    },
+    {
+      "title": "physics",
+      "start": 3921.0,
+      "end": 3933.0,
+      "text": " Then you'd often write your monograph your whole book about it maybe deliver some fancy lectures maybe some of the scholars at the university would be interested and maybe write a textbook and maybe lecture on it in their classes but they were kind of they were separate."
+    },
+    {
+      "title": "physics",
+      "start": 3934.0,
+      "end": 3949.0,
+      "text": " The separation begins to be reduced starting in the roughly 1850 1840s 1850s and they become much much closer associated not automatically not without sort of some some switches back and forth."
+    },
+    {
+      "title": "physics",
+      "start": 3949.0,
+      "end": 3955.0,
+      "text": " But the trend really sets in starting in the middle 19th century again we'll look at that a bit more directly next time very good question."
+    },
+    {
+      "title": "physics",
+      "start": 3956.0,
+      "end": 3970.0,
+      "text": " So another question is why do we go from the convention used in Maxwell after noting the potential I sighed now using it five oh very good are they different no they're not different so I guess I skipped ahead to the modern I showed my prejudices in my slides here there's using the Greek letter five for potential."
+    },
+    {
+      "title": "physics",
+      "start": 3970.0,
+      "end": 3985.0,
+      "text": " That the short answer is I don't know what that particular letter changed what I do know and we'll talk about again next time is that as you got a taste of again in the reader today Maxwell was not using any of this fancy pants vector stuff right."
+    },
+    {
+      "title": "physics",
+      "start": 3986.0,
+      "end": 3991.0,
+      "text": " Maxwell was writing everything out in explicit contention coordinates."
+    },
+    {
+      "title": "physics",
+      "start": 3992.0,
+      "end": 3998.0,
+      "text": " That's probably why he joked why his book was 900 pages like if you just use vectors they would have been a 20 page pamphlet you know we'd be done."
+    },
+    {
+      "title": "physics",
+      "start": 3998.0,
+      "end": 4006.0,
+      "text": " And so I talk a lot about that actually in the coming class so the particular question how did society come fire it's interesting and I actually don't know."
+    },
+    {
+      "title": "physics",
+      "start": 4007.0,
+      "end": 4021.0,
+      "text": " But the larger question about Maxwell's notation and in particular how can become so valuable for people like us when he writes these incredibly clunky pain of the buck kinds of things as part of why I gave you those excerpts from his reader from his treatise."
+    },
+    {
+      "title": "physics",
+      "start": 4021.0,
+      "end": 4034.0,
+      "text": " It doesn't look just like you know our favorite textbooks today even when we're using quote of what his equations so it's a great question the conventions actually show a lot of interesting stuff even a particular question about sci fi I I don't know."
+    },
+    {
+      "title": "physics",
+      "start": 4035.0,
+      "end": 4042.0,
+      "text": " Regarding the wheels police as analogies of his reality how is continuous rotational symmetry of the physics explained oh that's interesting."
+    },
+    {
+      "title": "physics",
+      "start": 4042.0,
+      "end": 4060.0,
+      "text": " I think the idea oh that's good yeah that's good so I think they they just are toward it by those like molecular vortices that's a kind of two day two dimensional slice and they certainly were things like sphere so a lot of it's up they talked about ball bearings we actually have spherical symmetry."
+    },
+    {
+      "title": "physics",
+      "start": 4060.0,
+      "end": 4079.0,
+      "text": " And so they constructed even more elaborate kind of pull these in gears so they were certainly very attuned especially thinking about these mathematical kind of fancy mathematicians like Thompson Maxwell they're very attuned to what we would now call symmetry arguments in real space kind of rotate the system around x, y or z."
+    },
+    {
+      "title": "physics",
+      "start": 4079.0,
+      "end": 4100.0,
+      "text": " And so a lot of their models were actually factly sort of spherical like like like like like billiard balls or like ball bearings as opposed to only like circles so what will come to that as well these are all good questions other questions here from the chat."
+    },
+    {
+      "title": "physics",
+      "start": 4100.0,
+      "end": 4110.0,
+      "text": " Or from not the gen, anyone else have any questions that they want to to pose for the group feel free to raise just raise your blue hand at this point to now because each other."
+    },
+    {
+      "title": "physics",
+      "start": 4130.0,
+      "end": 4143.0,
+      "text": " I like the comment about putting your hand in jelly and now you keep on sticking my apologies for your keyboard just trying to catch up on the chat here."
+    },
+    {
+      "title": "physics",
+      "start": 4143.0,
+      "end": 4158.0,
+      "text": " There's a really interesting comment here about from Sabrina I like this so Sabrina writes that I don't know what it got is a grand unified theory but it seems like we're moving back towards everything being the same thing again with it."
+    },
+    {
+      "title": "physics",
+      "start": 4158.0,
+      "end": 4183.0,
+      "text": " So one of the things that that's maybe comes back to actually to the obo's question so for some of these folks the ether was a kind of word for something that didn't really know what it was a subject a topic they figured had to be everywhere because they could in they could infer its effects if I wiggle something here something happens there there must be some medium that transmitted the influence from a to b."
+    },
+    {
+      "title": "physics",
+      "start": 4183.0,
+      "end": 4192.0,
+      "text": " If you know how could a moving bar magnet possibly affect an electric current because they're both immersed in the shared medium is all pervasive medium."
+    },
+    {
+      "title": "physics",
+      "start": 4192.0,
+      "end": 4205.0,
+      "text": " And so they gave it a name they gave it a long before they had any kind of articulated descriptions or an hour they called it the light bearing either a little bit of a secret in your decades before they had any kind of more specific ideas about it."
+    },
+    {
+      "title": "physics",
+      "start": 4205.0,
+      "end": 4215.0,
+      "text": " And so in that sense I think it is kind of like we're in a similar situation today and we'll talk a bit about this near the very end of this semester with our quest to understand what's the world made of."
+    },
+    {
+      "title": "physics",
+      "start": 4215.0,
+      "end": 4234.0,
+      "text": " And we have some other we have very finely articulated models like a standard model and this kind of neutrino and that kind of electron and upcorks and downcorks and gluons and eggs body all this very specific and that amounts as you may know for not more than 5% of the kind of mass balance of universe."
+    },
+    {
+      "title": "physics",
+      "start": 4234.0,
+      "end": 4241.0,
+      "text": " We've explained 5% universe with unbelievable precision out to 12 decimal places thank you very much."
+    },
+    {
+      "title": "physics",
+      "start": 4241.0,
+      "end": 4248.0,
+      "text": " And we know nothing with a capital N nothing about the other 95% of the energy balance."
+    },
+    {
+      "title": "physics",
+      "start": 4248.0,
+      "end": 4255.0,
+      "text": " So we give it names we call it dark matter and dark energy again it will come to in the very near the end of the turn."
+    },
+    {
+      "title": "physics",
+      "start": 4256.0,
+      "end": 4272.0,
+      "text": " And I think in some sense I have some sort of sympathy with either my present colleagues myself and or with the kind of people of Farad is a maximum age they didn't know what the ether was but they knew that had to be there it was conveying all these effects they could measure the effects of disturbing the ether as far as they were concerned."
+    },
+    {
+      "title": "physics",
+      "start": 4273.0,
+      "end": 4282.0,
+      "text": " So they gave it a name a kind of placeholder name partly to help organize their studies. Oh I'm studying the Luminiferous ether as well that helps get scholars you come to the same page."
+    },
+    {
+      "title": "physics",
+      "start": 4282.0,
+      "end": 4293.0,
+      "text": " They would give their best estimates of what they thought the thing was like and how it behave but they didn't know right they had had a better or less well compelling responses."
+    },
+    {
+      "title": "physics",
+      "start": 4293.0,
+      "end": 4311.0,
+      "text": " And I think we're in a very similar situation today not by design not by our hopes because we have been stymied now for four decades to get any more kind of carefully articulated knowledge about what specifically is dark matter seems to be filling every galaxy much much more so than that."
+    },
+    {
+      "title": "physics",
+      "start": 4312.0,
+      "end": 4335.0,
+      "text": " And particularly this other separate kind of stuff that we now called dark energy so I think we again I don't want to say we've learned nothing since 1820 we can see some some maybe humbling humility inducing parallels between our best efforts today and the efforts of very very earnest sounds of folks from from long ago that's a great."
+    },
+    {
+      "title": "physics",
+      "start": 4335.0,
+      "end": 4339.0,
+      "text": " So again we'll keep that in mind as we march forward throughout the term."
+    },
+    {
+      "title": "physics",
+      "start": 4339.0,
+      "end": 4344.0,
+      "text": " Julian asks why are they so reluctant to accept action at a distance and how did we come to accept it."
+    },
+    {
+      "title": "physics",
+      "start": 4344.0,
+      "end": 4350.0,
+      "text": " Oh good let me take it first one first action a distance that's a great topic."
+    },
+    {
+      "title": "physics",
+      "start": 4350.0,
+      "end": 4357.0,
+      "text": " Newton famously says when it comes to the phenomena of gravity, I feign no hypothesis."
+    },
+    {
+      "title": "physics",
+      "start": 4357.0,
+      "end": 4375.0,
+      "text": " He says I think they're quantitatively the effect of one mass exerting a force the other goes as the product of the masses divided by the square their distance is law of universal gravitation what's the underlying reason for that he says for that I feign no hypothesis."
+    },
+    {
+      "title": "physics",
+      "start": 4375.0,
+      "end": 4389.0,
+      "text": " He actually had a lot of hypotheses he just knew not to write them down a lot of scholars have argued that he was actually convinced at least by analogy the gravity was a kind of alchemical effect even a time when alken he was in kind of poor repute."
+    },
+    {
+      "title": "physics",
+      "start": 4389.0,
+      "end": 4403.0,
+      "text": " So he said outwardly and publicly I don't know what it is but he seems to have at least been inspired in part by these very what we would now call a cult forces where something can somehow have an influence on something else instantly across time and space."
+    },
+    {
+      "title": "physics",
+      "start": 4403.0,
+      "end": 4415.0,
+      "text": " So so Newton was kind of comfortable with the notion of action or distance that somehow the earth could instantly tug on the moon and vice versa without having to wait for some influence to travel you here and there."
+    },
+    {
+      "title": "physics",
+      "start": 4415.0,
+      "end": 4438.0,
+      "text": " That even in its day was criticized by number of scholars even in Newton's own day because they thought it did sound a cult it sounds like you know kind of witchcraft how could this thing possibly affect something over there if everything else I see you know I throw a pond actually a rock into the pond I see ripples spread out the distant edges of the pond aren't affected by my rock until the ripples get there."
+    },
+    {
+      "title": "physics",
+      "start": 4438.0,
+      "end": 4461.0,
+      "text": " There are all kinds of common sense observations that suggested to people like ligaments I mean like Newton's very smart contemporaries that the physical world seemed to convey influences by requiring some time for influence to allow for me to be so Newton's action of distance was already at least had a kind of curious you know kind of bad reputation among the savants who cared."
+    },
+    {
+      "title": "physics",
+      "start": 4461.0,
+      "end": 4490.0,
+      "text": " And then you get to someone like like Faraday and Ursted and Thomas Young and now they figure they have a reason to finally give up or to finally reject that action and distance because they have separate reasons based on this wave theory of life say oh there is a seat there's a physical explanation available to us for how all these physical phenomena are transmitted from A to B across space they're all sitting in this elastic medium is either and that can have a local disturbance of propagating."
+    },
+    {
+      "title": "physics",
+      "start": 4491.0,
+      "end": 4520.0,
+      "text": " So there was so to speak an added reason to pile on and say not only did people wonder about Newton's action of distance in Newton's own day now roughly a hundred hundred ten years later we have new inputs we've new evidence from our investigations the suggestion that Newton hadn't known about it or hadn't taken into account at all all the more reason to try to find out a kind of local cause local causes you local effects kind of response so that starts getting more and more compelling."
+    },
+    {
+      "title": "physics",
+      "start": 4521.0,
+      "end": 4550.0,
+      "text": " Now Julian asks because he knows what's coming why do we now accept action of distance we sort of do and don't we have a love for you relationship I assume Julian that you're referring to quantum entanglement or so called quantum non locality if you're not referring to that I'm going to hijack this and I'm going to talk about because I just love it so we're going to talk about that action a few classes a little bit later this term so how have we made our kind of awkward piece with a very certain kind of action of distance not easily not right away."
+    },
+    {
+      "title": "physics",
+      "start": 4551.0,
+      "end": 4564.0,
+      "text": " Thanks to a lot of hard and contested thinking that's a preview for for lecture 12 I think so we're going to we're going to talk about quantum non locality is one of my favorite topics in the universe we'll get look at that too."
+    },
+    {
+      "title": "physics",
+      "start": 4565.0,
+      "end": 4583.0,
+      "text": " But for a long long time between let's say 1800 and the 1960s 70s people were quite content to say the action of distance is always always bad we never want we never want it in our physics and they had a range of reasons why they thought that was going to be an acceptable approach."
+    },
+    {
+      "title": "physics",
+      "start": 4583.0,
+      "end": 4609.0,
+      "text": " Aiden asks how accessible were the lectures and later universities research I mentioned that Faraday did not have much money when he was younger but he was the exception was the exception rule to class discrimination events all yeah very good so in Britain in British history I mean the rough shorthand is we're always talking about class discrimination so including in Faraday's time Faraday was absolutely the exception who proves the rule it was as I say this rags to riches story."
+    },
+    {
+      "title": "physics",
+      "start": 4609.0,
+      "end": 4626.0,
+      "text": " It wasn't there there was no social mobility and you can read any kind of Charles Dickens novel to see some characters who have a breakthrough and rise above their station in the language of the time but in the in the natural philosophy Faraday stands out as a pretty unusual case and the universities as well there were"
+    },
+    {
+      "title": "physics",
+      "start": 4626.0,
+      "end": 4639.0,
+      "text": " Scholarship students at places like Cambridge then is now so it wasn't only very very rich children and very rich families who go to university but it was tilted very strongly that way"
+    },
+    {
+      "title": "physics",
+      "start": 4639.0,
+      "end": 4657.0,
+      "text": " In fact it's only in Britain in the middle decades of the 20th century like a hundred years after the days of Thompson and Maxwell was a very large university reform throughout Britain to make much more accessible university for many many more for people for many more backgrounds"
+    },
+    {
+      "title": "physics",
+      "start": 4657.0,
+      "end": 4686.0,
+      "text": " That kind of large scale national university reform comes really an earnest like a hundred years later so there were students on fellowship in fact Isaac Newton was a scholarship student when he went to Cambridge in his own lifetime in the 1600s often they would have to be basically like a Butler or a made for their for their roommates not an ideal situation right this is not like work study was like you have to go clean up for your rich roommate not what I recommend today so there were ways to be"
+    },
+    {
+      "title": "physics",
+      "start": 4686.0,
+      "end": 4711.0,
+      "text": " a student as some of these elite British universities from from more humble backgrounds not great this was well outside the reach of someone like Faraday so it does again the latter didn't extend sort of arbitrarily low but there were there was a range of social classes universities in this time not not a full range and that begins to change pretty slowly all over the world including Britain including fracking the United States and of course we still have challenges even here"
+    },
+    {
+      "title": "physics",
+      "start": 4711.0,
+      "end": 4717.0,
+      "text": " So that's a great question Faraday was indeed the exception who who proves the rule within natural philosophy"
+    },
+    {
+      "title": "physics",
+      "start": 4717.0,
+      "end": 4740.0,
+      "text": " Yeah great question any other questions there if not I realize we're pretty much at the hour those are great questions thank you so much I hope it's not too clunky we'll try to get better I'll try to get better at at flowing in the questions and discussions throughout these zoom lectures anyway thanks everyone great great questions I'll post the videos as soon as done processing will go to the campsite and we'll pick it up there for next week"
+    },
+    {
+      "title": "physics",
+      "start": 4740.0,
+      "end": 4742.0,
+      "text": " everyone stay well see you soon"
+    }
+  ],
+  "text": " Okay, welcome everyone. Welcome back to 8225, which is also STS042, physics in the 20th century. Let me start by asking just quickly, if there are any logistical questions, any kind of course structure or other questions like that. We can try to clear up quickly and then we'll jump into the first main lecture. In general, it's good to do the readings at least to skim the more technical readings before the assigned class. So for today, that was a brief excerpt from Maxwell's Treatise on Electries in Magnus, for example, at a chapter from Bruce Hunt's book on the Maximilians. So in general, it would be helpful if you keep up with the readings because it's just going to snowball. Otherwise, some of the readings as you probably have noted with the maximum in particular are pretty, they're not exactly a page turning novel, right? Like what's going on with that? So I'm going to be talking about what Maxwell thought he was doing, what some of Maxwell's contemporaries, how they read that book in today's lecture. So today, I hope we will exemplify the kind of use to make of readings like that as we go through the first work example with Maxwell today. Other readings, as you'll see, like the chapter from Bruce Hunt for this week, are by physicists or historians or sociologists or other more recent scholars trying to help us make sense of that older work. And for those, I think it does make sense to read them a bit more closely, what's the actual argument the author is making, what are the kinds of evidence does the author bring to bear? Because what we'll work on together over the course of the semester is actually working on your own written essays, your own analyses, where you will be, will help you will build up toward it. But you're working on articulating an argument, defending that argument with evidence and examples from various sources. So those are the readings that we would call a secondary source, readings by historians or more recent physicists or philosophers or sociologists or journalists or whomever. Those are more like the kinds of writings we're going to try to do ourselves or the course of the term. So I reckon plus I think hopefully they're interesting I've chosen for you know very carefully. So I do recommend you try to read those a bit differently, let's say, than something like skimming over Maxwell's treatise, which might look both pretty bland and weird and a little unusual given how we do things today. So there are kind of different ways to read the different kinds of sources. And I guess I hope we today will actually give a bit of an example of that as we talk talk a little bit about that Maxwell reading throughout today. So that's the plan and if there's no other questions, I think we'll just jump right in. So I'm going to go ahead and share screen. And hopefully you can see that for a slide. So today we're going to start our kind of journey in earnest. So we're going to turn the clock back about 200 years and talk about some of the leading natural philosophers and the leading people who are trying to understand the physical world. And what did they think their job was what were the settings in which they did it, what were the conceptual tools they brought to bear. And we'll always be asking ourselves what looks kind of similar and what looks really, really unfamiliar from our vantage points today. So the discussion today has three main sections. I have a brief kind of warm up on physics then and now just to try to prep us to put our minds back into the world of the early 19th century. Then we'll spend a bit of time talking about Michael Faraday, who is one of the most widely celebrated scientists or natural philosophers of his day. And we'll see some of the things that he introduced during his rather unusual career. And then the last main section for today we'll talk about some of the folks who were a bit younger than Faraday, who kind of took up his mantle, who tried to continue his line of work, but again using some some different kinds of techniques and tools in this case William Thompson and James Clark Maxwell. So that's our kind of goal for today. So let's just pause and remember that we are entering a kind of you know imaginary time capsule and going back you know about 200 years to start. So the assumptions that we might bring in as physics students as MIT students more generally about how the world works about what the job of a physicist is and so on. Those won't map on perfectly well to some of these earlier folks we start talking about and I really I find that that's part of what's so fun for me about working in the history science is exactly this moment with things don't look so familiar as well as a continuity we can trace over time. So one of the biggest questions we might ask about physics today is what what's the world made up what do we think as modern day scientists are the basic building blocks out of which the world is made. If we were to conduct a survey of most working physicists at MIT or really anywhere around the world at this point we'd get an answer along these lines we would hear about something called the standard model of particle physics which is amazing and will actually talk a bit about the standard model later in the semester. It describes the world is made up of a very small number of fundamental entities elementary particles like the quarks and electrons and how mayzons and neutrinos and even the long elusive exposed on there's a collection not a very big collection of stuff out of which we think literally everything else is made. We hear the physicists today talk about the tools that have been developed to try to study interactions of those elementary bits of matter how different particles can interact with each other can scatter off each other can transmit the fundamental forces of nature like changing certain kinds of particles in a vacuum. Depending on which physicist we ask we might get an earful maybe more than we invited saying that actually all those particles of the missiles really only the kind of the efflorescence of more fundamental entities called strings that live in some abstract space the point is we're going to get an answer like this about basically particles exchanging particles in the vacuum. Now if we were to build our time machine which I sincerely hope we can complete soon and we go back you know a hundred or little in 200 years to say talk with leading a natural researchers in Britain and we told them this answer that physicist today so the world is made of particles exchanging particles in a vacuum they would have thought we were really not with it. I like to think they would have shouted bollocks or at least something maybe more colorful every single part of this modern answer would have looked extraordinarily wrong headed to the people that were going to spend some time reading about and talking about at the start of this term and why is that important I mean if we if we did this exercise with the ancient minds or the medieval Turks or or the or the Renaissance French we'd also expect some disagreement what I like about this is that we're turning the clock back not so far compared to the present day. And yet we already see a huge divergence in the answers as we'll see throughout today and actions for several class sessions for the term we use their equations we still use said you know Maxwell's equations for example and a lot of the ideas that Michael Farad introduced and yet what they thought those equations meant what they thought they were describing about how the world is made up are almost you know a hundred degrees opposite from how we start our investigations today so even though some parts have remained the same. Going over these hundred fifty or 200 years to the past what we make how we make sense of those ideas or those techniques have gone through a really quite amazing change. So what do we think the world is made of that's not a kind of static set of answers and we see pretty dramatic change even over a relatively short span of history. There's another kind of shift that we want to get our heads into a kind of a tune ourselves to as well and that concerns who pursues the study physics and in what kinds of settings what institutions. So during the first half of the 19th century we'll start this class people who worked on what we would call physics electricity, magnetism optics other phenomena heat. They also worked on things that we would call not physics like chemistry or mathematics or astronomy physiology even beyond that for them this was all kind of one field of study it was often grouped under the term natural philosophy rather than physics or chemistry or mathematics per se. In fact the term for person who studied these things in English term we would call scientists was actually only invented in 1834 it's remarkably new as far as the English language goes it was invented after some developments will actually start talking about today so even having the job description scientist or the title is actually relatively new and what these particular kinds of scientists that we would now call physicists what they thought they should do again some pretty broad changes. Not only do they think their job description is different than what we might imagine for ourselves but where they did the work and what kinds of settings or institutions that was also pretty different merely 200 years ago let alone much further back in human history. Not a stuff we'll start by talking about today was not done in schools or universities they were done in separate institutes or academies and the key thing is these were not places where students took classes to get degrees there was a kind of separation between kind of learning institutions universities existed throughout many parts of the world including Western Europe and the United States university existed but that was not where people were doing what we would call scientific research. In fact some of the most prominent natural philosophers are leading physicists were not really not professors at universities some of them had never even attended university themselves that's true of the first figure we'll look at today Michael Farrier. So there's a big shift toward a kind of placement of this research that would look more familiar things more like what we'd expect to see ourselves that shift begins in the middle of the 19th century so more like 150 or 107 years ago rather than 200 years ago or more. There's a shift to where research in fields like physics gets done more often than not by people who are professors in universities who also spend some of the time teaching students like what we are more used to today that's that has a history it's actually relatively recent and it has an emerges really in the middle part of the 19th century. So the overall theme of this very first kind of warm up for the class is to kind of put ourselves on guard we shouldn't assume that our current sense of what's expected or normal or familiar either about how we choose to study the natural world what concepts we use let alone how we think we we should be pursuing that what kinds of institutions or job descriptions. We shouldn't expect that what's familiar to us today is just how people did things in the past and in fact we'll see some pretty dramatic changes over a relatively short span of time. So I pause there and ask him any questions just on that early kind of warm up. Anyone have any thoughts or questions about that. If not, then I'm going to press on again feel free to jump in on the chat if things come up. Let's talk about this first figure I already mentioned Michael Farry we're going to spend a little time talking about Farry I think he's fast. So he became one of the most successful and actually one of the most famous natural philosophers in his lifetime in fact really of the entire 19th century. He had a pretty remarkable personal story and I think we'll also see he helps sort of make clear some of the larger social and institutional changes going on as well he helps us understand his own larger time period. Personally he had this really kind of inspiring rags to riches story who is born into a rather poor family he never attended high school let alone college university. He was apprenticed to a book binder at age 13 I mean he literally left his family moved in with his his main tutor and was apprenticed in a kind of trade. So in that sense his kind of life his career path started out closer to what we might expect of the Renaissance or even the Middle Ages. He had to go to the modern period it was a kind of time still of guilds and of trades associations and his role his way to make a living was to learn the kind of manual dexterity skills of being a book binder starting early on. He met the very famous chemist or natural philosopher Humphrey Davy when Davy gave a series of public lectures on natural philosophy at the Royal institution in London and we'll talk about about the Royal institution. It was not a university was a place where research was done and public lectures were given so Faraday was just mesmerized by Davy's lectures he actually took very careful notes on these public lectures Faraday then bound into a beautiful very fancy book and here's how we know he was so smart he then gave that fancy book to Davy as a gift and I have a hint here what you can do with that information. He basically brought his way into a new kind of apprenticeship. Davy was very flattered and impressed by the kind of manual skills by the dexterity that Faraday had shown so Davy hired Faraday for a basic new kind of apprenticeship. Faraday had never attended high school or college he wasn't that he was trained in mathematical physics quite the contrary. But Davy figured Faraday could do some new kinds of manual dexterity skills in the laboratory as a laboratory assistant a kind of continuation of his book binder apprenticeship. So that's how Faraday enters what we now call the world of natural philosophy. So years and years go by they were very closely for long time. Davy eventually steps down he retires and Faraday in fact became his successor now the director of this royal institution in London. So much like I mentioned a few moments ago Faraday worked on really a kind of mind bogging array of topics mind bogging from our modern point of view quite kind of familiar to his own contemporaries. So he worked on what we would separately class wise chemistry optics electric magazine electrolysis and more. To Faraday these were all elements of a single unified approach to nature and he was particularly faraday fast and even more than some of his contemporaries with his inter convertibility of forces. How could electrical effects make you know physiological effects happen like using electric shocks to make a frog's leg jump. How could chemical effects be be catalyzed by electric current so is the way that one kind of phenomenon or force could have effects and some other domain. Now Faraday was partly inspired in this kind of inter convertibility view by his own religious background so really very interesting work by a number of historians biographers of Faraday who tried to understand why Faraday took this kind of notion even further even more fervently than many of his own contemporaries. And these other historians make a pretty compelling case Faraday belong to a rather small religious minority in England he was a Protestant but he was not an anglican he was not a member of the kind of official church of England he belonged to a small sect called the sandamanians Protestant but not Anglican. And the sandamanians even more than the kind of standard church of England at the time emphasized a kind of underlying unity to all of nature were all part of one natural world and that people and things are somehow connected to each other that was part of what the sandamanians themselves kind of believed and had a theological import for them. And there's a really interesting parallel at the very least in some of the ways that Faraday had explored the natural world as well. He became a beloved very successful public lecturer he continued the tradition that Ambridavi had done at the Royal institution giving these very very well attended so called Christmas lectures these still continue from Royal institution to this day. Faraday would really fill the lecture hall and give these dazzling spectacular demonstrations electrical effects and chemical change in all the rest. That's partly why he became so beloved and well known in his lifetime. You can't quite see it in this engraving it's hard to tell but these were this really was the definition of popular the tickets were not too expensive. That's partly how very young and poor Faraday himself was able to attend as a child. It wasn't like attending you know the fanciest opera performance in in high elite London. There was a kind of you would there be cheap seats you can see how large the hall so they're the very nice you know fancy seats then as now we're expensive and tickets would go to the to the affluence and well to do. But there really was a cut what we today would call a kind of outreach is a real effort to reach across several kind of social and economic classes not all the way but broader than only the very elite. And they they became a really beloved kind of city institution within London people would come in from out of town to attend them became an annual tradition and Faraday became especially beloved as a presenter in that tradition. So they really were reaching not only people who had any interest in in natural philosophy was really the kind of a way of showing a kind of sophistication and and and away for members of the so called aspiring classes meaning those who weren't so well to do. To be able to participate in things that they saw the really elites doing so really had a interesting kind of social cross section to the story written a lot of issues that's not. So they really were talked about broadly covered in the in the broad sheet newspapers and on in this time period the main mechanisms were largely books so even side even scientists like when we would call physicists were mostly writing monographs and sometimes writing short articles for fellow specialists there were scientific journals include some of the earliest and founded in England going back to the 1660s similar ones in other parts of Europe. But the but the real kind of transfer mechanisms were often through monographs as partly why Maxwell's treat us that we'll talk about later today became so so widely known as influential there were then these these lectures there were also so called itinerant lectures. People who made their whole living just giving popular lectures on topics like electricity town to town so not just in London but to the to the outskirts and likewise throughout provincial France and other places so there were kind of popular lectures in that sense you can think of it almost like like PBS television today like no specials but for fellow specialists there were just the start of professional meetings the British Association for the advancement of science I'm having annual meetings of the sort that would become so familiar. For fellow specialists sometimes those would be covered in the national newspapers it was a hodgepodge some things would look familiar to us some things might seem a little a little more unusual but Faraday wrote books and books and some articles for example. There were and certainly some of this would get into the curriculum for universities will talk more about that actually especially later today in the next class session but the way that kind of fellow researchers interact with fellow researchers it was largely through books sometimes through journals and through these different kinds of lectures great great questions. I'm going to move on these are great questions i'll try to answer more than I'll get to as we go further but I want to get to one of the topics that was really really high on Faraday's list of most important this is really going to set our kind of agenda for several classes to come and that's what was called the ether a presumptive a hypothetical medium that pretty much everyone that we're going to talk about Faraday included just assume they kind of knew they had a lot of things to do with the first class of the year. So I think that's a very important thing to do is to have an extremely strong confidence that this medium was filling all of space filled every nook and cranny of the universe. And that's it was this medium that filled everything that enabled various processes to affect one other that was the kind of inter convertibility of forces why did electrical effects lead to magnetic effects because they're both they're both ultimately effects of this ether that connects everything so what's the ether. Faraday's own childhood another kind of amateur British naturalist named Thomas Young building on some work by French scholars from around the same time right around the year 1800 had advanced a wave theory of light this is opposite actually to Isaac Newton's theory of light or a particle or corpuscular theory. So Thomas Young like some of the French scholars as well suggest there's a whole bunch of optical phenomena like interference like reflection and refraction could really make only be made sense of if light was a series of waves and I'm sure you've seen this is a very simple illustration. If two waves are perfectly in sync with each other we'd say in phase you can get constructive interference that peaks will become larger than either wave alone the trumps are going deeper. Of course if those two waves are exactly out of sync with each other the perfectly out of phase you can get destructive interference and the resultant wave of vanish together and sort of anything in between. So Young and others were convinced that these interference phenomena were natural indications that light is a wave phenomena but then the next question is well waves of what waves in what ocean waves are clearly waves of water sound waves or compressions or waves in the atmosphere in the air water waves of. So they said well anyway we know about is a wave in some medium there must be a medium that carries these light waves it was called the luminiferous ether which is a very fancy word. You can see how to parse it here if you remember either Latin or Harry Potter I find them equally helpful think about the lumos spell in Harry Potter the lumini art just means light referring to light ferris means carrying like a ferris wheel. So the formal name of lumini efforts either it really just means the light carrying with a light bearing ether this was the medium in which light traveled in which everything all of the physical phenomena were immersed which is why these folks would never said the stuff of the world is elementary particles traveling in vacuum there is no vacuum everything at root is filled with ether that's where they were starting. So why would you need a medium for light again even before around the same time as Thomas young in England a number French scholars had found that the speed of light speed of which light waves travel depends on the medium and medium in which they're traveling in fact are slower in water than an air that's opposite by the way the sound waves travel more quickly in a dense medium. And that led to things like snows law the whole kind of set of knowledge about refraction and how light behaves that across is from one type of medium to another you can characterize these media in terms of what became known as an index of a fraction. And so everything about the behavior of these waves seem to depend on the medium through which they were traveling so there must be some kind of baseline or reference medium the ether with respect to which any of these deviations would then be measured so water is one type of medium but even if you take all the water away and have a kind of evacuated chamber you still have light waves traveling in the in the remaining ether that was how they organize these studies are so much for light. What about other things like electricity and magnetism so again during Faraday's early career by this point he was already a kind of in sconce to the Royal institution still working closely with people like on pretty Davy. There was a headline grabbing event not found in Britain but actually nearby in Denmark so on another natural philosopher Hans Christian Orstead was giving a public lecture very much like at the Royal institution same kind of format these were popular throughout. Orstead was giving a public lecture and he accidentally discovered in the midst of his talk something that he really didn't expect he had an appraise that looked a lot like this kind of conducting coil so is a conducting wire and he had nearby a compass so a magnetic needle and he found that when current was flowing through the wire the needle would be deflected he did not expect at all. Not expected at all. Not expected at all. No one else expected that somehow that electric current the flow of electricity could affect could induce magnetic effects it could change the behavior of that magnetic magnetic needle of the compass. This became headline news if there had been 19th century Twitter this would have broken Twitter hashtag. This was like literally whatever was super exciting including people like Michael Faraday. This was for Faraday exactly this kind of interconversion of forces that he was so interested partly from his sandamanian faith partly because he was a natural philosopher of his time. So not only does he quickly replicate Orstead's finding he separately finds that he can get electric current to move a compass needle. He then finds the inverse he then does as shown here he takes a bar magnet and starts moving it in a pattern near a conducting coil from which he can measure the current as an ammeter attached and he finds the inverse can happen as well then a moving magnet changing magnetic effect can induce an electric current. So he's investigating induction both sort of electric currents inducing magnetic effects magnetic fields or magnetic effects inducing electric effects and he wants to kind of keep track of this stuff. So he starts sketching these helpful doodles that he calls lines of force. As far as Faraday was concerned these were lines of force to depict the underlying state of the ether. So it must be he begins to reason with these kind of pictorial aids that the ether could be put under states of strain or tension that's if I have an electric charge that I place within the ether it's going to have an effect and put a kind of strain on the ether immediately around it. So he draws these lines of force emitting out your outward from positive electric charge or collapsing into ward a negative electric charge. And then he begins using his sort of like middle school level mathematics he had a little bit of geometry before leaving formal schooling and he puts that to work he says he he supposes what the number of lines that come outward from a positive charge is fixed and is proportional to the amount of that electric charge. So charge of say seven units would have seven of these lines rating outward affecting this round of ether by charge of 10 units would have 10 lines ready to happen. Then you can imagine what would happen if you surrounded that positive charge with a kind of imaginary sphere at some distant radius. Then you ask how many lines per unit area will cross through that imagined sphere the density of field lines will fall out the lines are dispersing as you get further and further away from electric charge. So the density of field lines how many of those lines will intersect a kind of unit of that sphere will fall off like one of our square to take the fixed number of lines. So the density of field lines divide by the surface area that you've surrounded that charge by the area goes by like four pi r squared. So the density should fall off like one of our r squared that was really exciting to Faraday because he had learned from again from French scholars like cool ohm not too long before really just in Faraday's own childhood. If there was this Newton-like force of attraction or repulsion among electric charges we now call it cool ohms law that this magnitude of the force between two electric charges falls off like one over the square the distance exactly as as Faraday had kind of reasons toward by thinking about states attention in the ether and how that strain would be kind of dissipated at more and more distance. So Faraday went on I mean he was so excited not only about one topic like electricity but also about magnetism what if you plop a bar magnet down in the ether then he could do that with these things like iron filings and trace out the kind of lines and influence around the magnets and you've probably done even as a child. And he realized that he could make sense of this also in terms of lines of force that these iron filings were helping him map out the kind of magnetic effects the strain that the bar magnet with its north and south magnetic holes could do for the surrounding ether. What's really interesting here is that Faraday starts to say that sometimes forces might not be transmitted only along the kind of straight line shortest path between a and b that was the sort of rule for all Newton-like forces the magnetic lines of force would bend they curve they would have these kind of looping pads. And so maybe the magnetic force did not always go on shortest distance paths. And more generally Faraday starts saying let's keep track of all these states of tension in the ether he introduces this notion of the field something that physicists to this day use every single day of our careers we now call it field theory. It largely comes as being introduced by Faraday as he tries to make sense of with kind of convenient and demonic devices these states of strain in the ether. So the electric and magnetic fields as far as Faraday was concerned were simply ways of characterizing the local state of the ether as represented by these kind of lines of force. What were the stresses and strains at that spot in the ether how do they change of a go to this spot how do they change that that one spot over time this is what he says is the notion of a field it's just shorthand for the state of the underlying ether. And so the real one might still wonder is the ether just a helpful thing to think about it at Faraday and his colleagues think he was really part of the world. And it was unambiguously for them part of the world not just convenient to think about but really the stuff from which the world was made and we'll talk about this in some more detail over coming class sessions. Faraday thought he found like the golden proof in 1845 and now is much more senior researcher. How could you demonstrate the ethos real well let's study the interaction in magnetic fields and the behavior of light in particular polarized light. This is now known as the Faraday effect of the Faraday rotation is one of these things it's literally still in our textbooks we use it all the time. It comes from Faraday's efforts to prove to himself and his colleagues that we are all immersed in this elastic bendable ether. So Faraday and his peers the idea was the following that if you put the ether under local strain by by putting a local magnetic field in some region of space. That magnetic field will have a kind of twisting or curling effect a kind of torsion on the underlying ether. And then this light wave is traveling through this kind of deformed local bit of the ether so it's behavior will change in a particular what's called the plane of polarization. The direction in which it's its wave is is waving will rotate of some angle shown here is the angle beta. So if the if the field starts out the wave starts out waving in one direction it will literally rotate it by some angle. The amount of rotation depends on the strength of the field and the distance through which this this ether is under attention. This is not just a good idea for 1845 it's how we make sense of the world today. It's the ether part but it comes from trying to figure out is the ether real just last year I had fun working with a really terrific year up student some of my no mox doxner. He and my friend Joe from audio and physics. We use this exact same phenomenon that an external magnetic field will rotate the plane of polarization of light. Not to talk about the ether but as a way to jam quantum encryption indefinitely so in this sort of hyper modern physics of the moment we're still going back to parity rotation. And yet parity thought this is a way of characterizing the ether I just love that we're going to see many examples of that throughout the class. Let me wrap up the parity part that will pause again for some more questions. So Faraday as we've seen worked on a variety of phenomena what we would call separately chemistry and optics electrolysis even physiology let alone electricity and actions. He was especially interested in the inter convertibility of forces partly compelling case of the made this kind of resonated especially closely with his his sort of religious minority views his sandamanian views and that there was this kind of underlying unity of nature. Faraday was never trained in advance mathematics he had really just the rudiments of this kind of pictorial geometry like we saw with the kind of lines of force. He was an apprentice to take where he had tremendous manual tech dexterity skills and also great cleverness. He became this leading experimentalist based on not formal training at a university but being kind of a apprentice as a book binder and then essentially a apprentice as hungry day is assistant at the world institution not at university. He introduces these things which we still use to this day like lines of force and then fields for Faraday these are ways of characterizing the one big prize of natural studies meaning the ether the medium within which all these things unfold in the reason as far as Friday was concerned why there could be this inter convertibility and unity. So in place of Newtonian action of distance that somehow one object could instantaneously affect or zero force on another one. Faraday starts explaining all physics physical phenomena here is the ambition to explain everything in terms of these local fields local disturbance here at position x equals one. And they can convey effects to its nearest neighbors point by point so you have to study how these fields change over time and spread out through space everything is now much the local fields not action and distance let me pause there again and ask me any questions see at least one more item in the chat. Any questions on the Faraday material. Very good so it was common to attend the public science lectures in fact it was seen as a way of being kind of elegant again it doesn't really fascinating work on the kind of social class emulation going on especially heightened as you might know in in Britain is time to read. So to be considered a kind of fashionable lady in the terminology today one had to show or at least fame interest in a range of topics one of which was these kind of you know elegant demonstrations of the glories of the world for many people this by the way we had a kind of over religious significance a kind of natural theology not for everyone but for many in this period the idea was it learning about how electric shocks make frauds frogs legs twitch or how magnetic bar magnets. Can change can induce electric current these are ways of kind of revealing the glory of God's creation as many people argue at the time so as a as actually a function of kind of moral or spiritual uplift and therefore again according to the kind of assumptions and we might say prejudice is the time therefore all the more important for young women to be exposed to this was a thinking of the time with their kind of tender moral souls that needed special care again to speak in their idiom not not my name. So there actually was a great encouragement for women to attend these public lectures not not as you might expect to move into the laboratory not to do the work that was almost uniquely male enclave in this period certainly in the wrong institution but to be sort of exposed to be part of the broader kind of polite discussions it was one way of showing that you were you know how to kind of appropriate upbringing again is lots of cool stuff I beg that to talk more about that or sense and reference to Marie the short answer was yes to attend the Christmas lectures at Royal Institute that was an awesome thing to you know bring your daughter to but but at the time and the Sunni will see change rather slowly but change over time throughout the semester at that time it was not something that was seen as a kind of acceptable or appropriate day job or a career path so that was a very very clear gender disparity but a great openness to have women participate in that limited way in the kind of public lectures very good question will come back to that that theme quite a lot. Great questions oh that's so good so will come to actually will come to some of that in his very next unit right now so so partly i'll just putt but the short answer is there was a growing recognition in just this time period among many influential government leaders not only in Britain in many parts of your perfect many parts of the world China and Japan certainly North America. A growing recognition by this during this exact time period that many nation states would benefit from investing in what we would now call science and technology or science and engineering so there certainly were hot button issues then as now natural evolution Darwin's theory of evolution which comes just around this time for publishing 1859 that becomes yet another flashpoint for for tension and controversy but for a lot of this work in what we would now call the physical sciences as we'll see. There was actually a kind of investment a new kind of priority in a lot of this work not across the board not without its own hiccups will come to that but it was actually a turning point in in a new kind of investment partly because many of these places were undergoing their own kind of nation based industrial development and we'll see that actually more explicitly in the next class some of it today with Maxwell and in the next semester was a great question to theme will trace throughout the semester. But even in in Faraday's own lifetime that was beginning to change into a more kind of a higher priority investment in exactly these topics great question. Any others should we press on. These are great so keep in common these are great historical questions to help us think about like what was different back then what might have been similar so we're going to keep that kind of back in fourth in mind as we enter now just the last part for today's class and we're talking about William Thompson and James Clark Max well. So as as we saw these briefly Faraday had very little formal training and mathematics and he used very little in his own studies he's very voluminous studies and that's not surprising given what we know about his own early childhood and education. There's a really remarkable shift one that I still find unbelievably fascinating so we're going to spend quite a bit of time talking about it today in next class as well. This amazing shift that begins really late in Faraday's own lifetime in the middle decades of the 19th century it doesn't only happen in Britain we're going to look at it because it's especially kind of dramatic or kind of blown out of proportion we might say in Britain at places like Cambridge University it's happening also in places like France and other parts of the world. Even beyond here but Cambridge in Britain gives us like the kind of capstone picture that in this almost like pure essence so there's a real sea change going on between Faraday's early life and even a later years of his own career in in the way that people would try to approach national phenomenon like electricity and activism. Two kind of exemplars two examples of that shift our names that might be familiar to many of you and will spend a little time today talking about some of their work William Thompson who was later known as Lord Calvin that's the same Calvin from the Calvin. Temperature scale absolute temperature for a little to you and other many other things. So Thompson on one hand and James Clark max on the other again I'm sure max all familiar name things like max equations and all the rest. So these two folks were about two generations younger than Faraday they were coming of age when Faraday was already a well known natural philosopher they pick up on Faraday's work they were avid readers of Faraday's books often monographs not just his articles and they begin to translate it into a very powerful mathematical form of the sorts of Faraday had had no inkling of whatsoever. Turns out both Thompson and Maxwell were were born in Scotland they were not from London or the immediate English surroundings you know both Scottish born they both moved to Cambridge for their formal university training in the middle decades of the 19th century. So both Thompson and Max were became deeply involved coming to exactly the question it was raised just in that last question period they came deeply involved with what we might call kind of engineering aspects or applications of natural philosophy all around the physics of the ether they had both had very long illustrious careers. Not only when they were university students they were pursuing these very fancy sophisticated mathematical kind of formal mathematical approaches to electricity, magnetism and the physics of the ether not only for the sake of pure mathematics as we'll see they were deeply involved in very practical ways with with things that governments wanted to pay for like telegraphy and other practical electrical technical devices. So among the most important in their own careers wasn't deep telegraphy so as you know Britain then as now was an island is still an island back then it had lots and lots of colonies that's what's changed it was a period of still rapid acceleration of the British colonial adventure. So distant outposts or so called possession this territorial possession is really all around the world again many of you might recall the old quick that the sun never sets on the British Empire and that time period there were colonial holdings or territories that spanned really the entire globe so at any given time of day the sun was shining on some British outposts. So what do you need if you're going to try to administer a world spanning empire you need ways to have efficient communication and that was an enormous impetus for things like telegraphy even with some of the former colonies like the United States or Canada some some kind of formal colonial holdings there was still an effort in the same period the middle decades of the 19th century to have efficient long disk communication things like commerce and diplomacy. So there are all kinds of reasons why electro mechanical investigations were given a very high priority in Britain in this time period. So we get a taste that here's our first quotation from that little bit of the Maxwell that I decide Maxwell published this voluminous treat as a two volume treat us in 1873 to the two volumes together run to about 900 pages it makes for fun be treating. But in a very opening of the preface we get this really interesting observation he tells us partly why anyone should read this book and he says here the important applications of electromagnetism to telegraphy have reacted on pure science by giving a commercial value and indeed a kind of governmental diplomatic value to accurate electrical measurements and by affording to electricians as they experts in the field. The use of apparatus on a scale which greatly transcends that of any ordinary laboratory this is they're getting huge investment to conduct very large investigations with very elaborate apparatus. The consequences of this demand the sort of government and commercial private interest demand for electrical knowledge and of these experimental opportunities for acquiring that knowledge have already been very great both in stimulating the energies of advanced electricians. And then diffusing among practical men a degree of accurate knowledge which is likely to conduce to the general scientific progress of the whole engineering profession p s by my nine hundred page book if literally worth something that's what he's announcing the opening pages of his treat us. So let's go a little bit into some some of how William Thompson and James Clark Maxwell start treating Faraday's kind of intellectual legacy. So Thompson began reading Faraday's books as well as some articles as an undergraduate Faraday Thompson was still you know basically 18 and 19 years old at Cambridge when he starts devouring Faraday's work or continues to. He began to realize that he could put Faraday's work he could kind of translate it on the one hand and also Newton's work on mechanics within the same mathematical structure this with the stuff that only in the middle decades of the 19th century was what suit university students at Cambridge like William Thompson began to really be immersed in will talk much more about that in the next lecture. So we realize that you could make this bridge you could treat all these disparate phenomena with an electricity and separately all these disparate phenomena within Newton's mechanics blocks sliding down planes the attraction of gravity. Introduce one similar mathematical construct the potential a scalar potential which is often just you labeled by the Greek letter five if this is brand new to you don't worry if it's very familiar to you great. The idea is that a scalar function a scalar field like this potential it has values at every point in space those values can change over time but it doesn't have direction it has no it only has magnitudes you can think of making a kind of representing the temperature in the room at every location space. And then tracking how those temperature readings change over time at each location space that's a scalar function temperature scalar has magnitude but not direction that's hopefully review other things like these fields that Faraday introduced for electricity magnetism those have direction as well as as well as magnitude those are vector quantities. Well, as Thompson was learning to just devour in his undergraduate studies you could create a vector quantity by taking kind of rates of change of a scale of quantity what we now call the gradient so the gradient of when this upside down triangle and the opposite possible the gradient of a scalar function gives a vector function and in particular. One could represent these vector field like quantities of either electricity or gravitation by first writing down a simpler mathematical object the scalar function scalar potential. So he first in reviews what had already been worked out by a bunch of 18th century so vaunt throughout the throughout France French scholars throughout the 1700s downstream from Newton himself they have really translated Newton's own work into this language of direct directional quantities like. And then it's a simple field like the gravitation like forces and the gravitational field and then introduced the simplifying a mathematical structure of the scalar potential. And then you could study not just how the field is related to changes in that scalar function the gradient you can see how the field would divert the divergence of that field related to where the stuff is the density of sources of gravitation like a mass density. This was basically a translation re translation of of Newton's work from the 1680s translated into this more modern language throughout the 1700s by the French scholars of direction full of extra quantities being related to derivatives to rates of change of simpler scale requires that was literally textbook stuff that's what Thompson's learning as an undergraduate it's not Thompson not those French folks in this case. Who says can we make a one for one map he's absorbing this cool Faraday stuff he says what if we represent an electric field as the state of strain in the ether exactly as Faraday had begun kind of grow up into or pictorially there's a their electrical forces to be forces related to electrical fields the state of disturbance of the ether sorry how that. So again, okay you can then relate the electric field again to rates of change of a simpler quantity of scalar potential exactly analogous to the gravitational case you can then ask how the electric field is diverging throughout space and time like those lines of force getting more and more spread out which other in Faraday simple pictures. And that's related to where the stuff is to the sources of this electrical disturbance the charge density how many electrical charge objects are distributed throughout space per unit volume say so he makes a one to one. And he says there's really this precise mathematical analogy between electrical phenomena and mechanics like Newton's laws and the mapping is done by this a little bit more formal more fancy mathematics so far that's not so shocking Thompson was among the first to take this textbook. And so I started doing new things with it with a Faraday cool in M stuff. One within one year of when Faraday introduced what we now call Faraday rotation remember that thing about the external magnetic field rotating the plane improvisation for light Thompson does the same thing is it's oh good Faraday has some new cool stuff let me put that through my very fancy universe and mathematics. So now he still undergraduate Thompson is now making brand new stuff not just rewriting the known regularities among electrical phenomena but in fact formalizing the brand new stuff like Faraday rotation introduces a new kind of mathematical object the vector potential that was not known even to the French savant we still call it the vector potential a. And he introduces a new operator new way of manipulating that quantity which we call the curl Thompson events curl as an undergraduate just let that sink in for a second. So you know the new semesters early you all can invent all kinds of new math before let's say November Thompson literally this like for fun on the weekends because he can't get enough math. So he introduces the vector potential and this curl because as Faraday had kind of intuitive the effect of a magnetic field on the surrounding ether was it kind of turning or twisting strain unlike the kind of straight line strain of an electric field and so Thompson wants to kind of formalize what that curl what that twisting torsion will be like as a different kind of strain in the ether any formalizes this new operator which we now no one love and use every single day. There comes out of Thompson trying to treat mathematically formally what he was still learning very actively from people like Faraday pretty amazing. So far following Faraday's lead Thompson begins to interpret this math math as a mechanically remember we saw that one to one bridge between the kind of Newton mechanic stuff and the electricity stuff he says if the same mathematics applies maybe it's the same physical explanation on under hurting all of it. The ether it learned from people like Michael Faraday others either seem to be this elastic physical medium it was literally a kind of stuff spread out everywhere and that medium could be put under local states of tension or strain with twist with directional properties described by these vectors. So these new mathematical techniques like curl could quantify this physical mechanical mediums response to pressures like electric and magnetic fields. He really took up to heart in a famous sort of public lectures much like these London ones he actually came to Baltimore in the United States and gave very, very well attended pop and lectures for Baltimore. Thompson basically tried to give his audience a feel for what these kind of experts were doing this is direct quotations of fat again people in their fancy opera gloves like out for night on the town. Do you have a great Lord Kelvin by this point the great enabled Lord Kelvin described about the latest advances and he tells us fancy audience stick your hand in a bowl of jelly okay and see how wiggles and vibrates as you move for handrave that's what it was to do physics because the jelly is just like this elastic ether it's everywhere in the job of super smart ambitious people like William Thompson was to quantify the wiggles and vibrations of that ether much as you would if you disturb. This part of jelly I love that. This is known as a mechanical world view if the mathematics was the same make this one to one mathematical map then maybe you could model electromagnetism on literally a mechanical model you have an elastic stuff under states of strain with directional properties. And if the models reproduce all the relevant phenomena like coulums law and all the rest all the electromagnetic phenomena that maybe these aren't only analogies or models maybe either really was merely a mechanical system just like that jar of jam so it becomes a mechanical world view all of the things of the world are to be understood on mechanical kind of vibrations or responses of this space filling ether last part and a possible questions almost done. When it turned to Thompson's slightly younger colleague James Clark Max. I mentioned they had a similar upbringing a couple years apart both Scott and both come to Cambridge for their undergraduate studies Maxwell's a couple years younger I don't think they actually overlapped and came to know each other later. He Maxwell like Thompson becomes steeped in his new Cambridge mathematical training will talk a lot more about the Cambridge training in the next class. And they did and Maxwell develops further analogies between these electromagnetic kind of ether based systems and mechanical systems here's a famous example this by the way you get some more description of this in that chapter by Bruce Hunt in the reading for today. The model the effects of a magnetic field on the ether Maxwell matches this elaborate system basically it's like a contraption of like pulleys and conveyor belts and gears we don't know if we're about to detail so much the ambition is what I want to convey. But there's a physical model of an actual system a mechanical system gears levers and straps that he thinks is what's really going on in the ether when we do things like put a little patch of ether under local strain from a magnetic field. So between these kind of vortices as depicted here are these idle wheels we'll sort of stay in place but can change the rate at which they turn and really is like these conveyor belts. If an external force change the rate at which one of these vortices was spinning you could change it by imposing what is external feels like a magnetic field. You change the rate at which this kind of unit cell is spinning that change of the rate at which the immediately nearest neighbors are going to be behaving it's all this far today field idea of local neighbor to local neighbor not action or distance. So this unit cell starts to change its rate of rotation that changes speed at which these intervening these local idle wheels spin that then changes the rate at which their nearest neighbors in because they're literally connected so it's all local effects. So all effects are local and the way that a magnetic disturbance affects something over there is by these local effects propagating through the medium in this kind of gears and straps conveyor belt sort of way. And again he gives us hints about this in the even in the brief excerpt from Maxwell's street is that I assigned for today. So he talks about how the action of one electrical system on another is affected not by direct direct action at distance not the way Newton had said. But rather by means of a distribution of stress in this medium is a elastic medium or the ether extending continuously throughout space. Likewise, he says if you pages later in the excerpt the distribution of stress in this medium is either is precisely that to which parity was led in his investigation of induction of the fact that a moving magnetic moving magnet can induce electrical effects like an electric current. At every point of the medium is a state of stress every part of the ethers under some kind of stress such as there's tension along the lines of force pressure at right angles is really going mechanical model almost sometimes a kind of hydrostatic one. And other ones more like the gears of the fact. This became how the max well is not just max but even his nearest followers and students and kind of protege is that's where they thought it was to study the natural world to build more and more kind of articulated mechanical models of the ether with which they could model and even predict more and more features of natural world like electromagnetic effects. So one of his acolytes Oliver large himself went on to a very very distinguished career in physics himself. He wrote a book a few years later the Maxwell's treat is called the modern modern views of electricity. And it was all about this sort of max well in approach within this mechanical world view to account for states of strain and ether using this kind of much more articulated mapping the fancy math. The people like Thompson Maxwell ensued the whole Cambridge group would articulate. Well, this didn't impress everyone I love this book reviews the nastiest book of you for a long long time. Here's a review by the French mathematical physicist Pierre du M reviewing Oliver largest book this kind of max well in book. du M hoped he would like it. He also was very interested in lectures and lectures, but he just snips in his wonderful sneering French way to where the quoting. du M says here is a book intended to expound the modern theories of electricity and there are nothing but strings which move around pullies which roll around drums which go through pearl beads which carry weights and tubes which pump water while others swelling contract. Tooth wheels are geared on another engage hooks. This is the real kicker. We thought we were entering the tranquil and neatly ordered a mode of reason. But we find ourselves in a factory this was not high praise he is like I thought it was going to learn something edifying for my soul and said this is literally low class stuff. This is the most obnoxious take down book review that I could think. So this max well in British approach doesn't please everyone and yet as we'll see in the last little bit there's starting to make some pretty remarkable strides nonetheless last little bit that will pause for questions last part for next. So while working out this sort of mechanical model how would local disturbances propagate through this elastic medium of the ether. Maxwell starts putting in some quantitative values for the way to characterize the kind of response of the ether these are really like spring constants how stretchy is the ether or how much stretching is attention to get sort of per unit applied external field. When we apply an external electric field to this part of the ether how much does attention change or likewise the magnetic field so we like spring constants analogous. And that's what he and his college are measuring in their local laboratories in study. Then he goes back to these mechanical models to ask how quickly would a mechanical disturbance begin to propagate within this mechanical ether. And he finds really to a surprise he didn't see that coming these disturbances in the ether moment by moment local effects would move at a speed he already knew very well the speed of light. Here's a direct quotation was very famous paper from 1865. And he says the velocity of transverse undulations in our hypothetical medium I just love that phrase transverse undulations in our hyperventilumia meaning the speed at which these waves of ether are traveling. That's been agreed so exactly with the velocity of light that's counted from optical experiments action mostly astronomical test that we can scarcely avoid the inference that light consists of the transverse undulations of the same media in the ether which is the cause of electric and magnetic phenomena. So that's what's going on here. To the light waves are literally nothing but traveling disturbances of electric and magnetic fields within this light bearing all pervasive ether. He gets that he gets this unification of electricity magnetism and optics by thinking very, very hard and very quantitatively about the mechanical response of this all pervasive ether. So let me wrap up, then I'll pause. I see a bunch of comments coming up in the chat, so I want to make sure we have time to chat. So let me just wrap up for and then we'll get to discussion. Leading natural philosophers of the 19th century were really quite convinced and they had very good reasons that the world is made up just different kinds of stuff than how our contemporaries would answer that question. That opening question, what's the world made of? The folks back then world leading rightly celebrated scholars, Faraday Thompson Maxwell and for that matter, people like Pierre Duhem and his contemporaries as well. They were convinced that the world was not made of elementary particles that skitter around and evacuate, but rather there was no vacuum and particles were a kind of afterthought will come back to that next class. That the world is filled with his elastic physical medium, the ether and everything that matters is a response that ether to various kinds of mechanical disturbances as Lord Kelvin says stick your hand in a bowl of jelly, see how that's what the world is made up until the middle decades of the 19th century, many leading highly accomplished and very influential natural philosophers like Michael Faraday. Could enter research careers based on this apprenticeship model closer to the middle ages or the Renaissance than to today. They often worked in sort of institutes which had no formal teaching function, they were not for the most part based at universities, that's what begins to change in the middle decades of the 19th century. So Faraday Thompson Maxwell in their own different ways pursue these analogies between this light bearing or luminiferous ether and mechanical systems Faraday with his rather rudimentary geometrical arguments and his very clever kind of pictorial aids, Thompson Maxwell with his increasingly sophisticated mathematics will look at that as a more next time. They all became convinced of what became called a mechanical worldview, the electromagnetic effects were literally nothing but mechanical effects, mechanical effects on this all pervasive ether. Moreover, this is the birth of what we now call field physics, local causes yield local effects, there's no action and a distance unlike Maxwell's description, actually Newton's description of gravity. A can affect B but it'll take some time for the effects to propagate and certain kinds of propagating effects like these electric and magnetic transverse undulations which show up as nothing other than what we call light. Let me stop sharing the screen there, open it up for questions, there's a huge set in the chat, I think I'll get to them all today. Great, great question, thank you. So there was a spectrum even among what we now call the max welions, they didn't all have, you know, exact same ideas only shared a lot. And so indeed some of them wondered is this a useful analogy and if so should we none of us keep pursuing it see what we get out of it. Others were convinced that it's more than it's not merely an analogy, it's a helpful analogy precisely cause of some deeper similarity and individuals use change over time in the whole group would have a kind of let's say evolving center of gravity. There were more like each other in the kind of Cambridge scene, then like say the French or the Germans or indeed communities further afield as well. Look at so I don't want to make it sound like they're all kind of like exactly have the same motion, they were pretty similar compared to as we'll see actually a really interesting contrast next class, I think it's with some leading scholars within the German states. So they are there was maybe the strongest countries, but you're right that some of these even within Cambridge or the kind of close Max Wollion colleagues, they were all delighted to pursue the mathematical analogies they were getting trained in this very very elaborate mathematical machinery as we'll talk more about next time they shared that. And they were impressed by what the analogies would bring them either to explain something or do prompts new questions and then try to go to the laboratory was a productive set of analogies that was already what they agreed on some then said it's not just analogy the world is filled with jelly effective. It's a great question. It looks like Julia has very kind of compiled a bunch of questions for me, let me answer some that Julia has as a private chat to me and if I miss some others we have time for some more. So someone asks by way Julia if university and research institutions were separated in time who used to teach at the university so very good people would teach at the university who had gone to university so self self replicating now that's still true today but we've achieved a kind of monopoly, whereas back then it wasn't such a monopoly. That is to say people who would teach universities had indeed been trained like like William Thompson or James Clark Maxwell with their own students and in fact we'll talk quite a bit about this in the next class and something I find really interesting. And that was still separated from people who could enter really elaborately amazingly prestigious careers like Michael Faraday or even Thomas Young before him or Hans Christian or state or many other names we counted today without going through that kind of formal university setting. So the kind of apprenticeship model like get your hands dirty on effectively a kind of elaborate internship and just like never leave that was still a viable path in to conduct really world class cutting edge research. Then you'd often write your monograph your whole book about it maybe deliver some fancy lectures maybe some of the scholars at the university would be interested and maybe write a textbook and maybe lecture on it in their classes but they were kind of they were separate. The separation begins to be reduced starting in the roughly 1850 1840s 1850s and they become much much closer associated not automatically not without sort of some some switches back and forth. But the trend really sets in starting in the middle 19th century again we'll look at that a bit more directly next time very good question. So another question is why do we go from the convention used in Maxwell after noting the potential I sighed now using it five oh very good are they different no they're not different so I guess I skipped ahead to the modern I showed my prejudices in my slides here there's using the Greek letter five for potential. That the short answer is I don't know what that particular letter changed what I do know and we'll talk about again next time is that as you got a taste of again in the reader today Maxwell was not using any of this fancy pants vector stuff right. Maxwell was writing everything out in explicit contention coordinates. That's probably why he joked why his book was 900 pages like if you just use vectors they would have been a 20 page pamphlet you know we'd be done. And so I talk a lot about that actually in the coming class so the particular question how did society come fire it's interesting and I actually don't know. But the larger question about Maxwell's notation and in particular how can become so valuable for people like us when he writes these incredibly clunky pain of the buck kinds of things as part of why I gave you those excerpts from his reader from his treatise. It doesn't look just like you know our favorite textbooks today even when we're using quote of what his equations so it's a great question the conventions actually show a lot of interesting stuff even a particular question about sci fi I I don't know. Regarding the wheels police as analogies of his reality how is continuous rotational symmetry of the physics explained oh that's interesting. I think the idea oh that's good yeah that's good so I think they they just are toward it by those like molecular vortices that's a kind of two day two dimensional slice and they certainly were things like sphere so a lot of it's up they talked about ball bearings we actually have spherical symmetry. And so they constructed even more elaborate kind of pull these in gears so they were certainly very attuned especially thinking about these mathematical kind of fancy mathematicians like Thompson Maxwell they're very attuned to what we would now call symmetry arguments in real space kind of rotate the system around x, y or z. And so a lot of their models were actually factly sort of spherical like like like like like billiard balls or like ball bearings as opposed to only like circles so what will come to that as well these are all good questions other questions here from the chat. Or from not the gen, anyone else have any questions that they want to to pose for the group feel free to raise just raise your blue hand at this point to now because each other. I like the comment about putting your hand in jelly and now you keep on sticking my apologies for your keyboard just trying to catch up on the chat here. There's a really interesting comment here about from Sabrina I like this so Sabrina writes that I don't know what it got is a grand unified theory but it seems like we're moving back towards everything being the same thing again with it. So one of the things that that's maybe comes back to actually to the obo's question so for some of these folks the ether was a kind of word for something that didn't really know what it was a subject a topic they figured had to be everywhere because they could in they could infer its effects if I wiggle something here something happens there there must be some medium that transmitted the influence from a to b. If you know how could a moving bar magnet possibly affect an electric current because they're both immersed in the shared medium is all pervasive medium. And so they gave it a name they gave it a long before they had any kind of articulated descriptions or an hour they called it the light bearing either a little bit of a secret in your decades before they had any kind of more specific ideas about it. And so in that sense I think it is kind of like we're in a similar situation today and we'll talk a bit about this near the very end of this semester with our quest to understand what's the world made of. And we have some other we have very finely articulated models like a standard model and this kind of neutrino and that kind of electron and upcorks and downcorks and gluons and eggs body all this very specific and that amounts as you may know for not more than 5% of the kind of mass balance of universe. We've explained 5% universe with unbelievable precision out to 12 decimal places thank you very much. And we know nothing with a capital N nothing about the other 95% of the energy balance. So we give it names we call it dark matter and dark energy again it will come to in the very near the end of the turn. And I think in some sense I have some sort of sympathy with either my present colleagues myself and or with the kind of people of Farad is a maximum age they didn't know what the ether was but they knew that had to be there it was conveying all these effects they could measure the effects of disturbing the ether as far as they were concerned. So they gave it a name a kind of placeholder name partly to help organize their studies. Oh I'm studying the Luminiferous ether as well that helps get scholars you come to the same page. They would give their best estimates of what they thought the thing was like and how it behave but they didn't know right they had had a better or less well compelling responses. And I think we're in a very similar situation today not by design not by our hopes because we have been stymied now for four decades to get any more kind of carefully articulated knowledge about what specifically is dark matter seems to be filling every galaxy much much more so than that. And particularly this other separate kind of stuff that we now called dark energy so I think we again I don't want to say we've learned nothing since 1820 we can see some some maybe humbling humility inducing parallels between our best efforts today and the efforts of very very earnest sounds of folks from from long ago that's a great. So again we'll keep that in mind as we march forward throughout the term. Julian asks why are they so reluctant to accept action at a distance and how did we come to accept it. Oh good let me take it first one first action a distance that's a great topic. Newton famously says when it comes to the phenomena of gravity, I feign no hypothesis. He says I think they're quantitatively the effect of one mass exerting a force the other goes as the product of the masses divided by the square their distance is law of universal gravitation what's the underlying reason for that he says for that I feign no hypothesis. He actually had a lot of hypotheses he just knew not to write them down a lot of scholars have argued that he was actually convinced at least by analogy the gravity was a kind of alchemical effect even a time when alken he was in kind of poor repute. So he said outwardly and publicly I don't know what it is but he seems to have at least been inspired in part by these very what we would now call a cult forces where something can somehow have an influence on something else instantly across time and space. So so Newton was kind of comfortable with the notion of action or distance that somehow the earth could instantly tug on the moon and vice versa without having to wait for some influence to travel you here and there. That even in its day was criticized by number of scholars even in Newton's own day because they thought it did sound a cult it sounds like you know kind of witchcraft how could this thing possibly affect something over there if everything else I see you know I throw a pond actually a rock into the pond I see ripples spread out the distant edges of the pond aren't affected by my rock until the ripples get there. There are all kinds of common sense observations that suggested to people like ligaments I mean like Newton's very smart contemporaries that the physical world seemed to convey influences by requiring some time for influence to allow for me to be so Newton's action of distance was already at least had a kind of curious you know kind of bad reputation among the savants who cared. And then you get to someone like like Faraday and Ursted and Thomas Young and now they figure they have a reason to finally give up or to finally reject that action and distance because they have separate reasons based on this wave theory of life say oh there is a seat there's a physical explanation available to us for how all these physical phenomena are transmitted from A to B across space they're all sitting in this elastic medium is either and that can have a local disturbance of propagating. So there was so to speak an added reason to pile on and say not only did people wonder about Newton's action of distance in Newton's own day now roughly a hundred hundred ten years later we have new inputs we've new evidence from our investigations the suggestion that Newton hadn't known about it or hadn't taken into account at all all the more reason to try to find out a kind of local cause local causes you local effects kind of response so that starts getting more and more compelling. Now Julian asks because he knows what's coming why do we now accept action of distance we sort of do and don't we have a love for you relationship I assume Julian that you're referring to quantum entanglement or so called quantum non locality if you're not referring to that I'm going to hijack this and I'm going to talk about because I just love it so we're going to talk about that action a few classes a little bit later this term so how have we made our kind of awkward piece with a very certain kind of action of distance not easily not right away. Thanks to a lot of hard and contested thinking that's a preview for for lecture 12 I think so we're going to we're going to talk about quantum non locality is one of my favorite topics in the universe we'll get look at that too. But for a long long time between let's say 1800 and the 1960s 70s people were quite content to say the action of distance is always always bad we never want we never want it in our physics and they had a range of reasons why they thought that was going to be an acceptable approach. Aiden asks how accessible were the lectures and later universities research I mentioned that Faraday did not have much money when he was younger but he was the exception was the exception rule to class discrimination events all yeah very good so in Britain in British history I mean the rough shorthand is we're always talking about class discrimination so including in Faraday's time Faraday was absolutely the exception who proves the rule it was as I say this rags to riches story. It wasn't there there was no social mobility and you can read any kind of Charles Dickens novel to see some characters who have a breakthrough and rise above their station in the language of the time but in the in the natural philosophy Faraday stands out as a pretty unusual case and the universities as well there were Scholarship students at places like Cambridge then is now so it wasn't only very very rich children and very rich families who go to university but it was tilted very strongly that way In fact it's only in Britain in the middle decades of the 20th century like a hundred years after the days of Thompson and Maxwell was a very large university reform throughout Britain to make much more accessible university for many many more for people for many more backgrounds That kind of large scale national university reform comes really an earnest like a hundred years later so there were students on fellowship in fact Isaac Newton was a scholarship student when he went to Cambridge in his own lifetime in the 1600s often they would have to be basically like a Butler or a made for their for their roommates not an ideal situation right this is not like work study was like you have to go clean up for your rich roommate not what I recommend today so there were ways to be a student as some of these elite British universities from from more humble backgrounds not great this was well outside the reach of someone like Faraday so it does again the latter didn't extend sort of arbitrarily low but there were there was a range of social classes universities in this time not not a full range and that begins to change pretty slowly all over the world including Britain including fracking the United States and of course we still have challenges even here So that's a great question Faraday was indeed the exception who who proves the rule within natural philosophy Yeah great question any other questions there if not I realize we're pretty much at the hour those are great questions thank you so much I hope it's not too clunky we'll try to get better I'll try to get better at at flowing in the questions and discussions throughout these zoom lectures anyway thanks everyone great great questions I'll post the videos as soon as done processing will go to the campsite and we'll pick it up there for next week everyone stay well see you soon",
+  "video_number": 10
+}

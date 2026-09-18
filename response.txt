@@ -1,0 +1,5 @@
+You're asking about today's topic. That would be numerical computation for deep learning. In video 2, at around 53 seconds, we dive into the basics of numerical computation for deep learning, but to be more specific, we start to discuss it in video 1, around 41 seconds into the video, and we also touch upon it briefly in video 4, starting from 1691.76 seconds.
+
+Let me clarify - video 1 is all about giving some context for where we are in the course, video 2 is where we actually start to talk about numerical computation for deep learning, and video 4 is a bit more about how bias might play into this topic, specifically in the context of machine learning for health.
+
+If you'd like to learn more about how this topic is being covered in depth, I'd recommend watching video 2, from around 53 seconds onwards.
