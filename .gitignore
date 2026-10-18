@@ -2,6 +2,7 @@
 /video/
 /audios/
 /embeddings.joblib
+/video_index.npz
 
 # Python caches and local environments
 __pycache__/

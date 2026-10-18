@@ -1,16 +1,26 @@
-# How to use this RAG AI Teaching assistant on your own data
-## Step 1 - Collect your videos
-Move all your video files to the videos folder
+# RAG AI Teaching Assistant
 
-## Step 2 - Convert to mp3
-Convert all the video files to mp3 by ruunning video_to_mp3
+Ask questions about the video transcripts in `jsons/`. The web app retrieves relevant transcript segments, asks Gemini to answer from those segments, and returns the video titles and timestamps used as sources.
 
-## Step 3 - Convert mp3 to json 
-Convert all the mp3 files to json by ruunning mp3_to_json
+## Deploy a shareable assistant
 
-## Step 4 - Convert the json files to Vectors
-Use the file preprocess_json to convert the json files to a dataframe with Embeddings and save it as a joblib pickle
+The web interface is hosted on Netlify. Its Python API is hosted on Render, because the original scripts depend on local Ollama and cannot run as a public Netlify site. Render builds a Gemini embedding index from the checked-in transcript JSON files. The API key is only stored on Render.
 
-## Step 5 - Prompt generation and feeding to LLM
+1. Push this repository to GitHub. Keep the transcript files in `jsons/`; the large local `embeddings.joblib` is not needed.
+2. Create a Gemini API key in [Google AI Studio](https://aistudio.google.com/apikey).
+3. In Render, create a new Blueprint from this GitHub repository and set `GOOGLE_API_KEY` when prompted. Wait for the `rag-teaching-assistant-api` service to finish its first build; it embeds the transcript corpus.
+4. Copy the service URL from Render. In `netlify.toml`, replace `https://YOUR-RENDER-SERVICE.onrender.com` with that URL and push the change to GitHub.
+5. In Netlify, import the same GitHub repository. Netlify reads `netlify.toml`, publishes `web/`, and displays the shareable site URL when the deploy finishes.
 
-Read the joblib file and load it into the memory. Then create a relevant prompt as per the user query and feed it to the LLM
+The first Render build can take several minutes while Gemini indexes the transcripts. A free Render service may sleep when idle, so its first response after a quiet period can be slow. The Gemini key is used for embedding and answer requests; configure usage limits in Google AI Studio before sharing the public link.
+
+## Run locally
+
+Install the packages in `requirements.txt`, set `GOOGLE_API_KEY`, then build the transcript index and start the API:
+
+```bash
+python build_index.py
+uvicorn api:app --reload
+```
+
+Serve `web/` locally and proxy `/api/*` to `http://localhost:8000/*`, or deploy using the steps above. The legacy scripts for extracting transcripts and building a local Ollama index remain available for offline experimentation.
