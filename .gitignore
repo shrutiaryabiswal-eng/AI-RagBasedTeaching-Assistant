@@ -1,24 +1,40 @@
-# Local media and generated model artifacts
-/video/
-/audios/
-/embeddings.joblib
-/video_index.npz
-
-# Python caches and local environments
+# Python cache and environment
 __pycache__/
 *.py[cod]
 .venv/
 venv/
 env/
 
-# Local configuration and runtime output
+# Local media and generated artifacts
+/audios/
+/video/
+/embeddings.joblib
+/video_index.npz
+
+# Web-generated media and data
+/web/audios/
+/web/video/
+/web/jsons/
+
+# Secrets and logs
 .env
 .env.*
 !.env.example
 *.log
 
-# Editor and operating-system files
+# Editor and OS files
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+# ZIP archive
+/requirements.zip
+
+# Duplicate scripts
+/speechToText - Copy.py
+/video_to_mp3 - Copy.py
+/web/speechToText - Copy.py
+/web/video_to_mp3 - Copy.py
+
+# Runtime output
+/web/response.txt
