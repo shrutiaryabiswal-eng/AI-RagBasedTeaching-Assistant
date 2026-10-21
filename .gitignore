@@ -1,40 +1,16 @@
-# Python cache and environment
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-env/
-
-# Local media and generated artifacts
+# Local media and generated files
 /audios/
 /video/
 /embeddings.joblib
-/video_index.npz
-
-# Web-generated media and data
 /web/audios/
 /web/video/
 /web/jsons/
+/web/response.txt
 
-# Secrets and logs
-.env
-.env.*
-!.env.example
-*.log
-
-# Editor and OS files
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-# ZIP archive
+# Temporary files and duplicate scripts
 /requirements.zip
-
-# Duplicate scripts
 /speechToText - Copy.py
 /video_to_mp3 - Copy.py
 /web/speechToText - Copy.py
 /web/video_to_mp3 - Copy.py
-
-# Runtime output
-/web/response.txt
+__pycache__/
